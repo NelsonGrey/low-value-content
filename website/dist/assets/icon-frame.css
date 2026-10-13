@@ -18,3 +18,14 @@
     padding: 1.5rem;
   }
 }
+
+.site-header .nav-cta {
+  padding: .45rem .8rem;
+  background: #171713;
+  color: #fff;
+}
+
+.site-header .nav-cta:hover {
+  background: #e54a2e;
+  text-decoration: none;
+}
