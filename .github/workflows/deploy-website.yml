@@ -1,0 +1,40 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [develop, staging, main]
+    paths:
+      - "website/dist/**"
+      - "firebase.json"
+      - ".firebaserc"
+      - ".github/workflows/deploy-website.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-website-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # develop -> dev, staging -> staging, main -> prod
+    environment: ${{ github.ref_name == 'main' && 'production' || github.ref_name == 'staging' && 'staging' || 'development' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve Firebase project
+        id: target
+        run: |
+          case "${GITHUB_REF_NAME}" in
+            main)    echo "project=low-value-content-prod" >> "$GITHUB_OUTPUT" ;;
+            staging) echo "project=low-value-content-staging" >> "$GITHUB_OUTPUT" ;;
+            *)       echo "project=low-value-content-dev" >> "$GITHUB_OUTPUT" ;;
+          esac
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ steps.target.outputs.project }}
+          channelId: live

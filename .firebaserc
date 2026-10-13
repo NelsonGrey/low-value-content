@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "low-value-content-dev",
+    "development": "low-value-content-dev",
+    "staging": "low-value-content-staging",
+    "production": "low-value-content-prod"
+  }
+}

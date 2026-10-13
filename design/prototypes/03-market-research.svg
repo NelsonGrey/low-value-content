@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <g fill="#111111" text-anchor="middle" font-family="Georgia, Times New Roman, serif">
+    <circle cx="2250" cy="2700" r="1500" fill="none" stroke="#111111" stroke-width="28"/>
+    <circle cx="2250" cy="2700" r="1310" fill="none" stroke="#111111" stroke-width="10"/>
+    <text x="2250" y="2180" font-size="245" font-style="italic">I’m not doomscrolling.</text>
+    <text x="2250" y="2600" font-size="330" font-weight="700">I’M DOING</text>
+    <text x="2250" y="2990" font-size="275" font-weight="700" letter-spacing="-5">MARKET RESEARCH.</text>
+    <text x="2250" y="3450" font-size="82" font-family="Arial, Helvetica, sans-serif" letter-spacing="22">LOW VALUE CONTENT RESEARCH DEPT.</text>
+  </g>
+</svg>

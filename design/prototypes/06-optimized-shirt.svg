@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <g fill="#111111" font-family="Arial, Helvetica, sans-serif">
+    <text x="650" y="1780" font-size="185" letter-spacing="16">EXPERIMENT 01</text>
+    <text x="650" y="2310" font-size="390" font-weight="800">I OPTIMIZED</text>
+    <text x="650" y="2740" font-size="390" font-weight="800">THIS SHIRT FOR</text>
+    <text x="650" y="3170" font-size="390" font-weight="800">ENGAGEMENT.</text>
+    <line x1="650" y1="3430" x2="3850" y2="3430" stroke="#111111" stroke-width="25"/>
+    <text x="650" y="3760" font-size="130" letter-spacing="14">RESULT: STATISTICALLY INSIGNIFICANT</text>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <g fill="#111111" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif">
+    <text x="2250" y="2100" font-size="580" font-weight="800" letter-spacing="-12">THOUGHT</text>
+    <text x="2250" y="2670" font-size="580" font-weight="800" letter-spacing="-12">LEADER.</text>
+    <line x1="1050" y1="2930" x2="3450" y2="2930" stroke="#111111" stroke-width="24"/>
+    <text x="2250" y="3320" font-size="250" font-weight="400" letter-spacing="22">NO THOUGHTS REQUIRED.</text>
+    <text x="2250" y="3650" font-size="90" letter-spacing="25">CERTIFICATION NOT INCLUDED</text>
+  </g>
+</svg>

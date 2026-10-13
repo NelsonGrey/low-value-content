@@ -1,0 +1,23 @@
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Firebase
+.firebase/
+firebase-debug*.log
+firestore-debug.log
+
+# Secrets
+.env
+.env.*
+*service-account*.json
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node (future website tooling)
+node_modules/

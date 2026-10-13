@@ -1,0 +1,27 @@
+name: Bug report
+description: Something is broken on the website, in a tool, or in a design file
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [Website, Design file, Tool / script, GitHub Actions / deploy, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the page or file affected and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: dev / staging / prod, browser, or OS
