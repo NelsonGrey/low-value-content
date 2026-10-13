@@ -1,4 +1,5 @@
 @import url("footer-layout.css");
+@import url("icon-frame.css");
 :root{--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}body{padding-top:74px;padding-bottom:76px}
 .site-header{position:fixed;left:0;right:0;top:0}
 .site-footer{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;min-height:76px;padding:.65rem clamp(1.2rem,4vw,4rem);background:#111;border-top:1px solid #333;flex-wrap:wrap}
