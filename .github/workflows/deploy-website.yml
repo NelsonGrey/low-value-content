@@ -23,7 +23,7 @@ jobs:
     # develop -> dev, staging -> staging, main -> prod
     environment: ${{ github.ref_name == 'main' && 'production' || github.ref_name == 'staging' && 'staging' || 'development' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Resolve Firebase project
         id: target
         run: |
