@@ -43,6 +43,23 @@ jobs:
           esac
       - name: Select environment hosting policy
         run: cp "${{ steps.target.outputs.config }}" firebase.json
+      - name: Write non-prod access-gate config
+        if: github.ref_name != 'main'
+        env:
+          ALLOWED_EMAIL_DOMAINS: ${{ secrets.ALLOWED_EMAIL_DOMAINS }}
+          ALLOWED_EMAILS: ${{ secrets.ALLOWED_EMAILS }}
+          FIREBASE_WEB_API_KEY: ${{ secrets.FIREBASE_WEB_API_KEY }}
+          FIREBASE_WEB_APP_ID: ${{ secrets.FIREBASE_WEB_APP_ID }}
+        run: |
+          if [ -z "${ALLOWED_EMAIL_DOMAINS}${ALLOWED_EMAILS}" ]; then
+            echo "::error::Set ALLOWED_EMAIL_DOMAINS and/or ALLOWED_EMAILS in this GitHub Environment (empty allowlist locks everyone out)."
+            exit 1
+          fi
+          CONFIG=$(jq -nc \
+            --arg domains "$ALLOWED_EMAIL_DOMAINS" --arg emails "$ALLOWED_EMAILS" \
+            --arg apiKey "$FIREBASE_WEB_API_KEY" --arg appId "$FIREBASE_WEB_APP_ID" \
+            '{domains: ($domains | split(",")), emails: ($emails | split(",")), apiKey: $apiKey, appId: $appId}')
+          printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/dist/assets/env-config.js
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

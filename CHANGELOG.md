@@ -4,6 +4,9 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+- Google sign-in access gate on dev and staging with domain and exact-email allowlists (parity with vehicle-vitals).
+
 ## [0.1.0] - 2026-10-13
 
 ### Added
