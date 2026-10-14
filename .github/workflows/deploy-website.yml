@@ -28,10 +28,21 @@ jobs:
         id: target
         run: |
           case "${GITHUB_REF_NAME}" in
-            main)    echo "project=low-value-content-prod" >> "$GITHUB_OUTPUT" ;;
-            staging) echo "project=low-value-content-staging" >> "$GITHUB_OUTPUT" ;;
-            *)       echo "project=low-value-content-dev" >> "$GITHUB_OUTPUT" ;;
+            main)
+              echo "project=low-value-content-prod" >> "$GITHUB_OUTPUT"
+              echo "config=firebase.prod.json" >> "$GITHUB_OUTPUT"
+              ;;
+            staging)
+              echo "project=low-value-content-staging" >> "$GITHUB_OUTPUT"
+              echo "config=firebase.staging.json" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "project=low-value-content-dev" >> "$GITHUB_OUTPUT"
+              echo "config=firebase.dev.json" >> "$GITHUB_OUTPUT"
+              ;;
           esac
+      - name: Select environment hosting policy
+        run: cp "${{ steps.target.outputs.config }}" firebase.json
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
