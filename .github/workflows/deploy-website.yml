@@ -16,6 +16,7 @@ concurrency:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   deploy:
@@ -60,9 +61,10 @@ jobs:
             --arg apiKey "$FIREBASE_WEB_API_KEY" --arg appId "$FIREBASE_WEB_APP_ID" \
             '{domains: ($domains | split(",")), emails: ($emails | split(",")), apiKey: $apiKey, appId: $appId}')
           printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/dist/assets/env-config.js
-      - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Authenticate to Google Cloud (Workload Identity Federation, no keys)
+        uses: google-github-actions/auth@v2
         with:
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: ${{ steps.target.outputs.project }}
-          channelId: live
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: github-deploy@${{ steps.target.outputs.project }}.iam.gserviceaccount.com
+      - name: Deploy to Firebase Hosting
+        run: npx --yes firebase-tools@15 deploy --only hosting --project "${{ steps.target.outputs.project }}"
