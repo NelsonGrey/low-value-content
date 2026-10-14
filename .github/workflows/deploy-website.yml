@@ -5,6 +5,7 @@ on:
     branches: [develop, staging, main]
     paths:
       - "website/dist/**"
+      - "website/coming-soon/**"
       - "firebase.json"
       - ".firebaserc"
       - ".github/workflows/deploy-website.yml"
@@ -61,6 +62,12 @@ jobs:
             --arg apiKey "$FIREBASE_WEB_API_KEY" --arg appId "$FIREBASE_WEB_APP_ID" \
             '{domains: ($domains | split(",")), emails: ($emails | split(",")), apiKey: $apiKey, appId: $appId}')
           printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/dist/assets/env-config.js
+      - name: Publish coming-soon page to production
+        if: github.ref_name == 'main' && vars.SHOW_COMING_SOON != 'false'
+        run: |
+          # Prod serves the coming-soon page until the SHOW_COMING_SOON variable is set to "false".
+          rm -rf website/dist
+          cp -R website/coming-soon website/dist
       - name: Authenticate to Google Cloud (Workload Identity Federation, no keys)
         uses: google-github-actions/auth@v2
         with:
