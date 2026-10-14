@@ -107,7 +107,7 @@ firebase deploy --only hosting --project production    # low-value-content-prod
 
 [.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) deploys on every push to `develop`, `staging`, or `main` that changes `website/dist/**`, `firebase.json`, or `.firebaserc`. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
 
-Each environment needs a secret named `FIREBASE_SERVICE_ACCOUNT` containing the service-account JSON for that environment's Firebase project. Deploys fail until these are set.
+Deploys are keyless. The workflow authenticates with [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation) because the organization policy `iam.disableServiceAccountKeyCreation` forbids service-account keys. Each Firebase project has a `github-deploy` service account (Firebase Hosting Admin only) and a GitHub OIDC provider that trusts only this repository and only that environment's branch (`develop`, `staging`, or `main`). Each GitHub Environment holds a `WIF_PROVIDER` variable with the provider's resource name. No credentials are stored in GitHub.
 
 ## Non-prod access gate
 
