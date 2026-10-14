@@ -2,26 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Low Value Content</title>
-  <meta name="description" content="Satirical t-shirts for people who are extremely online. Coming soon.">
-  <style>
-    :root { --bg: #f6f4ef; --fg: #1a1a1a; --muted: #5a5a5a; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #151515; --fg: #f1efe9; --muted: #a8a8a8; } }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-    main { max-width: 36rem; text-align: center; }
-    h1 { font-size: clamp(2.25rem, 8vw, 4rem); line-height: 1.05; margin: 0 0 1rem; letter-spacing: -0.02em; text-transform: uppercase; }
-    p { color: var(--muted); font-size: 1.125rem; margin: 0.5rem 0; }
-    footer { margin-top: 2rem; font-size: 0.8125rem; color: var(--muted); }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#d8ff43">
+  <meta name="description" content="Low Value Content makes premium editorial T-shirts for people who have seen enough of the internet.">
+  <title>Low Value Content — The internet has produced enough</title>
+  <script src="/assets/env-config.js"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/shell.css">
+  <link rel="stylesheet" href="assets/campaign.css">
+  <script src="assets/site.js" defer></script>
 </head>
-<body>
-  <main>
-    <h1>Low Value Content</h1>
-    <p>Satirical t-shirts for the extremely online.</p>
-    <p>Engagement pending. Please allow 3&ndash;5 business days for relevance.</p>
-    <footer>&copy; 2026 Nelson Grey LLC</footer>
+<body class="campaign-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Low Value Content home"><span>LVC</span> Low Value Content</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Primary navigation"><a href="shirts.html">The Drop</a><a href="collections.html">Collections</a><a href="about.html">The Story</a><a class="nav-cta" href="social.html">Follow</a></nav>
+  </header>
+  <main id="main">
+    <section class="campaign-hero">
+      <div class="campaign-hero-copy reveal">
+        <p class="eyebrow">Editorial apparel for the extremely online</p>
+        <h1>The internet has produced <em>enough content.</em></h1>
+        <p>Unfortunately, we made shirts about it.</p>
+        <div class="actions"><a class="button" href="shirts.html">Preview the first drop</a><a class="text-link" href="#manifesto">Read the fine print ↓</a></div>
+      </div>
+      <figure class="campaign-hero-image reveal">
+        <img src="assets/mockup-launch-01.png" alt="Three Low Value Content shirts from the first release" width="1774" height="887">
+        <figcaption>Drop 001 · Six wearable side effects of having a feed</figcaption>
+      </figure>
+    </section>
+    <section class="ticker" aria-label="Low Value Content themes"><div>THOUGHT LEADERSHIP WITHOUT THE THOUGHTS <i>◆</i> AUTHENTICITY, NOW MONETIZED <i>◆</i> MARKET RESEARCH, STILL SCROLLING <i>◆</i> VALIDATION PENDING <i>◆</i></div></section>
+    <section class="drop-intro section" id="drop">
+      <div class="section-kicker"><p class="section-number">Drop 001</p><p>Six shirts. One shared condition.</p></div>
+      <div class="drop-head"><h2>Wear what the feed did to you.</h2><a class="text-link" href="shirts.html">See all six →</a></div>
+      <div class="featured-products">
+        <a class="featured-product reveal" href="shirts.html#validate"><img src="assets/shirt-01.png" alt="Please validate me algorithmically T-shirt"><span>Algorithm Anxiety</span><h3>Please validate me algorithmically.</h3><b>Preview</b></a>
+        <a class="featured-product featured-product-wide reveal" href="shirts.html#doomscrolling"><img src="assets/shirt-03.png" alt="I’m not doomscrolling, I’m doing market research T-shirt"><span>Chronically Online</span><h3>I’m not doomscrolling. I’m doing market research.</h3><b>Preview</b></a>
+        <a class="featured-product reveal" href="shirts.html#authentic"><img src="assets/shirt-05.png" alt="My authentic self is currently being monetized T-shirt"><span>Artificial Authenticity</span><h3>My authentic self is currently being monetized.</h3><b>Preview</b></a>
+      </div>
+    </section>
+    <section class="statement" id="manifesto">
+      <p class="eyebrow">Low Value Content presents</p>
+      <h2>You are not the product.<br><em>You are also the content.</em></h2>
+      <p>We make dry, wearable observations about algorithm anxiety, workplace performance, creator economics, and the daily requirement to appear naturally interesting.</p>
+    </section>
+    <section class="campaign-image-band">
+      <img src="assets/mockup-launch-02.png" alt="Three more Low Value Content shirts in charcoal, ivory, and muted green" width="1774" height="887">
+      <div><p class="eyebrow">No loud clip art. No motivational breakthroughs.</p><h2>Just good shirts with bad news.</h2><a class="button light" href="shirts.html">Meet the first six</a></div>
+    </section>
+    <section class="collection-tease section">
+      <div class="section-head"><div><p class="section-number">The ongoing series</p><h2>Ten symptoms.<br>New observations as required.</h2></div><p>The first release is only the beginning. Each collection takes aim at a different ritual of contemporary digital life.</p></div>
+      <div class="collection-marquee">
+        <a href="collections.html#social-media-theater"><span>01</span> Social Media Theater</a>
+        <a href="collections.html#algorithm-anxiety"><span>02</span> Algorithm Anxiety</a>
+        <a href="collections.html#creator-economy"><span>03</span> Creator Economy</a>
+        <a href="collections.html#chronically-online"><span>04</span> Chronically Online</a>
+        <a href="collections.html#artificial-authenticity"><span>05</span> Artificial Authenticity</a>
+      </div>
+      <a class="text-link collection-link" href="collections.html">Browse the full taxonomy →</a>
+    </section>
+    <section class="quality-pitch">
+      <div><p class="eyebrow">The shirt matters</p><h2>The joke should be disposable.<br>The garment should not.</h2></div>
+      <div class="quality-points"><p><b>Substantial.</b> A premium, relaxed heavyweight direction designed to feel like apparel—not event swag.</p><p><b>Restrained.</b> Neutral colors, edited typography, and one-color prints that do not need to shout.</p><p><b>Physically proven.</b> Final products will not launch until the fit, print, wash, and delivery experience survive real-world testing.</p></div>
+    </section>
+    <section class="drop-cta">
+      <img src="assets/iconmark-11-content-cocktail.svg" alt="" width="256" height="256">
+      <div><p class="eyebrow">The feed will continue</p><h2>Drop 001 is currently buffering.</h2><p>Follow the release for first looks, sample decisions, and the eventual opportunity to spend money on a sentence.</p><a class="button light" href="social.html">Follow the release</a></div>
+    </section>
   </main>
+  <footer class="site-footer"><a class="wordmark" href="index.html"><span>LVC</span> Low Value Content</a><nav class="footer-links" aria-label="Footer navigation"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a><a href="cookies.html">Cookies</a><a href="social.html#instagram">Instagram</a><a href="social.html#tiktok">TikTok</a><a href="social.html#linkedin">LinkedIn</a></nav><p class="fine">© 2026 Low Value Content, an imprint of Nelson Grey LLC. All rights reserved.</p></footer>
 </body>
 </html>
