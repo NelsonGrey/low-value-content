@@ -22,6 +22,7 @@ This repository holds the whole project: the business plan, the product concept 
 - [Getting started](#getting-started)
 - [Website](#website)
 - [Deployment](#deployment)
+- [Non-prod access gate](#non-prod-access-gate)
 - [Branching and releases](#branching-and-releases)
 - [Business plan](#business-plan)
 - [Documentation](#documentation)
@@ -107,6 +108,18 @@ firebase deploy --only hosting --project production    # low-value-content-prod
 [.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) deploys on every push to `develop`, `staging`, or `main` that changes `website/dist/**`, `firebase.json`, or `.firebaserc`. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
 
 Each environment needs a secret named `FIREBASE_SERVICE_ACCOUNT` containing the service-account JSON for that environment's Firebase project. Deploys fail until these are set.
+
+## Non-prod access gate
+
+The dev and staging sites sit behind a Google sign-in wall (`website/dist/assets/auth-gate.js`), the same model as `EnvironmentGate` in vehicle-vitals, modulo-squares, and sprout. Production and `localhost` are never gated. It keeps the public out; it is not a hard auth boundary, because the allowlist ships in the page.
+
+A visitor gets in if their email's **domain** is in `ALLOWED_EMAIL_DOMAINS`, or their exact address is in `ALLOWED_EMAILS`. An empty allowlist locks everyone out. Both are comma-separated secrets set per GitHub Environment (`development`, `staging`); the deploy workflow writes them into `assets/env-config.js` at deploy time and fails if both are empty. The same workflow step passes the public Firebase web config from the `FIREBASE_WEB_API_KEY` and `FIREBASE_WEB_APP_ID` secrets.
+
+**Grant someone access:** add their address to `ALLOWED_EMAILS` (or their domain to `ALLOWED_EMAIL_DOMAINS`) under *Settings → Environments → development / staging → Environment secrets*, then re-run the deploy for that branch.
+
+**One-time setup per Firebase project** (`low-value-content-dev`, `low-value-content-staging`): register a Web app, enable **Google** under Authentication → Sign-in method, and add `<project>.web.app` under Authentication → Settings → Authorized domains.
+
+Both environments also send `X-Robots-Tag: noindex, nofollow, noarchive` and a strict CSP (see `firebase.dev.json`, `firebase.staging.json`).
 
 ## Branching and releases
 
