@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, staging, main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  site-checks:
+    name: Site and config checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate HTML references and JSON config
+        run: python3 scripts/check-site.py
+      - name: Validate workflow YAML
+        run: |
+          pip install --quiet pyyaml
+          python3 -c "import glob, yaml; [yaml.safe_load(open(f)) for f in glob.glob('.github/**/*.yml', recursive=True)]; print('workflow YAML ok')"
+
+  secret-scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Scan history with gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.21.2 \
+            detect --source /repo --config /repo/.gitleaks.toml --no-banner --redact --verbose
+
+  promotion-guard:
+    name: Promotion guard
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only promote develop -> staging -> main
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          # Branch protection is unavailable on this plan, so this check is advisory: it fails
+          # loudly if someone opens a PR that skips an environment, but it cannot block a merge.
+          case "$BASE" in
+            main)    [ "$HEAD" = "staging" ] || { echo "::error::PRs into main must come from staging (got $HEAD)."; exit 1; } ;;
+            staging) [ "$HEAD" = "develop" ] || { echo "::error::PRs into staging must come from develop (got $HEAD)."; exit 1; } ;;
+            *) echo "No promotion rule for base '$BASE'." ;;
+          esac
+
+  pipeline-summary:
+    name: Pipeline Summary
+    needs: [site-checks, secret-scan]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all checks to pass
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "Results: $RESULTS"
+          case "$RESULTS" in *failure*|*cancelled*) exit 1 ;; esac
