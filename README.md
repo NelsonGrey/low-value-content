@@ -1,9 +1,10 @@
 # Low Value Content
 
+[![CI](https://github.com/NelsonGrey/low-value-content/actions/workflows/ci.yml/badge.svg)](https://github.com/NelsonGrey/low-value-content/actions/workflows/ci.yml)
 [![Deploy Website](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml/badge.svg)](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml)
 ![License: Proprietary](https://img.shields.io/badge/license-proprietary-lightgrey)
 
-**Low Value Content** is a satirical t-shirt brand of **Nelson Grey LLC**. The shirts poke fun at social media theater, algorithm anxiety, the creator economy, and other symptoms of being extremely online.
+**Low Value Content** is a satirical t-shirt imprint of **Nelson Grey LLC**. The shirts poke fun at social media theater, algorithm anxiety, the creator economy, and other symptoms of being extremely online.
 
 This repository holds the whole project: the business plan, the product concept catalog, shirt design prototypes, launch mockups, and the website.
 
@@ -26,6 +27,7 @@ This repository holds the whole project: the business plan, the product concept 
 - [Branching and releases](#branching-and-releases)
 - [Business plan](#business-plan)
 - [Documentation](#documentation)
+- [Quality and security](#quality-and-security)
 - [Contributing, security, and support](#contributing-security-and-support)
 - [License](#license)
 
@@ -158,10 +160,23 @@ Its first recommendations are to clear the Low Value Content name for trademark,
 | Agent and ChatGPT project notes | [AGENTS.md](AGENTS.md) |
 | Change history | [CHANGELOG.md](CHANGELOG.md) |
 
+## Quality and security
+
+| Check | Where | What it does |
+| --- | --- | --- |
+| Site and config checks | CI (`scripts/check-site.py`) | Every page has `lang`, title, viewport, and description; local links and assets resolve; Firebase JSON is valid |
+| Secret scan | CI (gitleaks, full history) | Fails on committed keys, tokens, or private keys |
+| Promotion guard | CI, pull requests | Fails PRs that skip an environment (advisory; see below) |
+| Pipeline Summary | CI | Single pass/fail roll-up of the checks above |
+| Dependabot | GitHub | Alerts, security updates, and weekly GitHub Actions updates |
+
+The organization is on the GitHub Free plan, so this private repository cannot use branch protection, secret scanning, or code scanning. CI covers what it can; the promotion flow is enforced by convention. See [SECURITY.md](SECURITY.md).
+
 ## Contributing, security, and support
 
 - [CONTRIBUTING.md](CONTRIBUTING.md): workflow and standards
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): expected behavior
+- [CLAUDE.md](CLAUDE.md): guide for AI-assisted sessions
 - [SECURITY.md](SECURITY.md): reporting vulnerabilities
 - [SUPPORT.md](SUPPORT.md): where to get help
 

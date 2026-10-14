@@ -4,4 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    labels: ["dependencies"]
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"

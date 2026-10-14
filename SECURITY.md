@@ -1,19 +1,40 @@
 # Security Policy
 
-## Reporting a vulnerability
+## Supported Versions
 
-Please **do not** open a public issue for security problems.
+Low Value Content has not launched. Only the code currently on each environment branch is supported; there is no long-term support for older commits.
 
-Report privately using GitHub's **Report a vulnerability** option on the repository's Security tab (private vulnerability reporting), or contact the repository owner, [@mnelson3](https://github.com/mnelson3), directly.
+| Branch | Environment | Status |
+|---|---|---|
+| `main` | Production (coming-soon page) | Supported |
+| `staging` | Staging | Supported |
+| `develop` | Development (default branch) | Supported |
 
-Include what you found, how to reproduce it, and the potential impact. You can expect an acknowledgement within a few business days.
+## Reporting a Vulnerability
+
+This repository is private and has no public issue tracker, so please don't report security concerns through issues or pull requests. Email **admin@nelsongrey.com** with:
+
+- A description of the vulnerability and its potential impact
+- Steps to reproduce, or a proof of concept if available
+- Any relevant logs, request and response samples, or affected URLs
+
+You should get an acknowledgement within a few business days.
 
 ## Scope
 
-- The Low Value Content website (`website/dist/` and its Firebase Hosting deployments)
-- GitHub Actions workflows and deployment configuration
+- The Low Value Content website (`website/dist/`, `website/coming-soon/`) and its Firebase Hosting deployments
+- The non-production access gate (`website/dist/assets/auth-gate.js`) and its allowlist handling
+- GitHub Actions workflows, Workload Identity Federation deploy configuration, and hosting headers
 - Accidentally exposed secrets or personal data in the repository
 
-## Handling secrets
+## Security Model
 
-If you find a committed credential, report it privately. Do not use it. It will be rotated and removed from history if needed.
+- **Non-production gating:** dev and staging require Google sign-in from an allowlisted domain or email, and send `X-Robots-Tag: noindex, nofollow, noarchive` plus a strict Content Security Policy. The gate keeps the public out; it is not a hard authentication boundary, because the allowlist ships in the page.
+- **Keyless deploys:** GitHub Actions authenticates to Google Cloud with Workload Identity Federation. Each Firebase project trusts only this repository and only that environment's branch. No service-account keys exist.
+- **No data collection:** the website has no forms, accounts, or analytics.
+
+## Dependency and Secret Hygiene
+
+Dependabot alerts, security updates, and version updates are enabled. CI runs a gitleaks secret scan on every push and pull request. Do not commit credentials; deploy configuration lives in GitHub Environment secrets and variables, never in source.
+
+GitHub secret scanning, push protection, code scanning, private vulnerability reporting, and branch protection are not available for this repository because it is private on the GitHub Free plan. The gitleaks CI job and the advisory promotion guard stand in for them until the plan changes.
