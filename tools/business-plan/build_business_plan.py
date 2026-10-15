@@ -339,7 +339,7 @@ page_break(doc)
 # Company concept
 doc.add_heading("Company Concept", level=1)
 doc.add_heading("Brand Name", level=2)
-add_para(doc, "The working brand name is Low Value Content. The name functions as criticism of low quality online material and as self aware commentary on the shirt itself. A preliminary web search found no obvious exact apparel collision, and a WHOIS lookup on September 28 2026 returned no registration match for lowvaluecontent.com. Neither result constitutes trademark clearance, and domain availability can change immediately.")
+add_para(doc, "The working brand name is Low Value Content. The name functions as criticism of low quality online material and as self aware commentary on the shirt itself. A preliminary web search found no obvious exact apparel collision, and The domain lowvaluecontent.com was registered on October 15 2026. Neither the web search nor owning the domain constitutes trademark clearance.")
 
 doc.add_heading("Positioning", level=2)
 add_para(doc, "The brand targets people who participate in online culture while remaining skeptical of its incentives. The humor should criticize platform behavior, corporate performance, creator economics, and compulsive consumption. It should not depend on attacking individual users or protected groups.")
