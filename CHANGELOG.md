@@ -6,6 +6,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 - Repository standards: CI (site checks, gitleaks secret scan, advisory promotion guard, Pipeline Summary), CLAUDE.md, expanded SECURITY policy, `.gitattributes`, `.gitleaks.toml`, grouped Dependabot, meta descriptions on legal pages, and a filled-in GitHub About section.
+- Commerce backend (`functions/`): Stripe Checkout sessions, verified Stripe and Printify webhooks, idempotent Printify order submission held for manual approval, Firestore order ledger, public order-status endpoint, and scheduled reconciliation. Test-mode vertical slice on the Drop 001 "validate" shirt; checkout refuses placeholder Printify IDs.
 - Branded coming-soon page for production, controlled by the `SHOW_COMING_SOON` environment variable.
 - Keyless deploys via Workload Identity Federation (org policy forbids service-account keys).
 - Google sign-in access gate on dev and staging with domain and exact-email allowlists (parity with vehicle-vitals).
