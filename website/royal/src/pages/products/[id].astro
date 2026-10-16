@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { lineage, products, productImage, type Product } from "../../data";
+
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { id: product.id }, props: { product } }));
+}
+
+const { product } = Astro.props as { product: Product };
+const image = productImage(product);
+const rawDesignStudy = "designStudy" in product.assets ? product.assets.designStudy : undefined;
+const designStudy = rawDesignStudy ? `/assets/${rawDesignStudy.split("/").pop()}` : null;
+const canBuy = product.commerceStatus === "test-sellable" && product.commerce.catalogKey;
+const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
+---
+<BaseLayout title={`${product.primaryCopy} | Low Value Content`} description={`${product.primaryCopy} — ${product.royalTreatment}. A Low Value Content apparel concept.`} current="shop">
+  <article class="product-page">
+    <div class:list={["product-visual", !image && "typographic"]}>
+      {image ? <img src={image} alt={`${product.primaryCopy} apparel concept`} /> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
+    </div>
+    <div class="product-details">
+      <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.originalCollection}</p>
+      <h1>{product.primaryCopy}</h1>
+      <p class="price">$32 <span>planned retail</span></p>
+      <p class="treatment">Issued as <b>{product.royalTreatment}</b> during the reign of <b>{reignName}</b>.</p>
+      {product.latin && <p class="latin">{product.latin}</p>}
+      {canBuy ? (
+        <form class="buy-form" data-product={product.commerce.catalogKey} data-color="white">
+          <label>Size<select name="size" required><option value="l" selected>L</option></select></label>
+          <label>Quantity<select name="quantity"><option>1</option><option>2</option><option>3</option></select></label>
+          <button class="button" type="submit">Proceed to secure test checkout</button>
+          <p class="buy-note" role="status" aria-live="polite">Test configuration: White / L only. US shipping is $5.99.</p>
+        </form>
+      ) : (
+        <div class="development-notice"><b>In development</b><p>This concept is not yet available for purchase. Production artwork, garment selection, sampling, and Printify variants remain to be approved.</p></div>
+      )}
+      <dl>
+        <div><dt>House</dt><dd>{product.house}</dd></div>
+        <div><dt>Issuing office</dt><dd>{product.realmIssue.office}</dd></div>
+        <div><dt>Title conveyed</dt><dd>{product.realmIssue.wearerTitle}</dd></div>
+        <div><dt>Family</dt><dd>{product.family.replaceAll("-", " ")}</dd></div>
+        <div><dt>QR destination</dt><dd>{product.qrRoute}</dd></div>
+        <div><dt>Creative status</dt><dd>{product.creativeStatus.replaceAll("-", " ")}</dd></div>
+      </dl>
+      <section class="proclamation"><p class="eyebrow">By authority of {product.house}</p><blockquote>{product.realmIssue.proclamation}</blockquote><p class="title-line">The wearer is therefore styled <b>{product.realmIssue.wearerTitle}</b>.</p></section>
+      <section class="provenance"><p class="script">The Garment Constitution</p><h2>A complete joke in front. A needlessly elaborate institution behind it.</h2><ol><li><b>Front:</b> the original saying remains dominant.</li><li><b>Sleeve:</b> the issuing House receives a restrained seal.</li><li><b>Upper back:</b> office, reign, title, and permanent QR route.</li></ol></section>
+    </div>
+  </article>
+  {designStudy && (
+    <section class="design-study">
+      <div><p class="eyebrow">Realm merge · Design study V3</p><h2>The observation in front.<br /><span class="script">The institution behind it.</span></h2><p>This restrained front-and-back study is the working bridge between the original Low Value Content design language and the ceremonial world of Valebasse. It is a direction for refinement, not production-ready art.</p></div>
+      <img src={designStudy} alt={`Front and back Realm integration study for ${product.primaryCopy}`} />
+    </section>
+  )}
+  {canBuy && <script is:inline src="/assets/checkout.js"></script>}
+</BaseLayout>
+
+<style>
+  .product-page { display: grid; grid-template-columns: 1.08fr .92fr; min-height: calc(100vh - 92px); }
+  .product-visual { background: #e8dfce; padding: clamp(2rem, 5vw, 6rem); display: grid; place-items: center; }
+  .product-visual img { width: 100%; max-height: 76vh; object-fit: contain; }
+  .product-visual.typographic > div { border: 14px double var(--navy); width: min(640px, 100%); aspect-ratio: 4 / 5; display: flex; padding: 3rem; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--ivory); }
+  .product-visual.typographic p { color: var(--gold); text-transform: uppercase; letter-spacing: .15em; }
+  .product-visual.typographic h1 { color: var(--navy); font-size: clamp(2.5rem, 5vw, 5rem); text-transform: uppercase; line-height: .96; }
+  .product-details { padding: clamp(3rem, 6vw, 7rem); align-self: center; }
+  .product-details > h1 { font-size: clamp(3rem, 5vw, 5.5rem); line-height: .92; font-weight: 400; margin: 1rem 0 1.5rem; }
+  .price { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; }
+  .price span { font: .7rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #6d7378; }
+  .treatment { font-size: 1.1rem; line-height: 1.7; }
+  .buy-form { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; background: #eee5d4; border: 1px solid var(--line); }
+  .buy-form label { display: grid; gap: .4rem; font: 700 .7rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
+  .buy-form select { padding: .8rem; border: 1px solid var(--gold); background: white; font: inherit; }
+  .buy-form .button, .buy-note { grid-column: 1 / -1; }
+  .buy-note { margin: 0; font: .75rem/1.5 var(--sans); }
+  .development-notice { margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--gold); background: var(--ivory); }
+  .development-notice b { text-transform: uppercase; letter-spacing: .12em; font: 700 .72rem var(--sans); color: var(--crimson); }
+  .development-notice p { line-height: 1.55; }
+  dl { margin: 2rem 0; border-top: 1px solid var(--line); }
+  dl div { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  dt { font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--crimson); }
+  dd { margin: 0; text-transform: capitalize; }
+  .proclamation { margin-top: 3rem; padding: 2rem; border: 1px solid var(--gold); background: #eee5d4; }
+  .proclamation blockquote { margin: 1rem 0; font-size: 1.35rem; line-height: 1.45; }
+  .title-line { margin-bottom: 0; font-size: .9rem; line-height: 1.6; }
+  .provenance { margin-top: 3rem; }
+  .provenance h2 { font-size: 2rem; font-weight: 400; line-height: 1.1; }
+  .provenance ol { padding-left: 1.2rem; line-height: 1.8; }
+  .design-study { padding: clamp(4rem, 8vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .design-study > div { display: grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
+  .design-study h2 { margin: .8rem 0 0; font-size: clamp(2.8rem, 5vw, 5.5rem); line-height: .96; font-weight: 400; }
+  .design-study h2 span { color: var(--gold-light); }
+  .design-study > div > p:last-child { margin: 0; color: rgba(244,238,223,.72); font-size: 1.05rem; line-height: 1.7; }
+  .design-study img { display: block; width: 100%; border: 1px solid rgba(218,191,131,.45); }
+  @media (max-width: 900px) { .product-page { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) { .design-study > div { grid-template-columns: 1fr; } }
+</style>

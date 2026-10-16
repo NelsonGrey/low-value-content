@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <g fill="#111111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+    <text x="2250" y="2050" font-size="230" letter-spacing="18">MY AUTHENTIC SELF</text>
+    <rect x="900" y="2300" width="2700" height="850" fill="none" stroke="#111111" stroke-width="28"/>
+    <text x="2250" y="2835" font-size="360" font-weight="800">MONETIZED</text>
+    <text x="2250" y="3450" font-size="210" letter-spacing="13">CURRENTLY AVAILABLE</text>
+    <text x="2250" y="3770" font-size="95" letter-spacing="25">TERMS AND CONDITIONS APPLY</text>
+  </g>
+</svg>

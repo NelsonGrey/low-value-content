@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const channels = [
+  { id: "instagram", icon: "/assets/icon-instagram.svg", label: "Primary / Instagram", title: "The visual catalog.", copy: "Shirt reveals, heraldic details, samples, release photography, and occasional proof that somebody left the realm.", status: "Official profile opens with Drop 001." },
+  { id: "tiktok", icon: "/assets/icon-tiktok.svg", label: "Primary / TikTok", title: "The moving feed.", copy: "Quick observations, joke reveals, design experiments, proclamations, and the regrettably necessary creation of content about Low Value Content.", status: "Official profile opens with Drop 001." },
+  { id: "linkedin", icon: "/assets/icon-linkedin.svg", label: "Selective / LinkedIn", title: "Work is content.", copy: "Thought leadership, productivity theater, creator economics, and corporate performance—used carefully enough not to become the thing being mocked.", status: "The court page opens when it has something to say." },
+];
+---
+<BaseLayout title="Social Proclamations | Low Value Content" description="The planned official social channels for Low Value Content and La Maison de Valebasse.">
+  <header class="social-hero"><p class="script">Follow the Court</p><h1>We regret to inform you<br />there will be more content.</h1><p>Official profiles will open with Drop 001. Until verified destinations are approved, this page records where the brand intends to publish—and why.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
+  <section class="channels">
+    {channels.map((channel) => <article id={channel.id}><img src={channel.icon} alt="" /><p class="eyebrow">{channel.label}</p><h2>{channel.title}</h2><p>{channel.copy}</p><blockquote>{channel.status}</blockquote></article>)}
+    <article><img src="/assets/royal-mark.svg" alt="" /><p class="eyebrow">Owned / This website</p><h2>The source of low truth.</h2><p>Final releases, product details, policies, lineage, and the complete catalog will live here rather than inside a rented feed.</p><blockquote>Bookmarking remains available.</blockquote></article>
+  </section>
+</BaseLayout>
+<style>
+  .social-hero{padding:clamp(5rem,10vw,10rem) clamp(1.25rem,8vw,9rem);background:var(--crimson);color:white;border-bottom:4px double var(--gold)}.social-hero .script{color:var(--gold-light);font-size:2rem;margin:0}.social-hero h1{font-size:clamp(3.8rem,8vw,8.5rem);line-height:.88;font-weight:400;margin:1rem 0 2rem}.social-hero>p:not(.script){max-width:760px;font-size:1.2rem;line-height:1.7}.social-hero span{display:inline-block;margin-top:1.5rem;color:var(--gold-light);font:700 .66rem/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase}.channels{display:grid;grid-template-columns:repeat(2,1fr);background:var(--paper)}.channels article{min-height:430px;padding:clamp(3rem,6vw,6rem);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.channels img{width:46px;height:46px;margin-bottom:2rem}.channels h2{font-size:clamp(2.5rem,4vw,4.5rem);line-height:1;font-weight:400;margin:.7rem 0 1.5rem}.channels article>p:not(.eyebrow){max-width:580px;line-height:1.7;font-size:1.05rem}.channels blockquote{margin:2rem 0 0;padding:1rem 0;border-top:1px solid var(--gold);color:var(--crimson);font-family:var(--script);font-size:1.25rem}@media(max-width:760px){.channels{grid-template-columns:1fr}}
+</style>

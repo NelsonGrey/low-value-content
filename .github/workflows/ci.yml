@@ -14,8 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: website/royal/package-lock.json
       - name: Validate HTML references and JSON config
         run: python3 scripts/check-site.py
+      - name: Validate apparel manifest and commerce wiring
+        run: python3 scripts/check-apparel-manifest.py
+      - name: Build the Royal House storefront
+        run: npm ci --prefix website/royal && npm run build --prefix website/royal
       - name: Validate workflow YAML
         run: |
           pip install --quiet pyyaml

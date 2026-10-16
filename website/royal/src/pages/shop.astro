@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data";
+---
+<BaseLayout title="The Regalia of Valebasse | Low Value Content" description="Explore the founding Low Value Content apparel collection and ceremonial editions issued by La Maison de Valebasse." current="shop">
+  <header class="page-hero">
+    <p class="script">The Royal Wardrobe</p>
+    <h1>Ten decrees.<br />Worn as evidence.</h1>
+    <p>Every original observation is now an official issue of Valebasse: a readable joke on the front, an issuing House at the sleeve, and a needlessly elaborate provenance waiting behind the seal.</p>
+  </header>
+  <section class="garment-system">
+    <article><span>01</span><p class="eyebrow">The front</p><h2>The joke.</h2><p>Large, immediate, and complete without explanation.</p></article>
+    <article><span>02</span><p class="eyebrow">The sleeve</p><h2>The House.</h2><p>A small seal identifies the fictional authority responsible.</p></article>
+    <article><span>03</span><p class="eyebrow">The back</p><h2>The realm.</h2><p>Office, reign, ceremonial title, and QR provenance continue the story.</p></article>
+  </section>
+  <section class="section catalog">
+    <div class="section-heading"><p class="eyebrow">The founding wardrobe</p><h2>One collection.<br /><span class="script">Ten official issues.</span></h2><p>The original sayings, royal arms, honors, and commemorations now share one system of Houses, offices, reigns, and titles.</p></div>
+    <div class="product-grid">{products.map((product) => <ProductCard product={product} />)}</div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
+  .page-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
+  .page-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
+  .page-hero > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
+  .catalog { background: var(--paper); }
+  .garment-system { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--crimson); color: white; }
+  .garment-system article { padding: clamp(2.5rem, 5vw, 5rem); border-right: 1px solid rgba(255,255,255,.2); }
+  .garment-system article:last-child { border-right: 0; }
+  .garment-system span { color: var(--gold-light); font: .65rem/1 var(--sans); letter-spacing: .16em; }
+  .garment-system .eyebrow { color: var(--gold-light); margin-top: 2.5rem; }
+  .garment-system h2 { margin: .5rem 0; font-size: clamp(2.3rem, 4vw, 4rem); font-weight: 400; }
+  .garment-system p:last-child { color: rgba(255,255,255,.72); line-height: 1.6; }
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 1.5rem; }
+  @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system { grid-template-columns: 1fr; } .garment-system article { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } }
+  @media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
+</style>

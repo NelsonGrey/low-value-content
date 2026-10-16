@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { products } from "../data";
+const featured = [products[0], products[2], products[6], products[8]];
+---
+<BaseLayout title="La Maison de Valebasse | Presented by Low Value Content" description="Enter the Most Ancient and Most Serene House of Valebasse: satirical regalia, disputed lineage, and ceremonial internet history, presented by Low Value Content.">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="portal-mark">Low Value Content presents</p>
+      <p class="script">By Royal Decree</p>
+      <h1>Official regalia for the <em>attention economy.</em></h1>
+      <p class="hero-dek">Beyond this threshold lies Valebasse: an ancient digital realm established several minutes ago and governed entirely by precedent we just invented.</p>
+      <div class="hero-actions"><a class="button" href="/shop.html">Inspect the regalia</a><a href="/lineage.html">View the succession →</a></div>
+      <p class="latin">Multa edita, pauca dicta · Much published, little said</p>
+    </div>
+    <div class="hero-art">
+      <div class="arms-panel">
+        <p>La Très Ancienne et Sérénissime</p>
+        <h2>Maison de Valebasse</h2>
+        <img src="/assets/royal-arms.svg" alt="Fictional heraldic arms with a notification shield and Wi-Fi crown" />
+        <p class="arms-motto">Multa edita, pauca dicta</p>
+        <span>By grace of the algorithm · established several minutes ago</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="proclamation">
+    <p>Let it be known throughout the feed</p>
+    <h2>Low Value Content is the threshold.<br /><i>Valebasse is the world beyond it.</i></h2>
+    <p>The original sayings remain the products. La Maison de Valebasse supplies their authority, lineage, and entirely unnecessary provenance.</p>
+  </section>
+
+  <section class="section featured">
+    <div class="section-heading"><p class="eyebrow">Drop 001 · The founding collection</p><h2>The jokes survived.<br /><span class="script">The institution expanded.</span></h2><p>Ten designs now form one official wardrobe: each with a House, an issuing office, a reign, and an entirely unnecessary title.</p></div>
+    <div class="product-grid">{featured.map((product) => <ProductCard product={product} />)}</div>
+    <a class="button ghost" href="/shop.html">View all ten designs</a>
+  </section>
+
+  <section class="current-reign">
+    <div><p class="eyebrow">The present reign</p><h2>Prompt I,<br /><i>the Generative</i></h2><p>His Algorithmic Majesty, sovereign of Valebasse and the Infinite Feed. Produces infinite answers while accepting no responsibility for the questions.</p><p class="latin">Multa generata, pauca dicta</p><a class="button light" href="/lineage.html">Consult the royal lineage</a></div>
+    <blockquote><span>“</span>Much generated,<br />little said.<span>”</span></blockquote>
+  </section>
+
+  <section class="observance section">
+    <div class="date"><span>09</span><b>September</b></div>
+    <div><p class="eyebrow">Annual royal observance</p><h2>The Feast of Saint Moth</h2><p>Patron of debugging, physical evidence, and problems that can be removed with tweezers.</p><a href="/calendar.html">Open the Royal Calendar →</a></div>
+    <div class="moth" aria-hidden="true">✦<br />⅋<br />✦</div>
+  </section>
+
+  <section class="entry">
+    <div class="certificate" aria-label="Example ceremonial title certificate">
+      <img src="/assets/royal-mark.svg" alt="" />
+      <p>Under the Great Seal of Valebasse</p>
+      <h3>Baron of Buffering</h3>
+      <span>Keeper of Three Unread Notifications</span>
+      <b>Ex mandato algorithmi</b>
+    </div>
+    <div><p class="script">Enter the Realm</p><h2>Every garment has a history.<br />Every subject deserves a meaningless title.</h2><p>Future garment QR codes will reveal proclamations, historical context, houses, honors, and the wearer’s ceremonial place in the realm.</p><a class="button light" href="/realm.html">Learn the formalities</a></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { min-height: calc(100vh - 92px); display: grid; grid-template-columns: .82fr 1.18fr; background: var(--ivory); }
+  .hero-copy { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 7rem); align-self: center; position: relative; }
+  .hero-copy::before { content: ''; position: absolute; inset: 2rem; border: 1px solid var(--line); pointer-events: none; }
+  .hero-copy > * { position: relative; }
+  .hero-copy .script { margin: 0; font-size: 2rem; }
+  .portal-mark { margin: 0 0 1.25rem; color: var(--navy); font: 700 .65rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+  h1 { font-size: clamp(3.4rem, 6.8vw, 7.6rem); line-height: .88; margin: 1rem 0 2rem; font-weight: 400; letter-spacing: -.045em; }
+  h1 em { color: var(--crimson); font-weight: 400; }
+  .hero-dek { font-size: 1.2rem; line-height: 1.6; max-width: 560px; }
+  .hero-actions { margin: 2rem 0; display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; font-family: var(--sans); font-size: .8rem; }
+  .hero-art { background: var(--navy); display: grid; place-items: center; padding: 2rem; position: relative; overflow: hidden; }
+  .arms-panel { width: min(680px, 100%); padding: clamp(2rem, 4vw, 4rem); text-align: center; color: var(--ivory); border: 4px double var(--gold); position: relative; background: radial-gradient(circle at center, var(--navy-2), var(--navy) 68%); }
+  .arms-panel::before, .arms-panel::after { content: '✦'; position: absolute; top: 1rem; color: var(--gold); }
+  .arms-panel::before { left: 1rem; } .arms-panel::after { right: 1rem; }
+  .arms-panel > p:first-child { margin: 0; color: var(--gold-light); font-family: var(--script); font-size: 1.5rem; }
+  .arms-panel h2 { margin: .3rem 0 0; font-size: clamp(2rem, 4vw, 4rem); font-weight: 400; text-transform: uppercase; letter-spacing: .05em; }
+  .arms-panel img { width: min(520px, 92%); margin: 1rem auto; }
+  .arms-panel .arms-motto { display: inline-block; margin: 0; padding: .5rem 1rem; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); text-transform: uppercase; letter-spacing: .15em; font-size: .68rem; }
+  .arms-panel span { display: block; margin-top: 1rem; color: rgba(244,238,223,.55); font: .6rem var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+  .proclamation { padding: 7rem 1.5rem; text-align: center; background: var(--paper); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .proclamation > p:first-child { font: 700 .7rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--crimson); }
+  .proclamation h2 { font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 400; margin: 1.5rem auto; }
+  .proclamation h2 i { font-family: var(--script); color: var(--crimson); font-weight: 400; }
+  .proclamation > p:last-child { max-width: 700px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
+  .featured { background: #efe7d7; }
+  .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .current-reign { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); color: var(--ivory); }
+  .current-reign > div { padding: clamp(4rem, 8vw, 8rem); }
+  .current-reign h2 { font-size: clamp(3.5rem, 7vw, 7.5rem); line-height: .88; margin: .5rem 0 2rem; font-weight: 400; }
+  .current-reign h2 i { color: var(--gold-light); }
+  .current-reign p:not(.eyebrow):not(.latin) { max-width: 600px; font-size: 1.2rem; line-height: 1.7; }
+  .current-reign blockquote { margin: 0; padding: 4rem; min-height: 600px; display: grid; place-items: center; text-align: center; background: var(--crimson); font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; }
+  .current-reign blockquote span { color: var(--gold-light); }
+  .observance { display: grid; grid-template-columns: .5fr 1fr .5fr; align-items: center; gap: 4rem; }
+  .date { border: 1px solid var(--gold); text-align: center; padding: 1.5rem; }
+  .date span { display: block; font-size: clamp(5rem, 10vw, 10rem); line-height: .9; }
+  .date b { text-transform: uppercase; letter-spacing: .15em; font: .7rem var(--sans); }
+  .observance h2 { font-size: clamp(2.5rem, 5vw, 5rem); margin: .5rem 0 1rem; font-weight: 400; }
+  .observance p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.6; }
+  .moth { text-align: center; font-size: 5rem; line-height: .65; color: var(--gold); }
+  .entry { display: grid; grid-template-columns: 1.2fr .8fr; background: var(--crimson); color: white; }
+  .certificate { margin: clamp(2rem, 6vw, 6rem); padding: clamp(2rem, 5vw, 5rem); border: 12px double var(--gold); outline: 1px solid var(--gold-light); outline-offset: -24px; background: var(--ivory); color: var(--navy); display: flex; min-height: 560px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .certificate img { width: 90px; height: 90px; }
+  .certificate p { text-transform: uppercase; letter-spacing: .13em; font: .66rem var(--sans); color: var(--crimson); }
+  .certificate h3 { font-size: clamp(3rem, 6vw, 6rem); line-height: .9; font-weight: 400; margin: 1.5rem 0; }
+  .certificate span { font-family: var(--script); font-size: 1.6rem; color: var(--crimson); }
+  .certificate b { margin-top: 2rem; color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; }
+  .entry > div { padding: clamp(4rem, 7vw, 7rem); align-self: center; }
+  .entry .script { color: var(--gold-light); font-size: 2rem; }
+  .entry h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); line-height: 1; font-weight: 400; }
+  .entry p:not(.script) { font-size: 1.1rem; line-height: 1.7; }
+  @media (max-width: 980px) { .hero, .current-reign, .entry { grid-template-columns: 1fr; } .product-grid { grid-template-columns: repeat(2, 1fr); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
+  @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } .observance { grid-template-columns: 1fr; } .hero-copy::before { inset: 1rem; } }
+</style>

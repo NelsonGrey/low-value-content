@@ -21,3 +21,4 @@ __pycache__/
 
 # Node (future website tooling)
 node_modules/
+.astro/

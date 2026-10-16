@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { lineage } from "../data";
+
+const details: Record<string, { motto: string; account: string }> = {
+  "moth-i": { motto: "Primus casus verus", account: "An actual moth, elevated posthumously after making a documented physical contribution to debugging." },
+  "lo-i": { motto: "Initium interruptum", account: "The first network message attempted LOGIN, delivered LO, and crashed before completing the thought." },
+  "spam-i": { motto: "Electus es cum omnibus", account: "First sovereign to address every subject simultaneously, whether or not correspondence had been requested." },
+  "emoticon-i": { motto: "Verte caput et ride", account: "Established compulsory emotional context and required all subjects to tilt their heads sideways." },
+  "web-i": { motto: "Omnibus aperta", account: "Freed information for humanity, which immediately began using it to argue with strangers." },
+  "y2k-the-almost": { motto: "Finis mundi dilatus", account: "Disputed pretender to the digital throne. The kingdom survived after years of preparation and several cupboards of bottled water." },
+  "web-i-restored": { motto: "Continuatio ordinaria", account: "Restored after the Millennium Interregnum, with most clocks, banks, and household appliances still operational." },
+  "content-i": { motto: "Vita est materia", account: "Declared ordinary existence valuable when recorded, titled, optimized, and uploaded." },
+  "scroll-i": { motto: "Semper deorsum", account: "A sovereign without bottom, boundary, or natural conclusion." },
+  "algorithm-i": { motto: "Ex mandato algorithmi", account: "Neither elected nor understood, yet determined what every subject was permitted to notice." },
+  "prompt-i": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers while accepting no responsibility for the questions." },
+};
+---
+<BaseLayout title="The Lineage of Valebasse | Low Value Content" description="The official and highly disputed sovereign lineage of La Maison de Valebasse." current="lineage">
+  <header class="lineage-hero">
+    <p class="script">La Maison de Valebasse</p>
+    <h1>An unbroken line<br />of interruptions.</h1>
+    <p>The court claims descent from Count Lowvale of the Net, whose name is concealed within the letters of Low Value Content. From the first actual moth to the present generative reign, these are the rulers under whom progressively more content was produced.</p>
+  </header>
+  <section class="timeline">
+    {lineage.map((entry, index) => (
+      <article class:list={[entry.disputed && "disputed"]}>
+        <div class="ordinal">{String(index + 1).padStart(2, "0")}</div>
+        <div class="portrait" aria-hidden="true"><span>{entry.id === "y2k-the-almost" ? "00" : ["✦", "LO", "@", ":-)", "W", "↻", "W", "▶", "↓", "◇", "AI"][index]}</span></div>
+        <div class="account">
+          <p class="period">{entry.period}{entry.disputed && " · disputed"}</p>
+          <h2>{entry.name}</h2>
+          <p class="latin">{details[entry.id]?.motto}</p>
+          <p>{details[entry.id]?.account}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+  <section class="succession-note">
+    <p class="script">The succession remains secure</p>
+    <h2>Until the next platform update.</h2>
+    <a class="button light" href="/shop.html">Acquire official regalia</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .lineage-hero { background: var(--crimson); color: white; padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 8vw, 9rem); border-bottom: 4px double var(--gold); }
+  .lineage-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
+  .lineage-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; margin: 1rem 0 2rem; }
+  .lineage-hero > p:last-child { max-width: 720px; font-size: 1.2rem; line-height: 1.7; }
+  .timeline { padding: 3rem clamp(1.25rem, 8vw, 9rem) 7rem; background: var(--paper); }
+  article { display: grid; grid-template-columns: 70px minmax(150px, 260px) 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding: 4rem 0; border-bottom: 1px solid var(--line); align-items: center; }
+  article.disputed { margin-inline: -2rem; padding-inline: 2rem; background: repeating-linear-gradient(-45deg, rgba(133,46,52,.05), rgba(133,46,52,.05) 10px, transparent 10px, transparent 20px); border: 2px dashed var(--crimson); }
+  .ordinal { font: .7rem var(--sans); letter-spacing: .15em; color: var(--crimson); }
+  .portrait { aspect-ratio: 1; border-radius: 50%; border: 8px double var(--gold); display: grid; place-items: center; background: var(--navy); color: var(--gold-light); box-shadow: inset 0 0 0 10px var(--ivory); }
+  .portrait span { font-size: clamp(2.5rem, 6vw, 5rem); }
+  .period { color: var(--crimson); text-transform: uppercase; letter-spacing: .12em; font: 700 .68rem var(--sans); }
+  .account h2 { font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 1; margin: .4rem 0 .8rem; font-weight: 400; }
+  .account > p:last-child { max-width: 640px; font-size: 1.1rem; line-height: 1.7; }
+  .succession-note { padding: 7rem 1.5rem; text-align: center; background: var(--navy); color: white; }
+  .succession-note .script { color: var(--gold-light); font-size: 2rem; }
+  .succession-note h2 { font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; margin: 1rem 0 2rem; }
+  @media (max-width: 700px) { article { grid-template-columns: 40px 100px 1fr; gap: 1rem; } .account h2 { font-size: 2rem; } }
+  @media (max-width: 520px) { article { grid-template-columns: 1fr; } .ordinal { display: none; } .portrait { width: 130px; } }
+</style>

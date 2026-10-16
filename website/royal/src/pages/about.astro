@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="About | Low Value Content" description="Low Value Content makes wearable observations about the systems, rituals, and small humiliations of online life.">
+  <article class="about">
+    <p class="script">A Brief Institutional History</p>
+    <h1>The joke is disposable.<br />The garment should not be.</h1>
+    <p class="lead">Low Value Content makes wearable observations about the systems, rituals, and small humiliations of online life. It is also the discreet purveyor and threshold to La Maison de Valebasse, the fictional institution that issues those observations with entirely unnecessary ceremony.</p>
+    <div class="columns"><section><h2>The target</h2><p>The system and its incentives—not individual users, protected groups, or people with less power. The voice remains dry, precise, self-aware, and implicated.</p></section><section><h2>The standard</h2><p>Every design must work as a complete shirt before its QR experience or mythology is considered. Final garments must earn their claims through physical sampling, fit review, wash testing, and print inspection.</p></section><section><h2>The status</h2><p>Low Value Content is in product development. Current designs, prices, specifications, and release timing remain provisional until rights review, physical sampling, and successful test orders are complete.</p></section></div>
+  </article>
+</BaseLayout>
+<style>
+  .about { padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 9vw, 10rem); min-height: 80vh; background: var(--ivory); }
+  .about .script { font-size: 2rem; }
+  h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; margin: 1rem 0 3rem; }
+  .lead { max-width: 850px; font-size: 1.4rem; line-height: 1.65; }
+  .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; padding-top: 2rem; border-top: 1px solid var(--gold); }
+  h2 { font-weight: 400; font-size: 2rem; }
+  section p { line-height: 1.7; }
+  @media (max-width: 750px) { .columns { grid-template-columns: 1fr; } }
+</style>

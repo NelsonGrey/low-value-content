@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { observances } from "../data";
+
+const eventCopy: Record<string, { year: string; line: string; latin?: string }> = {
+  "01-01": { year: "1983", line: "ARPANET adopted TCP/IP and the interconnected realm received a common protocol." },
+  "04-01": { year: "1998", line: "The Hyper Text Coffee Pot Control Protocol brought standards to the most essential network service." },
+  "04-23": { year: "2005", line: "The first YouTube video was uploaded. Nineteen seconds became an economy." },
+  "04-30": { year: "1993", line: "CERN placed the Web software in the public domain. The Web was free; other ways to pay followed." },
+  "05-03": { year: "1978", line: "The earliest widely recognized spam email addressed the realm without invitation." },
+  "05-11": { year: "1997", line: "Deep Blue defeated Garry Kasparov, beginning the first ceremonial observance of human obsolescence." },
+  "06-29": { year: "2007", line: "The first iPhone went on sale and the infinite scroll moved within ignoring distance." },
+  "09-09": { year: "1947", line: "An actual moth was found in the Mark II and entered the permanent peerage of technical history.", latin: "Primus casus verus" },
+  "09-19": { year: "1982", line: "The sideways smiley supplied mandatory emotional context to digital correspondence." },
+  "10-29": { year: "1969", line: "ARPANET attempted LOGIN, transmitted LO, and crashed before completing its first thought.", latin: "Initium interruptum" },
+  "11-30": { year: "2022", line: "ChatGPT was introduced and the present generative reign began." },
+  "12-31": { year: "1999", line: "The realm awaited the Millennium Pretender and discovered that successful prevention looks suspiciously uneventful.", latin: "Finis mundi dilatus" }
+};
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+---
+<BaseLayout title="Royal Calendar | Low Value Content" description="Annual observances commemorating bugs, spam, the Web, infinite scrolling, Y2K, artificial intelligence, and other events of state." current="calendar">
+  <header class="calendar-hero">
+    <p class="script">Dates of Ceremonial Importance</p>
+    <h1>The Royal Calendar</h1>
+    <p>Because history is easier to monetize when it occurs on the same date every year.</p>
+  </header>
+  <section class="calendar-list">
+    {observances.map((event) => {
+      const [month, day] = event.monthDay.split("-").map(Number);
+      const detail = eventCopy[event.monthDay];
+      return (
+        <article class:list={[event.monthDay === "12-31" && "y2k"]}>
+          <time datetime={`2026-${event.monthDay}`}><span>{String(day).padStart(2, "0")}</span><b>{months[month - 1]}</b></time>
+          <div>
+            <p class="year">Established {detail.year}</p>
+            <h2>{event.name}</h2>
+            {detail.latin && <p class="latin">{detail.latin}</p>}
+            <p>{detail.line}</p>
+          </div>
+          <p class="status">Commemorative edition<br /><b>under consideration</b></p>
+        </article>
+      );
+    })}
+  </section>
+</BaseLayout>
+
+<style>
+  .calendar-hero { text-align: center; padding: clamp(5rem, 10vw, 9rem) 1.5rem; background: var(--ivory); border-bottom: 4px double var(--gold); }
+  .calendar-hero .script { font-size: 2rem; margin: 0; }
+  .calendar-hero h1 { font-size: clamp(4rem, 10vw, 10rem); line-height: .9; margin: 1rem 0 2rem; font-weight: 400; }
+  .calendar-hero > p:last-child { font-size: 1.2rem; }
+  .calendar-list { background: var(--paper); padding: 2rem clamp(1.25rem, 7vw, 8rem) 7rem; }
+  article { display: grid; grid-template-columns: 190px 1fr 200px; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding: 3rem 0; border-bottom: 1px solid var(--line); }
+  article.y2k { background: var(--navy); color: white; margin-inline: -2rem; padding-inline: 2rem; border: 2px solid var(--gold); }
+  time { display: flex; align-items: center; gap: 1rem; }
+  time span { font-size: 4rem; line-height: .9; color: var(--crimson); }
+  .y2k time span { color: var(--gold-light); }
+  time b { writing-mode: vertical-rl; transform: rotate(180deg); font: 700 .66rem var(--sans); text-transform: uppercase; letter-spacing: .12em; }
+  .year { margin: 0; color: var(--crimson); font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .13em; }
+  .y2k .year { color: var(--gold-light); }
+  h2 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1; margin: .5rem 0; font-weight: 400; }
+  article div > p:last-child { max-width: 660px; line-height: 1.65; }
+  .status { border-left: 1px solid var(--line); padding-left: 1.5rem; font: .68rem/1.7 var(--sans); text-transform: uppercase; letter-spacing: .08em; }
+  .status b { color: var(--crimson); }
+  .y2k .status b { color: var(--gold-light); }
+  @media (max-width: 760px) { article { grid-template-columns: 120px 1fr; } .status { grid-column: 2; border: 0; padding: 0; } }
+  @media (max-width: 520px) { article { grid-template-columns: 1fr; } .status { grid-column: 1; } }
+</style>

@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-SITES = [ROOT / "website" / "dist", ROOT / "website" / "coming-soon"]
+SITES = [ROOT / "website" / "dist", ROOT / "website" / "coming-soon", ROOT / "website" / "royal" / "dist"]
 JSON_FILES = [".firebaserc", *(p.name for p in ROOT.glob("firebase*.json"))]
 
 
@@ -62,7 +62,7 @@ def main() -> int:
     for site in SITES:
         if not site.is_dir():
             continue
-        for page in sorted(site.glob("*.html")):
+        for page in sorted(site.rglob("*.html")):
             pages += 1
             rel = page.relative_to(ROOT)
             parser = Page()

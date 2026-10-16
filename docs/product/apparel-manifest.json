@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "status": "working",
+  "brand": {
+    "name": "Low Value Content",
+    "brandWorld": "La Maison de Valebasse",
+    "brandWorldFormal": "La Très Ancienne et Sérénissime Maison de Valebasse",
+    "brandArchitecture": "Low Value Content is the portal, purveyor, and maker's mark; Valebasse is the fictional realm and ruling house.",
+    "brandLine": "Official regalia for the attention economy.",
+    "primaryMotto": {
+      "english": "Much Published, Little Said",
+      "latin": "Multa edita, pauca dicta"
+    }
+  },
+  "sourceOfTruth": {
+    "sayings": "docs/product/concept-catalog.md",
+    "commerce": "functions/src/catalog.ts",
+    "storefront": "website/dist/shirts.html",
+    "brandGuide": "docs/brand/LOW_VALUE_CONTENT_GUIDE.md"
+  },
+  "productFamilies": [
+    {
+      "id": "royal-arms",
+      "name": "Royal Arms",
+      "purpose": "Flagship heraldic designs that establish the fictional institution."
+    },
+    {
+      "id": "orders-and-titles",
+      "name": "Orders & Titles",
+      "purpose": "Medals, ranks, honors, houses, and ceremonial offices."
+    },
+    {
+      "id": "royal-proclamations",
+      "name": "Royal Proclamations",
+      "purpose": "Original sayings presented as decrees, petitions, notices, and appointments."
+    },
+    {
+      "id": "court-uniforms",
+      "name": "Court Uniforms",
+      "purpose": "Restrained apparel with a small institutional mark and a larger secondary statement."
+    },
+    {
+      "id": "commemorative-editions",
+      "name": "Commemorative Editions",
+      "purpose": "Historically grounded releases tied to the lineage and Royal Calendar."
+    }
+  ],
+  "garmentSystem": {
+    "front": "The original joke remains the dominant, distance-readable artwork.",
+    "leftSleeve": "A restrained seal identifies the issuing House or sovereign office.",
+    "upperBack": "A small issue line records the office, reign, and ceremonial title.",
+    "qr": "A permanent owned-domain QR seal continues the joke through provenance, history, and an optional title.",
+    "makerMark": "Low Value Content appears as the small maker's mark, never as the ruling identity."
+  },
+  "houses": [
+    { "name": "House of Scroll", "latin": "Semper Deorsum", "line": "Forever downward.", "mark": "↓" },
+    { "name": "House of Signal", "latin": "Coniunctus, Non Accessibilis", "line": "Connected, yet unreachable.", "mark": "⌁" },
+    { "name": "House of Spam", "latin": "Ad Omnes Aeque", "line": "To all subjects equally.", "mark": "@" },
+    { "name": "House of Prompt", "latin": "Pete Sine Intellegendo", "line": "Ask without understanding.", "mark": "?" },
+    { "name": "House of Buffer", "latin": "Tandem, Fortasse", "line": "Eventually, perhaps.", "mark": "◌" },
+    { "name": "House of Influence", "latin": "Notus Quia Notus", "line": "Known for being known.", "mark": "◇" }
+  ],
+  "lineage": [
+    { "id": "moth-i", "name": "Moth I, the Debugger", "period": "1947–1969" },
+    { "id": "lo-i", "name": "LO I, the Interrupted", "period": "1969–1978" },
+    { "id": "spam-i", "name": "Spam I, the Unsolicited", "period": "1978–1982" },
+    { "id": "emoticon-i", "name": "Emoticon I, the Sideways", "period": "1982–1993" },
+    { "id": "web-i", "name": "Web I, the Open", "period": "1993–1999" },
+    { "id": "y2k-the-almost", "name": "Y2K, the Almost", "period": "December 31, 1999–January 1, 2000", "disputed": true },
+    { "id": "web-i-restored", "name": "Web I, Restored", "period": "2000–2005" },
+    { "id": "content-i", "name": "Content I, the Uploaded", "period": "2005–2007" },
+    { "id": "scroll-i", "name": "Scroll I, the Endless", "period": "2007–2016" },
+    { "id": "algorithm-i", "name": "Algorithm I, the Unseen", "period": "2016–2022" },
+    { "id": "prompt-i", "name": "Prompt I, the Generative", "period": "2022–present" }
+  ],
+  "observances": [
+    { "monthDay": "01-01", "name": "Feast of Universal Connectivity" },
+    { "monthDay": "04-01", "name": "Royal Day of Internet Standards" },
+    { "monthDay": "04-23", "name": "Feast of the Content Creator" },
+    { "monthDay": "04-30", "name": "Liberation of the Feed" },
+    { "monthDay": "05-03", "name": "Festival of Unsolicited Correspondence" },
+    { "monthDay": "05-11", "name": "Day of Human Obsolescence, First Observance" },
+    { "monthDay": "06-29", "name": "Coronation of the Infinite Scroll" },
+    { "monthDay": "09-09", "name": "Feast of Saint Moth, Patron of Debugging" },
+    { "monthDay": "09-19", "name": "Festival of Mandatory Emotional Context" },
+    { "monthDay": "10-29", "name": "The Royal Feast of LO" },
+    { "monthDay": "11-30", "name": "Day of Artificial Eloquence" },
+    { "monthDay": "12-31", "name": "The Vigil of the Missing Digits" }
+  ],
+  "sharedAssets": {
+    "originalLaunchMockups": [
+      "design/mockups/low-value-content-launch-01.png",
+      "design/mockups/low-value-content-launch-02.png",
+      "design/mockups/low-value-content-launch-03.png"
+    ],
+    "royalHouseConcepts": [
+      "mockups/royal-house/01-brand-identity-board.png",
+      "mockups/royal-house/02-apparel-collection.png",
+      "mockups/royal-house/03-ceremonial-packaging.png"
+    ],
+    "legacyLogoStudies": [
+      "website/dist/assets/logo-01-editorial.svg",
+      "website/dist/assets/logo-02-monogram.svg",
+      "website/dist/assets/logo-03-signal.svg",
+      "website/dist/assets/logo-04-label.svg",
+      "website/dist/assets/logo-05-stamp.svg"
+    ],
+    "legacyIconMarksGlob": "website/dist/assets/iconmark-*.svg"
+  },
+  "launchProducts": [
+    {
+      "position": 1,
+      "id": "validate",
+      "primaryCopy": "Please validate me algorithmically.",
+      "originalCollection": "Algorithm Anxiety",
+      "family": "royal-proclamations",
+      "royalTreatment": "Formal Petition for Algorithmic Recognition",
+      "house": "House of Influence",
+      "reign": "algorithm-i",
+      "latin": "Me algorithmice confirma",
+      "qrRoute": "/r/validate",
+      "realmIssue": {
+        "office": "Royal Chancery of Recognition",
+        "wearerTitle": "Petitioner in Good Algorithmic Standing",
+        "proclamation": "A formal request for recognition, received by the Crown and left permanently pending."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "test-sellable",
+      "assets": {
+        "artwork": "design/prototypes/01-validate-me.svg",
+        "artworkPreview": "design/prototypes/previews/01-validate-me.png",
+        "storefrontImage": "website/dist/assets/shirt-01.png"
+      },
+      "commerce": {
+        "catalogKey": "validate",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6ad1477a5dcca28e4500da6f",
+        "enabledVariants": ["white-l"]
+      }
+    },
+    {
+      "position": 2,
+      "id": "thought-leader",
+      "primaryCopy": "Thought leader. No thoughts required.",
+      "originalCollection": "Social Media Theater",
+      "family": "royal-proclamations",
+      "royalTreatment": "Official Court Appointment",
+      "house": "House of Influence",
+      "reign": "algorithm-i",
+      "latin": "Nulla cogitatio requiritur",
+      "qrRoute": "/r/thought-leader",
+      "realmIssue": {
+        "office": "Ministry of Public Importance",
+        "wearerTitle": "Thought Leader to the Court, Honorary",
+        "proclamation": "An appointment to speak with authority before the arrival of any supporting thought."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "planned",
+      "assets": {
+        "artwork": "design/prototypes/02-thought-leader.svg",
+        "artworkPreview": "design/prototypes/previews/02-thought-leader.png",
+        "storefrontImage": "website/dist/assets/shirt-02.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 3,
+      "id": "doomscrolling",
+      "primaryCopy": "I’m not doomscrolling. I’m doing market research.",
+      "originalCollection": "Chronically Online",
+      "family": "court-uniforms",
+      "royalTreatment": "Royal Institute of Digital Inquiry",
+      "house": "House of Scroll",
+      "reign": "scroll-i",
+      "latin": null,
+      "qrRoute": "/r/doomscrolling",
+      "realmIssue": {
+        "office": "Royal Institute of Digital Inquiry",
+        "wearerTitle": "Fellow of Applied Doomscrolling",
+        "proclamation": "Field research conducted continuously, without methodology, conclusion, or visible end."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "planned",
+      "assets": {
+        "artwork": "design/prototypes/03-market-research.svg",
+        "artworkPreview": "design/prototypes/previews/03-market-research.png",
+        "storefrontImage": "website/dist/assets/shirt-03.png",
+        "designStudy": "website/royal/public/assets/design-study-doomscrolling-v3.png",
+        "designStudyPrevious": "website/royal/public/assets/design-study-doomscrolling-v2.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 4,
+      "id": "content-creator",
+      "primaryCopy": "Content creator. Meaning pending.",
+      "originalCollection": "Creator Economy",
+      "family": "royal-proclamations",
+      "royalTreatment": "Unfinished Illuminated Proclamation",
+      "house": "House of Prompt",
+      "reign": "content-i",
+      "latin": null,
+      "qrRoute": "/r/content-creator",
+      "realmIssue": {
+        "office": "Scriptorium of Perpetual Production",
+        "wearerTitle": "Creator-in-Waiting",
+        "proclamation": "An unfinished illuminated work whose meaning will be supplied after publication."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "planned",
+      "assets": {
+        "artwork": "design/prototypes/04-content-creator.svg",
+        "artworkPreview": "design/prototypes/previews/04-content-creator.png",
+        "storefrontImage": "website/dist/assets/shirt-04.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 5,
+      "id": "authentic-self",
+      "primaryCopy": "My authentic self is currently being monetized.",
+      "originalCollection": "Artificial Authenticity",
+      "family": "royal-proclamations",
+      "royalTreatment": "Royal Portrait and Auction Inventory",
+      "house": "House of Influence",
+      "reign": "algorithm-i",
+      "latin": "Persona vera venalis",
+      "qrRoute": "/r/authentic-self",
+      "realmIssue": {
+        "office": "Office of Licensed Authenticity",
+        "wearerTitle": "Bearer of the Monetized Self",
+        "proclamation": "The Crown recognizes this authentic person as available for sponsorship, subject to terms."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "planned",
+      "assets": {
+        "artwork": "design/prototypes/05-authentic-self.svg",
+        "artworkPreview": "design/prototypes/previews/05-authentic-self.png",
+        "storefrontImage": "website/dist/assets/shirt-05.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 6,
+      "id": "optimized-shirt",
+      "primaryCopy": "I optimized this shirt for engagement.",
+      "originalCollection": "Algorithm Anxiety",
+      "family": "court-uniforms",
+      "royalTreatment": "Office of Engagement Performance Report",
+      "house": "House of Influence",
+      "reign": "algorithm-i",
+      "latin": "Ad favorem optimizatum",
+      "qrRoute": "/r/optimized-shirt",
+      "realmIssue": {
+        "office": "Bureau of Engagement Measures",
+        "wearerTitle": "Deputy Optimizer of Minor Outcomes",
+        "proclamation": "A performance garment calibrated to produce statistically insignificant approval."
+      },
+      "creativeStatus": "editable-prototype",
+      "commerceStatus": "planned",
+      "assets": {
+        "artwork": "design/prototypes/06-optimized-shirt.svg",
+        "artworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
+        "storefrontImage": "website/dist/assets/shirt-06.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 7,
+      "id": "much-published",
+      "primaryCopy": "Much Published, Little Said",
+      "originalCollection": "Maison de Valebasse",
+      "family": "royal-arms",
+      "royalTreatment": "Full Peacock-and-Parrot Arms",
+      "house": "La Maison de Valebasse",
+      "reign": "prompt-i",
+      "latin": "Multa edita, pauca dicta",
+      "qrRoute": "/r/much-published",
+      "realmIssue": {
+        "office": "The Sovereign College of Arms",
+        "wearerTitle": "Subject in Excellent Posting",
+        "proclamation": "The full arms of Valebasse, granted for conspicuous publication in the absence of content."
+      },
+      "creativeStatus": "concept-mockup",
+      "commerceStatus": "planned",
+      "assets": {
+        "conceptReference": "mockups/royal-house/02-apparel-collection.png",
+        "storefrontImage": "website/royal/public/assets/shirt-07-realm.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 8,
+      "id": "order-blue-check",
+      "primaryCopy": "Order of the Blue Check",
+      "originalCollection": "Maison de Valebasse",
+      "family": "orders-and-titles",
+      "royalTreatment": "Fictional Medal for Distinguished Personal Visibility",
+      "house": "House of Influence",
+      "reign": "algorithm-i",
+      "latin": "Ordo Signi Caerulei",
+      "qrRoute": "/r/order-blue-check",
+      "realmIssue": {
+        "office": "The Chancery of Honors",
+        "wearerTitle": "Companion of the Blue Check",
+        "proclamation": "A distinction awarded for exceptional visibility and no other confirmed service."
+      },
+      "creativeStatus": "concept-mockup",
+      "commerceStatus": "planned",
+      "assets": {
+        "conceptReference": "mockups/royal-house/02-apparel-collection.png",
+        "storefrontImage": "website/royal/public/assets/shirt-08-realm.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 9,
+      "id": "y2k-the-almost",
+      "primaryCopy": "The End of the World Has Been Postponed",
+      "originalCollection": "Royal Calendar",
+      "family": "commemorative-editions",
+      "royalTreatment": "The Millennium Interregnum",
+      "house": "House of Buffer",
+      "reign": "y2k-the-almost",
+      "latin": "Finis mundi dilatus",
+      "qrRoute": "/r/y2k",
+      "realmIssue": {
+        "office": "Office of Temporal Continuity",
+        "wearerTitle": "Survivor of the Millennium Interregnum",
+        "proclamation": "Issued in remembrance of the night civilization briefly awaited a formatting error."
+      },
+      "creativeStatus": "copy-approved-for-development",
+      "commerceStatus": "planned",
+      "assets": {
+        "storefrontImage": "website/royal/public/assets/shirt-09-realm.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    },
+    {
+      "position": 10,
+      "id": "saint-moth",
+      "primaryCopy": "Patron Saint of Debugging",
+      "originalCollection": "Royal Calendar",
+      "family": "commemorative-editions",
+      "royalTreatment": "The Feast of Saint Moth",
+      "house": "House of Signal",
+      "reign": "moth-i",
+      "latin": "Primus casus verus",
+      "qrRoute": "/r/moth",
+      "realmIssue": {
+        "office": "Royal Guild of Debuggers",
+        "wearerTitle": "Keeper of the First Actual Bug",
+        "proclamation": "A feast-day vestment honoring the creature whose brief technical career became immortal."
+      },
+      "creativeStatus": "copy-approved-for-development",
+      "commerceStatus": "planned",
+      "assets": {
+        "storefrontImage": "website/royal/public/assets/shirt-10-realm.png"
+      },
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+    }
+  ],
+  "preservationRules": [
+    "Never delete an existing design during migration.",
+    "Never rename a commerce catalog key without an explicit migration.",
+    "Keep editable SVG files as production-design masters until final artwork replaces them.",
+    "Treat generated mockups as concept references, never as print-ready artwork.",
+    "Keep prices and Printify identifiers authoritative on the server.",
+    "Verify every old product, saying, and declared asset before switching the deployed storefront.",
+    "Use permanent owned-domain QR routes whose destinations can change without reprinting garments."
+  ]
+}

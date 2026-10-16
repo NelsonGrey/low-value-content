@@ -56,7 +56,7 @@ Six prototypes are in [design/prototypes/](design/prototypes/) and launch mockup
 low-value-content/
 ├── docs/
 │   ├── business-plan/      Business plan (.docx) and its QA renders (qa/draft, qa/final)
-│   └── product/            Concept catalog and other product notes
+│   └── product/            Concept catalog, apparel manifest, and product notes
 ├── design/
 │   ├── prototypes/         Shirt design SVGs and PNG previews
 │   └── mockups/            Launch mockup images
@@ -87,7 +87,17 @@ firebase login
 
 ## Website
 
-The site is plain static HTML in [website/dist/](website/dist/) with no build step yet. The framework has not been chosen; when it is, scaffold it in `website/` and point `hosting.public` in [firebase.json](firebase.json) at the build output.
+The currently deployed site is plain static HTML in [website/dist/](website/dist/). Firebase Hosting serves that directory and routes `/api/**` to the commerce function.
+
+The **Maison de Valebasse** redesign is being developed non-destructively in [`website/royal/`](website/royal/). Low Value Content remains the portal, purveyor, owned domain, and garment maker's mark; Valebasse is the fictional realm and ruling house. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest. Its output remains separate from `website/dist/` until the migration checklist and final review are complete.
+
+```bash
+npm install --prefix website/royal
+npm run dev --prefix website/royal
+npm run build --prefix website/royal
+```
+
+The Valebasse build uses Node.js 24 or newer. The existing commerce functions retain their own runtime configuration.
 
 Preview locally:
 
@@ -157,6 +167,7 @@ Its first recommendations are to clear the Low Value Content name for trademark,
 | --- | --- |
 | Business plan | [docs/business-plan/](docs/business-plan/) |
 | Concept catalog | [docs/product/concept-catalog.md](docs/product/concept-catalog.md) |
+| Master apparel manifest | [docs/product/apparel-manifest.md](docs/product/apparel-manifest.md) |
 | Agent and ChatGPT project notes | [AGENTS.md](AGENTS.md) |
 | Change history | [CHANGELOG.md](CHANGELOG.md) |
 

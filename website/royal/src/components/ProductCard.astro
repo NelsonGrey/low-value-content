@@ -1,0 +1,45 @@
+---
+import type { Product } from "../data";
+import { productHref, productImage } from "../data";
+
+const { product } = Astro.props as { product: Product };
+const image = productImage(product);
+const reignLabel = product.reign.replaceAll("-", " ");
+---
+<article class:list={["product-card", !image && "product-card-text"]}>
+  <a class="product-image" href={productHref(product)}>
+    {image ? <img src={image} alt={`${product.primaryCopy} shirt concept`} loading="lazy" /> : (
+      <div class="text-art">
+        <span>{product.latin}</span>
+        <strong>{product.primaryCopy}</strong>
+        <i>{product.royalTreatment}</i>
+      </div>
+    )}
+    <span class="product-number">No. {String(product.position).padStart(2, "0")}</span>
+  </a>
+  <div class="product-copy">
+    <p>{product.house}</p>
+    <h3><a href={productHref(product)}>{product.primaryCopy}</a></h3>
+    <p class="issue">{product.royalTreatment}</p>
+    <p class="office">Issued by {product.realmIssue.office} · {reignLabel}</p>
+    <div><span>$32 planned</span><span>{product.commerceStatus === "test-sellable" ? "Test checkout" : "In development"}</span></div>
+  </div>
+</article>
+
+<style>
+  .product-card { border-top: 1px solid var(--line); padding-top: 1rem; }
+  .product-image { display: block; position: relative; background: #e9e0cf; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid rgba(23,32,42,.12); }
+  .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  .product-image:hover img { transform: scale(1.025); }
+  .product-number { position: absolute; left: .8rem; top: .8rem; background: var(--navy); color: var(--gold-light); padding: .45rem .6rem; font: .65rem/1 var(--sans); letter-spacing: .12em; }
+  .product-copy > p { margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .13em; color: var(--crimson); font: 700 .65rem/1.3 var(--sans); }
+  h3 { margin: 0; font-size: 1.35rem; line-height: 1.2; font-weight: 400; }
+  h3 a { text-decoration: none; }
+  .product-copy .issue { margin: .65rem 0 0; color: var(--navy); font: italic 1rem/1.35 var(--serif); }
+  .product-copy .office { margin: .65rem 0 0; color: #68707a; font: .62rem/1.45 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+  .product-copy > div { display: flex; justify-content: space-between; gap: 1rem; margin-top: .8rem; font: .72rem/1.3 var(--sans); color: #68707a; }
+  .text-art { height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: center; text-align: center; border: 12px double var(--navy); background: var(--ivory); }
+  .text-art span { color: var(--gold); text-transform: uppercase; letter-spacing: .15em; font-size: .62rem; }
+  .text-art strong { margin: 1.5rem 0; color: var(--navy); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 400; line-height: 1.05; text-transform: uppercase; }
+  .text-art i { font-family: var(--script); color: var(--crimson); font-size: 1.2rem; }
+</style>
