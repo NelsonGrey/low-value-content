@@ -66,21 +66,21 @@ const devices: Record<string, string> = {
   .lineage-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
   .lineage-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; margin: 1rem 0 2rem; }
   .lineage-hero > p:last-child { max-width: 720px; font-size: 1.2rem; line-height: 1.7; }
-  .timeline { padding: 3rem clamp(1.25rem, 8vw, 9rem) 7rem; background: var(--paper); }
+  .timeline { padding: 2rem clamp(1.25rem, 8vw, 9rem) 6rem; background: var(--paper); }
   .law-of-succession { display: grid; grid-template-columns: .35fr .8fr 1fr; gap: clamp(1.5rem, 5vw, 6rem); align-items: start; padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 8vw, 9rem); background: var(--ivory); border-bottom: 1px solid var(--line); }
   .law-of-succession h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .95; font-weight: 400; }
   .law-of-succession > p:last-child { margin: 0; max-width: 680px; font-size: 1.1rem; line-height: 1.75; }
-  article { display: grid; grid-template-columns: 70px minmax(150px, 260px) 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding: 4rem 0; border-bottom: 1px solid var(--line); align-items: center; }
+  article { display: grid; grid-template-columns: 56px minmax(110px, 150px) 1fr; gap: clamp(1.25rem, 3.5vw, 4rem); padding: 2.75rem 0; border-bottom: 1px solid var(--line); align-items: center; }
   article.disputed { margin-inline: -2rem; padding-inline: 2rem; background: repeating-linear-gradient(-45deg, rgba(133,46,52,.05), rgba(133,46,52,.05) 10px, transparent 10px, transparent 20px); border: 2px dashed var(--crimson); }
   .ordinal { font: .7rem var(--sans); letter-spacing: .15em; color: var(--crimson); }
   .portrait { aspect-ratio: 1; display: grid; place-items: center; }
-  .portrait img { width: 100%; max-height: 240px; object-fit: contain; }
+  .portrait img { width: 100%; max-height: 145px; object-fit: contain; }
   .period { color: var(--crimson); text-transform: uppercase; letter-spacing: .12em; font: 700 .68rem var(--sans); }
   .account h2 { font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 1; margin: .4rem 0 .8rem; font-weight: 400; }
   .account > p:last-child { max-width: 640px; font-size: 1.1rem; line-height: 1.7; }
   .succession-note { padding: 7rem 1.5rem; text-align: center; background: var(--navy); color: white; }
   .succession-note .script { color: var(--gold-light); font-size: 2rem; }
   .succession-note h2 { font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; margin: 1rem 0 2rem; }
-  @media (max-width: 700px) { .law-of-succession { grid-template-columns: 1fr; } article { grid-template-columns: 40px 100px 1fr; gap: 1rem; } .account h2 { font-size: 2rem; } }
-  @media (max-width: 520px) { .lineage-hero h1 { font-size: 3.2rem; } article { grid-template-columns: 1fr; } article.disputed { margin-inline: 0; padding-inline: 1rem; } .ordinal { display: none; } .portrait { width: 130px; } }
+  @media (max-width: 700px) { .law-of-succession { grid-template-columns: 1fr; } article { grid-template-columns: 36px 82px 1fr; gap: 1rem; } .account h2 { font-size: 2rem; } }
+  @media (max-width: 520px) { .lineage-hero h1 { font-size: 3.2rem; } article { grid-template-columns: 76px 1fr; align-items: start; } article.disputed { margin-inline: 0; padding-inline: 1rem; } .ordinal { display: none; } .portrait { width: 70px; } .account { grid-column: 2; } }
 </style>
