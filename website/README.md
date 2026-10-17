@@ -1,6 +1,6 @@
 # Website
 
-Static editorial showcase served by Firebase Hosting from `website/dist/`. It is a buildless, responsive HTML/CSS/JavaScript site so the pre-launch concept can be reviewed and deployed without a framework toolchain.
+The first-generation static editorial showcase in `website/dist/` is retained as an archive. Firebase Hosting now publishes the Astro storefront built from `website/royal/` into `website/royal/dist/`.
 
 ## Pages
 
@@ -17,6 +17,11 @@ Shared site assets are in `dist/assets/`. Source design files remain in [`../des
 
 Shared assets live outside this folder: shirt art in [`../design/`](../design/), product copy in [`../docs/product/concept-catalog.md`](../docs/product/concept-catalog.md).
 
-Preview locally: `firebase emulators:start --only hosting`
+Build and preview the deployed site locally:
 
-For a dependency-free preview, run `python3 -m http.server 4173 -d website/dist` from the repository root.
+```sh
+npm run build --prefix website/royal
+firebase emulators:start --only hosting
+```
+
+For a simple preview after building, run `python3 -m http.server 4173 -d website/royal/dist` from the repository root.

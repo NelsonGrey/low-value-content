@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "website/dist",
+    "public": "website/royal/dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
     "rewrites": [{ "source": "/api/**", "function": { "functionId": "api", "region": "us-central1" } }],

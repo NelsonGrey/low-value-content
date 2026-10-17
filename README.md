@@ -63,7 +63,8 @@ low-value-content/
 ├── tools/
 │   └── business-plan/      build_business_plan.py (regenerates the .docx)
 ├── website/
-│   └── dist/               Deployed static site (Firebase Hosting)
+│   ├── dist/               Archived first-generation static showcase
+│   └── royal/              Astro storefront and Firebase Hosting source
 ├── sources/                Synced from the ChatGPT project. Read-only, do not edit.
 ├── .github/                Workflows, issue and PR templates, CODEOWNERS, Dependabot
 ├── .firebaserc             Firebase project aliases (dev / staging / prod)
@@ -87,9 +88,9 @@ firebase login
 
 ## Website
 
-The currently deployed site is plain static HTML in [website/dist/](website/dist/). Firebase Hosting serves that directory and routes `/api/**` to the commerce function.
+The deployed experience is the Astro storefront in [`website/royal/`](website/royal/). Firebase Hosting serves `website/royal/dist`, routes `/api/**` to the commerce function, and leaves the earlier `website/dist/` showcase in the repository as an archive.
 
-The **Maison de Valebasse** redesign is being developed non-destructively in [`website/royal/`](website/royal/). Low Value Content remains the portal, purveyor, owned domain, and garment maker's mark; Valebasse is the fictional realm and ruling house. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest. Its output remains separate from `website/dist/` until the migration checklist and final review are complete.
+The **Royal House of Engagement** is the fictional institution inside Low Value Content's attention-economy satire. Low Value Content remains the portal, purveyor, owned domain, merchant, and garment maker's mark. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest.
 
 ```bash
 npm install --prefix website/royal
@@ -102,6 +103,7 @@ The Valebasse build uses Node.js 24 or newer. The existing commerce functions re
 Preview locally:
 
 ```bash
+npm run build --prefix website/royal
 firebase emulators:start --only hosting
 ```
 
@@ -117,7 +119,7 @@ firebase deploy --only hosting --project production    # low-value-content-prod
 
 ### Automatic deploys
 
-[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) deploys on every push to `develop`, `staging`, or `main` that changes `website/dist/**`, `firebase.json`, or `.firebaserc`. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
+[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) builds and deploys the Astro storefront on every push to `develop`, `staging`, or `main` that changes `website/royal/**`, the apparel manifest, Firebase configuration, or the workflow itself. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
 
 Deploys are keyless. The workflow authenticates with [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation) because the organization policy `iam.disableServiceAccountKeyCreation` forbids service-account keys. Each Firebase project has a `github-deploy` service account (Firebase Hosting Admin only) and a GitHub OIDC provider that trusts only this repository and only that environment's branch (`develop`, `staging`, or `main`). Each GitHub Environment holds a `WIF_PROVIDER` variable with the provider's resource name. No credentials are stored in GitHub.
 
