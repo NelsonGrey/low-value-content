@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard.astro";
 import { products } from "../data";
 const featured = [products[0], products[2], products[6], products[8]];
 ---
-<BaseLayout title="The Royal House of Engagement | Presented by Low Value Content" description="Enter the Royal House of Engagement: satirical regalia, disputed lineage, and ceremonial government for the attention economy, presented by Low Value Content.">
+<BaseLayout title="The Royal House of Engagement | Presented by Low Value Content" description="Enter the Royal House of Engagement: official regalia, disputed lineage, and the ceremonial government of the Attention Economy, presented by Low Value Content.">
   <section class="hero">
     <div class="hero-copy">
       <p class="portal-mark">Low Value Content presents</p>
@@ -18,9 +18,9 @@ const featured = [products[0], products[2], products[6], products[8]];
       <div class="arms-panel">
         <p>The Most Ancient and Most Serene</p>
         <h2>Royal House of Engagement</h2>
-        <img src="/assets/royal-arms.svg" alt="Fictional heraldic arms with a notification shield and Wi-Fi crown" />
+        <img src="/assets/royal-arms.svg" alt="Heraldic arms with a notification shield and Wi-Fi crown" />
         <p class="arms-motto">Multa edita, pauca dicta</p>
-        <span>By grace of the algorithm · established several minutes ago</span>
+        <span>By grace of the Algorithm · charter confirmed under Prompt I</span>
       </div>
     </div>
   </section>
@@ -28,11 +28,11 @@ const featured = [products[0], products[2], products[6], products[8]];
   <section class="proclamation">
     <p>Let it be known throughout the feed</p>
     <h2>Low Value Content is the threshold.<br /><i>Engagement is the Crown.</i></h2>
-    <p>The House converts attention into impressions, impressions into influence, and influence into proof of its own importance. The original sayings remain the products; the court exists only when its machinery makes them funnier.</p>
+    <p>The House converts attention into impressions, impressions into influence, and influence into proof of institutional importance. Public Notices retain their independence; the court assumes jurisdiction where classification, rank, and ceremony are required.</p>
   </section>
 
   <section class="section featured">
-    <div class="section-heading"><p class="eyebrow">Drop 001 · The founding collection</p><h2>Three degrees<br /><span class="script">of unnecessary ceremony.</span></h2><p>Public Notices stand outside the court. Court & Orders borrow its seals and appointments. Royal Commemorations surrender completely to lineage, Latin, and disputed history.</p></div>
+    <div class="section-heading"><p class="eyebrow">Drop 001 · The founding collection</p><h2>Three degrees<br /><span class="script">of ceremonial authority.</span></h2><p>Public Notices circulate beyond the court. Court & Orders bear its seals and appointments. Royal Commemorations enter the permanent record of lineage, Latin, and disputed history.</p></div>
     <div class="product-grid">{featured.map((product) => <ProductCard product={product} />)}</div>
     <a class="button ghost" href="/shop.html">View all ten designs</a>
   </section>
@@ -56,13 +56,13 @@ const featured = [products[0], products[2], products[6], products[8]];
       <span>Keeper of Three Unread Notifications</span>
       <b>Ex mandato algorithmi</b>
     </div>
-    <div><p class="script">Enter the Realm</p><h2>Some garments enter the court.<br />Others remain public notices.</h2><p>The saying leads, every launch design is front-only, and the House appears only when its ceremony makes the joke sharper. Online provenance and future QR stories extend selected issues without crowding the shirt.</p><a class="button light" href="/realm.html">Read the constitution</a></div>
+    <div><p class="script">Enter the Realm</p><h2>Some garments enter the court.<br />Others remain public notices.</h2><p>The declaration leads, every launch design is front-only, and the House appears only where its authority clarifies the issue. Online provenance and future QR records extend selected garments without burdening the front.</p><a class="button light" href="/realm.html">Read the constitution</a></div>
   </section>
 </BaseLayout>
 
 <style>
   .hero { min-height: calc(100vh - 92px); display: grid; grid-template-columns: .82fr 1.18fr; background: var(--ivory); }
-  .hero-copy { padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 7rem); align-self: center; position: relative; }
+  .hero-copy { min-width: 0; padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 7rem); align-self: center; position: relative; }
   .hero-copy::before { content: ''; position: absolute; inset: 2rem; border: 1px solid var(--line); pointer-events: none; }
   .hero-copy > * { position: relative; }
   .hero-copy .script { margin: 0; font-size: 2rem; }
@@ -88,11 +88,11 @@ const featured = [products[0], products[2], products[6], products[8]];
   .featured { background: #efe7d7; }
   .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
   .current-reign { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); color: var(--ivory); }
-  .current-reign > div { padding: clamp(4rem, 8vw, 8rem); }
+  .current-reign > div { min-width: 0; padding: clamp(4rem, 8vw, 8rem); }
   .current-reign h2 { font-size: clamp(3.5rem, 7vw, 7.5rem); line-height: .88; margin: .5rem 0 2rem; font-weight: 400; }
   .current-reign h2 i { color: var(--gold-light); }
   .current-reign p:not(.eyebrow):not(.latin) { max-width: 600px; font-size: 1.2rem; line-height: 1.7; }
-  .current-reign blockquote { margin: 0; padding: 4rem; min-height: 600px; display: grid; place-items: center; text-align: center; background: var(--crimson); font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; }
+  .current-reign blockquote { min-width: 0; margin: 0; padding: 4rem; min-height: 600px; display: grid; place-items: center; text-align: center; background: var(--crimson); font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; }
   .current-reign blockquote span { color: var(--gold-light); }
   .observance { display: grid; grid-template-columns: .5fr 1fr .5fr; align-items: center; gap: 4rem; }
   .date { border: 1px solid var(--gold); text-align: center; padding: 1.5rem; }
@@ -102,16 +102,16 @@ const featured = [products[0], products[2], products[6], products[8]];
   .observance p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.6; }
   .moth { text-align: center; font-size: 5rem; line-height: .65; color: var(--gold); }
   .entry { display: grid; grid-template-columns: 1.2fr .8fr; background: var(--crimson); color: white; }
-  .certificate { margin: clamp(2rem, 6vw, 6rem); padding: clamp(2rem, 5vw, 5rem); border: 12px double var(--gold); outline: 1px solid var(--gold-light); outline-offset: -24px; background: var(--ivory); color: var(--navy); display: flex; min-height: 560px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .certificate { min-width: 0; margin: clamp(2rem, 6vw, 6rem); padding: clamp(2rem, 5vw, 5rem); border: 12px double var(--gold); outline: 1px solid var(--gold-light); outline-offset: -24px; background: var(--ivory); color: var(--navy); display: flex; min-height: 560px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
   .certificate img { width: 90px; height: 90px; }
   .certificate p { text-transform: uppercase; letter-spacing: .13em; font: .66rem var(--sans); color: var(--crimson); }
   .certificate h3 { font-size: clamp(3rem, 6vw, 6rem); line-height: .9; font-weight: 400; margin: 1.5rem 0; }
   .certificate span { font-family: var(--script); font-size: 1.6rem; color: var(--crimson); }
   .certificate b { margin-top: 2rem; color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; }
-  .entry > div { padding: clamp(4rem, 7vw, 7rem); align-self: center; }
+  .entry > div { min-width: 0; padding: clamp(4rem, 7vw, 7rem); align-self: center; }
   .entry .script { color: var(--gold-light); font-size: 2rem; }
   .entry h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); line-height: 1; font-weight: 400; }
   .entry p:not(.script) { font-size: 1.1rem; line-height: 1.7; }
-  @media (max-width: 980px) { .hero, .current-reign, .entry { grid-template-columns: 1fr; } .product-grid { grid-template-columns: repeat(2, 1fr); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
-  @media (max-width: 600px) { .product-grid { grid-template-columns: 1fr; } .observance { grid-template-columns: 1fr; } .hero-copy::before { inset: 1rem; } }
+  @media (max-width: 980px) { .hero, .current-reign, .entry { grid-template-columns: minmax(0, 1fr); } .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
+  @media (max-width: 600px) { .product-grid, .observance { grid-template-columns: minmax(0, 1fr); } .hero-copy::before { inset: 1rem; } .current-reign > div, .entry > div { padding-inline: 1.25rem; } .current-reign blockquote { padding-inline: 1.25rem; } .certificate { margin-inline: 1.25rem; padding-inline: 1.25rem; outline-offset: -18px; } }
 </style>

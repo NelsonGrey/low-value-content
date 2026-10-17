@@ -21,7 +21,7 @@ Low Value Content remains the consumer brand, merchant, portal, purveyor, and ma
 9. No subject may admit that nobody is paying attention.
 10. More content is the official remedy for too much content.
 
-The primary motto remains *Multa edita, pauca dicta* — Much Published, Little Said. Latin supplies ceremonial texture; primary names, navigation, jokes, and explanations remain in English.
+The primary motto remains *Multa edita, pauca dicta* — Much Published, Little Said. Latin supplies ceremonial texture; primary names, navigation, declarations, and explanations remain in English.
 
 ## Constitutional hierarchy
 
@@ -135,8 +135,8 @@ This full style belongs in online provenance, packaging, or a certificate. Appar
 3. A product may have one primary Great House, one peerage title or institutional appointment, and one Order at most.
 4. Public Notices require no House, title, or mythology.
 5. A House is assigned by the mechanism being satirized, not merely by a related word.
-6. A title names the behavior or distinction; it does not replace the joke.
-7. An institution makes the absurdity respectable.
+6. A title names the behavior or distinction; it does not replace the primary declaration.
+7. An institution establishes the official interpretation.
 8. An Order rewards visibility, status, or ceremonial achievement across Houses.
 9. Extended styles, history, and QR provenance belong online or in packaging unless they materially improve the shirt.
 10. Concept mockups never override the canonical front-art master.
@@ -152,4 +152,15 @@ This full style belongs in online provenance, packaging, or a certificate. Appar
 
 ## Naming and presentation rule
 
-Use English for the House, hierarchy, navigation, product names, institutions, titles, and explanations. Use Latin selectively on mottos, seals, warrants, medals, and subordinate ceremonial inscriptions, with an English translation available nearby. The joke must never depend on translation.
+Use English for the House, hierarchy, navigation, product names, institutions, titles, and explanations. Use Latin selectively on mottos, seals, warrants, medals, and subordinate ceremonial inscriptions, with an English translation available nearby. Meaning must never depend on translation.
+
+## Voice and editorial discipline
+
+The House speaks as a sovereign institution and accepts its own authority without qualification.
+
+1. Never describe the work as a joke, satire, parody, absurdity, or fiction in public-facing copy.
+2. Never explain why a line is amusing or signal that the institution recognizes its own excesses.
+3. State improbable doctrine with administrative precision and complete seriousness.
+4. Prefer decrees, findings, classifications, records, appointments, and official interpretations.
+5. Permit contradiction to remain unresolved. The House records the contradiction; it does not comment upon it.
+6. Keep commercial facts direct. Price, availability, sizing, payment, fulfillment, returns, privacy, and customer rights remain outside ceremonial ambiguity.

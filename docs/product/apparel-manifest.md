@@ -14,7 +14,7 @@ The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json).
 
 **Low Value Content** is the portal, purveyor, owned domain, and maker's mark. **The Royal House of Engagement** is the ruling institution inside the fictional realm. It adds provenance, lineage, Great Houses, peerage, orders, Latin mottos, annual observances, commemorative editions, and QR experiences without requiring every shirt to use heraldic artwork.
 
-The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the joke; Latin supplies ceremonial texture and is always translated in public-facing copy.
+The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the declaration; Latin supplies ceremonial texture and is always translated in public-facing copy.
 
 ## Ten-product launch matrix
 
@@ -31,7 +31,7 @@ The Crown governs the Attention Economy by converting attention into impressions
 | 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Editable two-ink SVG | Planned |
 | 10 | Patron Saint of Debugging | Royal Commemorations | Full | Editable two-ink SVG | Planned |
 
-The ten garments are one wardrobe with three degrees of ceremony. **Public Notices** are direct editorial observations and do not need a House. **Court & Orders** use appointments, institutions, medals, seals, or sovereign heraldry where those devices improve the joke. **Royal Commemorations** use lineage and calendar history as the premise itself.
+The ten garments are one wardrobe with three degrees of ceremony. **Public Notices** are direct editorial observations and do not need a House. **Court & Orders** use appointments, institutions, medals, seals, or sovereign heraldry where those devices establish authority. **Royal Commemorations** use lineage and calendar history as the premise itself.
 
 Every launch garment is front-only. The saying and artwork must succeed in one print area. Houses, offices, reigns, ceremonial titles, and QR stories begin on the website, hangtags, or packaging inserts; sleeve marks, back prints, and garment QR seals remain optional future premium treatments after physical testing. `LO I, the Interrupted` remains a strong future commemorative design rather than displacing an existing launch shirt.
 
@@ -50,7 +50,7 @@ Every product page must combine two layers in proportion to the design:
 1. Clear commercial information: actual photography, sizes, colors, price, fit, care, shipping, returns, and an honest availability state.
 2. Optional fictional provenance: collection, Realm intensity, and—only when relevant—House, reign, Latin motto, proclamation, QR route, or ceremonial title.
 
-The commercial layer always wins when clarity and satire conflict. Prices and Printify IDs remain server-authoritative in `functions/src/catalog.ts`.
+The commercial layer always governs where ceremonial presentation conflicts with customer clarity. Prices and Printify IDs remain server-authoritative in `functions/src/catalog.ts`.
 
 The exact `frontArtDisplay` image is the storefront authority for what will print. Older generated shirt scenes and front/back studies are retained as concept references, but they are not shown as alternate product artwork because they may contain details that are absent from the launch print file.
 

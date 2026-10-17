@@ -4,7 +4,7 @@
 [![Deploy Website](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml/badge.svg)](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml)
 ![License: Proprietary](https://img.shields.io/badge/license-proprietary-lightgrey)
 
-**Low Value Content** is a satirical t-shirt imprint of **Nelson Grey LLC**. The shirts poke fun at social media theater, algorithm anxiety, the creator economy, and other symptoms of being extremely online.
+**Low Value Content** is an editorial apparel imprint of **Nelson Grey LLC**. Its garments record social media theater, algorithm anxiety, the creator economy, and other conditions of sustained online life.
 
 This repository holds the whole project: the business plan, the product concept catalog, shirt design prototypes, launch mockups, and the website.
 
@@ -90,7 +90,7 @@ firebase login
 
 The deployed experience is the Astro storefront in [`website/royal/`](website/royal/). Firebase Hosting serves `website/royal/dist`, routes `/api/**` to the commerce function, and leaves the earlier `website/dist/` showcase in the repository as an archive.
 
-The **Royal House of Engagement** is the fictional institution inside Low Value Content's attention-economy satire. Low Value Content remains the portal, purveyor, owned domain, merchant, and garment maker's mark. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest.
+The **Royal House of Engagement** is the governing institution within the Low Value Content world. Low Value Content remains the portal, purveyor, owned domain, merchant, and garment maker's mark. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest.
 
 ```bash
 npm install --prefix website/royal

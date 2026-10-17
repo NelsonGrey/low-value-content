@@ -1,16 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const channels = [
-  { id: "instagram", icon: "/assets/icon-instagram.svg", label: "Primary / Instagram", title: "The visual catalog.", copy: "Shirt reveals, heraldic details, samples, release photography, and occasional proof that somebody left the realm.", status: "Official profile opens with Drop 001." },
-  { id: "tiktok", icon: "/assets/icon-tiktok.svg", label: "Primary / TikTok", title: "The moving feed.", copy: "Quick observations, joke reveals, design experiments, proclamations, and the regrettably necessary creation of content about Low Value Content.", status: "Official profile opens with Drop 001." },
+  { id: "instagram", icon: "/assets/icon-instagram.svg", label: "Primary / Instagram", title: "The visual catalog.", copy: "Garment issues, heraldic details, samples, release photography, and official field reports from beyond the Realm.", status: "Official profile opens with Drop 001." },
+  { id: "tiktok", icon: "/assets/icon-tiktok.svg", label: "Primary / TikTok", title: "The moving record.", copy: "Short-form observations, issue reveals, design studies, proclamations, and proceedings of the House.", status: "Official profile opens with Drop 001." },
   { id: "linkedin", icon: "/assets/icon-linkedin.svg", label: "Selective / LinkedIn", title: "Work is content.", copy: "Thought leadership, productivity theater, creator economics, and corporate performance—used carefully enough not to become the thing being mocked.", status: "The court page opens when it has something to say." },
 ];
 ---
 <BaseLayout title="Social Proclamations | Low Value Content" description="The planned official social channels for Low Value Content and the Royal House of Engagement.">
-  <header class="social-hero"><p class="script">Follow the Court</p><h1>We regret to inform you<br />there will be more content.</h1><p>Official profiles will open with Drop 001. Until verified destinations are approved, this page records where the brand intends to publish—and why.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
+  <header class="social-hero"><p class="script">Follow the Court</p><h1>The Court will publish<br />through official channels.</h1><p>Official profiles will open with Drop 001. Until verified destinations are approved, this page records the authorized channels and their respective duties.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
   <section class="channels">
     {channels.map((channel) => <article id={channel.id}><img src={channel.icon} alt="" /><p class="eyebrow">{channel.label}</p><h2>{channel.title}</h2><p>{channel.copy}</p><blockquote>{channel.status}</blockquote></article>)}
-    <article><img src="/assets/royal-mark.svg" alt="" /><p class="eyebrow">Owned / This website</p><h2>The source of low truth.</h2><p>Final releases, product details, policies, lineage, and the complete catalog will live here rather than inside a rented feed.</p><blockquote>Bookmarking remains available.</blockquote></article>
+    <article><img src="/assets/royal-mark.svg" alt="" /><p class="eyebrow">Owned / This website</p><h2>The public record.</h2><p>Final releases, product details, policies, lineage, and the complete catalog will remain here rather than inside a rented feed.</p><blockquote>This domain constitutes the authoritative record.</blockquote></article>
   </section>
 </BaseLayout>
 <style>
