@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <title>Device of LO I</title><desc>A ceremonial terminal stopped after its first two characters.</desc>
+  <circle cx="120" cy="120" r="112" fill="#0d1c2b" stroke="#c6a15b" stroke-width="8"/>
+  <rect x="48" y="63" width="144" height="112" rx="8" fill="#f4eedf" stroke="#c6a15b" stroke-width="5"/><path d="M48 87h144" stroke="#c6a15b" stroke-width="5"/>
+  <text x="74" y="144" fill="#852e34" font-family="Georgia,serif" font-size="62" font-weight="700">LO</text><rect x="148" y="106" width="13" height="43" fill="#c6a15b"/>
+  <path d="M91 194h58" stroke="#c6a15b" stroke-width="6"/>
+</svg>

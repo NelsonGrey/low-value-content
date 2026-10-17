@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
-import { products } from "../data";
+import { houses, products } from "../data";
 const featured = [products[0], products[2], products[6], products[8]];
 ---
 <BaseLayout title="The Royal House of Engagement | Presented by Low Value Content" description="Enter the Royal House of Engagement: official regalia, disputed lineage, and the ceremonial government of the Attention Economy, presented by Low Value Content.">
@@ -25,10 +25,30 @@ const featured = [products[0], products[2], products[6], products[8]];
     </div>
   </section>
 
+  <section class="founding-plate">
+    <figure>
+      <img src="/assets/royal-house/01-brand-identity-board.png" alt="The founding identity plate showing the arms, supporters, standard, seals, and ceremonial ornament" />
+      <figcaption>Plate I · The Founding Arms · retained in the Royal Archive</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">The visual constitution</p>
+      <h2>Not a mark.<br /><span class="script">An entire apparatus.</span></h2>
+      <p>The peacock and parrot support the sovereign arms. Standards declare jurisdiction. Seals confer appointments. Botanical ornament dignifies the paperwork. Every device now serves a defined office within the Realm.</p>
+      <a href="/realm.html">Examine the full system →</a>
+    </div>
+  </section>
+
   <section class="proclamation">
     <p>Let it be known throughout the feed</p>
     <h2>Low Value Content is the threshold.<br /><i>Engagement is the Crown.</i></h2>
     <p>The House converts attention into impressions, impressions into influence, and influence into proof of institutional importance. Public Notices retain their independence; the court assumes jurisdiction where classification, rank, and ceremony are required.</p>
+  </section>
+
+  <section class="house-council section">
+    <div class="section-heading"><p class="eyebrow">The branches of government</p><h2>The Six Great Houses</h2><p>One Crown, six portfolios, and a complete division of responsibility for producing, circulating, measuring, and postponing the content of the Realm.</p></div>
+    <div class="house-badges">
+      {houses.map((house) => <a href="/realm.html#great-houses"><img src={`/assets/house-${house.id}.svg`} alt={`Badge of the ${house.name}`} /><span>{String(house.precedence).padStart(2, "0")}</span><h3>{house.name}</h3><p>{house.standing}</p></a>)}
+    </div>
   </section>
 
   <section class="section featured">
@@ -85,6 +105,22 @@ const featured = [products[0], products[2], products[6], products[8]];
   .proclamation h2 { font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 400; margin: 1.5rem auto; }
   .proclamation h2 i { font-family: var(--script); color: var(--crimson); font-weight: 400; }
   .proclamation > p:last-child { max-width: 700px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
+  .founding-plate { display: grid; grid-template-columns: 1.25fr .75fr; background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .founding-plate figure { margin: 0; padding: clamp(1rem, 3vw, 3rem); background: #091522; }
+  .founding-plate img { width: 100%; height: 100%; max-height: 760px; object-fit: contain; }
+  .founding-plate figcaption { margin-top: .75rem; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .founding-plate > div { align-self: center; padding: clamp(3rem, 7vw, 7rem); }
+  .founding-plate .eyebrow, .founding-plate a { color: var(--gold-light); }
+  .founding-plate h2 { margin: .75rem 0 1.5rem; font-size: clamp(3rem, 5vw, 5.8rem); line-height: .95; font-weight: 400; }
+  .founding-plate p:not(.eyebrow) { color: rgba(244,238,223,.75); font-size: 1.1rem; line-height: 1.7; }
+  .founding-plate a { font: 700 .7rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+  .house-council { background: #e8deca; }
+  .house-badges { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .house-badges a { min-width: 0; padding: 1.5rem 1rem 1.75rem; color: inherit; text-align: center; text-decoration: none; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .house-badges img { width: min(180px, 100%); margin: auto; }
+  .house-badges span { display: block; color: var(--crimson); font: 700 .6rem var(--sans); letter-spacing: .14em; }
+  .house-badges h3 { min-height: 2.2em; margin: .45rem 0; font-size: 1.35rem; font-weight: 400; line-height: 1.1; }
+  .house-badges p { margin: 0; color: #68707a; font: .62rem/1.5 var(--sans); text-transform: uppercase; letter-spacing: .08em; }
   .featured { background: #efe7d7; }
   .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
   .current-reign { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); color: var(--ivory); }
@@ -112,6 +148,6 @@ const featured = [products[0], products[2], products[6], products[8]];
   .entry .script { color: var(--gold-light); font-size: 2rem; }
   .entry h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); line-height: 1; font-weight: 400; }
   .entry p:not(.script) { font-size: 1.1rem; line-height: 1.7; }
-  @media (max-width: 980px) { .hero, .current-reign, .entry { grid-template-columns: minmax(0, 1fr); } .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
-  @media (max-width: 600px) { .product-grid, .observance { grid-template-columns: minmax(0, 1fr); } .hero-copy::before { inset: 1rem; } .current-reign > div, .entry > div { padding-inline: 1.25rem; } .current-reign blockquote { padding-inline: 1.25rem; } .certificate { margin-inline: 1.25rem; padding-inline: 1.25rem; outline-offset: -18px; } }
+  @media (max-width: 980px) { .hero, .founding-plate, .current-reign, .entry { grid-template-columns: minmax(0, 1fr); } .house-badges { grid-template-columns: repeat(3, 1fr); } .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
+  @media (max-width: 600px) { .house-badges { grid-template-columns: repeat(2, 1fr); } .product-grid, .observance { grid-template-columns: minmax(0, 1fr); } .hero-copy::before { inset: 1rem; } .current-reign > div, .entry > div { padding-inline: 1.25rem; } .current-reign blockquote { padding-inline: 1.25rem; } .certificate { margin-inline: 1.25rem; padding-inline: 1.25rem; outline-offset: -18px; } }
 </style>

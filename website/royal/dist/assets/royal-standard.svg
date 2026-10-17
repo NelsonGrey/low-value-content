@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img">
+  <title>The Royal Standard of Engagement</title><desc>A navy and gold standard bearing the six house charges beneath the crown.</desc>
+  <path fill="#0d1c2b" stroke="#c6a15b" stroke-width="12" d="M12 12h1176v476H12z"/><path fill="#852e34" d="M594 18h12v464h-12z"/>
+  <g fill="none" stroke="#c6a15b" stroke-width="12"><circle cx="600" cy="250" r="125"/><circle cx="600" cy="250" r="104" stroke-width="4"/><path d="m519 159 22-55 37 35 22-66 22 66 37-35 22 55z" fill="#c6a15b" stroke="#0d1c2b" stroke-width="6"/><path d="m545 250 38 34 72-80" stroke="#f4eedf" stroke-width="20"/></g>
+  <g fill="#c6a15b">
+    <path d="m158 115 26 26-26 26-10-10 16-16-16-16z"/><rect x="190" y="151" width="38" height="12"/>
+    <path d="M337 100h14v70l21-21 10 10-38 38-38-38 10-10 21 21z"/>
+    <path d="m1004 100 16 31 34 16-34 16-16 31-16-31-34-16 34-16z"/>
+    <path d="M144 350h18v42h-18zm30-28h18v70h-18zm30-18h18v88h-18z"/>
+    <path d="M321 331h72v51h-72z"/><path d="m321 333 36 27 36-27" fill="none" stroke="#0d1c2b" stroke-width="8"/>
+    <path d="M1004 319a50 50 0 1 1-45 29l17 8a31 31 0 1 0 28-18z"/>
+  </g>
+  <path d="M34 34h1132v432H34z" fill="none" stroke="#f4eedf" stroke-width="2"/>
+</svg>

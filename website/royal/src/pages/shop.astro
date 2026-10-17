@@ -45,6 +45,11 @@ const collections = [
       <b>Multa edita, pauca dicta</b>
     </aside>
   </header>
+  <section class="ceremonial-library">
+    <div class="library-copy"><p class="eyebrow">The material culture of the Realm</p><h2>The system beyond<br /><span class="script">the printed garment.</span></h2><p>Apparel carries the declaration. Boxes, tissue, appointment cards, wax seals, standards, and provenance records carry the institution. These founding studies establish the materials from which each House and Order now draws.</p></div>
+    <figure class="apparel-study"><img src="/assets/royal-house/02-apparel-collection.png" alt="Founding apparel study with formal heraldic garments in a ceremonial interior" /><figcaption>Plate III · Studies for the Royal Wardrobe</figcaption></figure>
+    <figure class="packaging-study"><img src="/assets/royal-house/03-ceremonial-packaging.png" alt="Ceremonial packaging study with box, tissue, seal, appointment card, and standard" /><figcaption>Plate IV · Ceremonial issue materials</figcaption></figure>
+  </section>
   <section class="garment-system">
     <article><span>01</span><p class="eyebrow">Launch garment</p><h2>Front only.</h2><p>The saying and artwork must earn the shirt without a second print location.</p></article>
     <article><span>02</span><p class="eyebrow">Realm threshold</p><h2>Only with authority.</h2><p>A seal, title, or Latin line appears only where the issue requires formal standing.</p></article>
@@ -89,6 +94,16 @@ const collections = [
   .warrant span { color: rgba(244,238,223,.72); line-height: 1.55; }
   .warrant b { margin-top: 2rem; color: var(--gold-light); font: 400 .66rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
   .catalog { background: var(--paper); scroll-margin-top: 2rem; }
+  .ceremonial-library { display: grid; grid-template-columns: 1fr 1fr; background: #e8deca; border-bottom: 4px double var(--gold); }
+  .ceremonial-library > * { min-width: 0; }
+  .library-copy { padding: clamp(4rem, 7vw, 8rem); align-self: center; }
+  .library-copy h2 { margin: .7rem 0 1.5rem; font-size: clamp(3rem, 5.5vw, 6rem); line-height: .94; font-weight: 400; }
+  .library-copy > p:last-child { max-width: 680px; font-size: 1.08rem; line-height: 1.75; }
+  .ceremonial-library figure { margin: 0; padding: 1rem; background: var(--navy); }
+  .ceremonial-library img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; object-position: center; }
+  .ceremonial-library figcaption { padding: .75rem .25rem 0; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .packaging-study { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr); max-height: 820px; border-top: 1px solid var(--gold); }
+  .packaging-study img { object-fit: contain; background: #e4dccb; }
   .catalog.court-and-orders { background: #eee5d4; }
   .catalog.royal-commemorations { background: #e7ddc9; }
   .garment-system { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--crimson); color: white; }
@@ -122,6 +137,6 @@ const collections = [
   .regalia-note h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
   .regalia-note p:not(.script) { max-width: 700px; color: rgba(244,238,223,.75); font-size: 1.08rem; line-height: 1.7; }
   .regalia-note a { color: var(--gold-light); font: 700 .72rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
-  @media (max-width: 900px) { .page-hero, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system, .collection-index { grid-template-columns: 1fr; } .garment-system article, .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
+  @media (max-width: 900px) { .page-hero, .ceremonial-library, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .packaging-study { grid-column: auto; } .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system, .collection-index { grid-template-columns: 1fr; } .garment-system article, .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
   @media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
 </style>

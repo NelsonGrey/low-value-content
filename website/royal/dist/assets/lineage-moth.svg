@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <title>Device of Moth I</title><desc>A ceremonial moth rendered in the colors of the realm.</desc>
+  <circle cx="120" cy="120" r="112" fill="#0d1c2b" stroke="#c6a15b" stroke-width="8"/>
+  <path d="M116 82C80 48 41 65 53 110c8 30 34 43 59 29m12-57c36-34 75-17 63 28-8 30-34 43-59 29M117 78l3-22 3 22m-12 9-14-17m32 17 14-17" fill="#852e34" stroke="#f4eedf" stroke-width="5"/>
+  <path d="M120 83c-13 20-14 62 0 93 14-31 13-73 0-93z" fill="#c6a15b" stroke="#f4eedf" stroke-width="4"/>
+  <circle cx="83" cy="103" r="9" fill="#c6a15b"/><circle cx="157" cy="103" r="9" fill="#c6a15b"/>
+</svg>

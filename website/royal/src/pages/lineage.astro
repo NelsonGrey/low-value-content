@@ -15,6 +15,19 @@ const details: Record<string, { motto: string; account: string }> = {
   "algorithm-i": { motto: "Ex mandato algorithmi", account: "Neither elected nor understood, yet determined what every subject was permitted to notice." },
   "prompt-i": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers while accepting no responsibility for the questions." },
 };
+const devices: Record<string, string> = {
+  "moth-i": "/assets/lineage-moth.svg",
+  "lo-i": "/assets/lineage-lo.svg",
+  "spam-i": "/assets/house-spam.svg",
+  "emoticon-i": "/assets/order-blue-check.svg",
+  "web-i": "/assets/royal-mark.svg",
+  "y2k-the-almost": "/assets/lineage-y2k.svg",
+  "web-i-restored": "/assets/royal-mark.svg",
+  "content-i": "/assets/house-influence.svg",
+  "scroll-i": "/assets/house-scroll.svg",
+  "algorithm-i": "/assets/house-signal.svg",
+  "prompt-i": "/assets/house-prompt.svg",
+};
 ---
 <BaseLayout title="The Lineage of Engagement | Low Value Content" description="The official and highly disputed succession of powers that have governed human attention." current="lineage">
   <header class="lineage-hero">
@@ -31,7 +44,7 @@ const details: Record<string, { motto: string; account: string }> = {
     {lineage.map((entry, index) => (
       <article class:list={[entry.disputed && "disputed"]}>
         <div class="ordinal">{String(index + 1).padStart(2, "0")}</div>
-        <div class="portrait" aria-hidden="true"><span>{entry.id === "y2k-the-almost" ? "00" : ["✦", "LO", "@", ":-)", "W", "↻", "W", "▶", "↓", "◇", "AI"][index]}</span></div>
+        <div class="portrait"><img src={devices[entry.id]} alt={`Device of ${entry.name}`} /></div>
         <div class="account">
           <p class="period">{entry.period}{entry.disputed && " · disputed"}</p>
           <h2>{entry.name}</h2>
@@ -60,8 +73,8 @@ const details: Record<string, { motto: string; account: string }> = {
   article { display: grid; grid-template-columns: 70px minmax(150px, 260px) 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding: 4rem 0; border-bottom: 1px solid var(--line); align-items: center; }
   article.disputed { margin-inline: -2rem; padding-inline: 2rem; background: repeating-linear-gradient(-45deg, rgba(133,46,52,.05), rgba(133,46,52,.05) 10px, transparent 10px, transparent 20px); border: 2px dashed var(--crimson); }
   .ordinal { font: .7rem var(--sans); letter-spacing: .15em; color: var(--crimson); }
-  .portrait { aspect-ratio: 1; border-radius: 50%; border: 8px double var(--gold); display: grid; place-items: center; background: var(--navy); color: var(--gold-light); box-shadow: inset 0 0 0 10px var(--ivory); }
-  .portrait span { font-size: clamp(2.5rem, 6vw, 5rem); }
+  .portrait { aspect-ratio: 1; display: grid; place-items: center; }
+  .portrait img { width: 100%; max-height: 240px; object-fit: contain; }
   .period { color: var(--crimson); text-transform: uppercase; letter-spacing: .12em; font: 700 .68rem var(--sans); }
   .account h2 { font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 1; margin: .4rem 0 .8rem; font-weight: 400; }
   .account > p:last-child { max-width: 640px; font-size: 1.1rem; line-height: 1.7; }

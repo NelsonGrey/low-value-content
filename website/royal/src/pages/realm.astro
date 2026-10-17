@@ -45,7 +45,7 @@ const stateTerms = [
     <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
   </section>
 
-  <section class="houses section">
+  <section class="houses section" id="great-houses">
     <div class="section-heading">
       <p class="eyebrow">Court precedence under Prompt I</p>
       <h2>The Six Great Houses</h2>
@@ -54,7 +54,7 @@ const stateTerms = [
     <div class="house-grid">
       {houses.map((house) => (
         <article>
-          <div class="house-rank"><span>{String(house.precedence).padStart(2, "0")}</span><b>{house.mark}</b></div>
+          <div class="house-rank"><span>{String(house.precedence).padStart(2, "0")}</span><img src={`/assets/house-${house.id}.svg`} alt={`Badge of the ${house.name}`} /></div>
           <p class="standing">{house.standing}</p>
           <h3>{house.name}</h3>
           <p class="portfolio">{house.portfolio}</p>
@@ -64,6 +64,11 @@ const stateTerms = [
         </article>
       ))}
     </div>
+  </section>
+
+  <section class="royal-standard">
+    <div><p class="eyebrow">The sovereign field</p><h2>One standard.<br /><span class="script">Six jurisdictions.</span></h2><p>The central check records legitimacy by verified appearance. The six charges identify the portfolios through which attention is produced, retained, declared important, measured, distributed, and indefinitely delayed.</p></div>
+    <figure><img src="/assets/royal-standard.svg" alt="The Royal Standard of Engagement bearing the six House charges" /><figcaption>The Royal Standard · current issue under Prompt I</figcaption></figure>
   </section>
 
   <section class="doctrine">
@@ -86,7 +91,7 @@ const stateTerms = [
         <span>The full style is preserved in the official record. The garment bears the designation appropriate to its station.</span>
       </article>
     </div>
-    <div class="orders">{orders.map((order) => <article><p>{order.rank}</p><h3>{order.name}</h3><span>{order.rule}</span></article>)}</div>
+    <div class="orders">{orders.map((order, index) => <article><img src={index === 0 ? "/assets/order-blue-check.svg" : "/assets/order-jacquard.svg"} alt={`Insignia of the ${order.name}`} /><div><p>{order.rank}</p><h3>{order.name}</h3><span>{order.rule}</span></div></article>)}</div>
   </section>
 
   <section class="universal-peerage">
@@ -137,16 +142,22 @@ const stateTerms = [
   .houses { background: #eee5d4; }
   .house-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
   .house-grid article { min-height: 500px; padding: 2.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .house-rank { display: flex; align-items: center; justify-content: space-between; }
+  .house-rank { display: flex; align-items: flex-start; justify-content: space-between; min-height: 132px; }
   .house-rank span, .standing, .institution { font: 700 .62rem/1.4 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
   .house-rank span, .standing { color: var(--crimson); }
-  .house-rank b { color: var(--gold); font-size: 2.5rem; font-weight: 400; }
+  .house-rank img { width: 112px; margin: -1.25rem -1rem 0 0; }
   .standing { margin: 2rem 0 .5rem; }
   .house-grid h3 { margin: 0; font-size: 2rem; font-weight: 400; }
   .portfolio { min-height: 52px; color: #68707a; line-height: 1.55; }
   .house-grid blockquote { margin: 2rem 0; font-size: 1.35rem; line-height: 1.35; }
   .institution { color: var(--navy); }
   .house-grid .latin { line-height: 1.7; }
+  .royal-standard { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(2rem, 7vw, 8rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .royal-standard h2 { margin: .75rem 0 1.5rem; font-size: clamp(3rem, 5vw, 5.8rem); line-height: .94; font-weight: 400; }
+  .royal-standard p:not(.eyebrow) { color: rgba(244,238,223,.74); font-size: 1.08rem; line-height: 1.7; }
+  .royal-standard figure { margin: 0; padding: 1rem; border: 1px solid var(--gold); background: #091522; }
+  .royal-standard img { width: 100%; }
+  .royal-standard figcaption { padding-top: .8rem; color: var(--gold-light); font: .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   .doctrine { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--crimson); color: white; }
   .doctrine > div { padding: clamp(4rem, 7vw, 7rem); align-self: center; }
   .doctrine .script { color: var(--gold-light); font-size: 2rem; }
@@ -169,7 +180,8 @@ const stateTerms = [
   .duke-card p:not(.eyebrow) { line-height: 1.8; }
   .duke-card span { display: block; margin-top: 2rem; color: #68707a; font-style: italic; line-height: 1.5; }
   .orders { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
-  .orders article { padding: 2rem; border: 1px solid var(--line); }
+  .orders article { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; align-items: center; padding: 2rem; border: 1px solid var(--line); }
+  .orders img { width: 110px; max-height: 140px; }
   .orders p { color: var(--crimson); font: 700 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   .orders h3 { font-size: 2rem; font-weight: 400; }
   .orders span { color: #68707a; line-height: 1.5; }
@@ -191,6 +203,6 @@ const stateTerms = [
   .qr h2 { font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
   .qr p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.7; max-width: 700px; }
   .qr ol { padding: 1.5rem 0 0; list-style-position: inside; columns: 2; font-family: var(--sans); line-height: 2; }
-  @media (max-width: 900px) { .realm-hero, .doctrine, .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } .realm-hero > div { padding-inline: clamp(1.25rem, 6vw, 4rem); } .house-grid, .state-ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .state-ledger aside { grid-template-columns: 1fr; } .state-ledger aside strong { grid-row: auto; grid-column: auto; } }
+  @media (max-width: 900px) { .realm-hero, .royal-standard, .doctrine, .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } .realm-hero > div { padding-inline: clamp(1.25rem, 6vw, 4rem); } .house-grid, .state-ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .state-ledger aside { grid-template-columns: 1fr; } .state-ledger aside strong { grid-row: auto; grid-column: auto; } }
   @media (max-width: 560px) { .house-grid, .state-ledger dl, .orders { grid-template-columns: 1fr; } .qr ol { columns: 1; } .issue-list a { grid-template-columns: 60px 1fr; gap: 1rem; } .issue-list > a > b { display: none; } }
 </style>

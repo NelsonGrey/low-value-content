@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img">
+  <title>Badge of the House of Scroll</title><desc>A crowned heraldic badge bearing an endless descending feed.</desc>
+  <g fill="none" stroke="#c6a15b" stroke-width="4">
+    <circle cx="120" cy="158" r="91" fill="#0d1c2b"/><circle cx="120" cy="158" r="80" stroke-width="1.5"/>
+    <path d="M67 74 82 42l22 22 16-38 16 38 22-22 15 32z" fill="#c6a15b" stroke="#0d1c2b" stroke-width="3"/>
+    <path d="M48 213c-25-25-30-62-13-94M192 213c25-25 30-62 13-94"/>
+    <path d="M45 189 27 179m24-7-20-4m28-12-21-14M195 189l18-10m-24-7 20-4m-28-12 21-14" stroke-width="2"/>
+    <path d="M120 91 174 112v50c0 38-26 61-54 74-28-13-54-36-54-74v-50z" fill="#f4eedf"/>
+    <path d="M91 133h58M91 153h58M91 173h58M120 126v70m-17-18 17 18 17-18" stroke="#852e34" stroke-width="7"/>
+  </g>
+</svg>

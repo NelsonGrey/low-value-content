@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img">
+  <title>Badge of the House of Influence</title><desc>A crowned heraldic badge bearing a radiant faceted star.</desc>
+  <g fill="none" stroke="#c6a15b" stroke-width="4">
+    <circle cx="120" cy="158" r="91" fill="#0d1c2b"/><circle cx="120" cy="158" r="80" stroke-width="1.5"/>
+    <path d="M67 74 82 42l22 22 16-38 16 38 22-22 15 32z" fill="#c6a15b" stroke="#0d1c2b" stroke-width="3"/>
+    <path d="M48 213c-25-25-30-62-13-94M192 213c25-25 30-62 13-94"/>
+    <path d="M45 189 27 179m24-7-20-4m28-12-21-14M195 189l18-10m-24-7 20-4m-28-12 21-14" stroke-width="2"/>
+    <path d="M120 91 174 112v50c0 38-26 61-54 74-28-13-54-36-54-74v-50z" fill="#f4eedf"/>
+    <path d="m120 120 13 25 27 13-27 13-13 25-13-25-27-13 27-13z" fill="#852e34" stroke="#852e34"/><path d="M120 108v16m0 68v16M70 158h16m68 0h16" stroke="#852e34" stroke-width="5"/>
+  </g>
+</svg>
