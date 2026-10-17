@@ -6,7 +6,7 @@ const channels = [
   { id: "linkedin", icon: "/assets/icon-linkedin.svg", label: "Selective / LinkedIn", title: "Work is content.", copy: "Thought leadership, productivity theater, creator economics, and corporate performance—used carefully enough not to become the thing being mocked.", status: "The court page opens when it has something to say." },
 ];
 ---
-<BaseLayout title="Social Proclamations | Low Value Content" description="The planned official social channels for Low Value Content and La Maison de Valebasse.">
+<BaseLayout title="Social Proclamations | Low Value Content" description="The planned official social channels for Low Value Content and the Royal House of Engagement.">
   <header class="social-hero"><p class="script">Follow the Court</p><h1>We regret to inform you<br />there will be more content.</h1><p>Official profiles will open with Drop 001. Until verified destinations are approved, this page records where the brand intends to publish—and why.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
   <section class="channels">
     {channels.map((channel) => <article id={channel.id}><img src={channel.icon} alt="" /><p class="eyebrow">{channel.label}</p><h2>{channel.title}</h2><p>{channel.copy}</p><blockquote>{channel.status}</blockquote></article>)}

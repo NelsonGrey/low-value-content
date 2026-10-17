@@ -1,6 +1,6 @@
 # Master Apparel and Asset Manifest
 
-The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json). It preserves the original apparel work while connecting it to La Maison de Valebasse, the future storefront, QR experiences, Stripe checkout, and Printify fulfillment.
+The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json). It preserves the original apparel work while connecting it to the Royal House of Engagement, the future storefront, QR experiences, Stripe checkout, and Printify fulfillment. The governing fiction and naming rules live in the [`Constitution of Engagement`](../brand/CONSTITUTION_OF_ENGAGEMENT.md).
 
 ## What remains unchanged
 
@@ -10,30 +10,30 @@ The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json).
 - Existing product IDs and commerce mappings are preserved.
 - Stripe remains the checkout provider; Printify remains the production and fulfillment provider.
 
-## What Valebasse adds
+## What the House adds
 
-**Low Value Content** is the portal, purveyor, owned domain, and maker's mark. **La Maison de Valebasse** is the ruling dynasty inside the fictional realm. Valebasse adds provenance, lineage, houses, honors, Latin mottos, annual observances, commemorative editions, and QR experiences without requiring every shirt to use heraldic artwork.
+**Low Value Content** is the portal, purveyor, owned domain, and maker's mark. **The Royal House of Engagement** is the ruling institution inside the fictional realm. It adds provenance, lineage, Great Houses, peerage, orders, Latin mottos, annual observances, commemorative editions, and QR experiences without requiring every shirt to use heraldic artwork.
 
-The formal court style is **La Très Ancienne et Sérénissime Maison de Valebasse**. The apocryphal founder is **Count Lowvale of the Net**: `LOW VALUE CONTENT` can be rearranged exactly as `COUNT LOWVALE + NET`.
+The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the joke; Latin supplies ceremonial texture and is always translated in public-facing copy.
 
 ## Ten-product launch matrix
 
-| # | Product | Treatment | Creative status | Commerce status |
-|---:|---|---|---|---|
-| 1 | Please validate me algorithmically. | Formal Petition for Algorithmic Recognition | Editable SVG | Test sellable: White / L |
-| 2 | Thought leader. No thoughts required. | Official Court Appointment | Editable SVG | Planned |
-| 3 | I’m not doomscrolling. I’m doing market research. | Royal Institute of Digital Inquiry | Editable SVG | Planned |
-| 4 | Content creator. Meaning pending. | Unfinished Illuminated Proclamation | Editable SVG | Planned |
-| 5 | My authentic self is currently being monetized. | Royal Portrait and Auction Inventory | Editable SVG | Planned |
-| 6 | I optimized this shirt for engagement. | Office of Engagement Performance Report | Editable SVG | Planned |
-| 7 | Much Published, Little Said | Full Peacock-and-Parrot Arms | Concept mockup | Planned |
-| 8 | Order of the Blue Check | Medal for Distinguished Personal Visibility | Concept mockup | Planned |
-| 9 | The End of the World Has Been Postponed | Y2K Millennium Interregnum | Copy ready for design | Planned |
-| 10 | Patron Saint of Debugging | Feast of Saint Moth | Copy ready for design | Planned |
+| # | Product | Launch collection | Realm intensity | Creative status | Commerce status |
+|---:|---|---|---|---|---|
+| 1 | Please validate me algorithmically. | Public Notices | None | Editable SVG | Test sellable: White / L |
+| 2 | Thought leader. No thoughts required. | Court & Orders | Moderate | Editable SVG | Planned |
+| 3 | I’m not doomscrolling. I’m doing market research. | Court & Orders | Moderate | Editable SVG | Planned |
+| 4 | Content creator. Meaning pending. | Public Notices | None | Editable SVG | Planned |
+| 5 | My authentic self is currently being monetized. | Public Notices | None | Editable SVG | Planned |
+| 6 | I optimized this shirt for engagement. | Public Notices | Light | Editable SVG | Planned |
+| 7 | Much Published, Little Said | Court & Orders | Full | Editable two-ink SVG | Planned |
+| 8 | Order of the Blue Check | Court & Orders | Full | Editable two-ink SVG | Planned |
+| 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Editable two-ink SVG | Planned |
+| 10 | Patron Saint of Debugging | Royal Commemorations | Full | Editable two-ink SVG | Planned |
 
-The ten garments are now one wardrobe rather than two adjacent concepts. Every shirt follows the same constitution: the original joke remains dominant on the front; a restrained House seal appears on the left sleeve; and the upper back carries the issuing office, reign, ceremonial title, and permanent QR route. The realm extends the joke without making the joke harder to read.
+The ten garments are one wardrobe with three degrees of ceremony. **Public Notices** are direct editorial observations and do not need a House. **Court & Orders** use appointments, institutions, medals, seals, or sovereign heraldry where those devices improve the joke. **Royal Commemorations** use lineage and calendar history as the premise itself.
 
-The first six retain their original editable artwork and gain Valebasse through placement and provenance. The final four use heraldry, honors, lineage, and calendar observances as the joke itself. `LO I, the Interrupted` remains a strong future commemorative design rather than displacing an existing launch shirt.
+Every launch garment is front-only. The saying and artwork must succeed in one print area. Houses, offices, reigns, ceremonial titles, and QR stories begin on the website, hangtags, or packaging inserts; sleeve marks, back prints, and garment QR seals remain optional future premium treatments after physical testing. `LO I, the Interrupted` remains a strong future commemorative design rather than displacing an existing launch shirt.
 
 ## Status meanings
 
@@ -45,12 +45,24 @@ The first six retain their original editable artwork and gain Valebasse through 
 
 ## Storefront contract
 
-Every product page must combine two layers:
+Every product page must combine two layers in proportion to the design:
 
 1. Clear commercial information: actual photography, sizes, colors, price, fit, care, shipping, returns, and an honest availability state.
-2. Fictional provenance: family, house, reign, Latin motto, proclamation, QR route, and ceremonial title.
+2. Optional fictional provenance: collection, Realm intensity, and—only when relevant—House, reign, Latin motto, proclamation, QR route, or ceremonial title.
 
 The commercial layer always wins when clarity and satire conflict. Prices and Printify IDs remain server-authoritative in `functions/src/catalog.ts`.
+
+The exact `frontArtDisplay` image is the storefront authority for what will print. Older generated shirt scenes and front/back studies are retained as concept references, but they are not shown as alternate product artwork because they may contain details that are absent from the launch print file.
+
+## Commerce ownership
+
+- **Lowvaluecontent.com** owns product discovery, size and quantity selection, and any future multi-item cart.
+- **Stripe Checkout** hosts the secure payment step after the site requests a server-validated Checkout Session.
+- **Printify** receives a paid order from the backend and handles production and fulfillment; it does not own the customer-facing cart.
+
+The current storefront is a direct-buy test flow, not a persistent shopping cart: one product selection is sent to Stripe Checkout. The backend can validate multiple order lines, but a multi-item cart interface has not yet been implemented or approved for launch.
+
+The complete ten-design vector set and its provider preflight gates are documented in [`realm-front-art-production-notes.md`](realm-front-art-production-notes.md).
 
 ## Validation
 

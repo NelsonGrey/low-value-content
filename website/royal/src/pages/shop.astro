@@ -1,31 +1,96 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
-import { products } from "../data";
+import { courtAndOrders, publicNotices, royalCommemorations } from "../data";
+
+const collections = [
+  {
+    number: "I",
+    id: "public-notices",
+    name: "Public Notices",
+    line: "The joke stands alone.",
+    description: "Direct observations in contemporary editorial form. The court may archive them, but it does not need to govern them.",
+    products: publicNotices,
+  },
+  {
+    number: "II",
+    id: "court-and-orders",
+    name: "Court & Orders",
+    line: "Status deserves a seal.",
+    description: "Appointments, institutes, medals, and sovereign arms where fictional authority makes the observation sharper.",
+    products: courtAndOrders,
+  },
+  {
+    number: "III",
+    id: "royal-commemorations",
+    name: "Royal Commemorations",
+    line: "History, needlessly observed.",
+    description: "Dated editions drawn from the Lineage and Royal Calendar, with the Realm operating at full ceremonial volume.",
+    products: royalCommemorations,
+  },
+];
 ---
-<BaseLayout title="The Regalia of Valebasse | Low Value Content" description="Explore the founding Low Value Content apparel collection and ceremonial editions issued by La Maison de Valebasse." current="shop">
+<BaseLayout title="The Regalia of Engagement | Low Value Content" description="Explore the founding Low Value Content apparel collection and ceremonial editions issued by the Royal House of Engagement." current="shop">
   <header class="page-hero">
-    <p class="script">The Royal Wardrobe</p>
-    <h1>Ten decrees.<br />Worn as evidence.</h1>
-    <p>Every original observation is now an official issue of Valebasse: a readable joke on the front, an issuing House at the sleeve, and a needlessly elaborate provenance waiting behind the seal.</p>
+    <div>
+      <p class="script">The Royal Wardrobe</p>
+      <h1>Regalia,<br />with restraint.</h1>
+      <p>Ten launch designs, organized by how much ceremony the joke can actually support. Some belong to the Crown. Some merely pass through customs.</p>
+    </div>
+    <aside class="warrant" aria-label="Founding regalia warrant">
+      <img src="/assets/royal-mark.svg" alt="" />
+      <p>Founding warrant · Drop 001</p>
+      <strong>Front-only by decree</strong>
+      <span>One print area. One complete joke. No compulsory mythology.</span>
+      <b>Multa edita, pauca dicta</b>
+    </aside>
   </header>
   <section class="garment-system">
-    <article><span>01</span><p class="eyebrow">The front</p><h2>The joke.</h2><p>Large, immediate, and complete without explanation.</p></article>
-    <article><span>02</span><p class="eyebrow">The sleeve</p><h2>The House.</h2><p>A small seal identifies the fictional authority responsible.</p></article>
-    <article><span>03</span><p class="eyebrow">The back</p><h2>The realm.</h2><p>Office, reign, ceremonial title, and QR provenance continue the story.</p></article>
+    <article><span>01</span><p class="eyebrow">Launch garment</p><h2>Front only.</h2><p>The saying and artwork must earn the shirt without a second print location.</p></article>
+    <article><span>02</span><p class="eyebrow">Realm threshold</p><h2>Only if funnier.</h2><p>A seal, title, or Latin line appears only when it improves the front.</p></article>
+    <article><span>03</span><p class="eyebrow">Extended world</p><h2>Off the garment.</h2><p>Lineage, provenance, QR stories, and titles live online or in packaging first.</p></article>
   </section>
-  <section class="section catalog">
-    <div class="section-heading"><p class="eyebrow">The founding wardrobe</p><h2>One collection.<br /><span class="script">Ten official issues.</span></h2><p>The original sayings, royal arms, honors, and commemorations now share one system of Houses, offices, reigns, and titles.</p></div>
-    <div class="product-grid">{products.map((product) => <ProductCard product={product} />)}</div>
+  <section class="artwork-plate">
+    <div>
+      <p class="eyebrow">Plate II · The complete front-art system</p>
+      <h2>Ten jokes.<br /><span class="script">Three levels of ceremony.</span></h2>
+      <p>This is the working print family: six editorial observations, two courtly distinctions, and two royal commemorations. Every composition is transparent, front-only, and restricted to two printed colors.</p>
+    </div>
+    <figure><img src="/assets/front-art-founding-ten.png" alt="The ten Low Value Content launch designs shown as a unified front-art system" /><figcaption>Drop 001 · Front-art proof sheet · Print-oriented prototypes</figcaption></figure>
+  </section>
+  <nav class="collection-index" aria-label="Regalia collections">
+    {collections.map((collection) => <a href={`#${collection.id}`}><span>{collection.number}</span><b>{collection.name}</b><small>{collection.products.length} issues</small></a>)}
+  </nav>
+  {collections.map((collection) => (
+    <section class:list={["section", "catalog", collection.id]} id={collection.id}>
+      <div class="collection-heading">
+        <p class="collection-number">Collection {collection.number}</p>
+        <div><p class="eyebrow">{collection.name}</p><h2>{collection.line}</h2><p>{collection.description}</p></div>
+      </div>
+      <div class="product-grid">{collection.products.map((product) => <ProductCard product={product} />)}</div>
+    </section>
+  ))}
+  <section class="regalia-note">
+    <img src="/assets/royal-arms.svg" alt="Arms of the Royal House of Engagement" />
+    <div><p class="script">A note from the wardrobe</p><h2>The House is an amplifier.<br />It is not a dress code.</h2><p>The peacock, parrot, notification shield, Wi-Fi crown, seals, standards, Latin, and calligraphy form a shared ceremonial library. They are reserved for the designs that become more absurd—not merely more decorated—when used.</p><a href="/realm.html">Consult the constitution →</a></div>
   </section>
 </BaseLayout>
 
 <style>
-  .page-hero { padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
+  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
   .page-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
   .page-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
-  .page-hero > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
-  .catalog { background: var(--paper); }
+  .page-hero > div > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
+  .warrant { padding: clamp(2rem, 4vw, 4rem); text-align: center; border: 4px double var(--gold); background: rgba(255,255,255,.035); }
+  .warrant img { width: 78px; margin: 0 auto 1.5rem; }
+  .warrant p, .warrant span, .warrant b { display: block; }
+  .warrant p { color: var(--gold-light); font: 700 .62rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .warrant strong { display: block; margin: 1.2rem 0 .75rem; font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; }
+  .warrant span { color: rgba(244,238,223,.72); line-height: 1.55; }
+  .warrant b { margin-top: 2rem; color: var(--gold-light); font: 400 .66rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .catalog { background: var(--paper); scroll-margin-top: 2rem; }
+  .catalog.court-and-orders { background: #eee5d4; }
+  .catalog.royal-commemorations { background: #e7ddc9; }
   .garment-system { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--crimson); color: white; }
   .garment-system article { padding: clamp(2.5rem, 5vw, 5rem); border-right: 1px solid rgba(255,255,255,.2); }
   .garment-system article:last-child { border-right: 0; }
@@ -33,7 +98,30 @@ import { products } from "../data";
   .garment-system .eyebrow { color: var(--gold-light); margin-top: 2.5rem; }
   .garment-system h2 { margin: .5rem 0; font-size: clamp(2.3rem, 4vw, 4rem); font-weight: 400; }
   .garment-system p:last-child { color: rgba(255,255,255,.72); line-height: 1.6; }
+  .artwork-plate { padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: #e8deca; border-bottom: 1px solid var(--gold); }
+  .artwork-plate > div { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 7vw, 8rem); align-items: end; margin-bottom: 3rem; }
+  .artwork-plate h2 { margin: .5rem 0 0; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .94; font-weight: 400; }
+  .artwork-plate > div > p:last-child { margin: 0; font-size: 1.08rem; line-height: 1.75; }
+  .artwork-plate figure { margin: 0; padding: clamp(.5rem, 1vw, 1rem); background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 24px 60px rgba(13,28,43,.14); }
+  .artwork-plate img { width: 100%; }
+  .artwork-plate figcaption { padding: .85rem .35rem 0; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .collection-index { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .collection-index a { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; padding: 1.5rem clamp(1.25rem, 4vw, 3rem); text-decoration: none; border-right: 1px solid var(--line); }
+  .collection-index a:last-child { border-right: 0; }
+  .collection-index span { grid-row: 1 / 3; align-self: center; color: var(--crimson); font: 400 2rem/1 var(--serif); }
+  .collection-index b { font-size: 1rem; font-weight: 400; }
+  .collection-index small { color: #68707a; font: .62rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  .collection-heading { display: grid; grid-template-columns: .25fr 1fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; margin-bottom: 3rem; }
+  .collection-number { margin: .15rem 0; color: var(--crimson); font: 700 .68rem/1.4 var(--sans); letter-spacing: .15em; text-transform: uppercase; }
+  .collection-heading h2 { margin: .4rem 0 1rem; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .92; font-weight: 400; }
+  .collection-heading > div > p:last-child { max-width: 650px; font-size: 1.08rem; line-height: 1.7; }
   .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 1.5rem; }
-  @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system { grid-template-columns: 1fr; } .garment-system article { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } }
+  .regalia-note { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .regalia-note img { width: min(520px, 100%); margin: auto; }
+  .regalia-note .script { color: var(--gold-light); font-size: 2rem; }
+  .regalia-note h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
+  .regalia-note p:not(.script) { max-width: 700px; color: rgba(244,238,223,.75); font-size: 1.08rem; line-height: 1.7; }
+  .regalia-note a { color: var(--gold-light); font: 700 .72rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  @media (max-width: 900px) { .page-hero, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system, .collection-index { grid-template-columns: 1fr; } .garment-system article, .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
   @media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
 </style>

@@ -4,20 +4,20 @@ import ProductCard from "../components/ProductCard.astro";
 import { products } from "../data";
 const featured = [products[0], products[2], products[6], products[8]];
 ---
-<BaseLayout title="La Maison de Valebasse | Presented by Low Value Content" description="Enter the Most Ancient and Most Serene House of Valebasse: satirical regalia, disputed lineage, and ceremonial internet history, presented by Low Value Content.">
+<BaseLayout title="The Royal House of Engagement | Presented by Low Value Content" description="Enter the Royal House of Engagement: satirical regalia, disputed lineage, and ceremonial government for the attention economy, presented by Low Value Content.">
   <section class="hero">
     <div class="hero-copy">
       <p class="portal-mark">Low Value Content presents</p>
       <p class="script">By Royal Decree</p>
       <h1>Official regalia for the <em>attention economy.</em></h1>
-      <p class="hero-dek">Beyond this threshold lies Valebasse: an ancient digital realm established several minutes ago and governed entirely by precedent we just invented.</p>
+      <p class="hero-dek">Beyond this threshold, attention is a natural resource, impressions are currency, and Engagement rules by the divine authority of an algorithm nobody can explain.</p>
       <div class="hero-actions"><a class="button" href="/shop.html">Inspect the regalia</a><a href="/lineage.html">View the succession →</a></div>
       <p class="latin">Multa edita, pauca dicta · Much published, little said</p>
     </div>
     <div class="hero-art">
       <div class="arms-panel">
-        <p>La Très Ancienne et Sérénissime</p>
-        <h2>Maison de Valebasse</h2>
+        <p>The Most Ancient and Most Serene</p>
+        <h2>Royal House of Engagement</h2>
         <img src="/assets/royal-arms.svg" alt="Fictional heraldic arms with a notification shield and Wi-Fi crown" />
         <p class="arms-motto">Multa edita, pauca dicta</p>
         <span>By grace of the algorithm · established several minutes ago</span>
@@ -27,18 +27,18 @@ const featured = [products[0], products[2], products[6], products[8]];
 
   <section class="proclamation">
     <p>Let it be known throughout the feed</p>
-    <h2>Low Value Content is the threshold.<br /><i>Valebasse is the world beyond it.</i></h2>
-    <p>The original sayings remain the products. La Maison de Valebasse supplies their authority, lineage, and entirely unnecessary provenance.</p>
+    <h2>Low Value Content is the threshold.<br /><i>Engagement is the Crown.</i></h2>
+    <p>The House converts attention into impressions, impressions into influence, and influence into proof of its own importance. The original sayings remain the products; the court exists only when its machinery makes them funnier.</p>
   </section>
 
   <section class="section featured">
-    <div class="section-heading"><p class="eyebrow">Drop 001 · The founding collection</p><h2>The jokes survived.<br /><span class="script">The institution expanded.</span></h2><p>Ten designs now form one official wardrobe: each with a House, an issuing office, a reign, and an entirely unnecessary title.</p></div>
+    <div class="section-heading"><p class="eyebrow">Drop 001 · The founding collection</p><h2>Three degrees<br /><span class="script">of unnecessary ceremony.</span></h2><p>Public Notices stand outside the court. Court & Orders borrow its seals and appointments. Royal Commemorations surrender completely to lineage, Latin, and disputed history.</p></div>
     <div class="product-grid">{featured.map((product) => <ProductCard product={product} />)}</div>
     <a class="button ghost" href="/shop.html">View all ten designs</a>
   </section>
 
   <section class="current-reign">
-    <div><p class="eyebrow">The present reign</p><h2>Prompt I,<br /><i>the Generative</i></h2><p>His Algorithmic Majesty, sovereign of Valebasse and the Infinite Feed. Produces infinite answers while accepting no responsibility for the questions.</p><p class="latin">Multa generata, pauca dicta</p><a class="button light" href="/lineage.html">Consult the royal lineage</a></div>
+    <div><p class="eyebrow">The present reign</p><h2>Prompt I,<br /><i>the Generative</i></h2><p>His Algorithmic Majesty, sovereign of the Attention Economy and protector of the Infinite Feed. Produces infinite answers while accepting no responsibility for the questions.</p><p class="latin">Multa generata, pauca dicta</p><a class="button light" href="/lineage.html">Consult the royal lineage</a></div>
     <blockquote><span>“</span>Much generated,<br />little said.<span>”</span></blockquote>
   </section>
 
@@ -51,12 +51,12 @@ const featured = [products[0], products[2], products[6], products[8]];
   <section class="entry">
     <div class="certificate" aria-label="Example ceremonial title certificate">
       <img src="/assets/royal-mark.svg" alt="" />
-      <p>Under the Great Seal of Valebasse</p>
+      <p>Under the Great Seal of Engagement</p>
       <h3>Baron of Buffering</h3>
       <span>Keeper of Three Unread Notifications</span>
       <b>Ex mandato algorithmi</b>
     </div>
-    <div><p class="script">Enter the Realm</p><h2>Every garment has a history.<br />Every subject deserves a meaningless title.</h2><p>Future garment QR codes will reveal proclamations, historical context, houses, honors, and the wearer’s ceremonial place in the realm.</p><a class="button light" href="/realm.html">Learn the formalities</a></div>
+    <div><p class="script">Enter the Realm</p><h2>Some garments enter the court.<br />Others remain public notices.</h2><p>The saying leads, every launch design is front-only, and the House appears only when its ceremony makes the joke sharper. Online provenance and future QR stories extend selected issues without crowding the shirt.</p><a class="button light" href="/realm.html">Read the constitution</a></div>
   </section>
 </BaseLayout>
 

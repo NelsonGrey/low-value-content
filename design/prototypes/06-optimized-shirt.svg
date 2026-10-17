@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
-  <g fill="#111111" font-family="Arial, Helvetica, sans-serif">
-    <text x="650" y="1780" font-size="185" letter-spacing="16">EXPERIMENT 01</text>
-    <text x="650" y="2310" font-size="390" font-weight="800">I OPTIMIZED</text>
-    <text x="650" y="2740" font-size="390" font-weight="800">THIS SHIRT FOR</text>
-    <text x="650" y="3170" font-size="390" font-weight="800">ENGAGEMENT.</text>
-    <line x1="650" y1="3430" x2="3850" y2="3430" stroke="#111111" stroke-width="25"/>
-    <text x="650" y="3760" font-size="130" letter-spacing="14">RESULT: STATISTICALLY INSIGNIFICANT</text>
+  <title>I Optimized This Shirt for Engagement — two-ink front artwork</title>
+  <desc>Independent experiment report with statistically insignificant result and a restrained issue mark.</desc>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="620" y="1250" fill="#D9483B" font-size="120" font-weight="700" letter-spacing="30">EXPERIMENT 01 · ISSUE 006</text>
+    <text x="620" y="2030" fill="#171713" font-size="410" font-weight="800">I OPTIMIZED</text><text x="620" y="2500" fill="#171713" font-size="410" font-weight="800">THIS SHIRT FOR</text><text x="620" y="2970" fill="#171713" font-size="410" font-weight="800">ENGAGEMENT.</text>
+    <line x1="620" y1="3300" x2="3880" y2="3300" stroke="#171713" stroke-width="30"/>
+    <text x="620" y="3690" fill="#171713" font-size="145" letter-spacing="18">RESULT: STATISTICALLY INSIGNIFICANT</text>
+    <g fill="none" stroke="#D9483B" stroke-width="28"><path d="M620 4070h3260"/><path d="M620 4070v-260M1270 4070v-90M1920 4070v-155M2570 4070v-45M3220 4070v-110M3880 4070v-70"/></g>
+    <text x="620" y="4450" fill="#D9483B" font-size="92" letter-spacing="26">ENGAGEMENT LIFT · WITHIN MARGIN OF ERROR</text>
   </g>
 </svg>

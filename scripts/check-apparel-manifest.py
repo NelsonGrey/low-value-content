@@ -35,12 +35,20 @@ def main() -> int:
     houses = {entry["name"] for entry in manifest.get("houses", [])}
     sovereign_house = manifest.get("brand", {}).get("brandWorld")
     qr_routes: set[str] = set()
+    launch_collections = {"Public Notices", "Court & Orders", "Royal Commemorations"}
+    realm_intensities = {"none", "light", "moderate", "full"}
 
     for product in products:
         label = product.get("id", "<missing-id>")
-        for field in ("primaryCopy", "originalCollection", "family", "royalTreatment", "house", "qrRoute", "creativeStatus", "commerceStatus"):
+        for field in ("primaryCopy", "originalCollection", "launchCollection", "realmIntensity", "regaliaRole", "family", "royalTreatment", "house", "qrRoute", "creativeStatus", "commerceStatus"):
             if not product.get(field):
                 errors.append(f"{label}: missing {field}")
+        if product.get("launchCollection") not in launch_collections:
+            errors.append(f"{label}: unknown launchCollection {product.get('launchCollection')!r}")
+        if product.get("realmIntensity") not in realm_intensities:
+            errors.append(f"{label}: unknown realmIntensity {product.get('realmIntensity')!r}")
+        if product.get("frontOnlyLaunch") is not True:
+            errors.append(f"{label}: launch garment must remain front-only")
         if product.get("family") not in families:
             errors.append(f"{label}: unknown family {product.get('family')!r}")
         if product.get("reign") not in reigns:

@@ -16,12 +16,17 @@ const details: Record<string, { motto: string; account: string }> = {
   "prompt-i": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers while accepting no responsibility for the questions." },
 };
 ---
-<BaseLayout title="The Lineage of Valebasse | Low Value Content" description="The official and highly disputed sovereign lineage of La Maison de Valebasse." current="lineage">
+<BaseLayout title="The Lineage of Engagement | Low Value Content" description="The official and highly disputed succession of powers that have governed human attention." current="lineage">
   <header class="lineage-hero">
-    <p class="script">La Maison de Valebasse</p>
+    <p class="script">The Royal House of Engagement</p>
     <h1>An unbroken line<br />of interruptions.</h1>
-    <p>The court claims descent from Count Lowvale of the Net, whose name is concealed within the letters of Low Value Content. From the first actual moth to the present generative reign, these are the rulers under whom progressively more content was produced.</p>
+    <p>This is not a family tree. The Crown passes to whichever technology, habit, or system most successfully commands public attention. From the first actual moth to the generative reign, these are the powers under whom progressively more content was produced.</p>
   </header>
+  <section class="law-of-succession">
+    <p class="eyebrow">The law of succession</p>
+    <h2>Authority follows attention.</h2>
+    <p>A reign begins when a new power changes what the realm notices, produces, or cannot stop checking. The Great Houses endure beneath the Crown; the sovereign changes whenever the machinery of attention does.</p>
+  </section>
   <section class="timeline">
     {lineage.map((entry, index) => (
       <article class:list={[entry.disputed && "disputed"]}>
@@ -49,6 +54,9 @@ const details: Record<string, { motto: string; account: string }> = {
   .lineage-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; margin: 1rem 0 2rem; }
   .lineage-hero > p:last-child { max-width: 720px; font-size: 1.2rem; line-height: 1.7; }
   .timeline { padding: 3rem clamp(1.25rem, 8vw, 9rem) 7rem; background: var(--paper); }
+  .law-of-succession { display: grid; grid-template-columns: .35fr .8fr 1fr; gap: clamp(1.5rem, 5vw, 6rem); align-items: start; padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 8vw, 9rem); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .law-of-succession h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .95; font-weight: 400; }
+  .law-of-succession > p:last-child { margin: 0; max-width: 680px; font-size: 1.1rem; line-height: 1.75; }
   article { display: grid; grid-template-columns: 70px minmax(150px, 260px) 1fr; gap: clamp(1.5rem, 4vw, 5rem); padding: 4rem 0; border-bottom: 1px solid var(--line); align-items: center; }
   article.disputed { margin-inline: -2rem; padding-inline: 2rem; background: repeating-linear-gradient(-45deg, rgba(133,46,52,.05), rgba(133,46,52,.05) 10px, transparent 10px, transparent 20px); border: 2px dashed var(--crimson); }
   .ordinal { font: .7rem var(--sans); letter-spacing: .15em; color: var(--crimson); }
@@ -60,6 +68,6 @@ const details: Record<string, { motto: string; account: string }> = {
   .succession-note { padding: 7rem 1.5rem; text-align: center; background: var(--navy); color: white; }
   .succession-note .script { color: var(--gold-light); font-size: 2rem; }
   .succession-note h2 { font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; margin: 1rem 0 2rem; }
-  @media (max-width: 700px) { article { grid-template-columns: 40px 100px 1fr; gap: 1rem; } .account h2 { font-size: 2rem; } }
-  @media (max-width: 520px) { article { grid-template-columns: 1fr; } .ordinal { display: none; } .portrait { width: 130px; } }
+  @media (max-width: 700px) { .law-of-succession { grid-template-columns: 1fr; } article { grid-template-columns: 40px 100px 1fr; gap: 1rem; } .account h2 { font-size: 2rem; } }
+  @media (max-width: 520px) { .lineage-hero h1 { font-size: 3.2rem; } article { grid-template-columns: 1fr; } article.disputed { margin-inline: 0; padding-inline: 1rem; } .ordinal { display: none; } .portrait { width: 130px; } }
 </style>

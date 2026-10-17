@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { lineage, products, productImage, type Product } from "../../data";
+import { hasRealmProvenance, lineage, products, productImage, type Product } from "../../data";
 
 export function getStaticPaths() {
   return products.map((product) => ({ params: { id: product.id }, props: { product } }));
@@ -8,21 +8,36 @@ export function getStaticPaths() {
 
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
-const rawDesignStudy = "designStudy" in product.assets ? product.assets.designStudy : undefined;
-const designStudy = rawDesignStudy ? `/assets/${rawDesignStudy.split("/").pop()}` : null;
+const rawFrontArt = "frontArtDisplay" in product.assets ? product.assets.frontArtDisplay : undefined;
+const frontArt = rawFrontArt ? `/assets/${rawFrontArt.split("/").pop()}` : null;
 const canBuy = product.commerceStatus === "test-sellable" && product.commerce.catalogKey;
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
+const realmConnected = hasRealmProvenance(product);
+const isCommemoration = product.launchCollection === "Royal Commemorations";
+const artSpecs: Record<string, { garment: string; inks: string }> = {
+  "validate": { garment: "Warm white", inks: "Editorial black + notification red" },
+  "thought-leader": { garment: "Warm white", inks: "Archive navy + antique gold" },
+  "doomscrolling": { garment: "Oxblood", inks: "Warm ivory + antique gold" },
+  "content-creator": { garment: "Warm white", inks: "Editorial black + status red" },
+  "authentic-self": { garment: "Warm white", inks: "Editorial black + status red" },
+  "optimized-shirt": { garment: "Warm white", inks: "Editorial black + status red" },
+  "much-published": { garment: "Deep navy", inks: "Warm ivory + antique gold" },
+  "order-blue-check": { garment: "Washed black", inks: "Appointment blue + antique gold" },
+  "y2k-the-almost": { garment: "Oxblood", inks: "Warm ivory + millennium gold" },
+  "saint-moth": { garment: "Warm ivory", inks: "Archive navy + antique gold" },
+};
+const artSpec = artSpecs[product.id];
 ---
 <BaseLayout title={`${product.primaryCopy} | Low Value Content`} description={`${product.primaryCopy} — ${product.royalTreatment}. A Low Value Content apparel concept.`} current="shop">
   <article class="product-page">
-    <div class:list={["product-visual", !image && "typographic"]}>
-      {image ? <img src={image} alt={`${product.primaryCopy} apparel concept`} /> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
+    <div class:list={["product-visual", `art-${product.id}`, !image && "typographic"]}>
+      {image ? <><img src={image} alt={`Exact front artwork for ${product.primaryCopy}`} /><span class="visual-label">Exact launch artwork · front print</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
     </div>
     <div class="product-details">
-      <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.originalCollection}</p>
+      <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
       <h1>{product.primaryCopy}</h1>
       <p class="price">$32 <span>planned retail</span></p>
-      <p class="treatment">Issued as <b>{product.royalTreatment}</b> during the reign of <b>{reignName}</b>.</p>
+      <p class="treatment">{product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
         <form class="buy-form" data-product={product.commerce.catalogKey} data-color="white">
@@ -35,21 +50,34 @@ const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? p
         <div class="development-notice"><b>In development</b><p>This concept is not yet available for purchase. Production artwork, garment selection, sampling, and Printify variants remain to be approved.</p></div>
       )}
       <dl>
-        <div><dt>House</dt><dd>{product.house}</dd></div>
-        <div><dt>Issuing office</dt><dd>{product.realmIssue.office}</dd></div>
-        <div><dt>Title conveyed</dt><dd>{product.realmIssue.wearerTitle}</dd></div>
-        <div><dt>Family</dt><dd>{product.family.replaceAll("-", " ")}</dd></div>
-        <div><dt>QR destination</dt><dd>{product.qrRoute}</dd></div>
+        <div><dt>Collection</dt><dd>{product.launchCollection}</dd></div>
+        <div><dt>Launch print</dt><dd>Front only</dd></div>
+        <div><dt>Realm intensity</dt><dd>{product.realmIntensity}</dd></div>
+        {realmConnected && <div><dt>House</dt><dd>{product.house}</dd></div>}
+        {realmConnected && <div><dt>{isCommemoration ? "Observed under" : "Archival reign"}</dt><dd>{reignName}</dd></div>}
         <div><dt>Creative status</dt><dd>{product.creativeStatus.replaceAll("-", " ")}</dd></div>
       </dl>
-      <section class="proclamation"><p class="eyebrow">By authority of {product.house}</p><blockquote>{product.realmIssue.proclamation}</blockquote><p class="title-line">The wearer is therefore styled <b>{product.realmIssue.wearerTitle}</b>.</p></section>
-      <section class="provenance"><p class="script">The Garment Constitution</p><h2>A complete joke in front. A needlessly elaborate institution behind it.</h2><ol><li><b>Front:</b> the original saying remains dominant.</li><li><b>Sleeve:</b> the issuing House receives a restrained seal.</li><li><b>Upper back:</b> office, reign, title, and permanent QR route.</li></ol></section>
+      {realmConnected ? (
+        <section class="proclamation"><p class="eyebrow">{isCommemoration ? "From the Royal Archive" : `By authority of ${product.house}`}</p><blockquote>{product.realmIssue.proclamation}</blockquote><p class="title-line">Online provenance: <b>{product.realmIssue.office}</b> · <b>{product.realmIssue.wearerTitle}</b>.</p></section>
+      ) : (
+        <section class="independent-note"><p class="eyebrow">Outside the court</p><h2>No title. No House. No supporting mythology required.</h2><p>The Realm may catalogue this observation, but the garment remains an independent Low Value Content notice.</p></section>
+      )}
+      <section class="provenance"><p class="script">The Launch Constitution</p><h2>The joke must survive on the front alone.</h2><ol><li><b>One print area:</b> production starts front-only.</li><li><b>Selective ceremony:</b> seals, Latin, and heraldry appear only when they sharpen the idea.</li><li><b>Extended provenance:</b> QR stories, titles, and lineage begin online or in packaging—not as compulsory garment decoration.</li></ol></section>
     </div>
   </article>
-  {designStudy && (
-    <section class="design-study">
-      <div><p class="eyebrow">Realm merge · Design study V3</p><h2>The observation in front.<br /><span class="script">The institution behind it.</span></h2><p>This restrained front-and-back study is the working bridge between the original Low Value Content design language and the ceremonial world of Valebasse. It is a direction for refinement, not production-ready art.</p></div>
-      <img src={designStudy} alt={`Front and back Realm integration study for ${product.primaryCopy}`} />
+  {frontArt && artSpec && (
+    <section class="front-art-section">
+      <div class="front-art-copy">
+        <p class="eyebrow">Front-art prototype · Two inks</p>
+        <h2>The regalia,<br /><span class="script">reduced to what prints.</span></h2>
+        <p>This transparent 4500 × 5400 vector composition translates the Realm concept into one centered front print. It is editable artwork—not a flattened mockup—and deliberately excludes sleeve decoration, back copy, and a garment QR code.</p>
+        <dl>
+          <div><dt>Garment direction</dt><dd>{artSpec.garment}</dd></div>
+          <div><dt>Ink direction</dt><dd>{artSpec.inks}</dd></div>
+          <div><dt>Print locations</dt><dd>One · front only</dd></div>
+          <div><dt>Next gate</dt><dd>Outline type, size to provider template, separate inks, sample and wash test</dd></div>
+        </dl>
+      </div>
     </section>
   )}
   {canBuy && <script is:inline src="/assets/checkout.js"></script>}
@@ -57,8 +85,9 @@ const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? p
 
 <style>
   .product-page { display: grid; grid-template-columns: 1.08fr .92fr; min-height: calc(100vh - 92px); }
-  .product-visual { background: #e8dfce; padding: clamp(2rem, 5vw, 6rem); display: grid; place-items: center; }
+  .product-visual { position: relative; background: #e8dfce; padding: clamp(2rem, 5vw, 6rem); display: grid; place-items: center; }
   .product-visual img { width: 100%; max-height: 76vh; object-fit: contain; }
+  .visual-label { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); padding: .55rem .7rem; background: rgba(244,238,223,.94); color: var(--navy); font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .product-visual.typographic > div { border: 14px double var(--navy); width: min(640px, 100%); aspect-ratio: 4 / 5; display: flex; padding: 3rem; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--ivory); }
   .product-visual.typographic p { color: var(--gold); text-transform: uppercase; letter-spacing: .15em; }
   .product-visual.typographic h1 { color: var(--navy); font-size: clamp(2.5rem, 5vw, 5rem); text-transform: uppercase; line-height: .96; }
@@ -82,15 +111,22 @@ const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? p
   .proclamation { margin-top: 3rem; padding: 2rem; border: 1px solid var(--gold); background: #eee5d4; }
   .proclamation blockquote { margin: 1rem 0; font-size: 1.35rem; line-height: 1.45; }
   .title-line { margin-bottom: 0; font-size: .9rem; line-height: 1.6; }
+  .independent-note { margin-top: 3rem; padding: 2rem; border-left: 4px solid var(--crimson); background: #eee5d4; }
+  .independent-note h2 { margin: .5rem 0 1rem; font-size: 2rem; font-weight: 400; line-height: 1.1; }
+  .independent-note p:last-child { margin-bottom: 0; line-height: 1.65; }
   .provenance { margin-top: 3rem; }
   .provenance h2 { font-size: 2rem; font-weight: 400; line-height: 1.1; }
   .provenance ol { padding-left: 1.2rem; line-height: 1.8; }
-  .design-study { padding: clamp(4rem, 8vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
-  .design-study > div { display: grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; align-items: end; margin-bottom: 2.5rem; }
-  .design-study h2 { margin: .8rem 0 0; font-size: clamp(2.8rem, 5vw, 5.5rem); line-height: .96; font-weight: 400; }
-  .design-study h2 span { color: var(--gold-light); }
-  .design-study > div > p:last-child { margin: 0; color: rgba(244,238,223,.72); font-size: 1.05rem; line-height: 1.7; }
-  .design-study img { display: block; width: 100%; border: 1px solid rgba(218,191,131,.45); }
+  .front-art-section { background: var(--ivory); border-top: 4px double var(--gold); }
+  .art-much-published { background: #10263a; }
+  .art-order-blue-check { background: #151515; }
+  .art-y2k-the-almost { background: #7d2734; }
+  .art-saint-moth { background: #f1e8d2; }
+  .art-validate, .art-thought-leader, .art-content-creator, .art-authentic-self, .art-optimized-shirt { background: #f4eedf; }
+  .art-doomscrolling { background: #7d2734; }
+  .front-art-copy { max-width: 980px; padding: clamp(3rem, 7vw, 7rem); margin: auto; }
+  .front-art-copy h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 5vw, 5.5rem); line-height: .94; font-weight: 400; }
+  .front-art-copy > p:not(.eyebrow) { max-width: 680px; font-size: 1.08rem; line-height: 1.7; }
+  .front-art-copy dl { margin-top: 2.5rem; }
   @media (max-width: 900px) { .product-page { grid-template-columns: 1fr; } }
-  @media (max-width: 760px) { .design-study > div { grid-template-columns: 1fr; } }
 </style>

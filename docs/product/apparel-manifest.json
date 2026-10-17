@@ -3,9 +3,9 @@
   "status": "working",
   "brand": {
     "name": "Low Value Content",
-    "brandWorld": "La Maison de Valebasse",
-    "brandWorldFormal": "La Très Ancienne et Sérénissime Maison de Valebasse",
-    "brandArchitecture": "Low Value Content is the portal, purveyor, and maker's mark; Valebasse is the fictional realm and ruling house.",
+    "brandWorld": "The Royal House of Engagement",
+    "brandWorldFormal": "The Most Ancient and Most Serene Royal House of Engagement",
+    "brandArchitecture": "Low Value Content is the consumer brand, portal, purveyor, and maker's mark. The Royal House of Engagement is the fictional ruling institution of the Attention Economy.",
     "brandLine": "Official regalia for the attention economy.",
     "primaryMotto": {
       "english": "Much Published, Little Said",
@@ -15,7 +15,8 @@
   "sourceOfTruth": {
     "sayings": "docs/product/concept-catalog.md",
     "commerce": "functions/src/catalog.ts",
-    "storefront": "website/dist/shirts.html",
+    "storefront": "website/royal/src/pages/shop.astro",
+    "printArtwork": "design/prototypes/",
     "brandGuide": "docs/brand/LOW_VALUE_CONTENT_GUIDE.md"
   },
   "productFamilies": [
@@ -46,19 +47,64 @@
     }
   ],
   "garmentSystem": {
-    "front": "The original joke remains the dominant, distance-readable artwork.",
-    "leftSleeve": "A restrained seal identifies the issuing House or sovereign office.",
-    "upperBack": "A small issue line records the office, reign, and ceremonial title.",
-    "qr": "A permanent owned-domain QR seal continues the joke through provenance, history, and an optional title.",
-    "makerMark": "Low Value Content appears as the small maker's mark, never as the ruling identity."
+    "launchFormat": "Every launch garment uses one front print area.",
+    "front": "The original joke remains the dominant, distance-readable artwork and must work without secondary decoration.",
+    "realmThreshold": "Heraldry, seals, Latin, and script appear only when they make the design funnier or establish a Realm-native issue.",
+    "extendedStory": "Houses, offices, reigns, titles, lineage, and QR provenance begin on product pages, hangtags, or packaging inserts.",
+    "premiumOption": "Sleeve marks, upper-back issue lines, and durable garment QR seals are reserved for tested future premium editions.",
+    "makerMark": "Low Value Content appears as the quiet maker's mark, never as the ruling identity.",
+    "storefrontDisplay": "The exact frontArtDisplay asset is the authoritative image throughout the storefront. Atmospheric shirt images and design studies are preserved only as concept references."
+  },
+  "constitution": {
+    "premise": "The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into proof of its own importance.",
+    "crown": "Engagement",
+    "naturalResource": "Attention",
+    "currency": "Impressions",
+    "aristocracy": "Influence",
+    "industry": "Content",
+    "providence": "The Algorithm",
+    "officialConsequence": "Sustained Cognitive Engagement",
+    "unofficialConsequence": "Brain rot",
+    "principles": [
+      "Attention is the natural resource.",
+      "Engagement is political legitimacy.",
+      "Impressions are the currency.",
+      "Influence is the aristocracy.",
+      "Content is the principal industry.",
+      "The Algorithm is divine providence.",
+      "Metrics are presumed accurate until they become inconvenient.",
+      "Brain rot is officially classified as sustained cognitive engagement.",
+      "No one is permitted to admit that nobody is paying attention.",
+      "More content is the official remedy for too much content."
+    ],
+    "hierarchy": [
+      { "rank": 1, "name": "The Crown", "function": "Embodies the reigning source of authority." },
+      { "rank": 2, "name": "The Royal House", "function": "Claims permanent ownership of engagement." },
+      { "rank": 3, "name": "The Great Houses", "function": "Compete to produce, distribute, measure, and certify importance." },
+      { "rank": 4, "name": "Ministries and Institutes", "function": "Convert absurd behavior into respectable policy and research." },
+      { "rank": 5, "name": "The Peerage", "function": "Awards territorial titles for dubious distinction." },
+      { "rank": 6, "name": "The Orders", "function": "Grant cross-House honors for conspicuous achievement." },
+      { "rank": 7, "name": "The Subjects", "function": "Follow, create, refresh, and occasionally attempt to log off." }
+    ]
   },
   "houses": [
-    { "name": "House of Scroll", "latin": "Semper Deorsum", "line": "Forever downward.", "mark": "↓" },
-    { "name": "House of Signal", "latin": "Coniunctus, Non Accessibilis", "line": "Connected, yet unreachable.", "mark": "⌁" },
-    { "name": "House of Spam", "latin": "Ad Omnes Aeque", "line": "To all subjects equally.", "mark": "@" },
-    { "name": "House of Prompt", "latin": "Pete Sine Intellegendo", "line": "Ask without understanding.", "mark": "?" },
-    { "name": "House of Buffer", "latin": "Tandem, Fortasse", "line": "Eventually, perhaps.", "mark": "◌" },
-    { "name": "House of Influence", "latin": "Notus Quia Notus", "line": "Known for being known.", "mark": "◇" }
+    { "id": "prompt", "precedence": 1, "name": "House of Prompt", "portfolio": "AI generation, synthetic expertise, and automated creativity", "contradiction": "The less one understands, the more confidently one produces.", "institution": "Office of Synthetic Understanding", "latin": "Pete Sine Intellegendo", "line": "Ask without understanding.", "mark": "?", "standing": "Produces the content." },
+    { "id": "scroll", "precedence": 2, "name": "House of Scroll", "portfolio": "Attention, compulsion, and infinite feeds", "contradiction": "Nothing is important, but everything must be seen.", "institution": "Royal Institute of Digital Inquiry", "latin": "Semper Deorsum", "line": "Forever downward.", "mark": "↓", "standing": "Keeps it moving." },
+    { "id": "influence", "precedence": 3, "name": "House of Influence", "portfolio": "Status, visibility, personal brands, and public importance", "contradiction": "Everyone is an influencer, leaving no one available to be influenced.", "institution": "Chancery of Public Importance", "latin": "Notus Quia Notus", "line": "Known for being known.", "mark": "◇", "standing": "Declares it important." },
+    { "id": "signal", "precedence": 4, "name": "House of Signal", "portfolio": "Analytics, dashboards, attribution, and evidence", "contradiction": "Every decision is data-driven; the data is adjusted to support the decision.", "institution": "Ministry of Measurable Outcomes", "latin": "Quod Mensuratur Verum Est", "line": "What is measured is true.", "mark": "⌁", "standing": "Proves it worked." },
+    { "id": "spam", "precedence": 5, "name": "House of Spam", "portfolio": "Scale, distribution, repetition, and unsolicited reach", "contradiction": "If nobody responded, the audience was insufficiently large.", "institution": "Ministry of Universal Correspondence", "latin": "Ad Omnes Aeque", "line": "To all subjects equally.", "mark": "@", "standing": "Sends it to everyone else." },
+    { "id": "buffer", "precedence": 6, "name": "House of Buffer", "portfolio": "Delay, loading, postponement, and technical excuses", "contradiction": "Everything is imminent; nothing is presently available.", "institution": "Commission for Imminent Availability", "latin": "Tandem, Fortasse", "line": "Eventually, perhaps.", "mark": "◌", "standing": "Precedence pending." }
+  ],
+  "peerage": [
+    { "rank": 1, "title": "Duke or Duchess", "rule": "Platform-scale compulsions and major cultural pathologies", "example": "Duke of Doomscrolling", "house": "House of Scroll" },
+    { "rank": 2, "title": "Marquess or Marchioness", "rule": "Unstable boundaries between online and offline, truth and opinion, or human and synthetic", "example": "Marquess of Context Collapse", "house": "House of Signal" },
+    { "rank": 3, "title": "Count or Countess", "rule": "Metrics, followers, views, impressions, and anything misleadingly counted", "example": "Countess of Selective Analytics", "house": "House of Signal" },
+    { "rank": 4, "title": "Viscount or Viscountess", "rule": "Secondary statistics and derivative status", "example": "Viscount of Verified Reach", "house": "House of Influence" },
+    { "rank": 5, "title": "Baron or Baroness", "rule": "Everyday digital indignities and minor technical failures", "example": "Baron of Buffering", "house": "House of Buffer" }
+  ],
+  "orders": [
+    { "name": "Order of the Blue Check", "rule": "Cross-House distinction for conspicuous personal visibility", "rank": "Companion" },
+    { "name": "Order of Jacquard", "rule": "Recognition for programmable instructions and ancestral automation", "rank": "Companion" }
   ],
   "lineage": [
     { "id": "moth-i", "name": "Moth I, the Debugger", "period": "1947–1969" },
@@ -98,6 +144,10 @@
       "mockups/royal-house/02-apparel-collection.png",
       "mockups/royal-house/03-ceremonial-packaging.png"
     ],
+    "frontArtSystem": [
+      "design/prototypes/preview-sheet.png",
+      "website/royal/public/assets/front-art-founding-ten.png"
+    ],
     "legacyLogoStudies": [
       "website/dist/assets/logo-01-editorial.svg",
       "website/dist/assets/logo-02-monogram.svg",
@@ -113,6 +163,10 @@
       "id": "validate",
       "primaryCopy": "Please validate me algorithmically.",
       "originalCollection": "Algorithm Anxiety",
+      "launchCollection": "Public Notices",
+      "realmIntensity": "none",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "An independent editorial notice. The algorithm is the subject, not the sovereign.",
       "family": "royal-proclamations",
       "royalTreatment": "Formal Petition for Algorithmic Recognition",
       "house": "House of Influence",
@@ -129,7 +183,8 @@
       "assets": {
         "artwork": "design/prototypes/01-validate-me.svg",
         "artworkPreview": "design/prototypes/previews/01-validate-me.png",
-        "storefrontImage": "website/dist/assets/shirt-01.png"
+        "frontArtDisplay": "website/royal/public/assets/front-art-01-validate-me.png",
+        "conceptMockup": "website/dist/assets/shirt-01.png"
       },
       "commerce": {
         "catalogKey": "validate",
@@ -144,6 +199,10 @@
       "id": "thought-leader",
       "primaryCopy": "Thought leader. No thoughts required.",
       "originalCollection": "Social Media Theater",
+      "launchCollection": "Court & Orders",
+      "realmIntensity": "moderate",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "A court appointment reduced to one restrained seal and an otherwise immediate joke.",
       "family": "royal-proclamations",
       "royalTreatment": "Official Court Appointment",
       "house": "House of Influence",
@@ -160,7 +219,8 @@
       "assets": {
         "artwork": "design/prototypes/02-thought-leader.svg",
         "artworkPreview": "design/prototypes/previews/02-thought-leader.png",
-        "storefrontImage": "website/dist/assets/shirt-02.png"
+        "frontArtDisplay": "website/royal/public/assets/front-art-02-thought-leader.png",
+        "conceptMockup": "website/dist/assets/shirt-02.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -169,6 +229,10 @@
       "id": "doomscrolling",
       "primaryCopy": "I’m not doomscrolling. I’m doing market research.",
       "originalCollection": "Chronically Online",
+      "launchCollection": "Court & Orders",
+      "realmIntensity": "moderate",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "An institutional field uniform with a small House of Scroll endorsement inside the front artwork.",
       "family": "court-uniforms",
       "royalTreatment": "Royal Institute of Digital Inquiry",
       "house": "House of Scroll",
@@ -185,7 +249,8 @@
       "assets": {
         "artwork": "design/prototypes/03-market-research.svg",
         "artworkPreview": "design/prototypes/previews/03-market-research.png",
-        "storefrontImage": "website/dist/assets/shirt-03.png",
+        "frontArtDisplay": "website/royal/public/assets/front-art-03-market-research.png",
+        "conceptMockup": "website/dist/assets/shirt-03.png",
         "designStudy": "website/royal/public/assets/design-study-doomscrolling-v3.png",
         "designStudyPrevious": "website/royal/public/assets/design-study-doomscrolling-v2.png"
       },
@@ -196,6 +261,10 @@
       "id": "content-creator",
       "primaryCopy": "Content creator. Meaning pending.",
       "originalCollection": "Creator Economy",
+      "launchCollection": "Public Notices",
+      "realmIntensity": "none",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "An independent editorial notice whose unfinished status is the entire joke.",
       "family": "royal-proclamations",
       "royalTreatment": "Unfinished Illuminated Proclamation",
       "house": "House of Prompt",
@@ -212,7 +281,8 @@
       "assets": {
         "artwork": "design/prototypes/04-content-creator.svg",
         "artworkPreview": "design/prototypes/previews/04-content-creator.png",
-        "storefrontImage": "website/dist/assets/shirt-04.png"
+        "frontArtDisplay": "website/royal/public/assets/front-art-04-content-creator.png",
+        "conceptMockup": "website/dist/assets/shirt-04.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -221,6 +291,10 @@
       "id": "authentic-self",
       "primaryCopy": "My authentic self is currently being monetized.",
       "originalCollection": "Artificial Authenticity",
+      "launchCollection": "Public Notices",
+      "realmIntensity": "none",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "An independent transactional notice; no heraldry is required on the garment.",
       "family": "royal-proclamations",
       "royalTreatment": "Royal Portrait and Auction Inventory",
       "house": "House of Influence",
@@ -237,7 +311,8 @@
       "assets": {
         "artwork": "design/prototypes/05-authentic-self.svg",
         "artworkPreview": "design/prototypes/previews/05-authentic-self.png",
-        "storefrontImage": "website/dist/assets/shirt-05.png"
+        "frontArtDisplay": "website/royal/public/assets/front-art-05-authentic-self.png",
+        "conceptMockup": "website/dist/assets/shirt-05.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -246,6 +321,10 @@
       "id": "optimized-shirt",
       "primaryCopy": "I optimized this shirt for engagement.",
       "originalCollection": "Algorithm Anxiety",
+      "launchCollection": "Public Notices",
+      "realmIntensity": "light",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "A bureaucratic performance report with at most one quiet issue mark.",
       "family": "court-uniforms",
       "royalTreatment": "Office of Engagement Performance Report",
       "house": "House of Influence",
@@ -262,7 +341,8 @@
       "assets": {
         "artwork": "design/prototypes/06-optimized-shirt.svg",
         "artworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
-        "storefrontImage": "website/dist/assets/shirt-06.png"
+        "frontArtDisplay": "website/royal/public/assets/front-art-06-optimized-shirt.png",
+        "conceptMockup": "website/dist/assets/shirt-06.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -270,23 +350,30 @@
       "position": 7,
       "id": "much-published",
       "primaryCopy": "Much Published, Little Said",
-      "originalCollection": "Maison de Valebasse",
+      "originalCollection": "Royal House of Engagement",
+      "launchCollection": "Court & Orders",
+      "realmIntensity": "full",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "The sovereign arms of Engagement. The motto and heraldry are already the complete joke.",
       "family": "royal-arms",
       "royalTreatment": "Full Peacock-and-Parrot Arms",
-      "house": "La Maison de Valebasse",
+      "house": "The Royal House of Engagement",
       "reign": "prompt-i",
       "latin": "Multa edita, pauca dicta",
       "qrRoute": "/r/much-published",
       "realmIssue": {
         "office": "The Sovereign College of Arms",
         "wearerTitle": "Subject in Excellent Posting",
-        "proclamation": "The full arms of Valebasse, granted for conspicuous publication in the absence of content."
+        "proclamation": "The full arms of Engagement, granted for conspicuous publication in the absence of content."
       },
-      "creativeStatus": "concept-mockup",
+      "creativeStatus": "editable-prototype",
       "commerceStatus": "planned",
       "assets": {
+        "artwork": "design/prototypes/07-much-published.svg",
+        "artworkPreview": "design/prototypes/previews/07-much-published.png",
+        "frontArtDisplay": "website/royal/public/assets/front-art-07-much-published.png",
         "conceptReference": "mockups/royal-house/02-apparel-collection.png",
-        "storefrontImage": "website/royal/public/assets/shirt-07-realm.png"
+        "conceptMockup": "website/royal/public/assets/shirt-07-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -294,7 +381,11 @@
       "position": 8,
       "id": "order-blue-check",
       "primaryCopy": "Order of the Blue Check",
-      "originalCollection": "Maison de Valebasse",
+      "originalCollection": "Royal House of Engagement",
+      "launchCollection": "Court & Orders",
+      "realmIntensity": "full",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "A medal and appointment notice presented as a single ceremonial front print.",
       "family": "orders-and-titles",
       "royalTreatment": "Fictional Medal for Distinguished Personal Visibility",
       "house": "House of Influence",
@@ -306,11 +397,14 @@
         "wearerTitle": "Companion of the Blue Check",
         "proclamation": "A distinction awarded for exceptional visibility and no other confirmed service."
       },
-      "creativeStatus": "concept-mockup",
+      "creativeStatus": "editable-prototype",
       "commerceStatus": "planned",
       "assets": {
+        "artwork": "design/prototypes/08-order-blue-check.svg",
+        "artworkPreview": "design/prototypes/previews/08-order-blue-check.png",
+        "frontArtDisplay": "website/royal/public/assets/front-art-08-order-blue-check.png",
         "conceptReference": "mockups/royal-house/02-apparel-collection.png",
-        "storefrontImage": "website/royal/public/assets/shirt-08-realm.png"
+        "conceptMockup": "website/royal/public/assets/shirt-08-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -319,6 +413,10 @@
       "id": "y2k-the-almost",
       "primaryCopy": "The End of the World Has Been Postponed",
       "originalCollection": "Royal Calendar",
+      "launchCollection": "Royal Commemorations",
+      "realmIntensity": "full",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "A dated commemorative issue for the disputed reign of Y2K, the Almost.",
       "family": "commemorative-editions",
       "royalTreatment": "The Millennium Interregnum",
       "house": "House of Buffer",
@@ -330,10 +428,13 @@
         "wearerTitle": "Survivor of the Millennium Interregnum",
         "proclamation": "Issued in remembrance of the night civilization briefly awaited a formatting error."
       },
-      "creativeStatus": "copy-approved-for-development",
+      "creativeStatus": "editable-prototype",
       "commerceStatus": "planned",
       "assets": {
-        "storefrontImage": "website/royal/public/assets/shirt-09-realm.png"
+        "artwork": "design/prototypes/09-y2k-postponed.svg",
+        "artworkPreview": "design/prototypes/previews/09-y2k-postponed.png",
+        "frontArtDisplay": "website/royal/public/assets/front-art-09-y2k-postponed.png",
+        "conceptMockup": "website/royal/public/assets/shirt-09-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -342,6 +443,10 @@
       "id": "saint-moth",
       "primaryCopy": "Patron Saint of Debugging",
       "originalCollection": "Royal Calendar",
+      "launchCollection": "Royal Commemorations",
+      "realmIntensity": "full",
+      "frontOnlyLaunch": true,
+      "regaliaRole": "A natural-history devotional plate for the Feast of Saint Moth.",
       "family": "commemorative-editions",
       "royalTreatment": "The Feast of Saint Moth",
       "house": "House of Signal",
@@ -353,10 +458,13 @@
         "wearerTitle": "Keeper of the First Actual Bug",
         "proclamation": "A feast-day vestment honoring the creature whose brief technical career became immortal."
       },
-      "creativeStatus": "copy-approved-for-development",
+      "creativeStatus": "editable-prototype",
       "commerceStatus": "planned",
       "assets": {
-        "storefrontImage": "website/royal/public/assets/shirt-10-realm.png"
+        "artwork": "design/prototypes/10-saint-moth.svg",
+        "artworkPreview": "design/prototypes/previews/10-saint-moth.png",
+        "frontArtDisplay": "website/royal/public/assets/front-art-10-saint-moth.png",
+        "conceptMockup": "website/royal/public/assets/shirt-10-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     }

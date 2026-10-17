@@ -1,8 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
-  <g fill="#111111" font-family="Courier New, monospace">
-    <text x="700" y="2400" font-size="335" font-weight="700">CONTENT CREATOR.</text>
-    <text x="700" y="2920" font-size="335" font-weight="700">MEANING PENDING.</text>
-    <rect x="700" y="3200" width="235" height="390"/>
-    <text x="1000" y="3460" font-size="120" letter-spacing="20">PLEASE WAIT</text>
+  <title>Content Creator, Meaning Pending — two-ink front artwork</title>
+  <desc>Independent typewriter-style editorial notice with an unfinished status block.</desc>
+  <g font-family="Courier New, Courier, monospace">
+    <text x="620" y="1680" fill="#171713" font-size="125" letter-spacing="24">DRAFT_00001.TXT</text>
+    <text x="620" y="2380" fill="#171713" font-size="390" font-weight="700">CONTENT CREATOR.</text>
+    <text x="620" y="2870" fill="#171713" font-size="390" font-weight="700">MEANING PENDING.</text>
+    <rect x="620" y="3220" width="3260" height="620" fill="#171713"/><rect x="690" y="3290" width="260" height="480" fill="#D9483B"/>
+    <text x="1110" y="3600" fill="#F4EEDF" font-size="155" letter-spacing="30" data-production="garment-color knockout; not a third ink">PLEASE WAIT</text>
+    <text x="620" y="4230" fill="#D9483B" font-size="105" letter-spacing="24">MEANING WILL BE SUPPLIED AFTER PUBLICATION_</text>
   </g>
 </svg>

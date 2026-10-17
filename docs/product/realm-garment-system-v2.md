@@ -1,13 +1,15 @@
 # Realm Garment System V2
 
+> **Status: archived as a premium-edition exploration.** The launch system is now governed by [`launch-collection-matrix-v3.md`](launch-collection-matrix-v3.md) and the master manifest. All launch garments are front-only; sleeve seals, back prints, and garment QR codes remain optional future treatments after sample and wash testing.
+
 ## The problem this pass addresses
 
-The original six designs are editorial, spare, contemporary, and saying-led. The newer Valebasse work is ornate, heraldic, historical, and object-led. Both are strong, but simply placing them in one catalog does not make them one collection.
+The original six designs are editorial, spare, contemporary, and saying-led. The newer Royal House work is ornate, heraldic, historical, and object-led. Both are strong, but simply placing them in one catalog does not make them one collection.
 
 V2 treats each garment as a two-sided argument:
 
 - **The front is the observation.** It must work immediately as a complete Low Value Content shirt.
-- **The reverse is the institution.** Valebasse supplies the House, office, reign, rank, and absurd provenance.
+- **The reverse is the institution.** The Royal House of Engagement supplies the Great House, office, reign, rank, and absurd provenance.
 - **The sleeve is the bridge.** One compact House seal makes the two faces feel intentionally related.
 - **The maker remains quiet.** Low Value Content appears as the source mark, not the dominant mythology.
 

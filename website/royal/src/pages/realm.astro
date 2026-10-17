@@ -1,101 +1,196 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { houses, products, productHref } from "../data";
+import { constitution, houses, orders, peerage, products, productHref } from "../data";
+
 const realmProductIds = new Set(["thought-leader", "doomscrolling", "much-published", "order-blue-check", "y2k-the-almost", "saint-moth"]);
 const realmProducts = products.filter((product) => realmProductIds.has(product.id));
+const stateTerms = [
+  ["Natural resource", constitution.naturalResource],
+  ["Political legitimacy", constitution.crown],
+  ["Currency", constitution.currency],
+  ["Aristocracy", constitution.aristocracy],
+  ["Principal industry", constitution.industry],
+  ["Divine providence", constitution.providence],
+];
 ---
-<BaseLayout title="The Realm of Valebasse | Low Value Content" description="Explore the houses, honors, titles, and QR experience of the Most Serene House of Valebasse." current="realm">
+<BaseLayout title="The Realm of Engagement | Low Value Content" description="The constitution, Great Houses, peerage, institutions, and official contradictions of the Royal House of Engagement." current="realm">
   <header class="realm-hero">
-    <div><p class="script">Bienvenue à Valebasse</p><h1>The realm behind the regalia.</h1><p>Low Value Content brought you to the threshold. You have now entered Valebasse: a fictional institution devoted to visibility, engagement, and ceremonial irrelevance.</p></div>
-    <div class="realm-arms"><img src="/assets/royal-arms.svg" alt="Fictional arms of La Maison de Valebasse" /><p>La Très Ancienne et Sérénissime Maison de Valebasse</p></div>
+    <div>
+      <p class="script">By Constitutional Error</p>
+      <h1>The government<br />of attention.</h1>
+      <p>{constitution.premise}</p>
+    </div>
+    <div class="realm-arms">
+      <img src="/assets/royal-arms.svg" alt="Fictional arms of the Royal House of Engagement" />
+      <p>The Most Ancient and Most Serene<br /><b>Royal House of Engagement</b></p>
+      <span>Multa edita, pauca dicta</span>
+    </div>
   </header>
-  <section class="section founding-plate">
-    <div class="plate-intro">
-      <div><p class="eyebrow">Plate I · The founding imagery</p><h2>The Realm was fully illustrated before it was properly governed.</h2></div>
-      <p>This original identity plate contains the visual vocabulary of Valebasse: its peacock and parrot supporters, quartered notification shield, algorithmic appointment seal, notification emblem, royal standard, Wi-Fi crown, and ceremonial typography. These elements are a library—not a requirement that every garment display all of them.</p>
+
+  <section class="state-ledger section">
+    <div class="section-heading">
+      <p class="eyebrow">The state at a glance</p>
+      <h2>A complete economy.<br /><span class="script">Almost entirely imaginary.</span></h2>
+      <p>The terms are not interchangeable. Each describes a different part of the machinery that turns human attention into institutional self-importance.</p>
     </div>
-    <figure>
-      <img src="/assets/royal-house/01-brand-identity-board.png" alt="Original Low Value Content and Valebasse identity plate showing heraldic arms, peacock and parrot supporters, notification emblem, algorithmic appointment seal, and royal standard" />
-      <figcaption>The Founding Plate · Original identity study · retained as concept artwork</figcaption>
-    </figure>
-    <div class="plate-uses">
-      <article><span>01</span><h3>The Arms</h3><p>Reserved for the sovereign identity, the Realm, and “Much Published, Little Said.”</p></article>
-      <article><span>02</span><h3>The Seals</h3><p>Selective use for appointments, orders, hangtags, certificates, and small institutional endorsements.</p></article>
-      <article><span>03</span><h3>The Standard</h3><p>Environmental branding, packaging, campaign imagery, and ceremonial web moments—not every shirt.</p></article>
-      <article><span>04</span><h3>The Ornament</h3><p>Borders, rules, corner devices, and typography that can unify quieter designs without adding lore.</p></article>
+    <dl>{stateTerms.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}</dl>
+    <aside><p class="eyebrow">Known outside the court as</p><strong>{constitution.unofficialConsequence}</strong><span>Official designation: {constitution.officialConsequence}</span></aside>
+  </section>
+
+  <section class="hierarchy section">
+    <div class="section-heading">
+      <p class="eyebrow">The constitutional hierarchy</p>
+      <h2>Authority descends.<br /><span class="script">Responsibility does not.</span></h2>
+    </div>
+    <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
+  </section>
+
+  <section class="houses section">
+    <div class="section-heading">
+      <p class="eyebrow">Court precedence under Prompt I</p>
+      <h2>The Six Great Houses</h2>
+      <p>The Houses are constitutionally equal. Their precedence changes with each reign and whenever the dashboard needs to tell a better story.</p>
+    </div>
+    <div class="house-grid">
+      {houses.map((house) => (
+        <article>
+          <div class="house-rank"><span>{String(house.precedence).padStart(2, "0")}</span><b>{house.mark}</b></div>
+          <p class="standing">{house.standing}</p>
+          <h3>{house.name}</h3>
+          <p class="portfolio">{house.portfolio}</p>
+          <blockquote>{house.contradiction}</blockquote>
+          <p class="institution">{house.institution}</p>
+          <p class="latin">{house.latin} · {house.line}</p>
+        </article>
+      ))}
     </div>
   </section>
-  <section class="section houses">
-    <div class="section-heading"><p class="eyebrow">The peerage of Valebasse</p><h2>The Six Houses</h2><p>Every subject belongs somewhere, even when no meaningful distinction can be identified.</p></div>
-    <div class="house-grid">{houses.map((house) => <article><span>{house.mark}</span><h3>{house.name}</h3><p class="latin">{house.latin}</p><p>{house.line}</p></article>)}</div>
+
+  <section class="doctrine">
+    <div><p class="script">The doctrine of convenient evidence</p><h2>All decisions shall be data-driven.</h2><p>All data shall be interpreted in accordance with the decision.</p></div>
+    <ol>{constitution.principles.map((principle, index) => <li><span>{String(index + 1).padStart(2, "0")}</span>{principle}</li>)}</ol>
   </section>
-  <section class="section wardrobe">
-    <div class="section-heading"><p class="eyebrow">The Realm made wearable</p><h2>The official issues</h2><p>These garments naturally belong to the court, its orders, or its commemorative history. The remaining Public Notices retain their independence beyond the palace walls.</p></div>
+
+  <section class="peerage section">
+    <div class="section-heading">
+      <p class="eyebrow">The peerage</p>
+      <h2>A title describes the distinction.<br /><span class="script">A House explains the damage.</span></h2>
+      <p>Institutions provide respectable justification. Orders recognize conspicuous achievement across House boundaries.</p>
+    </div>
+    <div class="peerage-grid">
+      <ol>{peerage.map((rank) => <li><span>{String(rank.rank).padStart(2, "0")}</span><div><h3>{rank.title}</h3><p>{rank.rule}</p><small>{rank.example} · {rank.house}</small></div></li>)}</ol>
+      <article class="duke-card">
+        <p class="eyebrow">Worked example</p>
+        <h3>His Grace,<br />the Duke of Doomscrolling</h3>
+        <p>First Peer of the House of Scroll<br />Fellow of the Royal Institute of Digital Inquiry<br />Companion of the Order of the Blue Check</p>
+        <span>The full style belongs online. The shirt keeps only what improves the joke.</span>
+      </article>
+    </div>
+    <div class="orders">{orders.map((order) => <article><p>{order.rank}</p><h3>{order.name}</h3><span>{order.rule}</span></article>)}</div>
+  </section>
+
+  <section class="universal-peerage">
+    <p class="eyebrow">Current constitutional crisis</p>
+    <h2>The Universal Peerage</h2>
+    <blockquote>Once every subject had acquired influence, the Crown discovered that no uninfluenced population remained.</blockquote>
+    <p>The matter was referred to committee.</p>
+  </section>
+
+  <section class="wardrobe section">
+    <div class="section-heading"><p class="eyebrow">The Realm made wearable</p><h2>The official issues</h2><p>These garments naturally belong to the Crown, a Great House, an Order, or the commemorative record. Public Notices remain independent beyond the palace walls.</p></div>
     <div class="issue-list">{realmProducts.map((product) => <a href={productHref(product)}><span>No. {String(product.position).padStart(2, "0")}</span><div><p>{product.house}</p><h3>{product.primaryCopy}</h3><small>{product.realmIssue.wearerTitle}</small></div><b>View issue →</b></a>)}</div>
   </section>
-  <section class="honors">
-    <div><p class="script">Distinctions of the Realm</p><h2>Honors may be earned through purchase, persistence, or administrative error.</h2></div>
-    <ul>
-      <li><b>Order of Jacquard</b><span>For programmable weaving and other ancestral instructions nobody read</span></li>
-      <li><b>Order of the Blue Check</b><span>Distinguished service to personal visibility</span></li>
-      <li><b>Baron of Buffering</b><span>For patience under uncertain loading conditions</span></li>
-      <li><b>Viscount of Vagueposting</b><span>For saying enough to invite inquiry, but never enough to clarify</span></li>
-      <li><b>Duke of Doomscrolling</b><span>For exhaustive research into the deterioration of everything</span></li>
-    </ul>
-  </section>
+
   <section class="section qr">
     <div class="qr-mark" aria-hidden="true"><span>▦</span></div>
-    <div><p class="eyebrow">The garment continues</p><h2>Scan the seal.<br /><span class="script">Receive almost nothing.</span></h2><p>Each future garment will carry a permanent owned-domain QR route. It will reveal the design’s proclamation, historical context, lineage, house, hidden joke, and optional ceremonial title—before quietly returning to the store.</p><ol><li>Scan the garment</li><li>Read its provenance</li><li>Claim a title</li><li>Share your new lack of authority</li></ol></div>
+    <div><p class="eyebrow">The story continues online</p><h2>Scan the seal.<br /><span class="script">Receive almost nothing.</span></h2><p>Every design has a permanent owned-domain route, while the launch garment remains front-only. Provenance, titles, House affiliation, and constitutional nonsense belong online or in packaging first.</p><ol><li>Scan the issue card</li><li>Read its provenance</li><li>Claim a title</li><li>Share your lack of authority</li></ol></div>
   </section>
 </BaseLayout>
 
 <style>
-  .realm-hero { display: grid; grid-template-columns: .8fr 1.2fr; min-height: 720px; background: var(--navy); color: white; }
-  .realm-hero > div { padding: clamp(4rem, 8vw, 8rem); align-self: center; }
+  .realm-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 720px; background: var(--navy); color: white; }
+  .realm-hero > div { min-width: 0; padding: clamp(4rem, 8vw, 8rem); align-self: center; }
   .realm-hero .script { color: var(--gold-light); font-size: 2rem; }
   .realm-hero h1 { font-size: clamp(4rem, 7vw, 8rem); line-height: .88; font-weight: 400; margin: 1rem 0 2rem; }
-  .realm-hero p:last-child { font-size: 1.15rem; line-height: 1.7; }
-  .realm-arms { display: grid; place-items: center; align-content: center; padding: clamp(3rem, 7vw, 7rem); background: radial-gradient(circle at center, var(--navy-2), #08131e 72%); border-left: 1px solid var(--line); }
-  .realm-arms img { width: min(700px, 100%); max-height: 650px; }
-  .realm-arms p { color: var(--gold-light); text-transform: uppercase; letter-spacing: .18em; font-size: .68rem; }
-  .founding-plate { background: #e8deca; border-top: 4px double var(--gold); border-bottom: 1px solid var(--gold); }
-  .plate-intro { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 7vw, 8rem); align-items: end; margin-bottom: 3rem; }
-  .plate-intro h2 { margin: .5rem 0 0; max-width: 900px; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .94; font-weight: 400; }
-  .plate-intro > p { margin: 0; font-size: 1.08rem; line-height: 1.75; }
-  .founding-plate figure { margin: 0; padding: clamp(.55rem, 1vw, 1rem); border: 1px solid var(--gold); background: var(--ivory); box-shadow: 0 24px 60px rgba(13,28,43,.14); }
-  .founding-plate figure img { display: block; width: 100%; }
-  .founding-plate figcaption { padding: .85rem .35rem 0; color: #68707a; font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
-  .plate-uses { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 3rem; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-  .plate-uses article { padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .plate-uses span { color: var(--crimson); font: 700 .62rem/1 var(--sans); letter-spacing: .16em; }
-  .plate-uses h3 { margin: 1.5rem 0 .55rem; font-size: 1.7rem; font-weight: 400; }
-  .plate-uses p { margin: 0; line-height: 1.6; }
-  .houses { background: var(--paper); }
+  .realm-hero p:last-child { max-width: 680px; font-size: 1.15rem; line-height: 1.7; }
+  .realm-arms { display: grid; place-items: center; align-content: center; text-align: center; background: radial-gradient(circle at center, var(--navy-2), #08131e 72%); border-left: 1px solid var(--line); }
+  .realm-arms img { width: min(620px, 100%); max-height: 560px; }
+  .realm-arms p { color: var(--gold-light); text-transform: uppercase; letter-spacing: .18em; font: .68rem/1.8 var(--sans); }
+  .realm-arms p b { color: var(--ivory); font-size: .95rem; }
+  .realm-arms span { color: rgba(244,238,223,.55); font: .62rem var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+  .state-ledger { background: #e8deca; border-top: 4px double var(--gold); }
+  .state-ledger dl { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .state-ledger dl div { padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .state-ledger dt { color: var(--crimson); font: 700 .65rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .state-ledger dd { margin: 1rem 0 0; font-size: 2rem; }
+  .state-ledger aside { margin-top: 3rem; padding: 2.5rem; background: var(--navy); color: white; display: grid; grid-template-columns: 1fr auto; gap: .5rem 2rem; align-items: center; }
+  .state-ledger aside p { margin: 0; color: var(--gold-light); }
+  .state-ledger aside strong { grid-row: 1 / 3; grid-column: 2; font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 400; }
+  .state-ledger aside span { color: rgba(255,255,255,.65); }
+  .hierarchy { background: var(--paper); }
+  .hierarchy ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .hierarchy li { display: grid; grid-template-columns: 90px 1fr; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  .hierarchy li > span { color: var(--crimson); font: 700 .7rem var(--sans); letter-spacing: .14em; }
+  .hierarchy h3, .hierarchy p { margin: 0; }
+  .hierarchy h3 { font-size: 1.6rem; font-weight: 400; }
+  .hierarchy p { margin-top: .35rem; color: #68707a; line-height: 1.55; }
+  .houses { background: #eee5d4; }
   .house-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-  .house-grid article { min-height: 300px; padding: 2.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .house-grid article > span { font-size: 3rem; color: var(--gold); }
-  .house-grid h3 { font-size: 2rem; font-weight: 400; margin: 2rem 0 .6rem; }
-  .wardrobe { background: #e8deca; border-top: 1px solid var(--gold); }
+  .house-grid article { min-height: 500px; padding: 2.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .house-rank { display: flex; align-items: center; justify-content: space-between; }
+  .house-rank span, .standing, .institution { font: 700 .62rem/1.4 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+  .house-rank span, .standing { color: var(--crimson); }
+  .house-rank b { color: var(--gold); font-size: 2.5rem; font-weight: 400; }
+  .standing { margin: 2rem 0 .5rem; }
+  .house-grid h3 { margin: 0; font-size: 2rem; font-weight: 400; }
+  .portfolio { min-height: 52px; color: #68707a; line-height: 1.55; }
+  .house-grid blockquote { margin: 2rem 0; font-size: 1.35rem; line-height: 1.35; }
+  .institution { color: var(--navy); }
+  .house-grid .latin { line-height: 1.7; }
+  .doctrine { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--crimson); color: white; }
+  .doctrine > div { padding: clamp(4rem, 7vw, 7rem); align-self: center; }
+  .doctrine .script { color: var(--gold-light); font-size: 2rem; }
+  .doctrine h2 { margin: 1rem 0; font-size: clamp(3rem, 6vw, 6rem); line-height: .93; font-weight: 400; }
+  .doctrine > div > p:last-child { font-size: 1.25rem; line-height: 1.6; }
+  .doctrine ol { list-style: none; padding: 0; margin: 0; }
+  .doctrine li { min-height: 86px; padding: 1.5rem 2rem; display: grid; grid-template-columns: 55px 1fr; gap: 1rem; align-items: center; border-left: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); font-size: 1.05rem; }
+  .doctrine li span { color: var(--gold-light); font: .62rem var(--sans); letter-spacing: .14em; }
+  .peerage { background: var(--paper); }
+  .peerage-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+  .peerage-grid > ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .peerage-grid > ol li { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  .peerage-grid li > span { color: var(--crimson); font: 700 .65rem var(--sans); }
+  .peerage-grid h3, .peerage-grid p { margin: 0; }
+  .peerage-grid h3 { font-size: 1.45rem; font-weight: 400; }
+  .peerage-grid p { margin-top: .35rem; line-height: 1.5; }
+  .peerage-grid small { display: block; margin-top: .5rem; color: #68707a; font-style: italic; }
+  .duke-card { padding: 2.5rem; border: 8px double var(--gold); background: var(--ivory); }
+  .duke-card h3 { margin: 1rem 0 2rem; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1; }
+  .duke-card p:not(.eyebrow) { line-height: 1.8; }
+  .duke-card span { display: block; margin-top: 2rem; color: #68707a; font-style: italic; line-height: 1.5; }
+  .orders { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
+  .orders article { padding: 2rem; border: 1px solid var(--line); }
+  .orders p { color: var(--crimson); font: 700 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .orders h3 { font-size: 2rem; font-weight: 400; }
+  .orders span { color: #68707a; line-height: 1.5; }
+  .universal-peerage { padding: clamp(5rem, 10vw, 10rem) 1.5rem; text-align: center; background: var(--navy); color: white; border-top: 4px double var(--gold); }
+  .universal-peerage .eyebrow { color: var(--gold-light); }
+  .universal-peerage h2 { margin: 1rem 0; font-size: clamp(4rem, 9vw, 9rem); line-height: .9; font-weight: 400; }
+  .universal-peerage blockquote { max-width: 900px; margin: 2rem auto; color: var(--gold-light); font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: 1.25; }
+  .universal-peerage > p:last-child { font: .72rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .wardrobe { background: #e8deca; }
   .issue-list { border-top: 1px solid var(--line); }
   .issue-list a { display: grid; grid-template-columns: 90px 1fr auto; gap: 2rem; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
   .issue-list > a > span, .issue-list > a > b { color: var(--crimson); font: 700 .65rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .issue-list p { margin: 0 0 .25rem; color: #68707a; font: .62rem/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
   .issue-list h3 { margin: 0; font-size: 1.5rem; font-weight: 400; }
   .issue-list small { display: block; margin-top: .3rem; color: #68707a; font-style: italic; }
-  .honors { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--crimson); color: white; }
-  .honors > div { padding: clamp(4rem, 7vw, 7rem); }
-  .honors .script { color: var(--gold-light); font-size: 2rem; }
-  .honors h2 { font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1; font-weight: 400; }
-  .honors ul { list-style: none; padding: 0; margin: 0; }
-  .honors li { min-height: 130px; padding: 2rem 3rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); }
-  .honors li b { font-size: 1.7rem; font-weight: 400; }
-  .honors li span { margin-top: .4rem; color: rgba(255,255,255,.7); }
   .qr { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; }
   .qr-mark { aspect-ratio: 1; display: grid; place-items: center; border: 14px double var(--navy); background: var(--ivory); }
   .qr-mark span { font-size: clamp(7rem, 20vw, 16rem); color: var(--navy); }
   .qr h2 { font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
   .qr p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.7; max-width: 700px; }
   .qr ol { padding: 1.5rem 0 0; list-style-position: inside; columns: 2; font-family: var(--sans); line-height: 2; }
-  @media (max-width: 900px) { .realm-hero, .honors, .qr, .plate-intro { grid-template-columns: 1fr; } .house-grid, .plate-uses { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .house-grid, .plate-uses { grid-template-columns: 1fr; } .qr ol { columns: 1; } .issue-list a { grid-template-columns: 60px 1fr; gap: 1rem; } .issue-list > a > b { display: none; } }
+  @media (max-width: 900px) { .realm-hero, .doctrine, .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } .realm-hero > div { padding-inline: clamp(1.25rem, 6vw, 4rem); } .house-grid, .state-ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .state-ledger aside { grid-template-columns: 1fr; } .state-ledger aside strong { grid-row: auto; grid-column: auto; } }
+  @media (max-width: 560px) { .house-grid, .state-ledger dl, .orders { grid-template-columns: 1fr; } .qr ol { columns: 1; } .issue-list a { grid-template-columns: 60px 1fr; gap: 1rem; } .issue-list > a > b { display: none; } }
 </style>

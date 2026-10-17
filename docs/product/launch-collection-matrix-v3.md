@@ -24,10 +24,10 @@ All launch garments begin as **front-only prints**. House seals, QR destinations
 | 04 | **Content creator. Meaning pending.** | Public Notices | Preserve the typewriter/editorial construction, black status block, and `PLEASE WAIT`. | Independent observation | None required | Content I is an optional website reference only | House of Prompt, illuminated proclamation, Latin, heraldry | Refine existing SVG; do not royalize the front |
 | 05 | **My authentic self is currently being monetized.** | Public Notices | Preserve the auction/status-box composition with `MONETIZED` as the visual interruption. | Independent observation | None required | Algorithm I may be discussed on the product page, not printed | Royal portrait, title, Latin, House seal | Refine existing SVG; keep transactional visual language |
 | 06 | **I optimized this shirt for engagement.** | Public Notices | Preserve the experiment/report format and statistically insignificant result. | Light bureaucratic affinity, but no required lore | None required | Algorithm I may be referenced editorially | Bureau title, reign, crest, garment QR | Refine existing SVG; allow one small issue number if useful |
-| 07 | **Much Published, Little Said** | Court & Orders | Use the peacock-and-parrot arms as the complete front design. The motto is already the joke. | Sovereign, Realm-native design | La Maison de Valebasse | Perpetual house motto; no reign required | Additional title, back explanation, QR | Reconstruct generated concept as editable production vector |
-| 08 | **Order of the Blue Check** | Court & Orders | Medal, ribbon, check device, and title form one centered front composition. | Realm-native order of merit | House of Influence | Algorithm I is optional provenance | Back print, wearer biography, second slogan | Reconstruct generated concept as editable production vector |
-| 09 | **The End of the World Has Been Postponed** | Royal Commemorations | Use the `99 | 00` clock, crossed cables, crown, English line, and restrained Latin. | Full commemorative mythology | House of Buffer | Y2K, the Almost; Vigil of the Missing Digits | Additional historical paragraph, garment QR | Simplify generated mockup and rebuild as limited-color vector |
-| 10 | **Patron Saint of Debugging** | Royal Commemorations | Use the moth, circuit halo, relay, title, and restrained Latin as one front emblem. | Full commemorative mythology | House of Signal | Moth I; Feast of Saint Moth on September 9 | Long history, second title, garment QR | Simplify generated mockup and rebuild as limited-color vector |
+| 07 | **Much Published, Little Said** | Court & Orders | Use the peacock-and-parrot arms as the complete front design. The motto is already the joke. | Sovereign, Realm-native design | The Royal House of Engagement | Perpetual house motto; no reign required | Additional title, back explanation, QR | Editable two-ink SVG prototype completed; provider preflight remains |
+| 08 | **Order of the Blue Check** | Court & Orders | Medal, ribbon, check device, and title form one centered front composition. | Realm-native order of merit | House of Influence | Algorithm I is optional provenance | Back print, wearer biography, second slogan | Editable two-ink SVG prototype completed; provider preflight remains |
+| 09 | **The End of the World Has Been Postponed** | Royal Commemorations | Use the `99 | 00` clock, crossed cables, crown, English line, and restrained Latin. | Full commemorative mythology | House of Buffer | Y2K, the Almost; Vigil of the Missing Digits | Additional historical paragraph, garment QR | Editable two-ink SVG prototype completed; provider preflight remains |
+| 10 | **Patron Saint of Debugging** | Royal Commemorations | Use the moth, circuit halo, relay, title, and restrained Latin as one front emblem. | Full commemorative mythology | House of Signal | Moth I; Feast of Saint Moth on September 9 | Long history, second title, garment QR | Editable two-ink SVG prototype completed; provider preflight remains |
 
 ## Information-placement matrix
 
@@ -65,24 +65,32 @@ The complete Founding Plate now appears on the Realm page as an archival artifac
 
 ### Priority A — Establish the system
 
-1. Rework No. 03 Doomscrolling from the V3 two-sided study into a front-only garment.
-2. Refine No. 01 Validate without adding Realm content.
-3. Refine No. 02 Thought Leader with one controlled court-appointment cue.
+Completed as print-oriented prototypes on October 16, 2026:
+
+1. No. 03 Doomscrolling — front-only institute seal with one House of Scroll endorsement.
+2. No. 01 Validate — refined as a lore-free editorial request.
+3. No. 02 Thought Leader — refined with one controlled algorithmic appointment seal.
 
 These three deliberately test **no lore**, **light lore**, and **moderate lore**.
 
 ### Priority B — Prove the Realm-native products
 
-4. Reconstruct No. 07 Much Published as editable vector artwork.
-5. Reconstruct No. 09 Y2K as editable limited-color artwork.
-6. Reconstruct No. 10 Saint Moth as editable limited-color artwork.
-7. Reconstruct No. 08 Blue Check as editable vector artwork.
+Completed as print-oriented prototypes on October 16, 2026:
+
+4. No. 07 Much Published — editable two-ink vector plus garment-color knockout.
+5. No. 09 Y2K — editable two-ink limited-color vector.
+6. No. 10 Saint Moth — editable two-ink limited-color vector.
+7. No. 08 Blue Check — editable two-ink vector.
+
+Provider-template sizing, outlined typography, separations, sampling, and wash testing remain open gates.
 
 ### Priority C — Complete the Public Notices
 
-8. Refine No. 04 Content Creator.
-9. Refine No. 05 Authentic Self.
-10. Refine No. 06 Optimized Shirt.
+Completed as print-oriented prototypes on October 16, 2026:
+
+8. No. 04 Content Creator — typewriter draft and unfinished status block.
+9. No. 05 Authentic Self — transactional listing and monetization stamp.
+10. No. 06 Optimized Shirt — experiment report and insignificant-result chart.
 
 ## Launch constraints
 

@@ -1,6 +1,6 @@
 # Realm Artwork Mockup Record
 
-These four storefront mockups complete the visual ten-shirt founding wardrobe. They are concept images for design evaluation, not print-ready production artwork.
+These four storefront mockups complete the visual ten-shirt founding wardrobe. They remain concept images for merchandising evaluation. Editable, limited-color front-art prototypes now live in `design/prototypes/07-much-published.svg` through `10-saint-moth.svg`; they still require provider-template sizing, font outlining, separation review, and physical sampling before production.
 
 The subsequent front/back merger pilot and its governing rules are documented in [`realm-garment-system-v2.md`](realm-garment-system-v2.md).
 
