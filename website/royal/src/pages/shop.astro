@@ -47,8 +47,8 @@ const collections = [
   </header>
   <section class="ceremonial-library">
     <div class="library-copy"><p class="eyebrow">The material culture of the Realm</p><h2>The system beyond<br /><span class="script">the printed garment.</span></h2><p>Apparel carries the declaration. Boxes, tissue, appointment cards, wax seals, standards, and provenance records carry the institution. These founding studies establish the materials from which each House and Order now draws.</p></div>
-    <figure class="apparel-study"><img src="/assets/royal-house/02-apparel-collection.png" alt="Founding apparel study with formal heraldic garments in a ceremonial interior" /><figcaption>Plate III · Studies for the Royal Wardrobe</figcaption></figure>
-    <figure class="packaging-study"><img src="/assets/royal-house/03-ceremonial-packaging.png" alt="Ceremonial packaging study with box, tissue, seal, appointment card, and standard" /><figcaption>Plate IV · Ceremonial issue materials</figcaption></figure>
+    <figure class="apparel-study"><a href="/assets/royal-house/02-apparel-collection.png"><img src="/assets/royal-house/02-apparel-collection.png" alt="Founding apparel study with formal heraldic garments in a ceremonial interior" /></a><figcaption>Plate III · Studies for the Royal Wardrobe · open full resolution</figcaption></figure>
+    <figure class="packaging-study"><a href="/assets/royal-house/03-ceremonial-packaging.png"><img src="/assets/royal-house/03-ceremonial-packaging.png" alt="Ceremonial packaging study with box, tissue, seal, appointment card, and standard" /></a><figcaption>Plate IV · Ceremonial issue materials · open full resolution</figcaption></figure>
   </section>
   <section class="garment-system">
     <article><span>01</span><p class="eyebrow">Launch garment</p><h2>Front only.</h2><p>The saying and artwork must earn the shirt without a second print location.</p></article>
@@ -82,9 +82,9 @@ const collections = [
 </BaseLayout>
 
 <style>
-  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
+  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4.5rem, 7vw, 7.5rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
   .page-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
-  .page-hero h1 { font-size: clamp(4rem, 9vw, 9rem); line-height: .86; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
+  .page-hero h1 { font-size: clamp(4rem, 8vw, 7.5rem); line-height: .88; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
   .page-hero > div > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
   .warrant { padding: clamp(2rem, 4vw, 4rem); text-align: center; border: 4px double var(--gold); background: rgba(255,255,255,.035); }
   .warrant img { width: 78px; margin: 0 auto 1.5rem; }
@@ -100,6 +100,7 @@ const collections = [
   .library-copy h2 { margin: .6rem 0 1rem; font-size: clamp(2.7rem, 4.5vw, 5rem); line-height: .95; font-weight: 400; }
   .library-copy > p:last-child { max-width: 620px; font-size: 1rem; line-height: 1.65; }
   .ceremonial-library figure { min-width: 0; margin: 0; padding: .65rem; background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 18px 42px rgba(13,28,43,.15); }
+  .ceremonial-library figure > a { display: block; }
   .apparel-study { grid-area: apparel; }
   .apparel-study img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
   .packaging-study { grid-area: packaging; width: min(360px, 100%); }
@@ -132,7 +133,8 @@ const collections = [
   .collection-number { margin: .15rem 0; color: var(--crimson); font: 700 .68rem/1.4 var(--sans); letter-spacing: .15em; text-transform: uppercase; }
   .collection-heading h2 { margin: .4rem 0 1rem; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .92; font-weight: 400; }
   .collection-heading > div > p:last-child { max-width: 650px; font-size: 1.08rem; line-height: 1.7; }
-  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem 1.5rem; }
+  .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem 1.25rem; }
+  .royal-commemorations .product-grid { grid-template-columns: repeat(2, minmax(240px, 320px)); }
   .regalia-note { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
   .regalia-note img { width: min(380px, 82%); margin: auto; }
   .regalia-note .script { color: var(--gold-light); font-size: 2rem; }
@@ -140,7 +142,8 @@ const collections = [
   .regalia-note p:not(.script) { max-width: 700px; color: rgba(244,238,223,.75); font-size: 1.08rem; line-height: 1.7; }
   .regalia-note a { color: var(--gold-light); font: 700 .72rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
   @media (max-width: 1000px) { .ceremonial-library { grid-template-columns: 1fr 1fr; grid-template-areas: "copy copy" "apparel apparel" "packaging packaging"; } .library-copy { max-width: 760px; } .apparel-study { width: min(820px, 100%); } }
-  @media (max-width: 900px) { .page-hero, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .product-grid { grid-template-columns: repeat(2, 1fr); } .garment-system, .collection-index { grid-template-columns: 1fr; } .garment-system article, .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
+  @media (max-width: 1000px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) { .page-hero, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .garment-system, .collection-index { grid-template-columns: 1fr; } .garment-system article, .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
   @media (max-width: 620px) { .ceremonial-library { grid-template-columns: 1fr; grid-template-areas: "copy" "apparel" "packaging"; padding-block: 3rem; } .apparel-study img { aspect-ratio: auto; max-height: 360px; object-fit: contain; } .packaging-study { width: 100%; } }
-  @media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .product-grid, .royal-commemorations .product-grid { grid-template-columns: 1fr; } }
 </style>

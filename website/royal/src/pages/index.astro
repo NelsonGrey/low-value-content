@@ -27,8 +27,8 @@ const featured = [products[0], products[2], products[6], products[8]];
 
   <section class="founding-plate">
     <figure>
-      <img src="/assets/royal-house/01-brand-identity-board.png" alt="The founding identity plate showing the arms, supporters, standard, seals, and ceremonial ornament" />
-      <figcaption>Plate I · The Founding Arms · retained in the Royal Archive</figcaption>
+      <a class="plate-link" href="/assets/royal-house/01-brand-identity-board.png"><img src="/assets/royal-house/01-brand-identity-board.png" alt="The founding identity plate showing the arms, supporters, standard, seals, and ceremonial ornament" /></a>
+      <figcaption>Plate I · The Founding Arms · open the archival plate</figcaption>
     </figure>
     <div>
       <p class="eyebrow">The visual constitution</p>
@@ -107,6 +107,7 @@ const featured = [products[0], products[2], products[6], products[8]];
   .proclamation > p:last-child { max-width: 700px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
   .founding-plate { display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 7vw, 8rem); background: var(--paper); color: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
   .founding-plate figure { width: 100%; margin: 0; padding: .55rem; background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 14px 36px rgba(13,28,43,.14); }
+  .plate-link { display: block; }
   .founding-plate img { width: 100%; max-height: 460px; object-fit: contain; }
   .founding-plate figcaption { margin-top: .55rem; color: var(--gold-light); font: .56rem/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .founding-plate > div { align-self: center; max-width: 700px; }
