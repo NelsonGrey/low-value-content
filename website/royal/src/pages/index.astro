@@ -105,9 +105,9 @@ const featured = [products[0], products[2], products[6], products[8]];
   .proclamation h2 { font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 400; margin: 1.5rem auto; }
   .proclamation h2 i { font-family: var(--script); color: var(--crimson); font-weight: 400; }
   .proclamation > p:last-child { max-width: 700px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
-  .founding-plate { display: grid; grid-template-columns: minmax(240px, 360px) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 9vw, 10rem); background: var(--paper); color: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+  .founding-plate { display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 7vw, 8rem); background: var(--paper); color: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
   .founding-plate figure { width: 100%; margin: 0; padding: .55rem; background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 14px 36px rgba(13,28,43,.14); }
-  .founding-plate img { width: 100%; max-height: 260px; object-fit: contain; }
+  .founding-plate img { width: 100%; max-height: 460px; object-fit: contain; }
   .founding-plate figcaption { margin-top: .55rem; color: var(--gold-light); font: .56rem/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .founding-plate > div { align-self: center; max-width: 700px; }
   .founding-plate .eyebrow, .founding-plate a { color: var(--crimson); }
@@ -148,7 +148,7 @@ const featured = [products[0], products[2], products[6], products[8]];
   .entry .script { color: var(--gold-light); font-size: 2rem; }
   .entry h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); line-height: 1; font-weight: 400; }
   .entry p:not(.script) { font-size: 1.1rem; line-height: 1.7; }
-  @media (max-width: 980px) { .hero, .current-reign, .entry { grid-template-columns: minmax(0, 1fr); } .house-badges { grid-template-columns: repeat(3, 1fr); } .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
-  @media (max-width: 700px) { .founding-plate { grid-template-columns: 110px minmax(0, 1fr); gap: 1.25rem; padding-block: 2rem; } .founding-plate img { max-height: 100px; } .founding-plate figcaption { display: none; } .founding-plate h2 { font-size: 2rem; } .founding-plate p:not(.eyebrow) { font-size: .9rem; } }
+  @media (max-width: 980px) { .hero, .founding-plate, .current-reign, .entry { grid-template-columns: minmax(0, 1fr); } .founding-plate figure { width: min(720px, 100%); } .house-badges { grid-template-columns: repeat(3, 1fr); } .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .observance { grid-template-columns: 1fr 2fr; } .moth { display: none; } }
+  @media (max-width: 700px) { .founding-plate { gap: 1.5rem; padding-block: 2.5rem; } .founding-plate img { max-height: 320px; } .founding-plate h2 { font-size: 2.5rem; } .founding-plate p:not(.eyebrow) { font-size: .95rem; } }
   @media (max-width: 600px) { .house-badges { grid-template-columns: repeat(2, 1fr); } .house-badges img { width: 62px; } .product-grid, .observance { grid-template-columns: minmax(0, 1fr); } .hero-copy::before { inset: 1rem; } .current-reign > div, .entry > div { padding-inline: 1.25rem; } .current-reign blockquote { padding-inline: 1.25rem; } .certificate { margin-inline: 1.25rem; padding-inline: 1.25rem; outline-offset: -18px; } }
 </style>
