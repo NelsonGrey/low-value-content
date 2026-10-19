@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Your Order | Low Value Content" description="Track a Low Value Content order.">
-  <section class="order-status">
+  <section class="plain-page ivory order-status">
     <p class="script">The Royal Ledger</p>
     <p class="eyebrow">Order status</p>
     <h1 id="order-title">Consulting the ledger…</h1>
@@ -13,9 +13,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <script is:inline src="/assets/order.js"></script>
 </BaseLayout>
 <style>
-  .order-status { min-height: 70vh; padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 9vw, 10rem); background: var(--ivory); }
-  .order-status .script { font-size: 2rem; }
-  h1 { max-width: 900px; font-size: clamp(3.5rem, 8vw, 8rem); line-height: .9; font-weight: 400; margin: 1rem 0 2rem; }
-  #order-message { font-size: 1.2rem; line-height: 1.6; }
-  dl { max-width: 720px; margin: 2rem 0; border-top: 1px solid var(--line); }
+  .order-status h1 { max-width: 18ch; }
+  #order-message { margin: 0; max-width: 40rem; font-size: 1.25rem; line-height: 1.6; }
+  #order-details { max-width: 720px; margin: 2rem 0; border-top: 1px solid var(--line); }
+  #order-details:empty { display: none; }
+  .order-status .button { margin-top: 2rem; }
 </style>

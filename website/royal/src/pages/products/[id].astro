@@ -89,12 +89,12 @@ const artSpec = artSpecs[product.id];
   .product-visual img { width: 100%; max-height: 76vh; object-fit: contain; }
   .visual-label { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); padding: .55rem .7rem; background: rgba(244,238,223,.94); color: var(--navy); font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .product-visual.typographic > div { border: 14px double var(--navy); width: min(640px, 100%); aspect-ratio: 4 / 5; display: flex; padding: 3rem; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--ivory); }
-  .product-visual.typographic p { color: var(--gold); text-transform: uppercase; letter-spacing: .15em; }
+  .product-visual.typographic p { color: var(--gold-text); text-transform: uppercase; letter-spacing: .15em; }
   .product-visual.typographic h1 { color: var(--navy); font-size: clamp(2.5rem, 5vw, 5rem); text-transform: uppercase; line-height: .96; }
   .product-details { padding: clamp(3rem, 6vw, 7rem); align-self: center; }
   .product-details > h1 { font-size: clamp(3rem, 5vw, 5.5rem); line-height: .92; font-weight: 400; margin: 1rem 0 1.5rem; }
   .price { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; }
-  .price span { font: .7rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #6d7378; }
+  .price span { font: .7rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #565e68; }
   .treatment { font-size: 1.1rem; line-height: 1.7; }
   .buy-form { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; background: #eee5d4; border: 1px solid var(--line); }
   .buy-form label { display: grid; gap: .4rem; font: 700 .7rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
@@ -128,5 +128,6 @@ const artSpec = artSpecs[product.id];
   .front-art-copy h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 5vw, 5.5rem); line-height: .94; font-weight: 400; }
   .front-art-copy > p:not(.eyebrow) { max-width: 680px; font-size: 1.08rem; line-height: 1.7; }
   .front-art-copy dl { margin-top: 2.5rem; }
-  @media (max-width: 900px) { .product-page { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
+  @media (max-width: 520px) { .buy-form { grid-template-columns: 1fr; } dl div { grid-template-columns: 1fr; gap: .2rem; } }
 </style>

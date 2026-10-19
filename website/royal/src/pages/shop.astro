@@ -57,8 +57,10 @@ const collections = [
   </section>
   <section class="artwork-plate">
     <div>
-      <p class="eyebrow">Plate II · The complete front-art system</p>
-      <h2>Ten issues.<br /><span class="script">Three levels of authority.</span></h2>
+      <div>
+        <p class="eyebrow">Plate II · The complete front-art system</p>
+        <h2>Ten issues.<br /><span class="script">Three levels of authority.</span></h2>
+      </div>
       <p>This is the working print family: six editorial observations, two courtly distinctions, and two royal commemorations. Every composition is transparent, front-only, and restricted to two printed colors.</p>
     </div>
     <figure><img src="/assets/front-art-founding-ten.png" alt="The ten Low Value Content launch designs shown as a unified front-art system" /><figcaption>Drop 001 · Front-art proof sheet · Print-oriented prototypes</figcaption></figure>
@@ -82,7 +84,7 @@ const collections = [
 </BaseLayout>
 
 <style>
-  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4.5rem, 7vw, 7.5rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
+  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4.5rem, 7vw, 7.5rem) var(--gutter); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
   .page-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
   .page-hero h1 { font-size: clamp(4rem, 8vw, 7.5rem); line-height: .88; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
   .page-hero > div > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
@@ -94,7 +96,7 @@ const collections = [
   .warrant span { color: rgba(244,238,223,.72); line-height: 1.55; }
   .warrant b { margin-top: 2rem; color: var(--gold-light); font: 400 .66rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
   .catalog { background: var(--paper); scroll-margin-top: 2rem; }
-  .ceremonial-library { display: grid; grid-template-columns: minmax(260px, .62fr) minmax(480px, 1.38fr); grid-template-areas: "copy apparel" "packaging apparel"; gap: 1.5rem clamp(2rem, 5vw, 5rem); align-items: start; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 7vw, 8rem); background: var(--paper); border-bottom: 1px solid var(--gold); }
+  .ceremonial-library { display: grid; grid-template-columns: minmax(260px, .62fr) minmax(480px, 1.38fr); grid-template-areas: "copy apparel" "packaging apparel"; gap: 1.5rem clamp(2rem, 5vw, 5rem); align-items: start; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: var(--paper); border-bottom: 1px solid var(--gold); }
   .ceremonial-library > * { min-width: 0; }
   .library-copy { grid-area: copy; align-self: end; padding-right: clamp(.5rem, 2vw, 2rem); }
   .library-copy h2 { margin: .6rem 0 1rem; font-size: clamp(2.7rem, 4.5vw, 5rem); line-height: .95; font-weight: 400; }
@@ -116,26 +118,26 @@ const collections = [
   .garment-system .eyebrow { color: var(--gold-light); margin-top: 2.5rem; }
   .garment-system h2 { margin: .5rem 0; font-size: clamp(2.3rem, 4vw, 4rem); font-weight: 400; }
   .garment-system p:last-child { color: rgba(255,255,255,.72); line-height: 1.6; }
-  .artwork-plate { padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: #e8deca; border-bottom: 1px solid var(--gold); }
+  .artwork-plate { padding: clamp(4rem, 8vw, 8rem) var(--gutter); background: #e8deca; border-bottom: 1px solid var(--gold); }
   .artwork-plate > div { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 7vw, 8rem); align-items: end; margin-bottom: 3rem; }
-  .artwork-plate h2 { margin: .5rem 0 0; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .94; font-weight: 400; }
+  .artwork-plate h2 { margin: .5rem 0 0; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
   .artwork-plate > div > p:last-child { margin: 0; font-size: 1.08rem; line-height: 1.75; }
   .artwork-plate figure { margin: 0; padding: clamp(.5rem, 1vw, 1rem); background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 24px 60px rgba(13,28,43,.14); }
   .artwork-plate img { width: 100%; }
   .artwork-plate figcaption { padding: .85rem .35rem 0; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   .collection-index { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--ivory); border-bottom: 1px solid var(--line); }
-  .collection-index a { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; padding: 1.5rem clamp(1.25rem, 4vw, 3rem); text-decoration: none; border-right: 1px solid var(--line); }
+  .collection-index a { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; padding: 1.5rem clamp(1.25rem, 3vw, 3rem); text-decoration: none; border-right: 1px solid var(--line); }
   .collection-index a:last-child { border-right: 0; }
   .collection-index span { grid-row: 1 / 3; align-self: center; color: var(--crimson); font: 400 2rem/1 var(--serif); }
   .collection-index b { font-size: 1rem; font-weight: 400; }
-  .collection-index small { color: #68707a; font: .62rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  .collection-index small { color: #565e68; font: .62rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
   .collection-heading { display: grid; grid-template-columns: .25fr 1fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; margin-bottom: 3rem; }
   .collection-number { margin: .15rem 0; color: var(--crimson); font: 700 .68rem/1.4 var(--sans); letter-spacing: .15em; text-transform: uppercase; }
   .collection-heading h2 { margin: .4rem 0 1rem; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .92; font-weight: 400; }
   .collection-heading > div > p:last-child { max-width: 650px; font-size: 1.08rem; line-height: 1.7; }
   .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem 1.25rem; }
   .royal-commemorations .product-grid { grid-template-columns: repeat(2, minmax(240px, 320px)); }
-  .regalia-note { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) clamp(1.25rem, 7vw, 8rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .regalia-note { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
   .regalia-note img { width: min(380px, 82%); margin: auto; }
   .regalia-note .script { color: var(--gold-light); font-size: 2rem; }
   .regalia-note h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }

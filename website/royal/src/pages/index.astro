@@ -81,15 +81,15 @@ const featured = [products[0], products[2], products[6], products[8]];
 </BaseLayout>
 
 <style>
-  .hero { min-height: calc(100vh - 92px); display: grid; grid-template-columns: .82fr 1.18fr; background: var(--ivory); }
-  .hero-copy { min-width: 0; padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 7rem); align-self: center; position: relative; }
-  .hero-copy::before { content: ''; position: absolute; inset: 2rem; border: 1px solid var(--line); pointer-events: none; }
+  .hero { min-height: min(calc(100vh - 92px), 820px); display: grid; grid-template-columns: 1fr 1fr; background: var(--ivory); }
+  .hero-copy { min-width: 0; padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem) var(--gutter); align-self: center; position: relative; }
+  .hero-copy::before { content: ''; position: absolute; inset: 2rem 0 2rem calc(var(--gutter) - 2rem); border: 1px solid var(--line); border-right: 0; pointer-events: none; }
   .hero-copy > * { position: relative; }
   .hero-copy .script { margin: 0; font-size: 2rem; }
   .portal-mark { margin: 0 0 1.25rem; color: var(--navy); font: 700 .65rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
-  h1 { font-size: clamp(3.4rem, 6.8vw, 7.6rem); line-height: .88; margin: 1rem 0 2rem; font-weight: 400; letter-spacing: -.045em; }
+  h1 { font-size: clamp(3rem, 5.4vw, 5.9rem); line-height: .94; margin: 1rem 0 1.75rem; font-weight: 400; letter-spacing: -.035em; }
   h1 em { color: var(--crimson); font-weight: 400; }
-  .hero-dek { font-size: 1.2rem; line-height: 1.6; max-width: 560px; }
+  .hero-dek { font-size: 1.15rem; line-height: 1.6; max-width: 560px; }
   .hero-actions { margin: 2rem 0; display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; font-family: var(--sans); font-size: .8rem; }
   .hero-art { background: var(--navy); display: grid; place-items: center; padding: 2rem; position: relative; overflow: hidden; }
   .arms-panel { width: min(680px, 100%); padding: clamp(2rem, 4vw, 4rem); text-align: center; color: var(--ivory); border: 4px double var(--gold); position: relative; background: radial-gradient(circle at center, var(--navy-2), var(--navy) 68%); }
@@ -100,12 +100,12 @@ const featured = [products[0], products[2], products[6], products[8]];
   .arms-panel img { width: min(520px, 92%); margin: 1rem auto; }
   .arms-panel .arms-motto { display: inline-block; margin: 0; padding: .5rem 1rem; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); text-transform: uppercase; letter-spacing: .15em; font-size: .68rem; }
   .arms-panel span { display: block; margin-top: 1rem; color: rgba(244,238,223,.55); font: .6rem var(--sans); text-transform: uppercase; letter-spacing: .14em; }
-  .proclamation { padding: 7rem 1.5rem; text-align: center; background: var(--paper); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .proclamation { padding: clamp(4.5rem, 8vw, 7rem) var(--gutter); text-align: center; background: var(--paper); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
   .proclamation > p:first-child { font: 700 .7rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--crimson); }
-  .proclamation h2 { font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; font-weight: 400; margin: 1.5rem auto; }
+  .proclamation h2 { font-size: clamp(2.4rem, 4.6vw, 4.8rem); line-height: 1.05; font-weight: 400; margin: 1.5rem auto; }
   .proclamation h2 i { font-family: var(--script); color: var(--crimson); font-weight: 400; }
   .proclamation > p:last-child { max-width: 700px; margin: auto; line-height: 1.7; font-size: 1.1rem; }
-  .founding-plate { display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 7vw, 8rem); background: var(--paper); color: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+  .founding-plate { display: grid; grid-template-columns: minmax(420px, 1.15fr) minmax(320px, .85fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: var(--paper); color: var(--navy); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
   .founding-plate figure { width: 100%; margin: 0; padding: .55rem; background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 14px 36px rgba(13,28,43,.14); }
   .plate-link { display: block; }
   .founding-plate img { width: 100%; max-height: 460px; object-fit: contain; }
@@ -121,31 +121,32 @@ const featured = [products[0], products[2], products[6], products[8]];
   .house-badges img { width: 72px; margin: auto; }
   .house-badges span { display: block; color: var(--crimson); font: 700 .6rem var(--sans); letter-spacing: .14em; }
   .house-badges h3 { min-height: 2.2em; margin: .35rem 0; font-size: 1.15rem; font-weight: 400; line-height: 1.1; }
-  .house-badges p { margin: 0; color: #68707a; font: .62rem/1.5 var(--sans); text-transform: uppercase; letter-spacing: .08em; }
+  .house-badges p { margin: 0; color: #565e68; font: .62rem/1.5 var(--sans); text-transform: uppercase; letter-spacing: .08em; }
   .featured { background: #efe7d7; }
   .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
   .current-reign { display: grid; grid-template-columns: 1fr 1fr; background: var(--navy); color: var(--ivory); }
-  .current-reign > div { min-width: 0; padding: clamp(4rem, 8vw, 8rem); }
-  .current-reign h2 { font-size: clamp(3.5rem, 7vw, 7.5rem); line-height: .88; margin: .5rem 0 2rem; font-weight: 400; }
+  .current-reign > div { min-width: 0; padding: clamp(4rem, 7vw, 7rem) clamp(2rem, 5vw, 5rem) clamp(4rem, 7vw, 7rem) var(--gutter); align-self: center; }
+  .current-reign h2 { font-size: clamp(3rem, 5.6vw, 6rem); line-height: .95; margin: .5rem 0 2rem; font-weight: 400; }
+  .current-reign .eyebrow { color: var(--gold-light); }
   .current-reign h2 i { color: var(--gold-light); }
   .current-reign p:not(.eyebrow):not(.latin) { max-width: 600px; font-size: 1.2rem; line-height: 1.7; }
   .current-reign blockquote { min-width: 0; margin: 0; padding: 4rem; min-height: 600px; display: grid; place-items: center; text-align: center; background: var(--crimson); font-size: clamp(2.5rem, 5vw, 5.5rem); line-height: 1.05; }
   .current-reign blockquote span { color: var(--gold-light); }
-  .observance { display: grid; grid-template-columns: .5fr 1fr .5fr; align-items: center; gap: 4rem; }
+  .observance { display: grid; grid-template-columns: minmax(12rem, .45fr) 1fr .4fr; align-items: center; gap: 4rem; }
   .date { border: 1px solid var(--gold); text-align: center; padding: 1.5rem; }
-  .date span { display: block; font-size: clamp(5rem, 10vw, 10rem); line-height: .9; }
-  .date b { text-transform: uppercase; letter-spacing: .15em; font: .7rem var(--sans); }
+  .date span { display: block; font-size: clamp(4.5rem, 8vw, 8rem); line-height: .9; }
+  .date b { display: block; margin-top: .6rem; text-transform: uppercase; letter-spacing: .15em; font: .7rem var(--sans); }
   .observance h2 { font-size: clamp(2.5rem, 5vw, 5rem); margin: .5rem 0 1rem; font-weight: 400; }
   .observance p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.6; }
   .moth { text-align: center; font-size: 5rem; line-height: .65; color: var(--gold); }
   .entry { display: grid; grid-template-columns: 1.2fr .8fr; background: var(--crimson); color: white; }
-  .certificate { min-width: 0; margin: clamp(2rem, 6vw, 6rem); padding: clamp(2rem, 5vw, 5rem); border: 12px double var(--gold); outline: 1px solid var(--gold-light); outline-offset: -24px; background: var(--ivory); color: var(--navy); display: flex; min-height: 560px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .certificate { min-width: 0; margin: clamp(2rem, 6vw, 6rem) clamp(1rem, 3vw, 3rem) clamp(2rem, 6vw, 6rem) var(--gutter); padding: clamp(2rem, 5vw, 5rem); border: 12px double var(--gold); outline: 1px solid var(--gold-light); outline-offset: -24px; background: var(--ivory); color: var(--navy); display: flex; min-height: 560px; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
   .certificate img { width: 90px; height: 90px; }
   .certificate p { text-transform: uppercase; letter-spacing: .13em; font: .66rem var(--sans); color: var(--crimson); }
   .certificate h3 { font-size: clamp(3rem, 6vw, 6rem); line-height: .9; font-weight: 400; margin: 1.5rem 0; }
   .certificate span { font-family: var(--script); font-size: 1.6rem; color: var(--crimson); }
-  .certificate b { margin-top: 2rem; color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; }
-  .entry > div { min-width: 0; padding: clamp(4rem, 7vw, 7rem); align-self: center; }
+  .certificate b { margin-top: 2rem; color: var(--gold-text); text-transform: uppercase; letter-spacing: .16em; font-size: .65rem; }
+  .entry > div { min-width: 0; padding: clamp(4rem, 7vw, 7rem) var(--gutter) clamp(4rem, 7vw, 7rem) clamp(1rem, 3vw, 3rem); align-self: center; }
   .entry .script { color: var(--gold-light); font-size: 2rem; }
   .entry h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); line-height: 1; font-weight: 400; }
   .entry p:not(.script) { font-size: 1.1rem; line-height: 1.7; }

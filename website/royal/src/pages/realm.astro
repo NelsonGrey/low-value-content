@@ -113,11 +113,12 @@ const stateTerms = [
 </BaseLayout>
 
 <style>
-  .realm-hero { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 620px; background: var(--navy); color: white; }
-  .realm-hero > div { min-width: 0; padding: clamp(4rem, 8vw, 8rem); align-self: center; }
+  .realm-hero { display: grid; grid-template-columns: 1.1fr .9fr; min-height: min(620px, 80vh); background: var(--navy); color: white; }
+  .realm-hero > div { min-width: 0; padding: clamp(3.5rem, 6vw, 6rem) clamp(2rem, 4vw, 4rem) clamp(3.5rem, 6vw, 6rem) var(--gutter); align-self: center; }
   .realm-hero .script { color: var(--gold-light); font-size: 2rem; }
-  .realm-hero h1 { font-size: clamp(4rem, 7vw, 8rem); line-height: .88; font-weight: 400; margin: 1rem 0 2rem; }
+  .realm-hero h1 { font-size: var(--fs-h1); line-height: .96; letter-spacing: -.03em; font-weight: 400; margin: 1rem 0 1.75rem; }
   .realm-hero p:last-child { max-width: 680px; font-size: 1.15rem; line-height: 1.7; }
+  .realm-hero > .realm-arms { align-self: stretch; padding: 2rem var(--gutter) 2rem 2rem; }
   .realm-arms { display: grid; place-items: center; align-content: center; text-align: center; background: radial-gradient(circle at center, var(--navy-2), #08131e 72%); border-left: 1px solid var(--line); }
   .realm-arms img { width: min(500px, 88%); max-height: 470px; }
   .realm-arms p { color: var(--gold-light); text-transform: uppercase; letter-spacing: .18em; font: .68rem/1.8 var(--sans); }
@@ -138,7 +139,7 @@ const stateTerms = [
   .hierarchy li > span { color: var(--crimson); font: 700 .7rem var(--sans); letter-spacing: .14em; }
   .hierarchy h3, .hierarchy p { margin: 0; }
   .hierarchy h3 { font-size: 1.6rem; font-weight: 400; }
-  .hierarchy p { margin-top: .35rem; color: #68707a; line-height: 1.55; }
+  .hierarchy p { margin-top: .35rem; color: #565e68; line-height: 1.55; }
   .houses { background: #eee5d4; }
   .house-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
   .house-grid article { min-height: 360px; padding: 1.75rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -148,11 +149,12 @@ const stateTerms = [
   .house-rank img { width: 54px; margin: -.35rem -.25rem 0 0; }
   .standing { margin: .85rem 0 .4rem; }
   .house-grid h3 { margin: 0; font-size: 2rem; font-weight: 400; }
-  .portfolio { min-height: 44px; color: #68707a; line-height: 1.5; }
+  .portfolio { min-height: 44px; color: #565e68; line-height: 1.5; }
   .house-grid blockquote { margin: 1.35rem 0; font-size: 1.16rem; line-height: 1.35; }
   .institution { color: var(--navy); }
   .house-grid .latin { line-height: 1.7; }
-  .royal-standard { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 480px); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) clamp(1.25rem, 8vw, 9rem); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .royal-standard { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 480px); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .royal-standard .eyebrow, .royal-standard h2 .script { color: var(--gold-light); }
   .royal-standard h2 { margin: .75rem 0 1.5rem; font-size: clamp(3rem, 5vw, 5.8rem); line-height: .94; font-weight: 400; }
   .royal-standard p:not(.eyebrow) { color: rgba(244,238,223,.74); font-size: 1.08rem; line-height: 1.7; }
   .royal-standard figure { width: 100%; max-width: 480px; margin: 0 0 0 auto; padding: .6rem; border: 1px solid var(--gold); background: #091522; }
@@ -174,17 +176,17 @@ const stateTerms = [
   .peerage-grid h3, .peerage-grid p { margin: 0; }
   .peerage-grid h3 { font-size: 1.45rem; font-weight: 400; }
   .peerage-grid p { margin-top: .35rem; line-height: 1.5; }
-  .peerage-grid small { display: block; margin-top: .5rem; color: #68707a; font-style: italic; }
+  .peerage-grid small { display: block; margin-top: .5rem; color: #565e68; font-style: italic; }
   .duke-card { padding: 2.5rem; border: 8px double var(--gold); background: var(--ivory); }
   .duke-card h3 { margin: 1rem 0 2rem; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1; }
   .duke-card p:not(.eyebrow) { line-height: 1.8; }
-  .duke-card span { display: block; margin-top: 2rem; color: #68707a; font-style: italic; line-height: 1.5; }
+  .duke-card span { display: block; margin-top: 2rem; color: #565e68; font-style: italic; line-height: 1.5; }
   .orders { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
   .orders article { display: grid; grid-template-columns: 62px 1fr; gap: 1rem; align-items: center; padding: 1.25rem; border: 1px solid var(--line); }
   .orders img { width: 58px; max-height: 72px; }
   .orders p { color: var(--crimson); font: 700 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   .orders h3 { font-size: 2rem; font-weight: 400; }
-  .orders span { color: #68707a; line-height: 1.5; }
+  .orders span { color: #565e68; line-height: 1.5; }
   .universal-peerage { padding: clamp(4.5rem, 7vw, 7rem) 1.5rem; text-align: center; background: var(--navy); color: white; border-top: 4px double var(--gold); }
   .universal-peerage .eyebrow { color: var(--gold-light); }
   .universal-peerage h2 { margin: 1rem 0; font-size: clamp(4rem, 8vw, 7rem); line-height: .92; font-weight: 400; }
@@ -194,15 +196,15 @@ const stateTerms = [
   .issue-list { border-top: 1px solid var(--line); }
   .issue-list a { display: grid; grid-template-columns: 90px 1fr auto; gap: 2rem; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--line); text-decoration: none; }
   .issue-list > a > span, .issue-list > a > b { color: var(--crimson); font: 700 .65rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
-  .issue-list p { margin: 0 0 .25rem; color: #68707a; font: .62rem/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  .issue-list p { margin: 0 0 .25rem; color: #565e68; font: .62rem/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
   .issue-list h3 { margin: 0; font-size: 1.5rem; font-weight: 400; }
-  .issue-list small { display: block; margin-top: .3rem; color: #68707a; font-style: italic; }
+  .issue-list small { display: block; margin-top: .3rem; color: #565e68; font-style: italic; }
   .qr { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; }
   .qr-mark { aspect-ratio: 1; display: grid; place-items: center; border: 14px double var(--navy); background: var(--ivory); }
   .qr-mark span { font-size: clamp(7rem, 20vw, 16rem); color: var(--navy); }
   .qr h2 { font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
   .qr p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.7; max-width: 700px; }
   .qr ol { padding: 1.5rem 0 0; list-style-position: inside; columns: 2; font-family: var(--sans); line-height: 2; }
-  @media (max-width: 900px) { .realm-hero, .royal-standard, .doctrine, .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } .realm-hero > div { padding-inline: clamp(1.25rem, 6vw, 4rem); } .house-grid, .state-ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .state-ledger aside { grid-template-columns: 1fr; } .state-ledger aside strong { grid-row: auto; grid-column: auto; } }
+  @media (max-width: 900px) { .realm-hero, .royal-standard, .doctrine, .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } .realm-hero > div { padding-inline: var(--gutter); } .house-grid, .state-ledger dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } .state-ledger aside { grid-template-columns: 1fr; } .state-ledger aside strong { grid-row: auto; grid-column: auto; } }
   @media (max-width: 560px) { .house-grid, .state-ledger dl, .orders { grid-template-columns: 1fr; } .qr ol { columns: 1; } .issue-list a { grid-template-columns: 60px 1fr; gap: 1rem; } .issue-list > a > b { display: none; } }
 </style>
