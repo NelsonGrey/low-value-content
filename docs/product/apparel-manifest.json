@@ -140,9 +140,9 @@
       "design/mockups/low-value-content-launch-03.png"
     ],
     "royalHouseConcepts": [
-      "mockups/royal-house/01-brand-identity-board.png",
-      "mockups/royal-house/02-apparel-collection.png",
-      "mockups/royal-house/03-ceremonial-packaging.png"
+      "website/public/assets/royal-house/01-brand-identity-board.png",
+      "website/public/assets/royal-house/02-apparel-collection.png",
+      "website/public/assets/royal-house/03-ceremonial-packaging.png"
     ],
     "frontArtSystem": [
       "design/prototypes/preview-sheet.png",
@@ -372,7 +372,7 @@
         "artwork": "design/prototypes/07-much-published.svg",
         "artworkPreview": "design/prototypes/previews/07-much-published.png",
         "frontArtDisplay": "website/public/assets/front-art-07-much-published.png",
-        "conceptReference": "mockups/royal-house/02-apparel-collection.png",
+        "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-07-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
@@ -403,7 +403,7 @@
         "artwork": "design/prototypes/08-order-blue-check.svg",
         "artworkPreview": "design/prototypes/previews/08-order-blue-check.png",
         "frontArtDisplay": "website/public/assets/front-art-08-order-blue-check.png",
-        "conceptReference": "mockups/royal-house/02-apparel-collection.png",
+        "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-08-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }

@@ -51,6 +51,10 @@ Each badge uses the same crown, circular double rule, botanical supporters, shie
 
 The visual institution does not need to appear on every shirt. Public Notices remain primarily typographic. Court, Order, and Royal Commemoration designs may use a badge, medal, seal, supporter, or sovereign device when that element establishes the garment's authority. Every launch garment must still resolve as a complete front-only design.
 
+## Imagery
+
+Photographic and illustrated imagery follows [`IMAGERY_DIRECTION.md`](IMAGERY_DIRECTION.md): the studio setting, light, palette, prompts, and shot list.
+
 ## Production rule
 
 SVG files are the canonical marks. Raster boards and mockups establish atmosphere, material, scale, and photography. Embedded wording in an early concept board does not supersede current naming, copy, or product specifications.
