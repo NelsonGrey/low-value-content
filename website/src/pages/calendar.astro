@@ -31,66 +31,156 @@ const eventDevices: Record<string, string> = {
   "11-30": "/assets/house-prompt.svg",
   "12-31": "/assets/lineage-y2k.svg",
 };
+const shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthCounts = months.map((_, i) => observances.filter((o) => Number(o.monthDay.split("-")[0]) === i + 1));
+
 ---
 <BaseLayout title="Royal Calendar | Low Value Content" description="Annual observances commemorating bugs, spam, the Web, infinite scrolling, Y2K, artificial intelligence, and other events of state." current="calendar">
   <header class="calendar-hero">
-    <p class="script">Dates of Ceremonial Importance</p>
-    <h1>The Royal Calendar</h1>
-    <p>Because history is easier to monetize when it occurs on the same date every year.</p>
+    <div class="hero-copy">
+      <p class="script">Dates of Ceremonial Importance</p>
+      <h1>The Royal Calendar</h1>
+      <p>Because history is easier to monetize when it occurs on the same date every year.</p>
+    </div>
+    <aside class="next-up" id="next-up" hidden aria-live="polite">
+      <p class="eyebrow">Next observance</p>
+      <time id="next-date"><span id="next-day"></span><b id="next-month"></b></time>
+      <h2 id="next-name"></h2>
+      <p class="countdown" id="next-countdown"></p>
+      <a class="text-link" id="next-link" href="#">Read the entry →</a>
+    </aside>
   </header>
   <section class="calendar-preface">
-    <p class="eyebrow">The annual cycle</p>
-    <h2>Twelve observances.<br /><span class="script">No ordinary days.</span></h2>
-    <p>The court year proceeds from Universal Connectivity through the Vigil of the Missing Digits. Each observance retains its historical device, established date, and present commemorative standing.</p>
+    <div class="preface-copy">
+      <p class="eyebrow">The annual cycle</p>
+      <h2>Twelve observances. <span class="script">No ordinary days.</span></h2>
+      <p>The court year proceeds from Universal Connectivity through the Vigil of the Missing Digits. Each observance keeps its historical device and established date, and each is a commemorative edition under consideration.</p>
+    </div>
+    <ol class="year-ribbon" aria-label="Observances by month">
+      {shortMonths.map((label, i) => {
+        const hits = monthCounts[i];
+        return (
+          <li class:list={[hits.length > 0 && "has-events"]}>
+            {hits.length > 0 ? <a href={`#obs-${hits[0].monthDay}`} aria-label={`${months[i]}: ${hits.length} observance${hits.length > 1 ? "s" : ""}`}><b>{label}</b><span>{hits.map(() => <i></i>)}</span></a> : <div><b>{label}</b><span></span></div>}
+          </li>
+        );
+      })}
+    </ol>
   </section>
-  <section class="calendar-list">
+  <section class="calendar-list" aria-label="Observances in date order">
     {observances.map((event) => {
       const [month, day] = event.monthDay.split("-").map(Number);
       const detail = eventCopy[event.monthDay];
       return (
-        <article class:list={[event.monthDay === "12-31" && "y2k"]}>
-          <div class="card-header">
-            <time datetime={`2026-${event.monthDay}`}><span>{String(day).padStart(2, "0")}</span><b>{months[month - 1]}</b></time>
-            <img class="event-device" src={eventDevices[event.monthDay]} alt="" />
-          </div>
-          <div>
+        <article class:list={["obs", event.monthDay === "12-31" && "y2k"]} id={`obs-${event.monthDay}`} data-obs={event.monthDay} data-name={event.name}>
+          <time datetime={`2026-${event.monthDay}`}><span>{String(day).padStart(2, "0")}</span><b>{months[month - 1]}</b></time>
+          <img class="event-device" src={eventDevices[event.monthDay]} alt="" />
+          <div class="obs-body">
             <p class="year">Established {detail.year}</p>
             <h2>{event.name}</h2>
             {detail.latin && <p class="latin">{detail.latin}</p>}
             <p>{detail.line}</p>
           </div>
-          <p class="status"><span>Commemorative edition</span><b>Under consideration</b></p>
+          <p class="status"><b>Under consideration</b><span class="next-tag" hidden></span></p>
         </article>
       );
     })}
   </section>
+  <script is:inline>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('[data-obs]'));
+      var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var best = null, bestDays = Infinity;
+      items.forEach(function (el) {
+        var p = el.dataset.obs.split('-'), t = new Date(today.getFullYear(), +p[0] - 1, +p[1]);
+        if (t < today) t = new Date(today.getFullYear() + 1, +p[0] - 1, +p[1]);
+        var days = Math.round((t - today) / 864e5);
+        if (days < bestDays) { bestDays = days; best = { el: el, t: t }; }
+      });
+      if (!best) return;
+      var label = bestDays === 0 ? 'Today' : bestDays === 1 ? 'Tomorrow' : 'In ' + bestDays + ' days';
+      var month = best.t.toLocaleString('en-US', { month: 'long' });
+      document.getElementById('next-day').textContent = String(best.t.getDate()).padStart(2, '0');
+      document.getElementById('next-month').textContent = month;
+      document.getElementById('next-name').textContent = best.el.dataset.name;
+      document.getElementById('next-countdown').textContent = label;
+      document.getElementById('next-link').setAttribute('href', '#' + best.el.id);
+      document.getElementById('next-up').hidden = false;
+      best.el.classList.add('is-next');
+      var tag = best.el.querySelector('.next-tag'); tag.textContent = 'Next · ' + label.toLowerCase(); tag.hidden = false;
+    })();
+  </script>
 </BaseLayout>
 
 <style>
-  .calendar-hero { text-align: center; padding: clamp(4.5rem, 7vw, 7.5rem) 1.5rem; background: var(--ivory); border-bottom: 4px double var(--gold); }
+  .calendar-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(4rem, 6vw, 6.5rem) var(--gutter); background: var(--ivory); border-bottom: 4px double var(--gold); }
   .calendar-hero .script { font-size: 2rem; margin: 0; }
-  .calendar-hero h1 { font-size: clamp(4rem, 9vw, 8rem); line-height: .92; margin: 1rem 0 2rem; font-weight: 400; }
-  .calendar-hero > p:last-child { font-size: 1.2rem; }
-  .calendar-preface { display: grid; grid-template-columns: minmax(8rem, .2fr) 1.3fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: start; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: #e8deca; border-bottom: 1px solid var(--gold); }
-  .calendar-preface h2 { margin: 0; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
-  .calendar-preface > p:last-child { margin: 0; max-width: 680px; font-size: 1.05rem; line-height: 1.7; }
-  .calendar-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--gold); padding: 1px; }
-  article { min-width: 0; min-height: 400px; display: flex; flex-direction: column; padding: clamp(1.5rem, 3vw, 2.75rem); background: var(--paper); }
-  article.y2k { background: var(--navy); color: white; border: 0; }
-  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem; }
-  time { display: flex; align-items: flex-end; gap: .7rem; }
-  time span { font-size: 4.5rem; line-height: .78; color: var(--crimson); }
-  .y2k time span { color: var(--gold-light); }
-  time b { padding-bottom: .15rem; font: 700 .62rem var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+  .calendar-hero h1 { font-size: var(--fs-h1); line-height: .96; letter-spacing: -.03em; margin: 1rem 0 1.5rem; font-weight: 400; }
+  .hero-copy > p:last-child { max-width: 32rem; margin: 0; font-size: 1.25rem; line-height: 1.6; color: #2c3640; }
+  .calendar-hero:has(#next-up[hidden]) { grid-template-columns: 1fr; }
+  .next-up { padding: 2rem 2.25rem 2.25rem; background: var(--navy); color: var(--ivory); border: 4px double var(--gold); }
+  .next-up[hidden] { display: none; }
+  .next-up .eyebrow { margin: 0 0 1.25rem; color: var(--gold-light); }
+  .next-up time { display: flex; align-items: flex-end; gap: .9rem; }
+  .next-up time span { font-size: 5.5rem; line-height: .8; color: var(--gold-light); }
+  .next-up time b { padding-bottom: .2rem; font: 700 .72rem var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .next-up h2 { margin: 1.25rem 0 .5rem; font-size: clamp(1.7rem, 2.6vw, 2.4rem); line-height: 1.08; font-weight: 400; }
+  .countdown { margin: 0 0 1.25rem; color: rgba(244,238,223,.8); font: 700 .7rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .next-up .text-link { color: var(--gold-light); }
+
+  .calendar-preface { padding: clamp(3rem, 5vw, 4.5rem) var(--gutter) clamp(2.5rem, 4vw, 3.5rem); background: #e8deca; border-bottom: 1px solid var(--gold); }
+  .preface-copy { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: .5rem clamp(2rem, 5vw, 5rem); align-items: end; }
+  .preface-copy .eyebrow { grid-column: 1 / -1; margin: 0; }
+  .preface-copy h2 { margin: 0; font-size: var(--fs-h2); line-height: 1.02; font-weight: 400; }
+  .preface-copy h2 .script { display: block; color: var(--crimson); }
+  .preface-copy > p:last-child { margin: 0; max-width: 34rem; font-size: 1.05rem; line-height: 1.7; }
+  .year-ribbon { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-top: 1px solid var(--gold); }
+  .year-ribbon li { border-right: 1px solid var(--line); }
+  .year-ribbon li:first-child { border-left: 1px solid var(--line); }
+  .year-ribbon a, .year-ribbon div { display: grid; justify-items: center; gap: .5rem; padding: .9rem 0 1rem; text-decoration: none; }
+  .year-ribbon b { font: 700 .66rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #6a6155; }
+  .year-ribbon .has-events b { color: var(--navy); }
+  .year-ribbon span { display: flex; gap: 4px; min-height: 9px; }
+  .year-ribbon i { width: 9px; height: 9px; border-radius: 50%; background: var(--crimson); }
+  .year-ribbon a:hover, .year-ribbon a:focus-visible { background: rgba(255,255,255,.45); }
+
+  .calendar-list { background: var(--paper); padding: 0 var(--gutter); }
+  .obs { display: grid; grid-template-columns: 7.5rem 5rem minmax(0, 1fr) auto; gap: 0 clamp(1.25rem, 3vw, 3rem); align-items: center; padding: 2.25rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 110px; }
+  .obs:last-child { border-bottom: 0; }
+  .obs time { display: grid; gap: .5rem; }
+  .obs time span { font-size: 4.25rem; line-height: .8; color: var(--crimson); }
+  .obs time b { font: 700 .66rem var(--sans); text-transform: uppercase; letter-spacing: .16em; }
   .event-device { width: 64px; height: 72px; object-fit: contain; }
-  .year { margin: 0; color: var(--crimson); font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .13em; }
-  .y2k .year { color: var(--gold-light); }
-  article h2 { font-size: clamp(2rem, 3vw, 3.3rem); line-height: 1; margin: .5rem 0; font-weight: 400; }
-  article div > p:last-child { max-width: 660px; line-height: 1.6; }
-  .status { display: flex; justify-content: space-between; gap: 1rem; margin: auto 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); font: .58rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .1em; }
-  .status span, .status b { display: block; }
-  .status b { color: var(--crimson); }
-  .y2k .status b { color: var(--gold-light); }
-  @media (max-width: 980px) { .calendar-preface { grid-template-columns: 1fr; } .calendar-preface > p:last-child { grid-column: auto; } .calendar-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 620px) { .calendar-preface { grid-template-columns: 1fr; } .calendar-preface > p:last-child { grid-column: auto; } .calendar-list { grid-template-columns: 1fr; } article { min-height: 0; } .card-header { margin-bottom: 1.5rem; } .status { margin-top: 2rem; } }
+  .year { margin: 0 0 .35rem; color: var(--crimson); font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+  .obs h2 { margin: 0; font-size: clamp(1.7rem, 2.6vw, 2.5rem); line-height: 1.05; font-weight: 400; }
+  .obs .latin { margin: .5rem 0 0; }
+  .obs-body > p:last-child { max-width: 40rem; margin: .75rem 0 0; font-size: 1.05rem; line-height: 1.6; color: #2c3640; }
+  .status { display: grid; justify-items: end; gap: .5rem; margin: 0; font: 700 .58rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+  .status b { padding: .45rem .65rem; border: 1px solid var(--line); color: var(--crimson); }
+  .next-tag { color: var(--navy); }
+  .next-tag[hidden] { display: none; }
+  .obs.is-next { margin-inline: calc(var(--gutter) * -.4); padding-inline: calc(var(--gutter) * .4); background: rgba(186,141,58,.12); box-shadow: inset 4px 0 0 var(--gold); }
+  .obs.y2k { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); background: var(--navy); color: white; border-bottom: 0; }
+  .y2k time span, .y2k .year { color: var(--gold-light); }
+  .y2k .latin { color: var(--gold-light); }
+  .y2k .obs-body > p:last-child { color: rgba(244,238,223,.88); }
+  .y2k .status b { color: var(--gold-light); border-color: rgba(218,191,131,.45); }
+
+  @media (max-width: 980px) {
+    .calendar-hero { grid-template-columns: 1fr; }
+    .preface-copy { grid-template-columns: 1fr; }
+    .obs { grid-template-columns: 7.5rem 4rem minmax(0, 1fr); }
+    .obs time span { font-size: 3.4rem; }
+    .status { grid-column: 3; justify-items: start; margin-top: 1rem; }
+  }
+  @media (max-width: 620px) {
+    .year-ribbon b { font-size: .56rem; letter-spacing: .04em; }
+    .year-ribbon i { width: 6px; height: 6px; }
+    .obs { grid-template-columns: 4.25rem minmax(0, 1fr); padding: 1.75rem 0; }
+    .obs time { grid-column: 1; }
+    .obs time span { font-size: 2.6rem; }
+    .event-device { display: none; }
+    .obs-body, .status { grid-column: 2; }
+    .obs.is-next { margin-inline: -1rem; padding-inline: 1rem; }
+  }
 </style>
