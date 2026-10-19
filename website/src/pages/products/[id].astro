@@ -28,6 +28,8 @@ const artSpecs: Record<string, { garment: string; inks: string }> = {
   "saint-moth": { garment: "Warm ivory", inks: "Archive navy + antique gold" },
 };
 const artSpec = artSpecs[product.id];
+const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
+const mockup = rawMockup && rawMockup.includes("-realm.") ? `/assets/${rawMockup.split("/").pop()}` : null;
 const start = products.findIndex((p) => p.id === product.id);
 const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 ---
@@ -68,6 +70,20 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
       <section class="provenance"><p class="script">The Launch Constitution</p><h2>The declaration must stand on the front alone.</h2><ol><li><b>One print area:</b> production starts front-only.</li><li><b>Selective ceremony:</b> seals, Latin, and heraldry appear only where the issue requires formal standing.</li><li><b>Extended provenance:</b> QR records, titles, and lineage begin online or in packaging—not as compulsory garment decoration.</li></ol></section>
     </div>
   </article>
+  {mockup && (
+    <section class="mockup-section">
+      <figure>
+        <img src={mockup} alt={`Studio concept mockup of ${product.primaryCopy} on a mannequin`} loading="lazy" />
+        <figcaption>Concept mockup · Realm direction</figcaption>
+      </figure>
+      <div class="mockup-copy">
+        <p class="eyebrow">The Realm, worn</p>
+        <h2>On the mannequin,<br /><span class="script">as the court imagines it.</span></h2>
+        <p>A studio concept of this issue in the Royal House's ceremonial register. It shows the direction, not the print file: the production artwork is the front-only composition above.</p>
+        <p class="mockup-note">Concept imagery. Final artwork, garment, and placement are subject to sampling.</p>
+      </div>
+    </section>
+  )}
   {frontArt && artSpec && (
     <section class="front-art-section">
       <div class="front-art-copy">
@@ -135,12 +151,21 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .front-art-section { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); }
   .front-art-copy { max-width: 40rem; }
   .front-art-section > dl { margin: .5rem 0 0; }
+  .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .mockup-section figure { margin: 0; padding: .55rem; background: #091522; border: 1px solid var(--gold); max-width: 30rem; justify-self: start; }
+  .mockup-section img { width: 100%; height: auto; }
+  .mockup-section figcaption { padding: .7rem .2rem .1rem; color: var(--gold-light); font: .6rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .mockup-copy .eyebrow { color: var(--gold-light); }
+  .mockup-copy h2 { margin: .6rem 0 1.25rem; font-size: var(--fs-h2); line-height: 1.02; font-weight: 400; }
+  .mockup-copy h2 .script { color: var(--gold-light); display: block; }
+  .mockup-copy p:not(.eyebrow) { max-width: 36rem; font-size: 1.1rem; line-height: 1.7; color: rgba(244,238,223,.88); }
+  .mockup-copy p.mockup-note { font: .68rem/1.5 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: rgba(244,238,223,.65); }
   .related { background: #efe7d7; border-top: 1px solid var(--gold); }
   .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
   .related-more { margin: 3rem 0 0; }
   .front-art-copy h2 { margin: .8rem 0 1.5rem; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
   .front-art-copy > p:not(.eyebrow) { max-width: 680px; font-size: 1.08rem; line-height: 1.7; }
   .front-art-copy dl { margin-top: 2.5rem; }
-  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .front-art-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
+  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .front-art-section, .mockup-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
   @media (max-width: 520px) { .related-grid { grid-template-columns: minmax(0, 1fr); } .buy-form { grid-template-columns: 1fr; } dl div { grid-template-columns: 1fr; gap: .2rem; } }
 </style>
