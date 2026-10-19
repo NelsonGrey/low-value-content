@@ -2,6 +2,8 @@
 
 Status: working direction, drafted from the existing reference images. Extends [`HERALDIC_SYSTEM.md`](HERALDIC_SYSTEM.md), which still governs the marks themselves: **SVG files are canonical; raster images establish atmosphere, material, scale, and photography.** Nothing here overrides current names, copy, or product specifications in the master manifest.
 
+The [`Ecosystem Apparel Catalog`](../product/ECOSYSTEM_APPAREL_CATALOG.md) applies this direction to the complete 104-product creative inventory. It determines whether a concept remains a typographic Public Notice or earns a House Warrant, Court & Order, or Royal Commemoration treatment before imagery is commissioned.
+
 ## References
 
 | Image | What it establishes |

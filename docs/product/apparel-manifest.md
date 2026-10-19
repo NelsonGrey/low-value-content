@@ -2,6 +2,8 @@
 
 The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json). It preserves the original apparel work while connecting it to the Royal House of Engagement, the future storefront, QR experiences, Stripe checkout, and Printify fulfillment. The governing fiction and naming rules live in the [`Constitution of Engagement`](../brand/CONSTITUTION_OF_ENGAGEMENT.md).
 
+The broader commercial-creative inventory is maintained in the [`Ecosystem Apparel Catalog`](ECOSYSTEM_APPAREL_CATALOG.md), with machine-readable classifications in [`ecosystem-apparel-catalog.json`](ecosystem-apparel-catalog.json). It reconciles the Founding Ten with the original 100-concept library and assigns each concept a printable issue form, ecosystem relationship, and imagery brief.
+
 ## What remains unchanged
 
 - **Low Value Content** is the consumer brand.

@@ -170,6 +170,7 @@ Its first recommendations are to clear the Low Value Content name for trademark,
 | --- | --- |
 | Business plan | [docs/business-plan/](docs/business-plan/) |
 | Concept catalog | [docs/product/concept-catalog.md](docs/product/concept-catalog.md) |
+| Ecosystem apparel catalog | [docs/product/ECOSYSTEM_APPAREL_CATALOG.md](docs/product/ECOSYSTEM_APPAREL_CATALOG.md) |
 | Master apparel manifest | [docs/product/apparel-manifest.md](docs/product/apparel-manifest.md) |
 | Agent and ChatGPT project notes | [AGENTS.md](AGENTS.md) |
 | Change history | [CHANGELOG.md](CHANGELOG.md) |
