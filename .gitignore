@@ -25,3 +25,6 @@ node_modules/
 
 # Website build output (CI builds it; never commit)
 website/dist/
+
+# Reproducible QA intermediates (large resolution upscales, not print masters)
+production/qa/ornate-raster-upscales/*-upscaled-concept-4500x5400.png
