@@ -1,4 +1,4 @@
-import manifest from "../../../docs/product/apparel-manifest.json";
+import manifest from "../../docs/product/apparel-manifest.json";
 
 export type Product = (typeof manifest.launchProducts)[number];
 export type LineageEntry = (typeof manifest.lineage)[number];

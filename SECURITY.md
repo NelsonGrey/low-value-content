@@ -22,8 +22,8 @@ You should get an acknowledgement within a few business days.
 
 ## Scope
 
-- The Low Value Content website (`website/dist/`, `website/coming-soon/`) and its Firebase Hosting deployments
-- The non-production access gate (`website/dist/assets/auth-gate.js`) and its allowlist handling
+- The Low Value Content website (`website/`, including `website/coming-soon/`) and its Firebase Hosting deployments
+- The non-production access gate (`website/public/assets/auth-gate.js`) and its allowlist handling
 - GitHub Actions workflows, Workload Identity Federation deploy configuration, and hosting headers
 - Accidentally exposed secrets or personal data in the repository
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Static checks for the website and repo config. Standard library only.
 
-Checks every HTML page under website/dist and website/coming-soon for: <html lang>,
+Checks every HTML page under website/dist (the Astro build output, so run
+`npm run build --prefix website` first) and website/coming-soon for: <html lang>,
 <title>, viewport, meta description (not on 404 pages), and that local links, scripts,
 stylesheets, and images resolve to files. Also validates the JSON config files.
 Run from the repository root: python3 scripts/check-site.py
@@ -13,7 +14,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-SITES = [ROOT / "website" / "dist", ROOT / "website" / "coming-soon", ROOT / "website" / "royal" / "dist"]
+SITES = [ROOT / "website" / "dist", ROOT / "website" / "coming-soon"]
 JSON_FILES = [".firebaserc", *(p.name for p in ROOT.glob("firebase*.json"))]
 
 

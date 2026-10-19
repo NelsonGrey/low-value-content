@@ -15,7 +15,7 @@
   "sourceOfTruth": {
     "sayings": "docs/product/concept-catalog.md",
     "commerce": "functions/src/catalog.ts",
-    "storefront": "website/royal/src/pages/shop.astro",
+    "storefront": "website/src/pages/shop.astro",
     "printArtwork": "design/prototypes/",
     "brandGuide": "docs/brand/LOW_VALUE_CONTENT_GUIDE.md"
   },
@@ -146,16 +146,16 @@
     ],
     "frontArtSystem": [
       "design/prototypes/preview-sheet.png",
-      "website/royal/public/assets/front-art-founding-ten.png"
+      "website/public/assets/front-art-founding-ten.png"
     ],
     "legacyLogoStudies": [
-      "website/dist/assets/logo-01-editorial.svg",
-      "website/dist/assets/logo-02-monogram.svg",
-      "website/dist/assets/logo-03-signal.svg",
-      "website/dist/assets/logo-04-label.svg",
-      "website/dist/assets/logo-05-stamp.svg"
+      "website/public/assets/logo-01-editorial.svg",
+      "website/public/assets/logo-02-monogram.svg",
+      "website/public/assets/logo-03-signal.svg",
+      "website/public/assets/logo-04-label.svg",
+      "website/public/assets/logo-05-stamp.svg"
     ],
-    "legacyIconMarksGlob": "website/dist/assets/iconmark-*.svg"
+    "legacyIconMarksGlob": "website/public/assets/iconmark-*.svg"
   },
   "launchProducts": [
     {
@@ -183,8 +183,8 @@
       "assets": {
         "artwork": "design/prototypes/01-validate-me.svg",
         "artworkPreview": "design/prototypes/previews/01-validate-me.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-01-validate-me.png",
-        "conceptMockup": "website/dist/assets/shirt-01.png"
+        "frontArtDisplay": "website/public/assets/front-art-01-validate-me.png",
+        "conceptMockup": "website/public/assets/shirt-01.png"
       },
       "commerce": {
         "catalogKey": "validate",
@@ -219,8 +219,8 @@
       "assets": {
         "artwork": "design/prototypes/02-thought-leader.svg",
         "artworkPreview": "design/prototypes/previews/02-thought-leader.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-02-thought-leader.png",
-        "conceptMockup": "website/dist/assets/shirt-02.png"
+        "frontArtDisplay": "website/public/assets/front-art-02-thought-leader.png",
+        "conceptMockup": "website/public/assets/shirt-02.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -249,10 +249,10 @@
       "assets": {
         "artwork": "design/prototypes/03-market-research.svg",
         "artworkPreview": "design/prototypes/previews/03-market-research.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-03-market-research.png",
-        "conceptMockup": "website/dist/assets/shirt-03.png",
-        "designStudy": "website/royal/public/assets/design-study-doomscrolling-v3.png",
-        "designStudyPrevious": "website/royal/public/assets/design-study-doomscrolling-v2.png"
+        "frontArtDisplay": "website/public/assets/front-art-03-market-research.png",
+        "conceptMockup": "website/public/assets/shirt-03.png",
+        "designStudy": "website/public/assets/design-study-doomscrolling-v3.png",
+        "designStudyPrevious": "website/public/assets/design-study-doomscrolling-v2.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -281,8 +281,8 @@
       "assets": {
         "artwork": "design/prototypes/04-content-creator.svg",
         "artworkPreview": "design/prototypes/previews/04-content-creator.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-04-content-creator.png",
-        "conceptMockup": "website/dist/assets/shirt-04.png"
+        "frontArtDisplay": "website/public/assets/front-art-04-content-creator.png",
+        "conceptMockup": "website/public/assets/shirt-04.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -311,8 +311,8 @@
       "assets": {
         "artwork": "design/prototypes/05-authentic-self.svg",
         "artworkPreview": "design/prototypes/previews/05-authentic-self.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-05-authentic-self.png",
-        "conceptMockup": "website/dist/assets/shirt-05.png"
+        "frontArtDisplay": "website/public/assets/front-art-05-authentic-self.png",
+        "conceptMockup": "website/public/assets/shirt-05.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -341,8 +341,8 @@
       "assets": {
         "artwork": "design/prototypes/06-optimized-shirt.svg",
         "artworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-06-optimized-shirt.png",
-        "conceptMockup": "website/dist/assets/shirt-06.png"
+        "frontArtDisplay": "website/public/assets/front-art-06-optimized-shirt.png",
+        "conceptMockup": "website/public/assets/shirt-06.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -371,9 +371,9 @@
       "assets": {
         "artwork": "design/prototypes/07-much-published.svg",
         "artworkPreview": "design/prototypes/previews/07-much-published.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-07-much-published.png",
+        "frontArtDisplay": "website/public/assets/front-art-07-much-published.png",
         "conceptReference": "mockups/royal-house/02-apparel-collection.png",
-        "conceptMockup": "website/royal/public/assets/shirt-07-realm.png"
+        "conceptMockup": "website/public/assets/shirt-07-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -402,9 +402,9 @@
       "assets": {
         "artwork": "design/prototypes/08-order-blue-check.svg",
         "artworkPreview": "design/prototypes/previews/08-order-blue-check.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-08-order-blue-check.png",
+        "frontArtDisplay": "website/public/assets/front-art-08-order-blue-check.png",
         "conceptReference": "mockups/royal-house/02-apparel-collection.png",
-        "conceptMockup": "website/royal/public/assets/shirt-08-realm.png"
+        "conceptMockup": "website/public/assets/shirt-08-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -433,8 +433,8 @@
       "assets": {
         "artwork": "design/prototypes/09-y2k-postponed.svg",
         "artworkPreview": "design/prototypes/previews/09-y2k-postponed.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-09-y2k-postponed.png",
-        "conceptMockup": "website/royal/public/assets/shirt-09-realm.png"
+        "frontArtDisplay": "website/public/assets/front-art-09-y2k-postponed.png",
+        "conceptMockup": "website/public/assets/shirt-09-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     },
@@ -463,8 +463,8 @@
       "assets": {
         "artwork": "design/prototypes/10-saint-moth.svg",
         "artworkPreview": "design/prototypes/previews/10-saint-moth.png",
-        "frontArtDisplay": "website/royal/public/assets/front-art-10-saint-moth.png",
-        "conceptMockup": "website/royal/public/assets/shirt-10-realm.png"
+        "frontArtDisplay": "website/public/assets/front-art-10-saint-moth.png",
+        "conceptMockup": "website/public/assets/shirt-10-realm.png"
       },
       "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
     }

@@ -11,7 +11,6 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = ROOT / "docs" / "product" / "apparel-manifest.json"
 CATALOG_PATH = ROOT / "docs" / "product" / "concept-catalog.md"
 COMMERCE_PATH = ROOT / "functions" / "src" / "catalog.ts"
-STOREFRONT_PATH = ROOT / "website" / "dist" / "shirts.html"
 
 
 def main() -> int:
@@ -81,12 +80,6 @@ def main() -> int:
     if saying_numbers != list(range(1, 101)):
         errors.append("concept catalog must retain exactly the numbered sayings 1 through 100")
 
-    storefront_text = STOREFRONT_PATH.read_text(encoding="utf-8")
-    storefront_ids = set(re.findall(r'data-product="([^"]+)"', storefront_text))
-    missing_storefront = storefront_ids - set(ids)
-    if missing_storefront:
-        errors.append(f"storefront product IDs absent from manifest: {sorted(missing_storefront)}")
-
     commerce_text = COMMERCE_PATH.read_text(encoding="utf-8")
     commerce_keys = set(re.findall(r"^\s{2}([a-zA-Z][\w-]*):\s*\{", commerce_text, flags=re.MULTILINE))
     by_catalog_key = {
@@ -108,7 +101,7 @@ def main() -> int:
         print(f"ERROR {error}")
     print(
         f"checked {len(products)} launch products, {len(saying_numbers)} sayings, "
-        f"{len(storefront_ids)} storefront commerce ID(s), {len(errors)} problem(s)"
+        f"{len(errors)} problem(s)"
     )
     return 1 if errors else 0
 

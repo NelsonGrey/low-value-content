@@ -4,9 +4,8 @@ on:
   push:
     branches: [develop, staging, main]
     paths:
-      - "website/royal/**"
+      - "website/**"
       - "docs/product/apparel-manifest.json"
-      - "website/coming-soon/**"
       - "firebase*.json"
       - ".firebaserc"
       - ".github/workflows/deploy-website.yml"
@@ -31,9 +30,9 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: website/royal/package-lock.json
+          cache-dependency-path: website/package-lock.json
       - name: Build the Royal House storefront
-        run: npm ci --prefix website/royal && npm run build --prefix website/royal
+        run: npm ci --prefix website && npm run build --prefix website
       - name: Resolve Firebase project
         id: target
         run: |
@@ -69,13 +68,13 @@ jobs:
             --arg domains "$ALLOWED_EMAIL_DOMAINS" --arg emails "$ALLOWED_EMAILS" \
             --arg apiKey "$FIREBASE_WEB_API_KEY" --arg appId "$FIREBASE_WEB_APP_ID" \
             '{domains: ($domains | split(",")), emails: ($emails | split(",")), apiKey: $apiKey, appId: $appId}')
-          printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/royal/dist/assets/env-config.js
+          printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/dist/assets/env-config.js
       - name: Publish coming-soon page to production
         if: github.ref_name == 'main' && vars.SHOW_COMING_SOON != 'false'
         run: |
           # Prod serves the coming-soon page until the SHOW_COMING_SOON variable is set to "false".
-          rm -rf website/royal/dist
-          cp -R website/coming-soon website/royal/dist
+          rm -rf website/dist
+          cp -R website/coming-soon website/dist
       - name: Authenticate to Google Cloud (Workload Identity Federation, no keys)
         uses: google-github-actions/auth@v3
         with:

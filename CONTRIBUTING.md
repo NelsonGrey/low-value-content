@@ -23,7 +23,7 @@ Use clear, imperative commit messages ("Add Validate Me shirt prototype"), with 
 
 ## What belongs in git
 
-Source, designs, docs, tools, and the deployable website (`website/dist/`) are tracked. Never commit credentials, service-account keys, API tokens, or `.env` files. GitHub rejects files over 100 MB.
+Source, designs, docs, tools, and the website source (`website/`) are tracked. Never commit credentials, service-account keys, API tokens, or `.env` files. GitHub rejects files over 100 MB.
 
 The `sources/` folder is a read-only mirror of the original ChatGPT project. Do not edit, rename, move, or delete anything in it (see [AGENTS.md](AGENTS.md)).
 
@@ -38,7 +38,7 @@ Before opening a pull request, run `python3 scripts/check-site.py` and, if you t
 
 ## Website
 
-- The site currently ships as plain static HTML in `website/dist/` with no build step. If a framework is adopted, update this section, the workflow, and `firebase.json`.
+- The site is an Astro project in `website/` (Node 24+). Run `npm run build --prefix website` to generate `website/dist/`, which is not committed.
 - Check pages at mobile and desktop widths and keep contrast accessible.
 - Test locally with `firebase emulators:start --only hosting` or any static server.
 

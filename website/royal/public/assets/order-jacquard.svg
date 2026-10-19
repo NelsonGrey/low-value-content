@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img">
-  <title>Insignia of the Order of Jacquard</title><desc>A ceremonial medal bearing a punched card and woven thread.</desc>
-  <path d="m76 19 44 43 44-43v92H76z" fill="#852e34" stroke="#c6a15b" stroke-width="5"/><path d="M104 19v74m32-74v74" stroke="#f4eedf" stroke-width="5"/>
-  <circle cx="120" cy="176" r="82" fill="#0d1c2b" stroke="#c6a15b" stroke-width="6"/><circle cx="120" cy="176" r="68" fill="#f4eedf" stroke="#c6a15b" stroke-width="2"/>
-  <rect x="77" y="130" width="86" height="92" rx="4" fill="none" stroke="#852e34" stroke-width="5"/>
-  <g fill="#852e34"><circle cx="94" cy="149" r="5"/><circle cx="120" cy="149" r="5"/><circle cx="146" cy="149" r="5"/><circle cx="94" cy="174" r="5"/><circle cx="146" cy="174" r="5"/><circle cx="94" cy="199" r="5"/><circle cx="120" cy="199" r="5"/><circle cx="146" cy="199" r="5"/></g>
-  <path d="M68 188c35-27 69 28 104-3" fill="none" stroke="#c6a15b" stroke-width="5"/>
-</svg>

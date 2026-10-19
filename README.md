@@ -63,8 +63,9 @@ low-value-content/
 ├── tools/
 │   └── business-plan/      build_business_plan.py (regenerates the .docx)
 ├── website/
-│   ├── dist/               Archived first-generation static showcase
-│   └── royal/              Astro storefront and Firebase Hosting source
+│   ├── src/ public/        Astro storefront source and static assets
+│   ├── coming-soon/        Standalone production placeholder
+│   └── dist/               Build output served by Firebase Hosting (not committed)
 ├── sources/                Synced from the ChatGPT project. Read-only, do not edit.
 ├── .github/                Workflows, issue and PR templates, CODEOWNERS, Dependabot
 ├── .firebaserc             Firebase project aliases (dev / staging / prod)
@@ -88,14 +89,14 @@ firebase login
 
 ## Website
 
-The deployed experience is the Astro storefront in [`website/royal/`](website/royal/). Firebase Hosting serves `website/royal/dist`, routes `/api/**` to the commerce function, and leaves the earlier `website/dist/` showcase in the repository as an archive.
+The website is one Astro project in [`website/`](website/). `npm run build` writes the static site to `website/dist/` (not committed), which Firebase Hosting serves, routing `/api/**` to the commerce function.
 
 The **Royal House of Engagement** is the governing institution within the Low Value Content world. Low Value Content remains the portal, purveyor, owned domain, merchant, and garment maker's mark. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest.
 
 ```bash
-npm install --prefix website/royal
-npm run dev --prefix website/royal
-npm run build --prefix website/royal
+npm install --prefix website
+npm run dev --prefix website
+npm run build --prefix website
 ```
 
 The Valebasse build uses Node.js 24 or newer. The existing commerce functions retain their own runtime configuration.
@@ -103,7 +104,7 @@ The Valebasse build uses Node.js 24 or newer. The existing commerce functions re
 Preview locally:
 
 ```bash
-npm run build --prefix website/royal
+npm run build --prefix website
 firebase emulators:start --only hosting
 ```
 
@@ -119,13 +120,13 @@ firebase deploy --only hosting --project production    # low-value-content-prod
 
 ### Automatic deploys
 
-[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) builds and deploys the Astro storefront on every push to `develop`, `staging`, or `main` that changes `website/royal/**`, the apparel manifest, Firebase configuration, or the workflow itself. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
+[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) builds and deploys the Astro storefront on every push to `develop`, `staging`, or `main` that changes `website/**`, the apparel manifest, Firebase configuration, or the workflow itself. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
 
 Deploys are keyless. The workflow authenticates with [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation) because the organization policy `iam.disableServiceAccountKeyCreation` forbids service-account keys. Each Firebase project has a `github-deploy` service account (Firebase Hosting Admin only) and a GitHub OIDC provider that trusts only this repository and only that environment's branch (`develop`, `staging`, or `main`). Each GitHub Environment holds a `WIF_PROVIDER` variable with the provider's resource name. No credentials are stored in GitHub.
 
 ## Non-prod access gate
 
-The dev and staging sites sit behind a Google sign-in wall (`website/dist/assets/auth-gate.js`), the same model as `EnvironmentGate` in vehicle-vitals, modulo-squares, and sprout. Production and `localhost` are never gated. It keeps the public out; it is not a hard auth boundary, because the allowlist ships in the page.
+The dev and staging sites sit behind a Google sign-in wall (`website/public/assets/auth-gate.js`), the same model as `EnvironmentGate` in vehicle-vitals, modulo-squares, and sprout. Production and `localhost` are never gated. It keeps the public out; it is not a hard auth boundary, because the allowlist ships in the page.
 
 A visitor gets in if their email's **domain** is in `ALLOWED_EMAIL_DOMAINS`, or their exact address is in `ALLOWED_EMAILS`. An empty allowlist locks everyone out. Both are comma-separated secrets set per GitHub Environment (`development`, `staging`); the deploy workflow writes them into `assets/env-config.js` at deploy time and fails if both are empty. The same workflow step passes the public Firebase web config from the `FIREBASE_WEB_API_KEY` and `FIREBASE_WEB_APP_ID` secrets.
 
@@ -137,7 +138,7 @@ Both environments also send `X-Robots-Tag: noindex, nofollow, noarchive` and a s
 
 ### Production coming-soon page
 
-Until launch, production (`main`) serves a standalone coming-soon page from [website/coming-soon/](website/coming-soon/) instead of the full site in `website/dist/`. The deploy workflow swaps it in for `main` pushes. Dev and staging always deploy the full site. The page is `noindex` and collects no data.
+Until launch, production (`main`) serves a standalone coming-soon page from [website/coming-soon/](website/coming-soon/) instead of the full site. The deploy workflow swaps it in for `main` pushes. Dev and staging always deploy the full site. The page is `noindex` and collects no data.
 
 The switch is the `SHOW_COMING_SOON` variable in the `production` GitHub Environment. It is `true` now, and anything other than the exact value `false` keeps the coming-soon page up (fails safe). **To go live:** set `SHOW_COMING_SOON` to `false` under *Settings → Environments → production → Environment variables*, then re-run the Deploy Website workflow on `main`.
 

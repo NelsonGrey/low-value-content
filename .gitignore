@@ -22,3 +22,6 @@ __pycache__/
 # Node (future website tooling)
 node_modules/
 .astro/
+
+# Website build output (CI builds it; never commit)
+website/dist/
