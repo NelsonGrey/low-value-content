@@ -111,7 +111,7 @@ const nav = [
   .current-reign .latin, .realm-hero .latin, .lineage-hero .latin, .page-hero .latin, .doctrine .latin, .universal-peerage .latin, .arms-panel .latin { color: var(--gold-light); }
   h1, h2, h3 { text-wrap: balance; }
   p, li { text-wrap: pretty; }
-  h1 .script, h2 .script, h1 i, h2 i { font-size: 1.04em; line-height: 1.12; }
+  h1 .script, h2 .script, h1 i, h2 i { font-size: .94em; line-height: 1.12; text-wrap: wrap; }
   :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   ::selection { background: var(--crimson); color: var(--ivory); }
   .plain-page { padding: clamp(4rem, 8vw, 7rem) var(--gutter) clamp(4.5rem, 8vw, 8rem); min-height: 62vh; background: var(--paper); }
@@ -175,9 +175,12 @@ const nav = [
   .button.light { background: var(--ivory); color: var(--navy); }
   .button.ghost { background: transparent; color: var(--navy); }
   .section { padding: clamp(3.75rem, 6.5vw, 7rem) var(--gutter); }
-  .section-heading { max-width: 780px; margin-bottom: 3rem; }
-  .section-heading h2 { font-size: clamp(2.3rem, 5vw, 5rem); line-height: .98; margin: .3rem 0 1rem; font-weight: 400; }
-  .section-heading p:last-child { max-width: 620px; font-size: 1.1rem; line-height: 1.7; }
+  .section-heading { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: .5rem clamp(2rem, 5vw, 5rem); align-items: end; margin-bottom: 3rem; }
+  .section-heading > .eyebrow { grid-column: 1 / -1; margin: 0; }
+  .section-heading h2 { font-size: var(--fs-h2); line-height: 1.02; margin: 0; font-weight: 400; }
+  .section-heading h2 .script, .section-heading h2 i { display: block; }
+  .section-heading p:last-child { max-width: 34rem; margin: 0; font-size: 1.08rem; line-height: 1.7; }
+  @media (max-width: 860px) { .section-heading { grid-template-columns: minmax(0, 1fr); } .section-heading p:last-child { margin-top: .75rem; } }
   @media (max-width: 800px) {
     .menu-button { display: block; }
     .site-header nav { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 1.25rem; background: var(--navy); flex-direction: column; align-items: stretch; border-top: 1px solid var(--line); }
