@@ -90,13 +90,13 @@ The shirt art itself, generated alone, so mockups can reuse it exactly. Full col
 
 > Rich antique heraldic illustration in the manner of an engraved coat of arms, gold acanthus ornament, deep colour, crisp edges, flat even lighting, centered on a plain solid background, no scene, no shadows, no mockup.
 
-| ID | Subject | Replaces |
-|---|---|---|
-| A07 | The existing peacock-and-parrot arms with book-and-sun shield and banner, text "MUCH PUBLISHED, LITTLE SAID" (derive from `shirt-07-realm.png`) | `front-art-07` |
-| A08 | Gold starburst medal with blue check, blue-and-ivory ribbon, text "ORDER OF THE BLUE CHECK" (from `shirt-08-realm.png`) | `front-art-08` |
-| A09 | Crowned cartouche with split clock "99 | 00", hourglass, crossed computer cables, banner "THE END OF THE WORLD HAS BEEN POSTPONED" and "FINIS MUNDI DILATUS" (from `shirt-09-realm.png`) | `front-art-09` |
-| A10 | Realistic moth with circuit-trace halo, laurels, vintage relay, banner "PATRON SAINT OF DEBUGGING" and "PRIMUS CASUS VERUS" (from `shirt-10-realm.png`) | `front-art-10` |
-| A03 | (If approved) lions supporting a shield with a loading spinner and a crown, text "I'M NOT DOOMSCROLLING. I'M DOING MARKET RESEARCH." | `front-art-03` |
+| ID | Subject | Replaces | Status |
+|---|---|---|---|
+| A07 | The existing peacock-and-parrot arms with book-and-sun shield and banner, text "MUCH PUBLISHED, LITTLE SAID" (derive from `shirt-07-realm.png`) | `front-art-07` | Draft generated; see `IMAGERY_PRODUCTION_LOG.md` |
+| A08 | Gold starburst medal with blue check, blue-and-ivory ribbon, text "ORDER OF THE BLUE CHECK" (from `shirt-08-realm.png`) | `front-art-08` | Draft generated; rights review remains |
+| A09 | Crowned cartouche with split clock "99 | 00", hourglass, crossed computer cables, banner "THE END OF THE WORLD HAS BEEN POSTPONED" and "FINIS MUNDI DILATUS" (from `shirt-09-realm.png`) | `front-art-09` | Draft generated; see `IMAGERY_PRODUCTION_LOG.md` |
+| A10 | Realistic moth with circuit-trace halo, laurels, vintage relay, banner "PATRON SAINT OF DEBUGGING" and "PRIMUS CASUS VERUS" (from `shirt-10-realm.png`) | `front-art-10` | Draft generated; see `IMAGERY_PRODUCTION_LOG.md` |
+| A03 | (If approved) lions supporting a shield with a loading spinner and a crown, text "I'M NOT DOOMSCROLLING. I'M DOING MARKET RESEARCH." | `front-art-03` | Awaiting direction |
 
 Attach the matching mockup as the reference and say: "Extract only the printed artwork from the shirt and redraw it flat on a plain background, keeping every element and every word."
 
