@@ -45,14 +45,25 @@ Read the references as one world: **a private study in an old institution, photo
 - **Check the garment color** against the table below before accepting a result.
 - Request **2400 px on the long edge** or larger so the site can make crisp smaller sizes.
 
-## Decision needed first: which design direction wins?
+## Decision: recognition beats minimalism
 
-Mockups 07 to 10 show ornate, full-colour heraldry (peacock and parrot arms, baroque crown, painted moth). The current front art for the same issues is flat line art in two inks. They are different products. Pick one before generating more:
+The jokes depend on the viewer recognising the object in a second or two. The current line-art front art for Court and Commemoration designs fails that test: the doves on No. 07 are shapeless, the moth on No. 10 reads as a flower or lightbulb, and the "99|00" clock on No. 09 reads as an open book. The mockups for 07 to 10 (peacock and parrot, painted moth, the "99:00" counter with crossed cables) are instantly legible.
 
-- **A. The mockups win.** Regenerate the front art toward the ornate look. Printify print-on-demand is generally direct-to-garment and can print full colour, so the two-ink limit may be self-imposed. Worth confirming with the provider before relying on it.
-- **B. The front art wins.** Regenerate Nos. 07 to 10 using the front-art files as attached references so every mockup shows what actually prints.
+**So the ornate, full-colour direction wins for the designs that rely on an image.** The line art for Nos. 07 to 10 is retired as a design source, and the mockups become the reference. Public Notices (01, 04, 05, 06) are typographic and already read at a glance, so they stay as they are.
 
-Until this is decided, the site labels the four mockups as "Concept mockup · Realm direction." Recommended: **B for launch fidelity, A as a later "ceremonial edition"**, but this is the owner's call.
+Two things to confirm outside this repo:
+
+- **Printing:** Printify is normally direct-to-garment and can print full colour, but ink limits, dark-garment underbase, and minimum resolution (print files are usually 300 DPI at the print size, e.g. 4500 x 5400 px) must be confirmed with the provider. AI-generated images are typically much smaller than that and will need a quality upscale or a vector redraw before production. This does not block the website.
+- **No. 03:** the collection image shows an ornate "Duke of Doomscrolling" (lions around a shield with a loading spinner) that is clearly funnier than the current arc-and-arrow art. Decide whether No. 03 moves to that treatment.
+
+## The legibility rule
+
+Every image, product or not, must pass this before it ships:
+
+1. **Two-second test.** Show it at about 200 px wide to someone who has not seen it. They should be able to say what the joke is, or at least name the central object (peacock, moth, medal, clock).
+2. **One hero object**, centered, large, and made of familiar real-world icons (a heart badge, a cursor, a loading spinner, a blue check, a notification count).
+3. **Text readable** at that size: three short lines at most.
+4. If it needs a caption to be funny, it is not done.
 
 ## Garment colors (from `artSpecs` on the product pages)
 
@@ -73,9 +84,25 @@ Until this is decided, the site labels the four mockups as "Concept mockup · Re
 
 Status: **Have** exists in the repo; **Need** must be generated. Aspect ratios are for the master image; the site derives smaller sizes.
 
+### Tier 0: artwork plates (do these first)
+
+The shirt art itself, generated alone, so mockups can reuse it exactly. Full colour, 4:5 portrait, centered, on a flat solid background (or transparent PNG if the tool supports it), 2400 px or larger, no garment and no scene. Same ornate heraldic style as the mockups. This is the print artwork, not a photograph, so **do not use the style lock**; use the one-line style below instead.
+
+> Rich antique heraldic illustration in the manner of an engraved coat of arms, gold acanthus ornament, deep colour, crisp edges, flat even lighting, centered on a plain solid background, no scene, no shadows, no mockup.
+
+| ID | Subject | Replaces |
+|---|---|---|
+| A07 | The existing peacock-and-parrot arms with book-and-sun shield and banner, text "MUCH PUBLISHED, LITTLE SAID" (derive from `shirt-07-realm.png`) | `front-art-07` |
+| A08 | Gold starburst medal with blue check, blue-and-ivory ribbon, text "ORDER OF THE BLUE CHECK" (from `shirt-08-realm.png`) | `front-art-08` |
+| A09 | Crowned cartouche with split clock "99 | 00", hourglass, crossed computer cables, banner "THE END OF THE WORLD HAS BEEN POSTPONED" and "FINIS MUNDI DILATUS" (from `shirt-09-realm.png`) | `front-art-09` |
+| A10 | Realistic moth with circuit-trace halo, laurels, vintage relay, banner "PATRON SAINT OF DEBUGGING" and "PRIMUS CASUS VERUS" (from `shirt-10-realm.png`) | `front-art-10` |
+| A03 | (If approved) lions supporting a shield with a loading spinner and a crown, text "I'M NOT DOOMSCROLLING. I'M DOING MARKET RESEARCH." | `front-art-03` |
+
+Attach the matching mockup as the reference and say: "Extract only the printed artwork from the shirt and redraw it flat on a plain background, keeping every element and every word."
+
 ### Tier 1: the product wardrobe (needed to launch)
 
-Single garment, 4:5 portrait, the style lock plus the subject below. Attach the matching `front-art-*.png`.
+Single garment, 4:5 portrait, the style lock plus the subject below. Attach the matching artwork plate (`A*`) where there is one, otherwise the current `front-art-*.png`.
 
 | ID | Subject | Status |
 |---|---|---|
@@ -85,7 +112,7 @@ Single garment, 4:5 portrait, the style lock plus the subject below. Attach the 
 | P04 | Warm-white tee. Monospace black print: "CONTENT CREATOR. MEANING PENDING." above a black progress bar reading "PLEASE WAIT". No heraldry. | Need |
 | P05 | Warm-white tee. Print: "MY AUTHENTIC SELF IS" above a red boxed "MONETIZED", then "CURRENTLY AVAILABLE". No heraldry. | Need |
 | P06 | Warm-white tee. Print: "I OPTIMIZED THIS SHIRT FOR ENGAGEMENT." with a small chart rule beneath. No heraldry. | Need |
-| P07 to P10 | Navy, washed-black, oxblood, ivory mannequin shots | Have (pending the A/B decision above) |
+| P07 to P10 | Navy, washed-black, oxblood, ivory mannequin shots | Have. Keep; regenerate only if the A-plates change the art |
 
 ### Tier 2: the ceremonial system and page heroes
 
@@ -147,7 +174,8 @@ Still-life objects with the House badge as a small engraved or enamel plaque. On
 - [ ] Same room, light, and camera as the references.
 - [ ] Garment color matches the table.
 - [ ] Printed text matches the manifest's text exactly, with no stray letters.
-- [ ] The artwork matches the attached front art (or Decision A is recorded).
+- [ ] The artwork matches the attached artwork plate exactly.
+- [ ] Passes the two-second test (see the legibility rule).
 - [ ] Public Notices carry no heraldry.
 - [ ] No people, brand logos, or watermarks.
 - [ ] The Blue Check device does not copy a real platform's mark closely enough to invite a rights question. Flag for review.
