@@ -21,13 +21,15 @@ A saying makes the shortlist only if it passes all five tests:
 
 ## The founding collection (already set)
 
+Houses are as recorded in the manifest. Public Notices with no realm intensity (Nos. 01, 04, 05) are shown to shoppers without a House.
+
 | No. | Saying | House | Form |
 |---|---|---|---|
-| 01 | Please validate me algorithmically. | Signal | Public Notice |
+| 01 | Please validate me algorithmically. | Influence | Public Notice |
 | 02 | Thought leader. No thoughts required. | Influence | Court & Order |
 | 03 | I'm not doomscrolling. I'm doing market research. | Scroll | Court & Order |
-| 04 | Content creator. Meaning pending. | none | Public Notice |
-| 05 | My authentic self is currently being monetized. | none | Public Notice |
+| 04 | Content creator. Meaning pending. | Prompt | Public Notice |
+| 05 | My authentic self is currently being monetized. | Influence | Public Notice |
 | 06 | I optimized this shirt for engagement. | Influence | Public Notice |
 | 07 | Much Published, Little Said | the Crown | Court & Order |
 | 08 | Order of the Blue Check | Influence | Court & Order |
