@@ -106,7 +106,7 @@ export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): 
       metadata: { publicToken, items: encodeLines(parsed.lines) },
       expires_at: Math.floor(Date.now() / 1000) + 31 * 60,
       success_url: `${deps.siteUrl}/order?token=${publicToken}`,
-      cancel_url: `${deps.siteUrl}/shirts#validate`,
+      cancel_url: `${deps.siteUrl}/shop`,
     });
     if (!session.url) throw new Error("Stripe returned no checkout URL");
 
