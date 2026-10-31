@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>Cancel anytime after calling us</title>
+  <desc>Cancel button leading into a telephone tree.</desc>
+<text x="2250" y="1700" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="330" font-weight="800" text-anchor="middle">CANCEL ANYTIME</text>
+  <text x="2250" y="2080" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="330" font-weight="800" text-anchor="middle">AFTER CALLING US.</text>
+  <rect x="1560" y="2400" width="1380" height="380" fill="#852E34"/><text x="2250" y="2650" fill="#F4EEDF" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="800" letter-spacing="36" text-anchor="middle">CANCEL</text>
+  <path d="M2250 2800v220" stroke="#142B40" stroke-width="28"/>
+  <path d="M2250 3020 L1250 3350" stroke="#142B40" stroke-width="22" fill="none"/><circle cx="1250" cy="3500" r="150" fill="none" stroke="#142B40" stroke-width="26"/><text x="1250" y="3558" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="170" font-weight="800" text-anchor="middle">1</text>
+  <path d="M1250 3650 L990 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="990" cy="3970" r="46" fill="#852E34"/>
+  <path d="M1250 3650 L1250 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="1250" cy="3970" r="46" fill="#852E34"/>
+  <path d="M1250 3650 L1510 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="1510" cy="3970" r="46" fill="#852E34"/>
+  <path d="M2250 3020 L2250 3350" stroke="#142B40" stroke-width="22" fill="none"/><circle cx="2250" cy="3500" r="150" fill="none" stroke="#142B40" stroke-width="26"/><text x="2250" y="3558" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="170" font-weight="800" text-anchor="middle">2</text>
+  <path d="M2250 3650 L1990 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="1990" cy="3970" r="46" fill="#852E34"/>
+  <path d="M2250 3650 L2250 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="2250" cy="3970" r="46" fill="#852E34"/>
+  <path d="M2250 3650 L2510 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="2510" cy="3970" r="46" fill="#852E34"/>
+  <path d="M2250 3020 L3250 3350" stroke="#142B40" stroke-width="22" fill="none"/><circle cx="3250" cy="3500" r="150" fill="none" stroke="#142B40" stroke-width="26"/><text x="3250" y="3558" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="170" font-weight="800" text-anchor="middle">3</text>
+  <path d="M3250 3650 L2990 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="2990" cy="3970" r="46" fill="#852E34"/>
+  <path d="M3250 3650 L3250 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="3250" cy="3970" r="46" fill="#852E34"/>
+  <path d="M3250 3650 L3510 3920" stroke="#852E34" stroke-width="16" fill="none"/><circle cx="3510" cy="3970" r="46" fill="#852E34"/>
+  <text x="2250" y="4390" fill="#852E34" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="18" text-anchor="middle">PRESS 7 TO HEAR THESE OPTIONS AGAIN</text>
+  <g id="house-mark" transform="translate(2040 780) scale(4.2)" fill="none" stroke="#852E34" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 31a34 34 0 0 1 48 0M34 39a23 23 0 0 1 32 0M43 47a10 10 0 0 1 14 0"/><path d="M22 55h56v31H22zM38 86 50 96l12-10"/><circle cx="74" cy="56" r="9" fill="#852E34" stroke="none"/></g>
+  <g id="house-frame">
+    <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#852E34" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 13</text>
+  </g>
+</svg>
