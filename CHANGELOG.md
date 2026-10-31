@@ -11,6 +11,14 @@ All notable changes to this project are documented here. The format follows [Kee
 - Keyless deploys via Workload Identity Federation (org policy forbids service-account keys).
 - Google sign-in access gate on dev and staging with domain and exact-email allowlists (parity with vehicle-vitals).
 
+### Removed
+- Duplicated files at the repository root and in `design-prototypes/`, `mockups/`, `output/`, and two `qa-business-plan*` temp directories; the maintained copies live under `docs/`, `design/`, and `tools/`.
+
+### Changed
+- README, brand guide, concept catalog notes, `functions/README.md`, and CONTRIBUTING reflect the ten-design Royal House launch, the real commerce catalog state, and hosting-only CI deploys.
+- The business plan builder adds an "Implementation Update" section (ten designs, Stripe and Firebase, Printify hold-for-approval, test-only commerce); the original plan text is unchanged and its QA renders are not regenerated.
+- Dependabot now also covers the `website/` and `functions/` npm packages.
+
 ## [0.1.0] - 2026-10-13
 
 ### Added
