@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>Human form. Printer reliability.</title>
+  <desc>Specification sheet with a paper-jam warning.</desc>
+<text x="620" y="1900" fill="#142B40" font-family="Georgia, 'Times New Roman', serif" font-size="330" font-weight="700" text-anchor="start">HUMAN FORM.</text>
+  <text x="620" y="2320" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="330" font-weight="700" text-anchor="start">PRINTER</text>
+  <text x="620" y="2740" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="330" font-weight="700" text-anchor="start">RELIABILITY.</text>
+  <g fill="none" stroke="#142B40" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(2650 2980)"><circle cx="500" cy="140" r="110"/><path d="M500 250v420M320 330h360M500 670l-120 330M500 670l120 330"/></g>
+  <g transform="translate(3000 3690)"><path d="M0 0l180 -300 180 300z" fill="none" stroke="#C99B43" stroke-width="30" stroke-linejoin="round"/><path d="M180 -200v110" stroke="#C99B43" stroke-width="30" stroke-linecap="round"/><circle cx="180" cy="-40" r="18" fill="#C99B43"/></g>
+  <text x="620" y="3440" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="start">FORM FACTOR</text><text x="2420" y="3440" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="end">HUMAN</text>
+  <path d="M620 3490h1800" stroke="#C99B43" stroke-width="12"/>
+  <text x="620" y="3720" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="start">JAM INTERVAL</text><text x="2420" y="3720" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="end">11 MINUTES</text>
+  <path d="M620 3770h1800" stroke="#C99B43" stroke-width="12"/>
+  <text x="620" y="4000" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="start">STATUS</text><text x="2420" y="4000" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="700" letter-spacing="16" text-anchor="end">PAPER JAM</text>
+  <path d="M620 4050h1800" stroke="#C99B43" stroke-width="12"/>
+  
+  <g id="house-frame">
+    <g fill="none" stroke="#C99B43"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#C99B43"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#142B40" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 20</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>Reduce. Reuse. Overnight delivery.</title>
+  <desc>Recycling arrows around a shipping box.</desc>
+<path d="M2060 1700 l190 -110 190 110 v220 l-190 110 -190 -110z M2060 1700 l190 110 190 -110 M2250 1810 v220" fill="none" stroke="#F4EEDF" stroke-width="40" stroke-linejoin="round"/>
+  <path d="M2423 1247 A560 560 0 0 1 2798 1896" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round"/>
+  <path d="M2880 1809 L2775 2002 L2759 1783" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2625 2196 A560 560 0 0 1 1875 2196" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round"/>
+  <path d="M1910 2311 L1795 2124 L1993 2219" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1702 1896 A560 560 0 0 1 2077 1247" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round"/>
+  <path d="M1960 1220 L2180 1214 L1998 1338" fill="none" stroke="#C99B43" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="2250" y="3010" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" text-anchor="middle">REDUCE.</text>
+  <text x="2250" y="3490" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" text-anchor="middle">REUSE.</text>
+  <text x="2250" y="3970" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" text-anchor="middle">OVERNIGHT</text>
+  <text x="2250" y="4440" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" text-anchor="middle">DELIVERY.</text>
+  
+  <g id="house-frame">
+    <g fill="none" stroke="#C99B43"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#C99B43"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 14</text>
+  </g>
+</svg>
