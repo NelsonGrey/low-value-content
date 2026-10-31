@@ -48,10 +48,10 @@ These records remain authoritative over every expansion classification. Existing
 | F04 | Content creator. Meaning pending. | Public Notices | PN | None required | Editable artwork: design/prototypes/04-content-creator.svg |
 | F05 | My authentic self is currently being monetized. | Public Notices | PN | None required | Editable artwork: design/prototypes/05-authentic-self.svg |
 | F06 | I optimized this shirt for engagement. | Public Notices | PN | None required | Editable artwork: design/prototypes/06-optimized-shirt.svg |
-| F07 | Much Published, Little Said | Court & Orders | CO | The Royal House of Engagement | Editable artwork: design/prototypes/07-much-published.svg |
-| F08 | Order of the Blue Check | Court & Orders | CO | House of Influence | Editable artwork: design/prototypes/08-order-blue-check.svg |
-| F09 | The End of the World Has Been Postponed | Royal Commemorations | RC | House of Buffer | Editable artwork: design/prototypes/09-y2k-postponed.svg |
-| F10 | Patron Saint of Debugging | Royal Commemorations | RC | House of Signal | Editable artwork: design/prototypes/10-saint-moth.svg |
+| F07 | Much Published, Little Said | Court & Orders | CO | The Royal House of Engagement | Artwork plate (not print-ready): design/mockups/royal-house/A07-much-published-little-said.png |
+| F08 | Order of the Blue Check | Court & Orders | CO | House of Influence | Artwork plate (not print-ready): design/mockups/royal-house/A08-order-blue-check.png |
+| F09 | The End of the World Has Been Postponed | Royal Commemorations | RC | House of Buffer | Artwork plate (not print-ready): design/mockups/royal-house/A09-y2k-postponed.png |
+| F10 | Patron Saint of Debugging | Royal Commemorations | RC | House of Signal | Artwork plate (not print-ready): design/mockups/royal-house/A10-patron-saint-debugging.png |
 
 ## First expansion tranche
 

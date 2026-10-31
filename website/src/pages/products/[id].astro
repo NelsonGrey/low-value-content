@@ -11,6 +11,8 @@ const { product } = Astro.props as { product: Product };
 const image = productImage(product);
 const rawFrontArt = "frontArtDisplay" in product.assets ? product.assets.frontArtDisplay : undefined;
 const frontArt = rawFrontArt ? `/assets/${rawFrontArt.split("/").pop()}` : null;
+const ornate = product.creativeStatus === "ornate-art-plate";
+const price = `$${Math.round(product.commerce.priceCents / 100)}`;
 const canBuy = product.commerceStatus === "test-sellable" && product.commerce.catalogKey;
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
 const realmConnected = hasRealmProvenance(product);
@@ -22,10 +24,10 @@ const artSpecs: Record<string, { garment: string; inks: string }> = {
   "content-creator": { garment: "Warm white", inks: "Editorial black + status red" },
   "authentic-self": { garment: "Warm white", inks: "Editorial black + status red" },
   "optimized-shirt": { garment: "Warm white", inks: "Editorial black + status red" },
-  "much-published": { garment: "Deep navy", inks: "Warm ivory + antique gold" },
-  "order-blue-check": { garment: "Washed black", inks: "Appointment blue + antique gold" },
-  "y2k-the-almost": { garment: "Oxblood", inks: "Warm ivory + millennium gold" },
-  "saint-moth": { garment: "Warm ivory", inks: "Archive navy + antique gold" },
+  "much-published": { garment: "Deep navy", inks: "Full colour heraldic plate" },
+  "order-blue-check": { garment: "Washed black", inks: "Full colour heraldic plate" },
+  "y2k-the-almost": { garment: "Oxblood", inks: "Full colour heraldic plate" },
+  "saint-moth": { garment: "Warm ivory", inks: "Full colour heraldic plate" },
 };
 const artSpec = artSpecs[product.id];
 const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
@@ -36,12 +38,12 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 <BaseLayout title={`${product.primaryCopy} | Low Value Content`} description={`${product.primaryCopy} — ${product.royalTreatment}. A Low Value Content apparel concept.`} current="shop">
   <article class="product-page">
     <div class:list={["product-visual", `art-${product.id}`, !image && "typographic"]}>
-      {image ? <><img src={image} alt={`Exact front artwork for ${product.primaryCopy}`} /><span class="visual-label">Exact launch artwork · front print</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
+      {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">{ornate ? "Artwork plate · not yet print-ready" : "Front artwork · print candidate"}</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
     </div>
     <div class="product-details">
       <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
       <h1>{product.primaryCopy}</h1>
-      <p class="price">$32 <span>planned retail</span></p>
+      <p class="price">{price} <span>planned retail</span></p>
       <p class="treatment">{product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
@@ -87,15 +89,15 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   {frontArt && artSpec && (
     <section class="front-art-section">
       <div class="front-art-copy">
-        <p class="eyebrow">Front-art prototype · Two inks</p>
+        <p class="eyebrow">{ornate ? "Artwork plate · Full colour" : "Front-art prototype · Two inks"}</p>
         <h2>The regalia,<br /><span class="script">reduced to what prints.</span></h2>
-        <p>This transparent 4500 × 5400 vector composition translates the Realm concept into one centered front print. It is editable artwork—not a flattened mockup—and deliberately excludes sleeve decoration, back copy, and a garment QR code.</p>
+        {ornate ? <p>This full-colour heraldic plate is the selected direction for the front print. It is a working plate, not a print file: it must be redrawn as vector or upscaled to print resolution and checked against the provider’s ink limits. It deliberately excludes sleeve decoration, back copy, and a garment QR code.</p> : <p>This transparent 4500 × 5400 vector composition translates the Realm concept into one centered front print. It is editable artwork—not a flattened mockup—and deliberately excludes sleeve decoration, back copy, and a garment QR code.</p>}
       </div>
       <dl>
         <div><dt>Garment direction</dt><dd>{artSpec.garment}</dd></div>
         <div><dt>Ink direction</dt><dd>{artSpec.inks}</dd></div>
         <div><dt>Print locations</dt><dd>One · front only</dd></div>
-        <div><dt>Next gate</dt><dd>Outline type, size to provider template, separate inks, sample and wash test</dd></div>
+        <div><dt>Next gate</dt><dd>{ornate ? "Redraw or upscale to print resolution, confirm provider ink limits, size to template, sample and wash test" : "Outline type, size to provider template, separate inks, sample and wash test"}</dd></div>
       </dl>
     </section>
   )}

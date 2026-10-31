@@ -26,3 +26,7 @@ All four files have transparent backgrounds and were generated with the built-in
 3. Decide whether A03 receives the proposed lion-and-loading-spinner redesign before generating it.
 4. Produce print-resolution redraws or approved high-quality upscales, then order physical samples before treating any plate as production art.
 5. Only after the plates are approved, use them as locked references for future P07–P10 garment images.
+
+## 2026-10-31 — Plates adopted as storefront display art
+
+The A07–A10 plates became the display art for Nos. 07–10 on the storefront and replaced the retired line art in the shop proof sheet. The site files `website/public/assets/front-art-07…10-*.png` are 720 × 900 palette-quantized derivatives of the plates, made for web delivery only. They are not print files, and the product pages label them "Artwork plate · not yet print-ready".

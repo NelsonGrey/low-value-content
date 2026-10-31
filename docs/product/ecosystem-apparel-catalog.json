@@ -180,9 +180,9 @@
       "imageBrief": "The sovereign arms of Engagement. The motto and heraldry constitute the complete issue.",
       "artworkPrompt": "Use case: logo-brand. Asset type: isolated front-only apparel artwork. Primary request: The sovereign arms of Engagement. The motto and heraldry constitute the complete issue.. Style: Ceremonial seal, medal, certificate, or appointment design with controlled antique ornament; English declaration dominant; two to five printable colors. Text (verbatim): \"Much Published, Little Said\" Constraints: one centered composition on a transparent background; exact text and no other primary wording; legible at 200 px; crisp separable edges; no garment, mannequin, room, props, shadows, watermark, or platform logo. Use the canonical The Royal House of Engagement device only as a subordinate reference element; do not invent or redesign its arms.",
       "exactText": "Much Published, Little Said",
-      "creativeStage": "editable-prototype",
+      "creativeStage": "ornate-art-plate",
       "rightsStage": "Creative concept only; collision and legal clearance remain open",
-      "productionStage": "Editable artwork: design/prototypes/07-much-published.svg",
+      "productionStage": "Artwork plate (not print-ready): design/mockups/royal-house/A07-much-published-little-said.png",
       "conceptMockup": "website/public/assets/shirt-07-realm.png",
       "artworkPlate": "design/mockups/royal-house/A07-much-published-little-said.png"
     },
@@ -202,9 +202,9 @@
       "imageBrief": "A medal and appointment notice presented as a single ceremonial front print.",
       "artworkPrompt": "Use case: logo-brand. Asset type: isolated front-only apparel artwork. Primary request: A medal and appointment notice presented as a single ceremonial front print.. Style: Ceremonial seal, medal, certificate, or appointment design with controlled antique ornament; English declaration dominant; two to five printable colors. Text (verbatim): \"Order of the Blue Check\" Constraints: one centered composition on a transparent background; exact text and no other primary wording; legible at 200 px; crisp separable edges; no garment, mannequin, room, props, shadows, watermark, or platform logo. Use the canonical House of Influence device only as a subordinate reference element; do not invent or redesign its arms.",
       "exactText": "Order of the Blue Check",
-      "creativeStage": "editable-prototype",
+      "creativeStage": "ornate-art-plate",
       "rightsStage": "Creative concept only; collision and legal clearance remain open",
-      "productionStage": "Editable artwork: design/prototypes/08-order-blue-check.svg",
+      "productionStage": "Artwork plate (not print-ready): design/mockups/royal-house/A08-order-blue-check.png",
       "conceptMockup": "website/public/assets/shirt-08-realm.png",
       "artworkPlate": "design/mockups/royal-house/A08-order-blue-check.png"
     },
@@ -224,9 +224,9 @@
       "imageBrief": "A dated commemorative issue for the disputed reign of Y2K, the Almost.",
       "artworkPrompt": "Use case: logo-brand. Asset type: isolated front-only apparel artwork. Primary request: A dated commemorative issue for the disputed reign of Y2K, the Almost.. Style: Rich archival commemorative illustration built around one historical relic or specimen; restrained antique ornament; English title dominant and Latin subordinate. Text (verbatim): \"The End of the World Has Been Postponed\" Constraints: one centered composition on a transparent background; exact text and no other primary wording; legible at 200 px; crisp separable edges; no garment, mannequin, room, props, shadows, watermark, or platform logo. Use the canonical House of Buffer device only as a subordinate reference element; do not invent or redesign its arms.",
       "exactText": "The End of the World Has Been Postponed",
-      "creativeStage": "editable-prototype",
+      "creativeStage": "ornate-art-plate",
       "rightsStage": "Creative concept only; collision and legal clearance remain open",
-      "productionStage": "Editable artwork: design/prototypes/09-y2k-postponed.svg",
+      "productionStage": "Artwork plate (not print-ready): design/mockups/royal-house/A09-y2k-postponed.png",
       "conceptMockup": "website/public/assets/shirt-09-realm.png",
       "artworkPlate": "design/mockups/royal-house/A09-y2k-postponed.png"
     },
@@ -246,9 +246,9 @@
       "imageBrief": "A natural-history devotional plate for the Feast of Saint Moth.",
       "artworkPrompt": "Use case: logo-brand. Asset type: isolated front-only apparel artwork. Primary request: A natural-history devotional plate for the Feast of Saint Moth.. Style: Rich archival commemorative illustration built around one historical relic or specimen; restrained antique ornament; English title dominant and Latin subordinate. Text (verbatim): \"Patron Saint of Debugging\" Constraints: one centered composition on a transparent background; exact text and no other primary wording; legible at 200 px; crisp separable edges; no garment, mannequin, room, props, shadows, watermark, or platform logo. Use the canonical House of Signal device only as a subordinate reference element; do not invent or redesign its arms.",
       "exactText": "Patron Saint of Debugging",
-      "creativeStage": "editable-prototype",
+      "creativeStage": "ornate-art-plate",
       "rightsStage": "Creative concept only; collision and legal clearance remain open",
-      "productionStage": "Editable artwork: design/prototypes/10-saint-moth.svg",
+      "productionStage": "Artwork plate (not print-ready): design/mockups/royal-house/A10-patron-saint-debugging.png",
       "conceptMockup": "website/public/assets/shirt-10-realm.png",
       "artworkPlate": "design/mockups/royal-house/A10-patron-saint-debugging.png"
     }

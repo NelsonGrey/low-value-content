@@ -1,6 +1,6 @@
 # Realm Artwork Mockup Record
 
-These four storefront mockups complete the visual ten-shirt founding wardrobe. They remain concept images for merchandising evaluation. Editable, limited-color front-art prototypes now live in `design/prototypes/07-much-published.svg` through `10-saint-moth.svg`; they still require provider-template sizing, font outlining, separation review, and physical sampling before production.
+These four storefront mockups complete the visual ten-shirt founding wardrobe. They remain concept images for merchandising evaluation. The ornate full-colour artwork plates `A07`–`A10` in `design/mockups/royal-house/` are the selected front-art direction for Nos. 07–10 (the earlier line-art SVGs in `design/prototypes/` are retired). They are below print resolution and still require a vector redraw or approved upscale, provider ink-limit review, and physical sampling before production.
 
 The subsequent front/back merger pilot and its governing rules are documented in [`realm-garment-system-v2.md`](realm-garment-system-v2.md).
 

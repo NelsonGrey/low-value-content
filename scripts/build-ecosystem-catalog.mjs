@@ -150,7 +150,9 @@ const founding = manifest.launchProducts.map((product) => {
     exactText: product.primaryCopy,
     creativeStage: product.creativeStatus,
     rightsStage: "Creative concept only; collision and legal clearance remain open",
-    productionStage: product.assets?.artwork ? `Editable artwork: ${product.assets.artwork}` : "No production artwork",
+    productionStage: product.assets?.artwork
+      ? `${product.creativeStatus === "ornate-art-plate" ? "Artwork plate (not print-ready)" : "Editable artwork"}: ${product.assets.artwork}`
+      : "No production artwork",
     conceptMockup: product.assets?.conceptMockup ?? null,
     artworkPlate: [7, 8, 9, 10].includes(product.position)
       ? `design/mockups/royal-house/A${String(product.position).padStart(2, "0")}-${product.position === 7 ? "much-published-little-said" : product.position === 8 ? "order-blue-check" : product.position === 9 ? "y2k-postponed" : "patron-saint-debugging"}.png`

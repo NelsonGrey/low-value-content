@@ -24,10 +24,10 @@ All launch garments begin as **front-only prints**. House seals, QR destinations
 | 04 | **Content creator. Meaning pending.** | Public Notices | Preserve the typewriter/editorial construction, black status block, and `PLEASE WAIT`. | Independent observation | None required | Content I is an optional website reference only | House of Prompt, illuminated proclamation, Latin, heraldry | Refine existing SVG; do not royalize the front |
 | 05 | **My authentic self is currently being monetized.** | Public Notices | Preserve the auction/status-box composition with `MONETIZED` as the visual interruption. | Independent observation | None required | Algorithm I may be discussed on the product page, not printed | Royal portrait, title, Latin, House seal | Refine existing SVG; keep transactional visual language |
 | 06 | **I optimized this shirt for engagement.** | Public Notices | Preserve the experiment/report format and statistically insignificant result. | Light bureaucratic affinity, but no required lore | None required | Algorithm I may be referenced editorially | Bureau title, reign, crest, garment QR | Refine existing SVG; allow one small issue number if useful |
-| 07 | **Much Published, Little Said** | Court & Orders | Use the peacock-and-parrot arms as the complete front design. The motto is the complete declaration. | Sovereign, Realm-native design | The Royal House of Engagement | Perpetual house motto; no reign required | Additional title, back explanation, QR | Editable two-ink SVG prototype completed; provider preflight remains |
-| 08 | **Order of the Blue Check** | Court & Orders | Medal, ribbon, check device, and title form one centered front composition. | Realm-native order of merit | House of Influence | Algorithm I is optional provenance | Back print, wearer biography, second slogan | Editable two-ink SVG prototype completed; provider preflight remains |
-| 09 | **The End of the World Has Been Postponed** | Royal Commemorations | Use the `99 | 00` clock, crossed cables, crown, English line, and restrained Latin. | Full commemorative authority | House of Buffer | Y2K, the Almost; Vigil of the Missing Digits | Additional historical paragraph, garment QR | Editable two-ink SVG prototype completed; provider preflight remains |
-| 10 | **Patron Saint of Debugging** | Royal Commemorations | Use the moth, circuit halo, relay, title, and restrained Latin as one front emblem. | Full commemorative authority | House of Signal | Moth I; Feast of Saint Moth on September 9 | Long history, second title, garment QR | Editable two-ink SVG prototype completed; provider preflight remains |
+| 07 | **Much Published, Little Said** | Court & Orders | Use the peacock-and-parrot arms as the complete front design. The motto is the complete declaration. | Sovereign, Realm-native design | The Royal House of Engagement | Perpetual house motto; no reign required | Additional title, back explanation, QR | Ornate full-colour plate (A07) selected; line-art SVG retired. Print-resolution artwork and provider preflight remain |
+| 08 | **Order of the Blue Check** | Court & Orders | Medal, ribbon, check device, and title form one centered front composition. | Realm-native order of merit | House of Influence | Algorithm I is optional provenance | Back print, wearer biography, second slogan | Ornate full-colour plate (A08) selected; line-art SVG retired. Print-resolution artwork and provider preflight remain |
+| 09 | **The End of the World Has Been Postponed** | Royal Commemorations | Use the `99 | 00` clock, crossed cables, crown, English line, and restrained Latin. | Full commemorative authority | House of Buffer | Y2K, the Almost; Vigil of the Missing Digits | Additional historical paragraph, garment QR | Ornate full-colour plate (A09) selected; line-art SVG retired. Print-resolution artwork and provider preflight remain |
+| 10 | **Patron Saint of Debugging** | Royal Commemorations | Use the moth, circuit halo, relay, title, and restrained Latin as one front emblem. | Full commemorative authority | House of Signal | Moth I; Feast of Saint Moth on September 9 | Long history, second title, garment QR | Ornate full-colour plate (A10) selected; line-art SVG retired. Print-resolution artwork and provider preflight remain |
 
 ## Information-placement matrix
 
@@ -77,12 +77,12 @@ These three deliberately test **no lore**, **light lore**, and **moderate lore**
 
 Completed as print-oriented prototypes on October 16, 2026:
 
-4. No. 07 Much Published — editable two-ink vector plus garment-color knockout.
-5. No. 09 Y2K — editable two-ink limited-color vector.
-6. No. 10 Saint Moth — editable two-ink limited-color vector.
-7. No. 08 Blue Check — editable two-ink vector.
+4. No. 07 Much Published — ornate full-colour plate (A07); the earlier two-ink line art is retired.
+5. No. 09 Y2K — ornate full-colour plate (A09); line art retired.
+6. No. 10 Saint Moth — ornate full-colour plate (A10); line art retired.
+7. No. 08 Blue Check — ornate full-colour plate (A08); line art retired.
 
-Provider-template sizing, outlined typography, separations, sampling, and wash testing remain open gates.
+Print-resolution redraws or approved upscales, provider-template sizing, ink-limit review, sampling, and wash testing remain open gates.
 
 ### Priority C — Complete the Public Notices
 
