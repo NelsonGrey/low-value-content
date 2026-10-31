@@ -5,6 +5,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 ## Commands
 - `npm install --prefix website` then `npm run build --prefix website`: build the site into `website/dist/` (Node 24+).
 - `python3 scripts/check-site.py`: validates every built HTML page (lang, title, viewport, description, local links) and the Firebase JSON config. Build first; CI does the same.
+- `python3 scripts/check-apparel-manifest.py`: validates the master apparel manifest against assets, the 100-saying catalog, and `functions/src/catalog.ts`. CI runs it too.
 - `firebase emulators:start --only hosting`: preview the built `website/dist/` locally (localhost is never gated).
 - `python tools/business-plan/build_business_plan.py`: regenerates the business plan `.docx` (needs `python-docx`). Not part of the site or deploy.
 - `gitleaks detect --source . --config .gitleaks.toml --redact`: secret scan.
@@ -14,7 +15,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - `website/coming-soon/`: standalone production placeholder. `main` deploys this instead of the built site unless the `SHOW_COMING_SOON` variable in the `production` GitHub Environment is exactly `false`.
 - `firebase.{dev,staging,prod}.json`: per-environment hosting config; the deploy workflow copies the right one to `firebase.json`. Dev and staging send noindex and a strict CSP.
 - `docs/`, `design/`, `tools/`: business plan, concept catalog, shirt art and mockups, generator script.
-- `sources/`: read-only mirror of the original ChatGPT project. Never edit, rename, move, or delete anything in it.
+- `sources/`: local-only, untracked, read-only mirror of the original ChatGPT project (may be absent). Never edit, rename, move, or delete anything in it.
 
 ## Rules that must keep holding
 - Flow is `feature/*` → `develop` → `staging` → `main`. Never push or open a PR to `main`, and never deploy to prod, unless the user explicitly says to. Prod is **not live**: it shows the coming-soon page.
