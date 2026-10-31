@@ -7,15 +7,15 @@
     <path d="M1740 3370h1020M1180 3980h2140" stroke-width="24"/><circle cx="2250" cy="1150" r="26" fill="#BD9143"/>
   </g>
   <g text-anchor="middle">
-    <text x="2250" y="1770" fill="#BD9143" font-family="Arial, Helvetica, sans-serif" font-size="95" letter-spacing="32">BY ALGORITHMIC APPOINTMENT</text>
+    <text x="2250" y="1770" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="95" letter-spacing="32">BY ALGORITHMIC APPOINTMENT</text>
     <text x="2250" y="2540" fill="#142B40" font-family="Arial Narrow, Arial, sans-serif" font-size="650" font-weight="800" letter-spacing="-16">THOUGHT</text>
     <text x="2250" y="3190" fill="#142B40" font-family="Arial Narrow, Arial, sans-serif" font-size="650" font-weight="800" letter-spacing="-16">LEADER.</text>
     <text x="2250" y="3760" fill="#142B40" font-family="Georgia, 'Times New Roman', serif" font-size="215" font-style="italic">No thoughts required.</text>
-    <text x="2250" y="4310" fill="#BD9143" font-family="Arial, Helvetica, sans-serif" font-size="90" letter-spacing="30">OFFICIAL COURT APPOINTMENT · HONORARY</text>
+    <text x="2250" y="4310" fill="#142B40" font-family="Arial, Helvetica, sans-serif" font-size="90" letter-spacing="30">OFFICIAL COURT APPOINTMENT · HONORARY</text>
   </g>
   <g id="house-frame">
     <g fill="none" stroke="#BD9143"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
     <g fill="#BD9143"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
-    <text x="2250" y="4850" fill="#BD9143" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 02</text>
+    <text x="2250" y="4850" fill="#142B40" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 02</text>
   </g>
 </svg>

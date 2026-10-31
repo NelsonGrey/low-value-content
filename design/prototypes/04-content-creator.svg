@@ -9,6 +9,7 @@
     <text x="1110" y="3600" fill="#F4EEDF" font-size="155" letter-spacing="30" data-production="garment-color knockout; not a third ink">PLEASE WAIT</text>
     <text x="620" y="4230" fill="#852E34" font-size="88" letter-spacing="14">MEANING WILL BE SUPPLIED AFTER PUBLICATION_</text>
   </g>
+  <g id="house-mark" transform="translate(2040 780) scale(4.2)" fill="none" stroke="#852E34" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 31a34 34 0 0 1 48 0M34 39a23 23 0 0 1 32 0M43 47a10 10 0 0 1 14 0"/><path d="M22 55h56v31H22zM38 86 50 96l12-10"/><circle cx="74" cy="56" r="9" fill="#852E34" stroke="none"/></g>
   <g id="house-frame">
     <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
     <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
