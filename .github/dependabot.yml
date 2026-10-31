@@ -20,6 +20,10 @@ updates:
       npm-website:
         patterns:
           - "*"
+    ignore:
+      # TypeScript 7 is a major jump that breaks the Astro type check; revisit when Astro supports it.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     labels:
       - "dependencies"
 
@@ -32,5 +36,9 @@ updates:
       npm-functions:
         patterns:
           - "*"
+    ignore:
+      # Keep @types/node on the functions runtime major (Node 22).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     labels:
       - "dependencies"
