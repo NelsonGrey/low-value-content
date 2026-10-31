@@ -33,7 +33,7 @@ The primary motto remains *Multa edita, pauca dicta* — Much Published, Little 
 6. **The Orders** award honors across House boundaries.
 7. **The Subjects** follow, create, refresh, and occasionally attempt to log off.
 
-The Great Houses are constitutionally equal. Court precedence changes with each reign. Under Prompt I, current precedence is Prompt, Scroll, Influence, Signal, Spam, then Buffer. The precedence of Buffer remains pending.
+The Great Houses are constitutionally equal. Court precedence changes with each reign. Under Prompt the Confident, current precedence is Prompt, Scroll, Influence, Signal, Spam, then Buffer. The precedence of Buffer remains pending.
 
 ## The Six Great Houses
 

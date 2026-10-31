@@ -31,10 +31,10 @@ Each badge uses the same crown, circular double rule, botanical supporters, shie
 
 ## Lineage devices
 
-- Moth I receives the ceremonial moth.
-- LO I receives the interrupted terminal.
-- Y2K, the Almost receives the divided double zero.
-- Spam I, Scroll I, and Prompt I inherit the corresponding Great House badge.
+- Moth the Pious receives the ceremonial moth.
+- LO the Interrupted receives the interrupted terminal.
+- Y2K the Almost receives the divided double zero.
+- Spam the Unsolicited, Scroll the Endless, and Prompt the Confident inherit the corresponding Great House badge.
 - Other reigns may use the nearest constitutional charge until a dedicated device is entered into the record.
 
 ## Use on the website
