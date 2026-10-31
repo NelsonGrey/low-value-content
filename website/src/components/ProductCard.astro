@@ -9,7 +9,7 @@ const realmConnected = hasRealmProvenance(product);
 ---
 <article class:list={["product-card", !image && "product-card-text"]}>
   <a class:list={["product-image", `art-${product.id}`]} href={productHref(product)}>
-    {image ? <img src={image} alt={`Exact front artwork for ${product.primaryCopy}`} /> : (
+    {image ? <img src={image} alt={`Front artwork for ${product.primaryCopy}`} /> : (
       <div class="text-art">
         <span>{product.latin}</span>
         <strong>{product.primaryCopy}</strong>
@@ -17,14 +17,14 @@ const realmConnected = hasRealmProvenance(product);
       </div>
     )}
     <span class="product-number">No. {String(product.position).padStart(2, "0")}</span>
-    <span class="art-label">What prints</span>
+    <span class="art-label">Front artwork</span>
   </a>
   <div class="product-copy">
     <div class="classification"><p>{product.launchCollection}</p><span class={`intensity intensity-${product.realmIntensity}`}>{product.realmIntensity === "none" ? "Independent" : `${product.realmIntensity} realm`}</span></div>
     <h3><a href={productHref(product)}>{product.primaryCopy}</a></h3>
     <p class="issue">{realmConnected ? product.royalTreatment : product.originalCollection}</p>
     <p class="office">{realmConnected ? `${product.house} · ${reignLabel}` : "No House required · front-only editorial issue"}</p>
-    <div class="status-row"><span>$32 planned</span><span>{product.commerceStatus === "test-sellable" ? "Test checkout" : "In development"}</span></div>
+    <div class="status-row"><span>{`$${Math.round(product.commerce.priceCents / 100)} planned`}</span><span>{product.commerceStatus === "test-sellable" ? "Test checkout" : "In development"}</span></div>
   </div>
 </article>
 

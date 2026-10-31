@@ -26,9 +26,16 @@ class Page(HTMLParser):
         self.viewport = False
         self.description = False
         self.refs = []
+        self.inline = []  # constructs the dev/staging Content-Security-Policy blocks
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == "script" and not a.get("src") and a.get("type") not in ("application/ld+json", "application/json"):
+            self.inline.append("inline <script>")
+        if tag == "style":
+            self.inline.append("inline <style>")
+        if "style" in a:
+            self.inline.append("style= attribute")
         if tag == "html" and a.get("lang"):
             self.lang = True
         if tag == "title":
@@ -73,6 +80,10 @@ def main() -> int:
                     errors.append(f"{rel}: missing {label}")
             if page.name != "404.html" and not parser.description:
                 errors.append(f"{rel}: missing meta description")
+            if site.name == "dist":
+                # firebase.dev.json / firebase.staging.json send script-src 'self' and style-src 'self'.
+                for kind in sorted(set(parser.inline)):
+                    errors.append(f"{rel}: {kind} is blocked by the dev/staging CSP; use an external file or class")
             for ref in parser.refs:
                 target = local_target(site, page, ref)
                 if target is None:

@@ -42,7 +42,7 @@ const stateTerms = [
       <p class="eyebrow">The constitutional hierarchy</p>
       <h2>Authority descends.<br /><span class="script">Responsibility does not.</span></h2>
     </div>
-    <ol>{constitution.hierarchy.map((level, i) => <li style={`--i:${i}`}><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
+    <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
   </section>
 
   <section class="houses section" id="great-houses">
@@ -138,6 +138,7 @@ const stateTerms = [
   .hierarchy .section-heading h2 { font-size: var(--fs-h2); }
   .hierarchy .section-heading .eyebrow { margin-bottom: .5rem; }
   .hierarchy ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .hierarchy li:nth-child(1) { --i: 0; } .hierarchy li:nth-child(2) { --i: 1; } .hierarchy li:nth-child(3) { --i: 2; } .hierarchy li:nth-child(4) { --i: 3; } .hierarchy li:nth-child(5) { --i: 4; } .hierarchy li:nth-child(6) { --i: 5; } .hierarchy li:nth-child(7) { --i: 6; }
   .hierarchy li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.4rem 0 1.4rem calc(var(--i) * clamp(.5rem, 1.6vw, 1.75rem)); border-bottom: 1px solid var(--line); }
   .hierarchy li:first-child h3 { color: var(--crimson); }
   .hierarchy li > span { color: var(--crimson); font: 700 .7rem var(--sans); letter-spacing: .14em; }

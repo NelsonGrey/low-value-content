@@ -61,9 +61,9 @@ const collections = [
         <p class="eyebrow">Plate II · The complete front-art system</p>
         <h2>Ten issues.<br /><span class="script">Three levels of authority.</span></h2>
       </div>
-      <p>This is the working print family: six editorial observations, two courtly distinctions, and two royal commemorations. Every composition is transparent, front-only, and restricted to two printed colors.</p>
+      <p>This is the working print family: {publicNotices.length} Public Notices, {courtAndOrders.length} Court &amp; Orders designs, and {royalCommemorations.length} Royal Commemorations. Nos. 01–06 are two-ink print candidates. Nos. 07–10 are full-colour heraldic plates that still need print-resolution artwork. Every composition is front-only.</p>
     </div>
-    <figure><img src="/assets/front-art-founding-ten.png" alt="The ten Low Value Content launch designs shown as a unified front-art system" /><figcaption>Drop 001 · Front-art proof sheet · Print-oriented prototypes</figcaption></figure>
+    <figure><img src="/assets/front-art-founding-ten.png" alt="The ten Low Value Content launch designs shown as a unified front-art system" /><figcaption>Drop 001 · Front-art proof sheet · Print candidates and artwork plates</figcaption></figure>
   </section>
   <nav class="collection-index" aria-label="Regalia collections">
     {collections.map((collection) => <a href={`#${collection.id}`}><span>{collection.number}</span><b>{collection.name}</b><small>{collection.products.length} issues</small></a>)}

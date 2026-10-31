@@ -182,7 +182,7 @@
       "commerceStatus": "test-sellable",
       "assets": {
         "artwork": "design/prototypes/01-validate-me.svg",
-        "artworkPreview": "design/prototypes/previews/01-validate-me.png",
+        "legacyArtworkPreview": "design/prototypes/previews/01-validate-me.png",
         "frontArtDisplay": "website/public/assets/front-art-01-validate-me.png",
         "conceptMockup": "website/public/assets/shirt-01.png"
       },
@@ -218,7 +218,7 @@
       "commerceStatus": "planned",
       "assets": {
         "artwork": "design/prototypes/02-thought-leader.svg",
-        "artworkPreview": "design/prototypes/previews/02-thought-leader.png",
+        "legacyArtworkPreview": "design/prototypes/previews/02-thought-leader.png",
         "frontArtDisplay": "website/public/assets/front-art-02-thought-leader.png",
         "conceptMockup": "website/public/assets/shirt-02.png"
       },
@@ -248,7 +248,7 @@
       "commerceStatus": "planned",
       "assets": {
         "artwork": "design/prototypes/03-market-research.svg",
-        "artworkPreview": "design/prototypes/previews/03-market-research.png",
+        "legacyArtworkPreview": "design/prototypes/previews/03-market-research.png",
         "frontArtDisplay": "website/public/assets/front-art-03-market-research.png",
         "conceptMockup": "website/public/assets/shirt-03.png",
         "designStudy": "website/public/assets/design-study-doomscrolling-v3.png",
@@ -280,7 +280,7 @@
       "commerceStatus": "planned",
       "assets": {
         "artwork": "design/prototypes/04-content-creator.svg",
-        "artworkPreview": "design/prototypes/previews/04-content-creator.png",
+        "legacyArtworkPreview": "design/prototypes/previews/04-content-creator.png",
         "frontArtDisplay": "website/public/assets/front-art-04-content-creator.png",
         "conceptMockup": "website/public/assets/shirt-04.png"
       },
@@ -310,7 +310,7 @@
       "commerceStatus": "planned",
       "assets": {
         "artwork": "design/prototypes/05-authentic-self.svg",
-        "artworkPreview": "design/prototypes/previews/05-authentic-self.png",
+        "legacyArtworkPreview": "design/prototypes/previews/05-authentic-self.png",
         "frontArtDisplay": "website/public/assets/front-art-05-authentic-self.png",
         "conceptMockup": "website/public/assets/shirt-05.png"
       },
@@ -340,7 +340,7 @@
       "commerceStatus": "planned",
       "assets": {
         "artwork": "design/prototypes/06-optimized-shirt.svg",
-        "artworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
+        "legacyArtworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
         "frontArtDisplay": "website/public/assets/front-art-06-optimized-shirt.png",
         "conceptMockup": "website/public/assets/shirt-06.png"
       },
@@ -366,11 +366,12 @@
         "wearerTitle": "Subject in Excellent Posting",
         "proclamation": "The full arms of Engagement, granted for conspicuous publication in the absence of content."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "ornate-art-plate",
       "commerceStatus": "planned",
       "assets": {
-        "artwork": "design/prototypes/07-much-published.svg",
-        "artworkPreview": "design/prototypes/previews/07-much-published.png",
+        "artwork": "design/mockups/royal-house/A07-much-published-little-said.png",
+        "legacyArtwork": "design/prototypes/07-much-published.svg",
+        "legacyArtworkPreview": "design/prototypes/previews/07-much-published.png",
         "frontArtDisplay": "website/public/assets/front-art-07-much-published.png",
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-07-realm.png"
@@ -397,11 +398,12 @@
         "wearerTitle": "Companion of the Blue Check",
         "proclamation": "A distinction awarded for exceptional visibility and no other confirmed service."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "ornate-art-plate",
       "commerceStatus": "planned",
       "assets": {
-        "artwork": "design/prototypes/08-order-blue-check.svg",
-        "artworkPreview": "design/prototypes/previews/08-order-blue-check.png",
+        "artwork": "design/mockups/royal-house/A08-order-blue-check.png",
+        "legacyArtwork": "design/prototypes/08-order-blue-check.svg",
+        "legacyArtworkPreview": "design/prototypes/previews/08-order-blue-check.png",
         "frontArtDisplay": "website/public/assets/front-art-08-order-blue-check.png",
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-08-realm.png"
@@ -428,11 +430,12 @@
         "wearerTitle": "Survivor of the Millennium Interregnum",
         "proclamation": "Issued in remembrance of the night civilization briefly awaited a formatting error."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "ornate-art-plate",
       "commerceStatus": "planned",
       "assets": {
-        "artwork": "design/prototypes/09-y2k-postponed.svg",
-        "artworkPreview": "design/prototypes/previews/09-y2k-postponed.png",
+        "artwork": "design/mockups/royal-house/A09-y2k-postponed.png",
+        "legacyArtwork": "design/prototypes/09-y2k-postponed.svg",
+        "legacyArtworkPreview": "design/prototypes/previews/09-y2k-postponed.png",
         "frontArtDisplay": "website/public/assets/front-art-09-y2k-postponed.png",
         "conceptMockup": "website/public/assets/shirt-09-realm.png"
       },
@@ -458,11 +461,12 @@
         "wearerTitle": "Keeper of the First Actual Bug",
         "proclamation": "A feast-day vestment honoring the creature whose brief technical career became immortal."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "ornate-art-plate",
       "commerceStatus": "planned",
       "assets": {
-        "artwork": "design/prototypes/10-saint-moth.svg",
-        "artworkPreview": "design/prototypes/previews/10-saint-moth.png",
+        "artwork": "design/mockups/royal-house/A10-patron-saint-debugging.png",
+        "legacyArtwork": "design/prototypes/10-saint-moth.svg",
+        "legacyArtworkPreview": "design/prototypes/previews/10-saint-moth.png",
         "frontArtDisplay": "website/public/assets/front-art-10-saint-moth.png",
         "conceptMockup": "website/public/assets/shirt-10-realm.png"
       },

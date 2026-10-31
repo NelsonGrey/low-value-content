@@ -28,10 +28,10 @@ The Crown governs the Attention Economy by converting attention into impressions
 | 4 | Content creator. Meaning pending. | Public Notices | None | Editable SVG | Planned |
 | 5 | My authentic self is currently being monetized. | Public Notices | None | Editable SVG | Planned |
 | 6 | I optimized this shirt for engagement. | Public Notices | Light | Editable SVG | Planned |
-| 7 | Much Published, Little Said | Court & Orders | Full | Editable two-ink SVG | Planned |
-| 8 | Order of the Blue Check | Court & Orders | Full | Editable two-ink SVG | Planned |
-| 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Editable two-ink SVG | Planned |
-| 10 | Patron Saint of Debugging | Royal Commemorations | Full | Editable two-ink SVG | Planned |
+| 7 | Much Published, Little Said | Court & Orders | Full | Ornate art plate | Planned |
+| 8 | Order of the Blue Check | Court & Orders | Full | Ornate art plate | Planned |
+| 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Ornate art plate | Planned |
+| 10 | Patron Saint of Debugging | Royal Commemorations | Full | Ornate art plate | Planned |
 
 The ten garments are one wardrobe with three degrees of ceremony. **Public Notices** are direct editorial observations and do not need a House. **Court & Orders** use appointments, institutions, medals, seals, or sovereign heraldry where those devices establish authority. **Royal Commemorations** use lineage and calendar history as the premise itself.
 
@@ -64,7 +64,7 @@ The exact `frontArtDisplay` image is the storefront authority for what will prin
 
 The current storefront is a direct-buy test flow, not a persistent shopping cart: one product selection is sent to Stripe Checkout. The backend can validate multiple order lines, but a multi-item cart interface has not yet been implemented or approved for launch.
 
-The complete ten-design vector set and its provider preflight gates are documented in [`realm-front-art-production-notes.md`](realm-front-art-production-notes.md).
+The front-art status of all ten designs and their provider preflight gates are documented in [`realm-front-art-production-notes.md`](realm-front-art-production-notes.md).
 
 ## Validation
 
