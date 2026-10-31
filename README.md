@@ -8,7 +8,7 @@
 
 This repository holds the whole project: the business plan, the product concept catalog, shirt design prototypes, launch mockups, and the website.
 
-> **Status:** early development. The website is a placeholder landing page, and none of the names or slogans are trademark-cleared yet. See the [concept catalog](docs/product/concept-catalog.md) and the business plan.
+> **Status:** pre-launch. The Royal House of Engagement storefront is built and deploys to dev and staging; production shows a coming-soon page until launch. One test-mode checkout exists (design No. 01, White / L). None of the names or slogans are trademark-cleared yet. See the [concept catalog](docs/product/concept-catalog.md) and the business plan.
 
 | Environment | Branch | Firebase project | URL |
 | --- | --- | --- | --- |
@@ -48,35 +48,40 @@ The [concept catalog](docs/product/concept-catalog.md) organizes 100 shirt sayin
 | 9 | Terms and Conditions |
 | 10 | Optimized Human |
 
-Six prototypes are in [design/prototypes/](design/prototypes/) and launch mockups are in [design/mockups/](design/mockups/).
+The launch assortment is the **Founding Ten**: six sayings from the catalog (Nos. 01–06, editable SVGs in [design/prototypes/](design/prototypes/)) plus four Realm-native designs (Nos. 07–10, ornate artwork plates in [design/mockups/royal-house/](design/mockups/royal-house/)). With those four, the full ecosystem catalog holds 104 concepts. Launch and concept mockups are in [design/mockups/](design/mockups/). The plates for Nos. 07–10 are not print-ready yet; see [the front-art notes](docs/product/realm-front-art-production-notes.md).
 
 ## Repository layout
 
 ```
 low-value-content/
 ├── docs/
+│   ├── brand/              Brand guide, Constitution of Engagement, heraldic system, imagery direction
 │   ├── business-plan/      Business plan (.docx) and its QA renders (qa/draft, qa/final)
-│   └── product/            Concept catalog, apparel manifest, and product notes
+│   └── product/            Concept catalog, apparel manifest (source of truth), launch matrix, product notes
 ├── design/
-│   ├── prototypes/         Shirt design SVGs and PNG previews
-│   └── mockups/            Launch mockup images
+│   ├── prototypes/         Shirt design SVGs and PNG previews (Nos. 01–10; 07–10 are retired line art)
+│   └── mockups/            Launch mockups, Royal House artwork plates, archived studies
+├── production/             Print-file candidates and QA proofs
+├── functions/              Commerce backend: Stripe Checkout, Printify, Firestore order ledger (see functions/README.md)
+├── scripts/                Site, manifest, and catalog checks and generators
 ├── tools/
 │   └── business-plan/      build_business_plan.py (regenerates the .docx)
 ├── website/
 │   ├── src/ public/        Astro storefront source and static assets
 │   ├── coming-soon/        Standalone production placeholder
 │   └── dist/               Build output served by Firebase Hosting (not committed)
-├── sources/                Synced from the ChatGPT project. Read-only, do not edit.
+├── sources/                Local-only mirror of the ChatGPT project (not tracked in git; may be absent). Read-only.
 ├── .github/                Workflows, issue and PR templates, CODEOWNERS, Dependabot
 ├── .firebaserc             Firebase project aliases (dev / staging / prod)
-└── firebase.json           Firebase Hosting configuration
+├── firebase.{dev,staging,prod}.json   Per-environment hosting config (the deploy workflow copies one to firebase.json)
+└── firebase.json           Default hosting config for local use
 ```
 
 ## Getting started
 
 Prerequisites:
 
-- [Node.js](https://nodejs.org/) 18+ and the [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Node.js](https://nodejs.org/) 24+ for the website (22 for `functions/`) and the [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
 - Python 3.11+ with `python-docx` (only to regenerate the business plan)
 - Access to the three Firebase projects (to deploy by hand)
 
@@ -99,7 +104,7 @@ npm run dev --prefix website
 npm run build --prefix website
 ```
 
-The Valebasse build uses Node.js 24 or newer. The existing commerce functions retain their own runtime configuration.
+The website needs Node.js 24 or newer. The commerce functions in `functions/` run on Node.js 22 and have their own `package.json`.
 
 Preview locally:
 
@@ -117,6 +122,10 @@ firebase deploy --only hosting --project development   # low-value-content-dev
 firebase deploy --only hosting --project staging       # low-value-content-staging
 firebase deploy --only hosting --project production    # low-value-content-prod
 ```
+
+### Commerce functions
+
+CI deploys **hosting only**. Hosting rewrites `/api/**` to the `api` function, so checkout and order status work in an environment only after the functions are deployed by hand: `firebase deploy --only functions --project <alias>`. Secrets, params, and webhook setup are in [functions/README.md](functions/README.md).
 
 ### Automatic deploys
 
@@ -179,7 +188,9 @@ Its first recommendations are to clear the Low Value Content name for trademark,
 
 | Check | Where | What it does |
 | --- | --- | --- |
-| Site and config checks | CI (`scripts/check-site.py`) | Every page has `lang`, title, viewport, and description; local links and assets resolve; Firebase JSON is valid |
+| Site and config checks | CI (`scripts/check-site.py`) | Every page has `lang`, title, viewport, and description; local links and assets resolve; no inline script or style (the dev/staging CSP blocks them); Firebase JSON is valid |
+| Manifest check | CI (`scripts/check-apparel-manifest.py`) | Ten launch products, 100 sayings, declared assets exist, backend catalog matches the manifest |
+| Functions CI | CI (`functions/`) | Typecheck, tests, and build for the commerce backend |
 | Secret scan | CI (gitleaks, full history) | Fails on committed keys, tokens, or private keys |
 | Promotion guard | CI, pull requests | Fails PRs that skip an environment (advisory; see below) |
 | Pipeline Summary | CI | Single pass/fail roll-up of the checks above |

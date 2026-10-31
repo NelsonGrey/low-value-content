@@ -158,9 +158,9 @@ Status: creative development draft. These phrases are not yet fully cleared for 
 | 99 | My wellness app is worried about me. | Concerned notification from a cheerful health icon | Launch |
 | 100 | Optimizing my natural state. | Human silhouette covered in calibration marks and adjustment sliders | Develop |
 
-## Ten featured shirt examples
+## Ten featured shirt examples (original set)
 
-The first six remain the recommended validation assortment. The final four demonstrate how the visual system extends into the newer collections.
+This is the original featured set from the first catalog draft. The shipped launch assortment, the Founding Ten, kept examples 1–6 and replaced 7–10 with four Realm-native designs; see the [apparel manifest](apparel-manifest.md). Examples 7–10 below (Nos. 51, 61, 81, and 91) remain unlaunched catalog concepts.
 
 1. Please validate me algorithmically.
 2. Thought leader. No thoughts required.

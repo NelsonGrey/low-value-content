@@ -25,7 +25,7 @@ Use clear, imperative commit messages ("Add Validate Me shirt prototype"), with 
 
 Source, designs, docs, tools, and the website source (`website/`) are tracked. Never commit credentials, service-account keys, API tokens, or `.env` files. GitHub rejects files over 100 MB.
 
-The `sources/` folder is a read-only mirror of the original ChatGPT project. Do not edit, rename, move, or delete anything in it (see [AGENTS.md](AGENTS.md)).
+If a local `sources/` folder exists, it is a read-only mirror of the original ChatGPT project (it is not tracked in git). Do not edit, rename, move, or delete anything in it (see [AGENTS.md](AGENTS.md)).
 
 ## Content and naming
 
@@ -34,7 +34,7 @@ The `sources/` folder is a read-only mirror of the original ChatGPT project. Do 
 
 ## Checks
 
-Before opening a pull request, run `python3 scripts/check-site.py` and, if you touched config or secrets handling, `gitleaks detect --source . --redact`. CI runs the same checks, a secret scan, and an advisory promotion guard that fails pull requests which skip an environment (`develop` → `staging` → `main` only). Branch protection is not available on this plan, so follow the flow by hand.
+Before opening a pull request, run `python3 scripts/check-site.py` (after a build), `python3 scripts/check-apparel-manifest.py` and, if you touched config or secrets handling, `gitleaks detect --source . --redact`. CI runs the same checks, a secret scan, and an advisory promotion guard that fails pull requests which skip an environment (`develop` → `staging` → `main` only). Branch protection is not available on this plan, so follow the flow by hand.
 
 ## Website
 
