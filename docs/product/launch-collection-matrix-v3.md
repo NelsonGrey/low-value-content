@@ -45,7 +45,7 @@ All launch garments begin as **front-only prints**. House seals, QR destinations
 
 ## Founding Plate utilization matrix
 
-The original board at `mockups/royal-house/01-brand-identity-board.png` is the source library for the Realm. Its elements should be extracted or redrawn deliberately rather than replaced by generic royal decoration.
+The original board at `website/public/assets/royal-house/01-brand-identity-board.png` is the source library for the Realm. Its elements should be extracted or redrawn deliberately rather than replaced by generic royal decoration.
 
 | Founding Plate element | Website role | Apparel role | Packaging / campaign role | Constraint |
 |---|---|---|---|---|

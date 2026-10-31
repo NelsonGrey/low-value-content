@@ -173,4 +173,4 @@ The first six remain the recommended validation assortment. The final four demon
 9. Basic personality. Premium features.
 10. Mindfulness, but competitively.
 
-The first six have editable SVG concept files in `design-prototypes/`. The typography remains live text for easy iteration; convert it to outlines only after choosing the final typefaces and printer specifications. The four expansion examples currently exist as presentation mockups and will need production artwork if selected for printing.
+The first six have editable SVG concept files in `design/prototypes/`. The typography remains live text for easy iteration; convert it to outlines only after choosing the final typefaces and printer specifications. The four expansion examples currently exist as presentation mockups and will need production artwork if selected for printing.

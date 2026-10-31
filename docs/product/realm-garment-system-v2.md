@@ -63,7 +63,7 @@ The V2 pilot combines the original circular research-department typography with 
 
 V2 established the basic merger but remained too decorative. V3 removes the fleur-de-lis devices from the front, replaces the sleeve crest with a direct House-of-Scroll arrow, reduces and simplifies the back arms, and adds a small non-scannable QR-style seal at the upper neck. The joke becomes clearer, and the Realm reads as a designed system rather than a costume theme.
 
-Both studies remain archived in `mockups/realm-merge/`; V3 is the current storefront study.
+Both studies remain archived in `design/mockups/realm-merge/`; V3 is the current storefront study.
 
 ## Refinement gates before propagation
 
