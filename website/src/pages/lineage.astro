@@ -3,33 +3,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { lineage } from "../data";
 
 const details: Record<string, { motto: string; account: string }> = {
-  "moth-i": { motto: "Primus casus verus", account: "An actual moth, elevated posthumously after making a documented physical contribution to debugging." },
-  "lo-i": { motto: "Initium interruptum", account: "The first network message attempted LOGIN, delivered LO, and crashed before completing the thought." },
-  "spam-i": { motto: "Electus es cum omnibus", account: "First sovereign to address every subject simultaneously, whether or not correspondence had been requested." },
-  "emoticon-i": { motto: "Verte caput et ride", account: "Established compulsory emotional context and required all subjects to tilt their heads sideways." },
+  "moth": { motto: "Primus casus verus", account: "An actual moth, canonized after making a documented physical contribution to debugging. Remembered as the Pious for dying in service of the machine." },
+  "lo": { motto: "Initium interruptum", account: "The first network message attempted LOGIN, delivered LO, and crashed before completing the thought." },
+  "spam": { motto: "Electus es cum omnibus", account: "First sovereign to address every subject simultaneously, whether or not correspondence had been requested." },
+  "emoticon": { motto: "Verte caput et ride", account: "Established compulsory emotional context and required all subjects to tilt their heads sideways." },
   "web-i": { motto: "Omnibus aperta", account: "Freed information for humanity, which immediately began using it to argue with strangers." },
   "y2k-the-almost": { motto: "Finis mundi dilatus", account: "Disputed pretender to the digital throne. The kingdom survived after years of preparation and several cupboards of bottled water." },
-  "web-i-restored": { motto: "Continuatio ordinaria", account: "Restored after the Millennium Interregnum, with most clocks, banks, and household appliances still operational." },
-  "content-i": { motto: "Vita est materia", account: "Declared ordinary existence valuable when recorded, titled, optimized, and uploaded." },
-  "scroll-i": { motto: "Semper deorsum", account: "A sovereign without bottom, boundary, or natural conclusion." },
-  "algorithm-i": { motto: "Ex mandato algorithmi", account: "Neither elected nor understood, yet determined what every subject was permitted to notice." },
-  "prompt-i": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers while accepting no responsibility for the questions." },
+  "web-ii": { motto: "Continuatio ordinaria", account: "Restored after the Millennium Interregnum, with most clocks, banks, and household appliances still operational." },
+  "content": { motto: "Vita est materia", account: "Wanted to be seen, and declared ordinary existence valuable only when recorded, titled, optimized, and uploaded." },
+  "scroll": { motto: "Semper deorsum", account: "A sovereign without bottom, boundary, or natural conclusion." },
+  "algorithm": { motto: "Ex mandato algorithmi", account: "Neither elected nor understood, and justly feared: determined what every subject was permitted to notice." },
+  "prompt": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers with total confidence and no responsibility for the questions." },
 };
 const devices: Record<string, string> = {
-  "moth-i": "/assets/lineage-moth.svg",
-  "lo-i": "/assets/lineage-lo.svg",
-  "spam-i": "/assets/house-spam.svg",
-  "emoticon-i": "/assets/order-blue-check.svg",
+  "moth": "/assets/lineage-moth.svg",
+  "lo": "/assets/lineage-lo.svg",
+  "spam": "/assets/house-spam.svg",
+  "emoticon": "/assets/order-blue-check.svg",
   "web-i": "/assets/royal-mark.svg",
   "y2k-the-almost": "/assets/lineage-y2k.svg",
-  "web-i-restored": "/assets/royal-mark.svg",
-  "content-i": "/assets/house-influence.svg",
-  "scroll-i": "/assets/house-scroll.svg",
-  "algorithm-i": "/assets/house-signal.svg",
-  "prompt-i": "/assets/house-prompt.svg",
+  "web-ii": "/assets/royal-mark.svg",
+  "content": "/assets/house-influence.svg",
+  "scroll": "/assets/house-scroll.svg",
+  "algorithm": "/assets/house-signal.svg",
+  "prompt": "/assets/house-prompt.svg",
 };
-const roman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"];
-const shortName = (name: string) => name.split(",")[0];
+const shortName = (name: string) => name.split(" the ")[0];
 const firstYear = (period: string) => period.match(/\d{4}/)?.[0] ?? "";
 const last = lineage.length - 1;
 const disputedCount = lineage.filter((e) => e.disputed).length;
@@ -48,7 +47,7 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
         <div><dt>Sovereigns</dt><dd>{lineage.length}</dd></div>
         <div><dt>Years of interruption</dt><dd>{yearsReigning}</dd></div>
         <div><dt>Disputed claims</dt><dd>{String(disputedCount).padStart(2, "0")}</dd></div>
-        <div><dt>Reigning now</dt><dd class="name">{shortName(lineage[last].name)}</dd></div>
+        <div><dt>Reigning now</dt><dd class="name">{lineage[last].name}</dd></div>
       </dl>
     </aside>
   </header>
@@ -70,13 +69,14 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
     <p class="eyebrow">The law of succession</p>
     <h2>Authority follows attention.</h2>
     <p>A reign begins when a new power changes what the realm notices, produces, or cannot stop checking. The Great Houses endure beneath the Crown; the sovereign changes whenever the machinery of attention does.</p>
+    <p>Sovereigns take the name of the power they embody. A numeral is granted only when a name recurs, and an epithet is awarded by posterity, usually without the sovereign’s consent.</p>
   </section>
   <section class="timeline" aria-label="The reigns">
     <ol>
       {lineage.map((entry, index) => (
         <li id={entry.id} class:list={["reign", entry.disputed && "disputed", index === last && "present"]}>
           <div class="when">
-            <span class="ordinal">Reign {roman[index]}</span>
+            <span class="ordinal">Reign {String(index + 1).padStart(2, "0")}</span>
             <b>{entry.period}</b>
           </div>
           <div class="node"><img src={devices[entry.id]} alt={`Device of ${entry.name}`} /></div>

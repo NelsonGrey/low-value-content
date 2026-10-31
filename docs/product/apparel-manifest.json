@@ -107,17 +107,17 @@
     { "name": "Order of Jacquard", "rule": "Recognition for programmable instructions and ancestral automation", "rank": "Companion" }
   ],
   "lineage": [
-    { "id": "moth-i", "name": "Moth I, the Debugger", "period": "1947–1969" },
-    { "id": "lo-i", "name": "LO I, the Interrupted", "period": "1969–1978" },
-    { "id": "spam-i", "name": "Spam I, the Unsolicited", "period": "1978–1982" },
-    { "id": "emoticon-i", "name": "Emoticon I, the Sideways", "period": "1982–1993" },
-    { "id": "web-i", "name": "Web I, the Open", "period": "1993–1999" },
-    { "id": "y2k-the-almost", "name": "Y2K, the Almost", "period": "December 31, 1999–January 1, 2000", "disputed": true },
-    { "id": "web-i-restored", "name": "Web I, Restored", "period": "2000–2005" },
-    { "id": "content-i", "name": "Content I, the Uploaded", "period": "2005–2007" },
-    { "id": "scroll-i", "name": "Scroll I, the Endless", "period": "2007–2016" },
-    { "id": "algorithm-i", "name": "Algorithm I, the Unseen", "period": "2016–2022" },
-    { "id": "prompt-i", "name": "Prompt I, the Generative", "period": "2022–present" }
+    { "id": "moth", "name": "Moth the Pious", "period": "1947–1969" },
+    { "id": "lo", "name": "LO the Interrupted", "period": "1969–1978" },
+    { "id": "spam", "name": "Spam the Unsolicited", "period": "1978–1982" },
+    { "id": "emoticon", "name": "Emoticon the Sideways", "period": "1982–1993" },
+    { "id": "web-i", "name": "Web I the Great", "period": "1993–1999" },
+    { "id": "y2k-the-almost", "name": "Y2K the Almost", "period": "December 31, 1999–January 1, 2000", "disputed": true },
+    { "id": "web-ii", "name": "Web II the Chastened", "period": "2000–2005" },
+    { "id": "content", "name": "Content the Wanting", "period": "2005–2007" },
+    { "id": "scroll", "name": "Scroll the Endless", "period": "2007–2016" },
+    { "id": "algorithm", "name": "Algorithm the Terrible", "period": "2016–2022" },
+    { "id": "prompt", "name": "Prompt the Confident", "period": "2022–present" }
   ],
   "observances": [
     { "monthDay": "01-01", "name": "Feast of Universal Connectivity" },
@@ -170,7 +170,7 @@
       "family": "royal-proclamations",
       "royalTreatment": "Formal Petition for Algorithmic Recognition",
       "house": "House of Influence",
-      "reign": "algorithm-i",
+      "reign": "algorithm",
       "latin": "Me algorithmice confirma",
       "qrRoute": "/r/validate",
       "realmIssue": {
@@ -206,7 +206,7 @@
       "family": "royal-proclamations",
       "royalTreatment": "Official Court Appointment",
       "house": "House of Influence",
-      "reign": "algorithm-i",
+      "reign": "algorithm",
       "latin": "Nulla cogitatio requiritur",
       "qrRoute": "/r/thought-leader",
       "realmIssue": {
@@ -236,7 +236,7 @@
       "family": "court-uniforms",
       "royalTreatment": "Royal Institute of Digital Inquiry",
       "house": "House of Scroll",
-      "reign": "scroll-i",
+      "reign": "scroll",
       "latin": null,
       "qrRoute": "/r/doomscrolling",
       "realmIssue": {
@@ -268,7 +268,7 @@
       "family": "royal-proclamations",
       "royalTreatment": "Unfinished Illuminated Proclamation",
       "house": "House of Prompt",
-      "reign": "content-i",
+      "reign": "content",
       "latin": null,
       "qrRoute": "/r/content-creator",
       "realmIssue": {
@@ -298,7 +298,7 @@
       "family": "royal-proclamations",
       "royalTreatment": "Royal Portrait and Auction Inventory",
       "house": "House of Influence",
-      "reign": "algorithm-i",
+      "reign": "algorithm",
       "latin": "Persona vera venalis",
       "qrRoute": "/r/authentic-self",
       "realmIssue": {
@@ -328,7 +328,7 @@
       "family": "court-uniforms",
       "royalTreatment": "Office of Engagement Performance Report",
       "house": "House of Influence",
-      "reign": "algorithm-i",
+      "reign": "algorithm",
       "latin": "Ad favorem optimizatum",
       "qrRoute": "/r/optimized-shirt",
       "realmIssue": {
@@ -358,7 +358,7 @@
       "family": "royal-arms",
       "royalTreatment": "Full Peacock-and-Parrot Arms",
       "house": "The Royal House of Engagement",
-      "reign": "prompt-i",
+      "reign": "prompt",
       "latin": "Multa edita, pauca dicta",
       "qrRoute": "/r/much-published",
       "realmIssue": {
@@ -390,7 +390,7 @@
       "family": "orders-and-titles",
       "royalTreatment": "Medal for Distinguished Personal Visibility",
       "house": "House of Influence",
-      "reign": "algorithm-i",
+      "reign": "algorithm",
       "latin": "Ordo Signi Caerulei",
       "qrRoute": "/r/order-blue-check",
       "realmIssue": {
@@ -418,7 +418,7 @@
       "launchCollection": "Royal Commemorations",
       "realmIntensity": "full",
       "frontOnlyLaunch": true,
-      "regaliaRole": "A dated commemorative issue for the disputed reign of Y2K, the Almost.",
+      "regaliaRole": "A dated commemorative issue for the disputed reign of Y2K the Almost.",
       "family": "commemorative-editions",
       "royalTreatment": "The Millennium Interregnum",
       "house": "House of Buffer",
@@ -453,7 +453,7 @@
       "family": "commemorative-editions",
       "royalTreatment": "The Feast of Saint Moth",
       "house": "House of Signal",
-      "reign": "moth-i",
+      "reign": "moth",
       "latin": "Primus casus verus",
       "qrRoute": "/r/moth",
       "realmIssue": {

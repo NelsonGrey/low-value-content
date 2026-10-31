@@ -55,7 +55,7 @@ The V2 pilot combines the original circular research-department typography with 
 - **Institution:** Royal Institute of Digital Inquiry
 - **Sleeve:** House of Scroll seal
 - **Back title:** Duke of Doomscrolling
-- **Back issue line:** House of Scroll · Scroll I, the Endless
+- **Back issue line:** House of Scroll · Scroll the Endless
 - **Garment:** washed oxblood heavyweight tee
 - **Ink:** warm ivory and muted antique gold, with minimal navy if needed
 

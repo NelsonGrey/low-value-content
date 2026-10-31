@@ -1,6 +1,6 @@
 # Low Value Content — Working Concept Catalog
 
-Status: creative development draft. These phrases are not yet fully cleared for trademark, marketplace, or prior-use conflicts.
+Status: creative development draft. The Launch / Develop / Hold column below is the original first-pass scoring; the Realm-aligned shortlist is in [sayings-review.md](sayings-review.md). These phrases are not yet fully cleared for trademark, marketplace, or prior-use conflicts.
 
 ## Scoring key
 

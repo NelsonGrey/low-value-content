@@ -145,16 +145,16 @@ Still-life objects with the House badge as a small engraved or enamel plaque. On
 | G04 | House of Signal: a brass pressure gauge and a chart with a gold ascending trace | Realm |
 | G05 | House of Spam: identical sealed envelopes spilling from a leather post-bag | Realm |
 | G06 | House of Buffer: an hourglass with a half-drawn gold ring, sand mid-fall | Realm |
-| L01 | Moth I: a pinned moth specimen under glass beside a small brass relay | Lineage |
-| L02 | LO I: a brass-and-glass terminal showing the two letters "LO" | Lineage |
-| L03 | Spam I: a pile of identical envelopes, as G05 but a portrait frame | Lineage |
-| L04 | Emoticon I: a gilt oval miniature of a sideways smile in a portrait frame | Lineage |
-| L05 | Web I: a globe wrapped in gold thread on a stand | Lineage |
-| L06 | Y2K, the Almost: a stopped clock reading 99:00 with a wax "disputed" seal | Lineage |
-| L07 | Content I: a gilded folding camera and film reel | Lineage |
-| L08 | Scroll I: as G02, cropped as a portrait | Lineage |
-| L09 | Algorithm I: a veiled brass orrery, no face visible, a black cloth draped over it | Lineage |
-| L10 | Prompt I: an ornate typewriter with an endless paper ribbon spilling off the platen | Lineage |
+| L01 | Moth the Pious: a pinned moth specimen under glass beside a small brass relay | Lineage |
+| L02 | LO the Interrupted: a brass-and-glass terminal showing the two letters "LO" | Lineage |
+| L03 | Spam the Unsolicited: a pile of identical envelopes, as G05 but a portrait frame | Lineage |
+| L04 | Emoticon the Sideways: a gilt oval miniature of a sideways smile in a portrait frame | Lineage |
+| L05 | Web I the Great: a globe wrapped in gold thread on a stand | Lineage |
+| L06 | Y2K the Almost: a stopped clock reading 99:00 with a wax "disputed" seal | Lineage |
+| L07 | Content the Wanting: a gilded folding camera and film reel | Lineage |
+| L08 | Scroll the Endless: as G02, cropped as a portrait | Lineage |
+| L09 | Algorithm the Terrible: a veiled brass orrery, no face visible, a black cloth draped over it | Lineage |
+| L10 | Prompt the Confident: an ornate typewriter with an endless paper ribbon spilling off the platen | Lineage |
 | U01 | 404: an empty gilded picture frame on a panelled wall, a small brass plaque left blank | 404 |
 | U02 | Order status: a wax-sealed ledger on the desk | Order |
 

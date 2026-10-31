@@ -35,7 +35,7 @@ The Crown governs the Attention Economy by converting attention into impressions
 
 The ten garments are one wardrobe with three degrees of ceremony. **Public Notices** are direct editorial observations and do not need a House. **Court & Orders** use appointments, institutions, medals, seals, or sovereign heraldry where those devices establish authority. **Royal Commemorations** use lineage and calendar history as the premise itself.
 
-Every launch garment is front-only. The saying and artwork must succeed in one print area. Houses, offices, reigns, ceremonial titles, and QR stories begin on the website, hangtags, or packaging inserts; sleeve marks, back prints, and garment QR seals remain optional future premium treatments after physical testing. `LO I, the Interrupted` remains a strong future commemorative design rather than displacing an existing launch shirt.
+Every launch garment is front-only. The saying and artwork must succeed in one print area. Houses, offices, reigns, ceremonial titles, and QR stories begin on the website, hangtags, or packaging inserts; sleeve marks, back prints, and garment QR seals remain optional future premium treatments after physical testing. `LO the Interrupted` remains a strong future commemorative design rather than displacing an existing launch shirt.
 
 ## Status meanings
 

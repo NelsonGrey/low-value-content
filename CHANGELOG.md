@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [Unreleased]
 
 ### Changed
+- Lineage: the eleven sovereigns no longer all carry "I". Sole bearers have no numeral and every reign has an epithet (Moth the Pious, Algorithm the Terrible, Content the Wanting, Prompt the Confident, and so on); the second Web is Web II the Chastened. Reign ids in the manifest lost their `-i` suffix. The lineage page explains the naming rule and shows "Reign 01" to "Reign 11".
+- Added `docs/product/sayings-review.md`: a Realm-aligned ranking of the 100 sayings with a twenty-line Wave 2 shortlist by House, five commemoration lines, and a cut list.
 - Content consistency pass. Product pages and cards are shopper-facing (production fields, the repeated Launch Constitution block and the front-art spec section are gone; lore sits in a collapsed archive note). The Royal House is the visible brand on every page title and on the coming-soon page, which now uses the House palette. Collection naming is "the founding collection". Garments are limited to Ivory, Oxblood, Navy and Black. Nos. 01–06 carry the shared House frame and imprint, are rebuilt in the House inks, and are rendered by `scripts/render-front-art.py`.
 - Nos. 07–10 now use the ornate full-colour artwork plates across the manifest, storefront, shop proof sheet, and production docs; the retired line art is kept as `legacyArtwork`. Product pages label the plates "not yet print-ready".
 - Storefront scripts and styles are external files, so the dev and staging Content-Security-Policy no longer blocks the menu, calendar highlight, or page styles. `scripts/check-site.py` now fails on inline scripts, styles, and `style=` attributes in the built site.

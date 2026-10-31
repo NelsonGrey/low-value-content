@@ -50,6 +50,10 @@ The system should feel like editorial design crossed with institutional interfac
 - Use a small, consistent source-identifying brand detail on the neck label, packaging, product page, or secondary placement.
 - Avoid loud novelty-shirt layouts, unlicensed assets, fake performance metrics, and mockups that imply an unapproved product specification.
 
+### Regnal names
+
+Sovereigns take the name of the power they embody. A numeral appears only when a name recurs (Web I the Great, Web II the Chastened); sole bearers carry none. Every sovereign has an epithet awarded by posterity, a mix of the classical (the Pious, the Great, the Terrible, the Wanting) and the technical (the Interrupted, the Unsolicited, the Sideways). The current line: Moth the Pious, LO the Interrupted, Spam the Unsolicited, Emoticon the Sideways, Web I the Great, Y2K the Almost, Web II the Chastened, Content the Wanting, Scroll the Endless, Algorithm the Terrible, Prompt the Confident. Ordinal position on the lineage page is shown as "Reign 01" to "Reign 11" so it never clashes with a regnal numeral.
+
 ### House palette and garments
 
 The Royal House is the visible brand and Low Value Content is the label on it. The same lockup appears everywhere: "The Royal House of Engagement" with "Purveyed by Low Value Content" beneath it. Page titles end "| The Royal House of Engagement". The founding collection is called **the founding collection** (ten issues); do not use "Drop 001", "Founding Ten", "Founding Six" or "Founding Plate" in public copy.
