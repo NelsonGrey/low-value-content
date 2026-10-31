@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [Unreleased]
 
 ### Changed
+- Content consistency pass. Product pages and cards are shopper-facing (production fields, the repeated Launch Constitution block and the front-art spec section are gone; lore sits in a collapsed archive note). The Royal House is the visible brand on every page title and on the coming-soon page, which now uses the House palette. Collection naming is "the founding collection". Garments are limited to Ivory, Oxblood, Navy and Black. Nos. 01–06 carry the shared House frame and imprint, are rebuilt in the House inks, and are rendered by `scripts/render-front-art.py`.
 - Nos. 07–10 now use the ornate full-colour artwork plates across the manifest, storefront, shop proof sheet, and production docs; the retired line art is kept as `legacyArtwork`. Product pages label the plates "not yet print-ready".
 - Storefront scripts and styles are external files, so the dev and staging Content-Security-Policy no longer blocks the menu, calendar highlight, or page styles. `scripts/check-site.py` now fails on inline scripts, styles, and `style=` attributes in the built site.
 - Product price on the storefront is read from the manifest instead of being hard-coded.

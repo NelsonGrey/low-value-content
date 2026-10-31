@@ -50,6 +50,15 @@ The system should feel like editorial design crossed with institutional interfac
 - Use a small, consistent source-identifying brand detail on the neck label, packaging, product page, or secondary placement.
 - Avoid loud novelty-shirt layouts, unlicensed assets, fake performance metrics, and mockups that imply an unapproved product specification.
 
+### House palette and garments
+
+The Royal House is the visible brand and Low Value Content is the label on it. The same lockup appears everywhere: "The Royal House of Engagement" with "Purveyed by Low Value Content" beneath it. Page titles end "| The Royal House of Engagement". The founding collection is called **the founding collection** (ten issues); do not use "Drop 001", "Founding Ten", "Founding Six" or "Founding Plate" in public copy.
+
+- **Garments:** four colours only: Ivory, Oxblood, Navy, Black. Colours are planned until sampling confirms the blank and provider.
+- **Inks (two-ink designs):** navy, oxblood and antique gold. No editorial black, lime or notification red.
+- **Shared frame (Nos. 01–06):** every two-ink design carries the House frame (double rule, diamond corners) and the imprint line "The Royal House of Engagement · No. NN". Headline typography may stay in its own joke register (typewriter, auction, report); small text is set in the House serif. Sources are `design/prototypes/01..06`; run `python3 scripts/render-front-art.py` to rebuild the display PNGs and proof sheet.
+- **Product pages show shoppers:** name, price, art, one line of description, collection, garment, and an archive note for the lore. Production status, print gates, realm intensity and similar workshop fields live in `docs/`, not on the site.
+
 ### Two registers
 
 The visual system has two registers. **Public Notices** use the restrained editorial register above: typography, status language, one or two inks, neutral garments. **Court & Orders** and **Royal Commemorations** use the Realm register: heraldry, seals, Latin as subordinate texture, and the navy, oxblood, antique gold, and ivory palette, with full-colour art for Nos. 07–10. The brand voice stays dry and exact in both; the Realm adds ceremony, not a different joke. Public Notices never receive sovereign heraldry.

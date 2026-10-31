@@ -71,16 +71,16 @@ Every image, product or not, must pass this before it ships:
 
 | No. | Design | Garment | Inks / palette |
 |---|---|---|---|
-| 01 | Please validate me algorithmically. | Warm white | Editorial black + notification red |
-| 02 | Thought leader. No thoughts required. | Warm white | Archive navy + antique gold |
-| 03 | I'm not doomscrolling. I'm doing market research. | Oxblood | Warm ivory + antique gold |
-| 04 | Content creator. Meaning pending. | Warm white | Editorial black + status red |
-| 05 | My authentic self is currently being monetized. | Warm white | Editorial black + status red |
-| 06 | I optimized this shirt for engagement. | Warm white | Editorial black + status red |
-| 07 | Much Published, Little Said | Deep navy | Warm ivory + antique gold |
-| 08 | Order of the Blue Check | Washed black | Appointment blue + antique gold |
-| 09 | The End of the World Has Been Postponed | Oxblood | Warm ivory + millennium gold |
-| 10 | Patron Saint of Debugging | Warm ivory | Archive navy + antique gold |
+| 01 | Please validate me algorithmically. | Ivory | Navy + oxblood |
+| 02 | Thought leader. No thoughts required. | Ivory | Archive navy + antique gold |
+| 03 | I'm not doomscrolling. I'm doing market research. | Oxblood | Ivory + antique gold |
+| 04 | Content creator. Meaning pending. | Ivory | Navy + oxblood |
+| 05 | My authentic self is currently being monetized. | Ivory | Navy + oxblood |
+| 06 | I optimized this shirt for engagement. | Ivory | Navy + oxblood |
+| 07 | Much Published, Little Said | Navy | Ivory + antique gold |
+| 08 | Order of the Blue Check | Black | Appointment blue + antique gold |
+| 09 | The End of the World Has Been Postponed | Oxblood | Ivory + millennium gold |
+| 10 | Patron Saint of Debugging | Ivory | Archive navy + antique gold |
 
 ## Shot list
 

@@ -2,12 +2,17 @@
   <title>My Authentic Self Is Currently Being Monetized — two-ink front artwork</title>
   <desc>Independent transactional notice with an auction-style monetized status stamp.</desc>
   <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
-    <text x="2250" y="1570" fill="#171713" font-size="210" letter-spacing="30">MY AUTHENTIC SELF IS</text>
-    <rect x="620" y="1960" width="3260" height="1180" fill="none" stroke="#171713" stroke-width="34"/><rect x="760" y="2100" width="2980" height="900" fill="#D9483B"/>
-    <text x="2250" y="2710" fill="#F4EEDF" font-size="520" font-weight="800" letter-spacing="4" data-production="garment-color knockout; not a third ink">MONETIZED</text>
-    <text x="2250" y="3520" fill="#171713" font-size="240" letter-spacing="22">CURRENTLY AVAILABLE</text>
-    <line x1="1030" y1="3780" x2="3470" y2="3780" stroke="#171713" stroke-width="24"/>
-    <text x="2250" y="4130" fill="#D9483B" font-size="105" letter-spacing="28">SPONSORSHIP SUBJECT TO TERMS</text>
-    <text x="2250" y="4430" fill="#171713" font-size="86" letter-spacing="24">PERSONA MAY DIFFER FROM PERSON</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="1570" fill="#142B40" font-size="210" letter-spacing="30">MY AUTHENTIC SELF IS</text>
+    <rect x="620" y="1960" width="3260" height="1180" fill="none" stroke="#142B40" stroke-width="34"/><rect x="760" y="2100" width="2980" height="900" fill="#852E34"/>
+    <text x="2250" y="2710" fill="#F4EEDF" font-size="420" font-weight="800" letter-spacing="4" data-production="garment-color knockout; not a third ink">MONETIZED</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="3520" fill="#142B40" font-size="240" letter-spacing="22">CURRENTLY AVAILABLE</text>
+    <line x1="1030" y1="3780" x2="3470" y2="3780" stroke="#142B40" stroke-width="24"/>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="4130" fill="#852E34" font-size="105" letter-spacing="28">SPONSORSHIP SUBJECT TO TERMS</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="4430" fill="#142B40" font-size="86" letter-spacing="24">PERSONA MAY DIFFER FROM PERSON</text>
+  </g>
+  <g id="house-frame">
+    <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#852E34" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 05</text>
   </g>
 </svg>

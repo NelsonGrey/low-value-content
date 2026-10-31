@@ -6,8 +6,8 @@ const channels = [
   { id: "linkedin", icon: "/assets/icon-linkedin.svg", label: "Selective / LinkedIn", title: "Work is content.", copy: "Thought leadership, productivity theater, creator economics, and corporate performance—used carefully enough not to become the thing being mocked.", status: "The court page opens when it has something to say." },
 ];
 ---
-<BaseLayout title="Social Proclamations | Low Value Content" description="The planned official social channels for Low Value Content and the Royal House of Engagement.">
-  <header class="social-hero"><p class="script">Follow the Court</p><h1>The Court will publish<br />through official channels.</h1><p>Official profiles will open with Drop 001. Until verified destinations are approved, this page records the authorized channels and their respective duties.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
+<BaseLayout title="Social Proclamations | The Royal House of Engagement" description="The planned official social channels for Low Value Content and the Royal House of Engagement.">
+  <header class="social-hero"><p class="script">Follow the Court</p><h1>The Court will publish<br />through official channels.</h1><p>Official profiles will open with the founding collection. Until verified destinations are approved, this page records the authorized channels and their respective duties.</p><span>Handles are being secured · no unofficial accounts linked</span></header>
   <section class="channels">
     {channels.map((channel) => <article id={channel.id}><img src={channel.icon} alt="" /><p class="eyebrow">{channel.label}</p><h2>{channel.title}</h2><p>{channel.copy}</p><blockquote>{channel.status}</blockquote></article>)}
     <article><img src="/assets/royal-mark.svg" alt="" /><p class="eyebrow">Owned / This website</p><h2>The public record.</h2><p>Final releases, product details, policies, lineage, and the complete catalog will remain here rather than inside a rented feed.</p><blockquote>This domain constitutes the authoritative record.</blockquote></article>

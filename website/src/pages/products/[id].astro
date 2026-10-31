@@ -9,41 +9,39 @@ export function getStaticPaths() {
 
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
-const rawFrontArt = "frontArtDisplay" in product.assets ? product.assets.frontArtDisplay : undefined;
-const frontArt = rawFrontArt ? `/assets/${rawFrontArt.split("/").pop()}` : null;
-const ornate = product.creativeStatus === "ornate-art-plate";
 const price = `$${Math.round(product.commerce.priceCents / 100)}`;
 const canBuy = product.commerceStatus === "test-sellable" && product.commerce.catalogKey;
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
 const realmConnected = hasRealmProvenance(product);
 const isCommemoration = product.launchCollection === "Royal Commemorations";
-const artSpecs: Record<string, { garment: string; inks: string }> = {
-  "validate": { garment: "Warm white", inks: "Editorial black + notification red" },
-  "thought-leader": { garment: "Warm white", inks: "Archive navy + antique gold" },
-  "doomscrolling": { garment: "Oxblood", inks: "Warm ivory + antique gold" },
-  "content-creator": { garment: "Warm white", inks: "Editorial black + status red" },
-  "authentic-self": { garment: "Warm white", inks: "Editorial black + status red" },
-  "optimized-shirt": { garment: "Warm white", inks: "Editorial black + status red" },
-  "much-published": { garment: "Deep navy", inks: "Full colour heraldic plate" },
-  "order-blue-check": { garment: "Washed black", inks: "Full colour heraldic plate" },
-  "y2k-the-almost": { garment: "Oxblood", inks: "Full colour heraldic plate" },
-  "saint-moth": { garment: "Warm ivory", inks: "Full colour heraldic plate" },
+// House garment palette: Ivory, Oxblood, Navy, Black.
+const garments: Record<string, string> = {
+  "validate": "Ivory",
+  "thought-leader": "Ivory",
+  "doomscrolling": "Oxblood",
+  "content-creator": "Ivory",
+  "authentic-self": "Ivory",
+  "optimized-shirt": "Ivory",
+  "much-published": "Navy",
+  "order-blue-check": "Black",
+  "y2k-the-almost": "Oxblood",
+  "saint-moth": "Ivory",
 };
-const artSpec = artSpecs[product.id];
+const garment = garments[product.id];
 const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
 const mockup = rawMockup && rawMockup.includes("-realm.") ? `/assets/${rawMockup.split("/").pop()}` : null;
 const start = products.findIndex((p) => p.id === product.id);
 const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 ---
-<BaseLayout title={`${product.primaryCopy} | Low Value Content`} description={`${product.primaryCopy} — ${product.royalTreatment}. A Low Value Content apparel concept.`} current="shop">
+<BaseLayout title={`${product.primaryCopy} | The Royal House of Engagement`} description={`${product.primaryCopy} — ${product.royalTreatment}. An official issue of the Royal House, by Low Value Content.`} current="shop">
   <article class="product-page">
     <div class:list={["product-visual", `art-${product.id}`, !image && "typographic"]}>
-      {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">{ornate ? "Artwork plate · not yet print-ready" : "Front artwork · print candidate"}</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
+      {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">Front artwork</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
     </div>
     <div class="product-details">
       <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
       <h1>{product.primaryCopy}</h1>
-      <p class="price">{price} <span>planned retail</span></p>
+      <p class="price">{price}</p>
       <p class="treatment">{product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
@@ -54,22 +52,22 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
           <p class="buy-note" role="status" aria-live="polite">Test configuration: White / L only. US shipping is $5.99.</p>
         </form>
       ) : (
-        <div class="development-notice"><b>In development</b><p>This concept is not yet available for purchase. Production artwork, garment selection, sampling, and Printify variants remain to be approved.</p></div>
+        <div class="development-notice"><b>Coming soon</b><p>This issue is not yet available. It opens with the first collection.</p></div>
       )}
       <dl>
         <div><dt>Collection</dt><dd>{product.launchCollection}</dd></div>
-        <div><dt>Launch print</dt><dd>Front only</dd></div>
-        <div><dt>Realm intensity</dt><dd>{product.realmIntensity}</dd></div>
+        <div><dt>Garment</dt><dd>{garment}, front print</dd></div>
         {realmConnected && <div><dt>House</dt><dd>{product.house}</dd></div>}
-        {realmConnected && <div><dt>{isCommemoration ? "Observed under" : "Archival reign"}</dt><dd>{reignName}</dd></div>}
-        <div><dt>Creative status</dt><dd>{product.creativeStatus.replaceAll("-", " ")}</dd></div>
       </dl>
       {realmConnected ? (
-        <section class="proclamation"><p class="eyebrow">{isCommemoration ? "From the Royal Archive" : `By authority of ${product.house}`}</p><blockquote>{product.realmIssue.proclamation}</blockquote><p class="title-line">Online provenance: <b>{product.realmIssue.office}</b> · <b>{product.realmIssue.wearerTitle}</b>.</p></section>
+        <details class="archive">
+          <summary>{isCommemoration ? "From the Royal Archive" : `By authority of ${product.house}`}</summary>
+          <blockquote>{product.realmIssue.proclamation}</blockquote>
+          <p class="title-line">{isCommemoration ? "Observed under" : "Issued in the reign of"} {reignName}. {product.realmIssue.office} · {product.realmIssue.wearerTitle}.</p>
+        </details>
       ) : (
-        <section class="independent-note"><p class="eyebrow">Outside the court</p><h2>No title. No House. No court authority required.</h2><p>The Realm may catalogue this observation, but the garment remains an independent Low Value Content notice.</p></section>
+        <p class="independent-note">An independent notice. No House, no title, no court authority required.</p>
       )}
-      <section class="provenance"><p class="script">The Launch Constitution</p><h2>The declaration must stand on the front alone.</h2><ol><li><b>One print area:</b> production starts front-only.</li><li><b>Selective ceremony:</b> seals, Latin, and heraldry appear only where the issue requires formal standing.</li><li><b>Extended provenance:</b> QR records, titles, and lineage begin online or in packaging—not as compulsory garment decoration.</li></ol></section>
     </div>
   </article>
   {mockup && (
@@ -81,30 +79,15 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
       <div class="mockup-copy">
         <p class="eyebrow">The Realm, worn</p>
         <h2>On the mannequin,<br /><span class="script">as the court imagines it.</span></h2>
-        <p>A studio concept of this issue in the Royal House's ceremonial register. It shows the direction, not the print file: the production artwork is the front-only composition above.</p>
-        <p class="mockup-note">Concept imagery. Final artwork, garment, and placement are subject to sampling.</p>
+        <p>A studio impression of this issue in the House's ceremonial register.</p>
+        <p class="mockup-note">Concept imagery. Final garment and placement are confirmed at sampling.</p>
       </div>
-    </section>
-  )}
-  {frontArt && artSpec && (
-    <section class="front-art-section">
-      <div class="front-art-copy">
-        <p class="eyebrow">{ornate ? "Artwork plate · Full colour" : "Front-art prototype · Two inks"}</p>
-        <h2>The regalia,<br /><span class="script">reduced to what prints.</span></h2>
-        {ornate ? <p>This full-colour heraldic plate is the selected direction for the front print. It is a working plate, not a print file: it must be redrawn as vector or upscaled to print resolution and checked against the provider’s ink limits. It deliberately excludes sleeve decoration, back copy, and a garment QR code.</p> : <p>This transparent 4500 × 5400 vector composition translates the Realm concept into one centered front print. It is editable artwork—not a flattened mockup—and deliberately excludes sleeve decoration, back copy, and a garment QR code.</p>}
-      </div>
-      <dl>
-        <div><dt>Garment direction</dt><dd>{artSpec.garment}</dd></div>
-        <div><dt>Ink direction</dt><dd>{artSpec.inks}</dd></div>
-        <div><dt>Print locations</dt><dd>One · front only</dd></div>
-        <div><dt>Next gate</dt><dd>{ornate ? "Redraw or upscale to print resolution, confirm provider ink limits, size to template, sample and wash test" : "Outline type, size to provider template, separate inks, sample and wash test"}</dd></div>
-      </dl>
     </section>
   )}
   <section class="section related">
-    <div class="section-heading"><p class="eyebrow">Continue through the collection</p><h2>More from Drop 001</h2><p>Ten launch designs, classified by degree of ceremonial authority.</p></div>
+    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>More from the first collection</h2><p>Ten founding issues, classified by degree of ceremonial authority.</p></div>
     <div class="related-grid">{related.map((item) => <ProductCard product={item} />)}</div>
-    <p class="related-more"><a class="button ghost" href="/shop.html">View all ten designs</a></p>
+    <p class="related-more"><a class="button ghost" href="/shop.html">View all ten issues</a></p>
   </section>
 </BaseLayout>
 
@@ -134,25 +117,17 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   dt { font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--crimson); }
   dd { margin: 0; }
   dd::first-letter { text-transform: uppercase; }
-  .proclamation { margin-top: 3rem; padding: 2rem; border: 1px solid var(--gold); background: #eee5d4; }
-  .proclamation blockquote { margin: 1rem 0; font-size: 1.35rem; line-height: 1.45; }
-  .title-line { margin-bottom: 0; font-size: .9rem; line-height: 1.6; }
-  .independent-note { margin-top: 3rem; padding: 2rem; border-left: 4px solid var(--crimson); background: #eee5d4; }
-  .independent-note h2 { margin: .5rem 0 1rem; font-size: 2rem; font-weight: 400; line-height: 1.1; }
-  .independent-note p:last-child { margin-bottom: 0; line-height: 1.65; }
-  .provenance { margin-top: 3rem; }
-  .provenance h2 { font-size: 2rem; font-weight: 400; line-height: 1.1; }
-  .provenance ol { padding-left: 1.2rem; line-height: 1.8; }
-  .front-art-section { background: var(--ivory); border-top: 4px double var(--gold); }
+  .archive { margin-top: 2rem; padding: 1.25rem 1.5rem; border: 1px solid var(--gold); background: #eee5d4; }
+  .archive summary { cursor: pointer; font: 700 .68rem var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--crimson); }
+  .archive blockquote { margin: 1rem 0; font-size: 1.3rem; line-height: 1.45; }
+  .title-line { margin: 0; font-size: .9rem; line-height: 1.6; color: #565e68; }
+  .independent-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--crimson); background: #eee5d4; line-height: 1.6; }
   .art-much-published { background: #10263a; }
   .art-order-blue-check { background: #151515; }
   .art-y2k-the-almost { background: #7d2734; }
-  .art-saint-moth { background: #f1e8d2; }
+  .art-saint-moth { background: #f4eedf; }
   .art-validate, .art-thought-leader, .art-content-creator, .art-authentic-self, .art-optimized-shirt { background: #f4eedf; }
   .art-doomscrolling { background: #7d2734; }
-  .front-art-section { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); }
-  .front-art-copy { max-width: 40rem; }
-  .front-art-section > dl { margin: .5rem 0 0; }
   .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
   .mockup-section figure { margin: 0; padding: .55rem; background: #091522; border: 1px solid var(--gold); max-width: 30rem; justify-self: start; }
   .mockup-section img { width: 100%; height: auto; }
@@ -165,9 +140,6 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .related { background: #efe7d7; border-top: 1px solid var(--gold); }
   .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
   .related-more { margin: 3rem 0 0; }
-  .front-art-copy h2 { margin: .8rem 0 1.5rem; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
-  .front-art-copy > p:not(.eyebrow) { max-width: 680px; font-size: 1.08rem; line-height: 1.7; }
-  .front-art-copy dl { margin-top: 2.5rem; }
-  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .front-art-section, .mockup-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
+  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .mockup-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
   @media (max-width: 520px) { .related-grid { grid-template-columns: minmax(0, 1fr); } .buy-form { grid-template-columns: 1fr; } dl div { grid-template-columns: 1fr; gap: .2rem; } }
 </style>
