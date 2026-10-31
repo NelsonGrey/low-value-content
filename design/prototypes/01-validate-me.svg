@@ -2,13 +2,18 @@
   <title>Please validate me algorithmically — two-ink front artwork</title>
   <desc>Independent editorial notice with bold request, incomplete loading loop, and pending status.</desc>
   <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
-    <text x="2250" y="1880" fill="#171713" font-size="185" letter-spacing="38">PUBLIC REQUEST 0001</text>
-    <text x="2250" y="2420" fill="#171713" font-size="350" font-weight="800" letter-spacing="2">PLEASE VALIDATE ME</text>
-    <text x="2250" y="2890" fill="#171713" font-size="350" font-weight="800" letter-spacing="2">ALGORITHMICALLY.</text>
-    <circle cx="2250" cy="3470" r="210" fill="none" stroke="#D9483B" stroke-width="48" stroke-dasharray="500 275"/>
-    <circle cx="2250" cy="3470" r="72" fill="#D9483B"/>
-    <line x1="1260" y1="3940" x2="3240" y2="3940" stroke="#171713" stroke-width="24"/>
-    <text x="2250" y="4240" fill="#171713" font-size="145" letter-spacing="38">REQUEST PENDING</text>
-    <text x="2250" y="4540" fill="#D9483B" font-size="90" letter-spacing="28">ESTIMATED RECOGNITION · INDEFINITE</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="1880" fill="#142B40" font-size="185" letter-spacing="38">PUBLIC REQUEST 0001</text>
+    <text x="2250" y="2420" fill="#142B40" font-size="300" font-weight="800" letter-spacing="2">PLEASE VALIDATE ME</text>
+    <text x="2250" y="2890" fill="#142B40" font-size="300" font-weight="800" letter-spacing="2">ALGORITHMICALLY.</text>
+    <circle cx="2250" cy="3470" r="210" fill="none" stroke="#852E34" stroke-width="48" stroke-dasharray="500 275"/>
+    <circle cx="2250" cy="3470" r="72" fill="#852E34"/>
+    <line x1="1260" y1="3940" x2="3240" y2="3940" stroke="#142B40" stroke-width="24"/>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="4240" fill="#142B40" font-size="145" letter-spacing="38">REQUEST PENDING</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="2250" y="4540" fill="#852E34" font-size="90" letter-spacing="28">ESTIMATED RECOGNITION · INDEFINITE</text>
+  </g>
+  <g id="house-frame">
+    <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#852E34" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 01</text>
   </g>
 </svg>

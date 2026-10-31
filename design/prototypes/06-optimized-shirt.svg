@@ -2,11 +2,16 @@
   <title>I Optimized This Shirt for Engagement — two-ink front artwork</title>
   <desc>Independent experiment report with statistically insignificant result and a restrained issue mark.</desc>
   <g font-family="Arial, Helvetica, sans-serif">
-    <text x="620" y="1250" fill="#D9483B" font-size="120" font-weight="700" letter-spacing="30">EXPERIMENT 01 · ISSUE 006</text>
-    <text x="620" y="2030" fill="#171713" font-size="410" font-weight="800">I OPTIMIZED</text><text x="620" y="2500" fill="#171713" font-size="410" font-weight="800">THIS SHIRT FOR</text><text x="620" y="2970" fill="#171713" font-size="410" font-weight="800">ENGAGEMENT.</text>
-    <line x1="620" y1="3300" x2="3880" y2="3300" stroke="#171713" stroke-width="30"/>
-    <text x="620" y="3690" fill="#171713" font-size="145" letter-spacing="18">RESULT: STATISTICALLY INSIGNIFICANT</text>
-    <g fill="none" stroke="#D9483B" stroke-width="28"><path d="M620 4070h3260"/><path d="M620 4070v-260M1270 4070v-90M1920 4070v-155M2570 4070v-45M3220 4070v-110M3880 4070v-70"/></g>
-    <text x="620" y="4450" fill="#D9483B" font-size="92" letter-spacing="26">ENGAGEMENT LIFT · WITHIN MARGIN OF ERROR</text>
+    <text font-family="Georgia, 'Times New Roman', serif" x="620" y="1250" fill="#852E34" font-size="120" font-weight="700" letter-spacing="30">EXPERIMENT 01 · ISSUE 006</text>
+    <text x="620" y="2030" fill="#142B40" font-size="410" font-weight="800">I OPTIMIZED</text><text x="620" y="2500" fill="#142B40" font-size="410" font-weight="800">THIS SHIRT FOR</text><text x="620" y="2970" fill="#142B40" font-size="410" font-weight="800">ENGAGEMENT.</text>
+    <line x1="620" y1="3300" x2="3880" y2="3300" stroke="#142B40" stroke-width="30"/>
+    <text font-family="Georgia, 'Times New Roman', serif" x="620" y="3690" fill="#142B40" font-size="145" letter-spacing="18">RESULT: STATISTICALLY INSIGNIFICANT</text>
+    <g fill="none" stroke="#852E34" stroke-width="28"><path d="M620 4070h3260"/><path d="M620 4070v-260M1270 4070v-90M1920 4070v-155M2570 4070v-45M3220 4070v-110M3880 4070v-70"/></g>
+    <text font-family="Georgia, 'Times New Roman', serif" x="620" y="4450" fill="#852E34" font-size="92" letter-spacing="26">ENGAGEMENT LIFT · WITHIN MARGIN OF ERROR</text>
+  </g>
+  <g id="house-frame">
+    <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#852E34" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 06</text>
   </g>
 </svg>
