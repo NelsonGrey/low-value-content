@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { isPurchasable, productHref, productImage, products, variantOptions } from "../data";
+
+// Display data only. The server re-prices every line from its own catalog at checkout.
+const catalog = Object.fromEntries(
+  products.filter(isPurchasable).map((product) => [
+    product.commerce.catalogKey,
+    {
+      name: product.primaryCopy,
+      price: product.commerce.priceCents,
+      href: productHref(product),
+      image: productImage(product),
+      variants: Object.fromEntries(variantOptions(product).map((o) => [o.key, o.label])),
+    },
+  ]),
+);
+---
+<BaseLayout title="Your Cart | The Royal House of Engagement" description="Review your Low Value Content order before secure checkout." current="cart">
+  <section class="plain-page ivory cart-page" data-cart-root>
+    <p class="script">The Royal Purse</p>
+    <p class="eyebrow">Your cart</p>
+    <h1>Your selections.</h1>
+    <ul class="cart-lines" data-cart-lines></ul>
+    <div data-cart-empty hidden>
+      <p class="lead">Nothing here yet.</p>
+      <a class="button" href="/shop.html">Browse the regalia</a>
+    </div>
+    <div class="cart-summary" data-cart-summary hidden>
+      <p class="cart-subtotal"><span>Subtotal</span><b data-cart-subtotal></b></p>
+      <p class="buy-note">US shipping ($5.99 per order) and any tax are added at secure checkout.</p>
+      <button class="button" type="button" data-cart-checkout>Proceed to secure checkout</button>
+      <p class="buy-note" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <script id="cart-catalog" type="application/json" set:html={JSON.stringify(catalog)} />
+</BaseLayout>

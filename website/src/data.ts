@@ -27,3 +27,28 @@ export const productImage = (product: Product): string | null => {
 };
 
 export const productHref = (product: Product) => `/products/${product.id}.html`;
+
+export interface VariantOption {
+  /** Catalog variant key: `<color>-<size>`, for example `ivory-l`. */
+  key: string;
+  color: string;
+  size: string;
+  label: string;
+}
+
+const SIZE_ORDER = ["xs", "s", "m", "l", "xl", "2xl", "3xl", "4xl"];
+const titleCase = (value: string) => value.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+
+/** Purchasable variants for a product, read from the manifest and ordered by size. Empty when nothing is sellable. */
+export const variantOptions = (product: Product): VariantOption[] =>
+  (product.commerce.enabledVariants as string[])
+    .map((key) => {
+      const cut = key.lastIndexOf("-");
+      const color = key.slice(0, cut);
+      const size = key.slice(cut + 1);
+      return { key, color, size, label: `${titleCase(color)} / ${size.toUpperCase()}` };
+    })
+    .sort((a, b) => SIZE_ORDER.indexOf(a.size) - SIZE_ORDER.indexOf(b.size));
+
+export const isPurchasable = (product: Product): boolean =>
+  product.commerceStatus === "test-sellable" && Boolean(product.commerce.catalogKey) && variantOptions(product).length > 0;

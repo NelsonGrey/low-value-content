@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
-import { hasRealmProvenance, lineage, products, productImage, type Product } from "../../data";
+import { hasRealmProvenance, isPurchasable, lineage, products, productImage, variantOptions, type Product } from "../../data";
 
 export function getStaticPaths() {
   return products.map((product) => ({ params: { id: product.id }, props: { product } }));
@@ -10,7 +10,11 @@ export function getStaticPaths() {
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
 const price = `$${Math.round(product.commerce.priceCents / 100)}`;
-const canBuy = product.commerceStatus === "test-sellable" && product.commerce.catalogKey;
+const canBuy = isPurchasable(product);
+const options = variantOptions(product);
+const colors = [...new Set(options.map((o) => o.color))];
+const sizesForFirstColor = options.filter((o) => o.color === colors[0]);
+const colorName = (c: string) => c.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
 const realmConnected = hasRealmProvenance(product);
 const isCommemoration = product.launchCollection === "Royal Commemorations";
@@ -45,11 +49,15 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
       <p class="treatment">{product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
-        <form class="buy-form" data-product={product.commerce.catalogKey} data-color="white">
-          <label>Size<select name="size" required><option value="l" selected>L</option></select></label>
-          <label>Quantity<select name="quantity"><option>1</option><option>2</option><option>3</option></select></label>
-          <button class="button" type="submit">Proceed to secure test checkout</button>
-          <p class="buy-note" role="status" aria-live="polite">Test configuration: White / L only. US shipping is $5.99.</p>
+        <form class="buy-form" data-product={product.commerce.catalogKey} data-variants={JSON.stringify(options)}>
+          {colors.length > 1
+            ? <label>Color<select name="color">{colors.map((c) => <option value={c}>{colorName(c)}</option>)}</select></label>
+            : <input type="hidden" name="color" value={colors[0]} />}
+          <label>Size<select name="size" required>{sizesForFirstColor.map((o) => <option value={o.size}>{o.size.toUpperCase()}</option>)}</select></label>
+          <label>Quantity<select name="quantity">{[1, 2, 3, 4, 5].map((n) => <option>{n}</option>)}</select></label>
+          <button class="button" type="submit">Add to cart</button>
+          <button class="button light" type="button" data-action="buy">Buy now</button>
+          <p class="buy-note" role="status" aria-live="polite">Test configuration. US shipping is $5.99 per order.</p>
         </form>
       ) : (
         <div class="development-notice"><b>Coming soon</b><p>This issue is not yet available. It opens with the first collection.</p></div>
