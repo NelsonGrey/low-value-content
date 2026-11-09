@@ -23,8 +23,10 @@ const nav = [
     <title>{title}</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/assets/auth-gate.css" />
+    <link rel="stylesheet" href="/assets/checkout.css" />
     <script is:inline src="/assets/env-config.js"></script>
     <script is:inline src="/assets/auth-gate.js"></script>
+    <script is:inline src="/assets/cart.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,6 +38,7 @@ const nav = [
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
       <nav id="site-navigation" aria-label="Primary navigation">
         {nav.map(([id, href, label]) => <a href={href} aria-current={current === id ? "page" : undefined}>{label}</a>)}
+        <a class="cart-link" href="/cart.html" aria-current={current === "cart" ? "page" : undefined}>Cart <span class="cart-count" data-cart-count hidden></span></a>
       </nav>
     </header>
     <main id="main"><slot /></main>
