@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { lineage } from "../data";
+
+const details: Record<string, { motto: string; account: string }> = {
+  "moth": { motto: "Primus casus verus", account: "An actual moth, canonized after making a documented physical contribution to debugging. Remembered as the Pious for dying in service of the machine." },
+  "lo": { motto: "Initium interruptum", account: "The first network message attempted LOGIN, delivered LO, and crashed before completing the thought." },
+  "spam": { motto: "Electus es cum omnibus", account: "First sovereign to address every subject simultaneously, whether or not correspondence had been requested." },
+  "emoticon": { motto: "Verte caput et ride", account: "Established compulsory emotional context and required all subjects to tilt their heads sideways." },
+  "web-i": { motto: "Omnibus aperta", account: "Freed information for humanity, which immediately began using it to argue with strangers." },
+  "y2k-the-almost": { motto: "Finis mundi dilatus", account: "Disputed pretender to the digital throne. The kingdom survived after years of preparation and several cupboards of bottled water." },
+  "web-ii": { motto: "Continuatio ordinaria", account: "Restored after the Millennium Interregnum, with most clocks, banks, and household appliances still operational." },
+  "content": { motto: "Vita est materia", account: "Wanted to be seen, and declared ordinary existence valuable only when recorded, titled, optimized, and uploaded." },
+  "scroll": { motto: "Semper deorsum", account: "A sovereign without bottom, boundary, or natural conclusion." },
+  "algorithm": { motto: "Ex mandato algorithmi", account: "Neither elected nor understood, and justly feared: determined what every subject was permitted to notice." },
+  "prompt": { motto: "Multa generata, pauca dicta", account: "Produces infinite answers with total confidence and no responsibility for the questions." },
+};
+const devices: Record<string, string> = {
+  "moth": "/assets/lineage-moth.svg",
+  "lo": "/assets/lineage-lo.svg",
+  "spam": "/assets/house-spam.svg",
+  "emoticon": "/assets/order-blue-check.svg",
+  "web-i": "/assets/royal-mark.svg",
+  "y2k-the-almost": "/assets/lineage-y2k.svg",
+  "web-ii": "/assets/royal-mark.svg",
+  "content": "/assets/house-influence.svg",
+  "scroll": "/assets/house-scroll.svg",
+  "algorithm": "/assets/house-signal.svg",
+  "prompt": "/assets/house-prompt.svg",
+};
+const shortName = (name: string) => name.split(" the ")[0];
+const firstYear = (period: string) => period.match(/\d{4}/)?.[0] ?? "";
+const last = lineage.length - 1;
+const disputedCount = lineage.filter((e) => e.disputed).length;
+const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].period));
+---
+<BaseLayout title="The Lineage of Engagement | The Royal House of Engagement" description="The official and highly disputed succession of powers that have governed human attention." current="lineage">
+  <header class="lineage-hero">
+    <div class="hero-copy">
+      <p class="script">The Royal House of Engagement</p>
+      <h1>An unbroken line of interruptions.</h1>
+      <p>This is not a family tree. The Crown passes to whichever technology, habit, or system most successfully commands public attention. From the first actual moth to the generative reign, these are the powers under whom progressively more content was produced.</p>
+    </div>
+    <aside class="reign-ledger" aria-label="The succession in figures">
+      <p class="eyebrow">The succession in figures</p>
+      <dl>
+        <div><dt>Sovereigns</dt><dd>{lineage.length}</dd></div>
+        <div><dt>Years of interruption</dt><dd>{yearsReigning}</dd></div>
+        <div><dt>Disputed claims</dt><dd>{String(disputedCount).padStart(2, "0")}</dd></div>
+        <div><dt>Reigning now</dt><dd class="name">{lineage[last].name}</dd></div>
+      </dl>
+    </aside>
+  </header>
+  <nav class="succession-strip" aria-label="Line of succession">
+    <p class="eyebrow">The line at a glance</p>
+    <ol>
+      {lineage.map((entry, index) => (
+        <li class:list={[entry.disputed && "disputed", index === last && "present"]}>
+          <a href={`#${entry.id}`}>
+            <img src={devices[entry.id]} alt="" />
+            <b>{firstYear(entry.period)}</b>
+            <span>{shortName(entry.name)}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+  <section class="law-of-succession">
+    <p class="eyebrow">The law of succession</p>
+    <h2>Authority follows attention.</h2>
+    <p>A reign begins when a new power changes what the realm notices, produces, or cannot stop checking. The Great Houses endure beneath the Crown; the sovereign changes whenever the machinery of attention does.</p>
+    <p>Sovereigns take the name of the power they embody. A numeral is granted only when a name recurs, and an epithet is awarded by posterity, usually without the sovereign’s consent.</p>
+  </section>
+  <section class="timeline" aria-label="The reigns">
+    <ol>
+      {lineage.map((entry, index) => (
+        <li id={entry.id} class:list={["reign", entry.disputed && "disputed", index === last && "present"]}>
+          <div class="when">
+            <span class="ordinal">Reign {String(index + 1).padStart(2, "0")}</span>
+            <b>{entry.period}</b>
+          </div>
+          <div class="node"><img src={devices[entry.id]} alt={`Device of ${entry.name}`} /></div>
+          <div class="what">
+            {entry.disputed && <span class="stamp">Disputed succession</span>}
+            {index === last && <span class="stamp">The present reign</span>}
+            <h2>{entry.name}</h2>
+            <p class="latin">{details[entry.id]?.motto}</p>
+            <p class="account">{details[entry.id]?.account}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="succession-note">
+    <p class="script">The succession remains secure</p>
+    <h2>Until the next platform update.</h2>
+    <a class="button light" href="/shop.html">Acquire official regalia</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .lineage-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; background: var(--crimson); color: white; padding: clamp(4rem, 6vw, 6.5rem) var(--gutter); }
+  .reign-ledger { padding: 1.75rem 2rem 2rem; border: 4px double var(--gold); background: rgba(13,28,43,.28); }
+  .reign-ledger .eyebrow { margin: 0 0 .5rem; color: var(--gold-light); }
+  .reign-ledger dl { margin: 0; }
+  .reign-ledger dl div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(218,191,131,.35); }
+  .reign-ledger dl div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .reign-ledger dt { font: 700 .66rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: rgba(244,238,223,.85); }
+  .reign-ledger dd { margin: 0; font-size: 2.6rem; line-height: 1; color: var(--gold-light); }
+  .reign-ledger dd.name { font-size: 1.6rem; }
+  .lineage-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
+  .lineage-hero h1 { max-width: 14ch; font-size: var(--fs-h1); line-height: .96; letter-spacing: -.03em; font-weight: 400; margin: 1rem 0 1.75rem; }
+  .hero-copy > p:last-child { max-width: 44rem; margin: 0; font-size: 1.2rem; line-height: 1.7; }
+
+  .succession-strip { background: var(--navy); color: var(--ivory); padding: 2.25rem var(--gutter) 2.5rem; border-top: 4px double var(--gold); border-bottom: 1px solid var(--line); }
+  .succession-strip .eyebrow { margin: 0 0 1.25rem; color: var(--gold-light); }
+  .succession-strip ol { list-style: none; margin: 0; padding: 0 0 .5rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: thin; }
+  .succession-strip li { flex: 1 0 6.5rem; position: relative; }
+  .succession-strip li + li::before { content: ''; position: absolute; top: 2.1rem; right: 50%; width: 100%; height: 1px; background: var(--gold); opacity: .55; }
+  .succession-strip a { position: relative; display: grid; justify-items: center; gap: .35rem; padding: 0 .35rem; text-decoration: none; text-align: center; }
+  .succession-strip img { width: 54px; height: 54px; object-fit: contain; padding: 5px; border-radius: 50%; background: var(--navy); border: 1px solid var(--gold); position: relative; z-index: 1; }
+  .succession-strip b { color: var(--gold-light); font: 700 .68rem/1 var(--sans); letter-spacing: .12em; }
+  .succession-strip span { font-size: .85rem; line-height: 1.25; color: rgba(244,238,223,.85); }
+  .succession-strip a:hover span, .succession-strip a:focus-visible span { color: white; text-decoration: underline; text-underline-offset: 3px; }
+  .succession-strip .disputed img { border-style: dashed; border-color: #e0868d; }
+  .succession-strip .present img { background: var(--crimson); border-width: 2px; }
+
+  .law-of-succession { display: grid; grid-template-columns: minmax(8rem, .2fr) 1.3fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: start; padding: clamp(3rem, 6vw, 5.5rem) var(--gutter); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .law-of-succession h2 { margin: 0; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
+  .law-of-succession > p:last-child { margin: 0; max-width: 680px; font-size: 1.1rem; line-height: 1.75; }
+
+  .timeline { padding: clamp(2rem, 4vw, 4rem) var(--gutter) clamp(4rem, 7vw, 7rem); background: var(--paper); }
+  .timeline ol { list-style: none; margin: 0; padding: 0; }
+  .reign { display: grid; grid-template-columns: minmax(9rem, 13rem) 6rem minmax(0, 1fr); gap: 0 clamp(.75rem, 2vw, 2rem); scroll-margin-top: 110px; }
+  .when { padding: 2.9rem 0 0; text-align: right; }
+  .ordinal { display: block; color: var(--crimson); font: 700 .66rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .when b { display: block; margin-top: .6rem; font-size: 1.15rem; font-weight: 400; line-height: 1.3; color: var(--navy); }
+  .node { position: relative; display: flex; justify-content: center; align-items: flex-start; padding-top: 1.75rem; }
+  .node::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--gold); }
+  .reign:first-child .node::before { top: 3.25rem; }
+  .reign:last-child .node::before { bottom: auto; height: 3.25rem; }
+  .node img { position: relative; z-index: 1; width: 78px; height: 78px; padding: 10px; object-fit: contain; border-radius: 50%; background: var(--paper); border: 1px solid var(--gold); box-shadow: 0 0 0 6px var(--paper); }
+  .what { margin: 1.25rem 0; padding: 1.5rem 0 1.75rem; border-bottom: 1px solid var(--line); }
+  .reign:last-child .what { border-bottom: 0; }
+  .what h2 { margin: 0; font-size: clamp(2rem, 3.6vw, 3.4rem); line-height: 1.02; font-weight: 400; }
+  .what .latin { margin: .6rem 0 .9rem; }
+  .account { max-width: 40rem; margin: 0; font-size: 1.15rem; line-height: 1.65; color: #2c3640; }
+  .stamp { display: inline-block; margin: 0 .5rem .9rem 0; padding: .35rem .6rem; border: 1px solid currentColor; color: var(--crimson); font: 700 .58rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+
+  .reign.disputed .what { padding-inline: 1.75rem; border: 2px dashed var(--crimson); background: repeating-linear-gradient(-45deg, rgba(133,46,52,.06), rgba(133,46,52,.06) 10px, transparent 10px, transparent 20px); }
+  .reign.disputed .node img { border: 2px dashed var(--crimson); }
+  .reign.present .what { padding-inline: 1.75rem; background: var(--navy); color: var(--ivory); border: 0; box-shadow: 0 18px 40px rgba(13,28,43,.18); }
+  .reign.present .account { color: rgba(244,238,223,.88); }
+  .reign.present .latin { color: var(--gold-light); }
+  .reign.present .stamp { color: var(--gold-light); }
+  .reign.present .node img { background: var(--crimson); border: 2px solid var(--gold); }
+
+  .succession-note { padding: clamp(4.5rem, 8vw, 7rem) var(--gutter); text-align: center; background: var(--navy); color: white; border-top: 4px double var(--gold); }
+  .succession-note .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
+  .succession-note h2 { font-size: var(--fs-h1); line-height: 1; font-weight: 400; margin: 1rem 0 2rem; }
+
+  @media (max-width: 980px) { .law-of-succession, .lineage-hero { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) {
+    .reign { grid-template-columns: 64px minmax(0, 1fr); }
+    .node { grid-row: 1 / 3; grid-column: 1; }
+    .node img { width: 56px; height: 56px; padding: 7px; box-shadow: 0 0 0 4px var(--paper); }
+    .when { grid-column: 2; padding: 2rem 0 0; text-align: left; }
+    .when b { font-size: 1rem; margin-top: .4rem; }
+    .what { grid-column: 2; margin-top: .75rem; }
+    .reign.disputed .what, .reign.present .what { padding-inline: 1.1rem; }
+  }
+</style>

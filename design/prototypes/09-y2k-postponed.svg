@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>The End of the World Has Been Postponed — two-ink front artwork</title>
+  <desc>Editable Y2K commemorative artwork with a split 99 and 00 clock, Wi-Fi crown, hourglass, crossed computer cables, English proclamation, and Latin line.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#E3B95F" stroke-width="34">
+      <path d="M1600 610a920 920 0 0 1 1300 0M1780 820a665 665 0 0 1 940 0M2030 1010a310 310 0 0 1 440 0M2250 1010v150"/>
+      <path d="M840 1430h2820v1960H840z"/>
+      <path d="M2250 1430v1960"/>
+      <path d="M740 3520c420-120 780-55 1080 195M3760 3520c-420-120-780-55-1080 195"/>
+    </g>
+    <g stroke="#F2E6C9" stroke-width="26">
+      <path d="M1340 1660h650v1320h-650zM2510 1660h650v1320h-650z"/>
+      <path d="M2050 1770h400M2050 2870h400"/>
+      <path d="M2060 1840c0 310 380 385 380 680 0 295-380 370-380 660M2440 1840c0 310-380 385-380 680 0 295 380 370 380 660"/>
+      <path d="M2020 1840h460M2020 3180h460"/>
+    </g>
+    <path d="M900 3920h2700M900 4780h2700" stroke="#E3B95F" stroke-width="34"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="2250" y="320" fill="#E3B95F" font-family="Arial, Helvetica, sans-serif" font-size="100" letter-spacing="38">THE VIGIL OF THE MISSING DIGITS · 31 XII 1999</text>
+    <text x="1665" y="2580" fill="#F2E6C9" font-family="Arial, Helvetica, sans-serif" font-size="760" font-weight="700">99</text>
+    <text x="2835" y="2580" fill="#F2E6C9" font-family="Arial, Helvetica, sans-serif" font-size="760" font-weight="700">00</text>
+    <text x="2250" y="4300" fill="#F2E6C9" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" letter-spacing="2">THE END OF THE WORLD</text>
+    <text x="2250" y="4560" fill="#F2E6C9" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" letter-spacing="2">HAS BEEN POSTPONED</text>
+    <text x="2250" y="5150" fill="#E3B95F" font-family="Arial, Helvetica, sans-serif" font-size="100" letter-spacing="34">FINIS MUNDI DILATUS</text>
+  </g>
+</svg>

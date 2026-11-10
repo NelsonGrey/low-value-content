@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { hasRealmProvenance, isPurchasable, lineage, products, productImage, variantOptions, type Product } from "../../data";
+
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { id: product.id }, props: { product } }));
+}
+
+const { product } = Astro.props as { product: Product };
+const image = productImage(product);
+const price = `$${Math.round(product.commerce.priceCents / 100)}`;
+const canBuy = isPurchasable(product);
+const options = variantOptions(product);
+const colors = [...new Set(options.map((o) => o.color))];
+const sizesForFirstColor = options.filter((o) => o.color === colors[0]);
+const colorName = (c: string) => c.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
+const realmConnected = hasRealmProvenance(product);
+const isCommemoration = product.launchCollection === "Royal Commemorations";
+// House garment palette: Ivory, Oxblood, Navy, Black.
+const garments: Record<string, string> = {
+  "validate": "Ivory",
+  "thought-leader": "Ivory",
+  "doomscrolling": "Oxblood",
+  "content-creator": "Ivory",
+  "authentic-self": "Ivory",
+  "optimized-shirt": "Ivory",
+  "much-published": "Navy",
+  "order-blue-check": "Black",
+  "y2k-the-almost": "Oxblood",
+  "saint-moth": "Ivory",
+};
+const garment = garments[product.id];
+const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
+const mockup = rawMockup && rawMockup.includes("-realm.") ? `/assets/${rawMockup.split("/").pop()}` : null;
+const start = products.findIndex((p) => p.id === product.id);
+const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
+---
+<BaseLayout title={`${product.primaryCopy} | The Royal House of Engagement`} description={`${product.primaryCopy} — ${product.royalTreatment}. An official issue of the Royal House, by Low Value Content.`} current="shop">
+  <article class="product-page">
+    <div class:list={["product-visual", `art-${product.id}`, !image && "typographic"]}>
+      {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">Front artwork</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
+    </div>
+    <div class="product-details">
+      <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
+      <h1>{product.primaryCopy}</h1>
+      <p class="price">{price}</p>
+      <p class="treatment">{product.regaliaRole}</p>
+      {product.latin && <p class="latin">{product.latin}</p>}
+      {canBuy ? (
+        <form class="buy-form" data-product={product.commerce.catalogKey} data-variants={JSON.stringify(options)}>
+          {colors.length > 1
+            ? <label>Color<select name="color">{colors.map((c) => <option value={c}>{colorName(c)}</option>)}</select></label>
+            : <input type="hidden" name="color" value={colors[0]} />}
+          <label>Size<select name="size" required>{sizesForFirstColor.map((o) => <option value={o.size}>{o.size.toUpperCase()}</option>)}</select></label>
+          <label>Quantity<select name="quantity">{[1, 2, 3, 4, 5].map((n) => <option>{n}</option>)}</select></label>
+          <button class="button" type="submit">Add to cart</button>
+          <button class="button light" type="button" data-action="buy">Buy now</button>
+          <p class="buy-note" role="status" aria-live="polite">Test configuration. US shipping is $5.99 per order.</p>
+        </form>
+      ) : (
+        <div class="development-notice"><b>Coming soon</b><p>This issue is not yet available. It opens with the first collection.</p></div>
+      )}
+      <dl>
+        <div><dt>Collection</dt><dd>{product.launchCollection}</dd></div>
+        <div><dt>Garment</dt><dd>{garment}, front print</dd></div>
+        {realmConnected && <div><dt>House</dt><dd>{product.house}</dd></div>}
+      </dl>
+      {realmConnected ? (
+        <details class="archive">
+          <summary>{isCommemoration ? "From the Royal Archive" : `By authority of ${product.house}`}</summary>
+          <blockquote>{product.realmIssue.proclamation}</blockquote>
+          <p class="title-line">{isCommemoration ? "Observed under" : "Issued in the reign of"} {reignName}. {product.realmIssue.office} · {product.realmIssue.wearerTitle}.</p>
+        </details>
+      ) : (
+        <p class="independent-note">An independent notice. No House, no title, no court authority required.</p>
+      )}
+    </div>
+  </article>
+  {mockup && (
+    <section class="mockup-section">
+      <figure>
+        <img src={mockup} alt={`Studio concept mockup of ${product.primaryCopy} on a mannequin`} loading="lazy" />
+        <figcaption>Concept mockup · Realm direction</figcaption>
+      </figure>
+      <div class="mockup-copy">
+        <p class="eyebrow">The Realm, worn</p>
+        <h2>On the mannequin,<br /><span class="script">as the court imagines it.</span></h2>
+        <p>A studio impression of this issue in the House's ceremonial register.</p>
+        <p class="mockup-note">Concept imagery. Final garment and placement are confirmed at sampling.</p>
+      </div>
+    </section>
+  )}
+  <section class="section related">
+    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>More from the first collection</h2><p>Ten founding issues, classified by degree of ceremonial authority.</p></div>
+    <div class="related-grid">{related.map((item) => <ProductCard product={item} />)}</div>
+    <p class="related-more"><a class="button ghost" href="/shop.html">View all ten issues</a></p>
+  </section>
+</BaseLayout>
+
+<style>
+  .product-page { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
+  .product-visual { position: sticky; top: 92px; align-self: start; height: calc(100vh - 92px); min-height: 520px; background: #e8dfce; padding: clamp(1.5rem, 3vw, 3rem); display: grid; place-items: center; overflow: hidden; }
+  .product-visual img { width: 100%; height: 100%; object-fit: contain; }
+  .visual-label { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); padding: .55rem .7rem; background: rgba(244,238,223,.94); color: var(--navy); font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+  .product-visual.typographic > div { border: 14px double var(--navy); width: min(640px, 100%); aspect-ratio: 4 / 5; display: flex; padding: 3rem; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--ivory); }
+  .product-visual.typographic p { color: var(--gold-text); text-transform: uppercase; letter-spacing: .15em; }
+  .product-visual.typographic h1 { color: var(--navy); font-size: clamp(2.5rem, 5vw, 5rem); text-transform: uppercase; line-height: .96; }
+  .product-details { min-width: 0; padding: clamp(2.5rem, 5vw, 5rem) var(--gutter) clamp(3rem, 6vw, 6rem) clamp(2rem, 4.5vw, 5rem); }
+  .product-details > h1 { font-size: clamp(2.4rem, 3.9vw, 3.8rem); line-height: 1; letter-spacing: -.02em; font-weight: 400; margin: .75rem 0 1.25rem; }
+  .price { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; }
+  .price span { font: .7rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #565e68; }
+  .treatment { font-size: 1.1rem; line-height: 1.7; }
+  .buy-form { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; background: #eee5d4; border: 1px solid var(--line); }
+  .buy-form label { display: grid; gap: .4rem; font: 700 .7rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
+  .buy-form select { padding: .8rem; border: 1px solid var(--gold); background: white; font: inherit; }
+  .buy-form .button, .buy-note { grid-column: 1 / -1; }
+  .buy-note { margin: 0; font: .75rem/1.5 var(--sans); }
+  .development-notice { margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--gold); background: var(--ivory); }
+  .development-notice b { text-transform: uppercase; letter-spacing: .12em; font: 700 .72rem var(--sans); color: var(--crimson); }
+  .development-notice p { line-height: 1.55; }
+  dl { margin: 2rem 0; border-top: 1px solid var(--line); }
+  dl div { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  dt { font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--crimson); }
+  dd { margin: 0; }
+  dd::first-letter { text-transform: uppercase; }
+  .archive { margin-top: 2rem; padding: 1.25rem 1.5rem; border: 1px solid var(--gold); background: #eee5d4; }
+  .archive summary { cursor: pointer; font: 700 .68rem var(--sans); letter-spacing: .13em; text-transform: uppercase; color: var(--crimson); }
+  .archive blockquote { margin: 1rem 0; font-size: 1.3rem; line-height: 1.45; }
+  .title-line { margin: 0; font-size: .9rem; line-height: 1.6; color: #565e68; }
+  .independent-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--crimson); background: #eee5d4; line-height: 1.6; }
+  .art-much-published { background: #10263a; }
+  .art-order-blue-check { background: #151515; }
+  .art-y2k-the-almost { background: #7d2734; }
+  .art-saint-moth { background: #f4eedf; }
+  .art-validate, .art-thought-leader, .art-content-creator, .art-authentic-self, .art-optimized-shirt { background: #f4eedf; }
+  .art-doomscrolling { background: #7d2734; }
+  .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .mockup-section figure { margin: 0; padding: .55rem; background: #091522; border: 1px solid var(--gold); max-width: 30rem; justify-self: start; }
+  .mockup-section img { width: 100%; height: auto; }
+  .mockup-section figcaption { padding: .7rem .2rem .1rem; color: var(--gold-light); font: .6rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .mockup-copy .eyebrow { color: var(--gold-light); }
+  .mockup-copy h2 { margin: .6rem 0 1.25rem; font-size: var(--fs-h2); line-height: 1.02; font-weight: 400; }
+  .mockup-copy h2 .script { color: var(--gold-light); display: block; }
+  .mockup-copy p:not(.eyebrow) { max-width: 36rem; font-size: 1.1rem; line-height: 1.7; color: rgba(244,238,223,.88); }
+  .mockup-copy p.mockup-note { font: .68rem/1.5 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: rgba(244,238,223,.65); }
+  .related { background: #efe7d7; border-top: 1px solid var(--gold); }
+  .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+  .related-more { margin: 3rem 0 0; }
+  @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .mockup-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
+  @media (max-width: 520px) { .related-grid { grid-template-columns: minmax(0, 1fr); } .buy-form { grid-template-columns: 1fr; } dl div { grid-template-columns: 1fr; gap: .2rem; } }
+</style>

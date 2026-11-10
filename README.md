@@ -1,13 +1,14 @@
 # Low Value Content
 
+[![CI](https://github.com/NelsonGrey/low-value-content/actions/workflows/ci.yml/badge.svg)](https://github.com/NelsonGrey/low-value-content/actions/workflows/ci.yml)
 [![Deploy Website](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml/badge.svg)](https://github.com/NelsonGrey/low-value-content/actions/workflows/deploy-website.yml)
 ![License: Proprietary](https://img.shields.io/badge/license-proprietary-lightgrey)
 
-**Low Value Content** is a satirical t-shirt brand of **Nelson Grey LLC**. The shirts poke fun at social media theater, algorithm anxiety, the creator economy, and other symptoms of being extremely online.
+**Low Value Content** is an editorial apparel imprint of **Nelson Grey LLC**. Its garments record social media theater, algorithm anxiety, the creator economy, and other conditions of sustained online life.
 
 This repository holds the whole project: the business plan, the product concept catalog, shirt design prototypes, launch mockups, and the website.
 
-> **Status:** early development. The website is a placeholder landing page, and none of the names or slogans are trademark-cleared yet. See the [concept catalog](docs/product/concept-catalog.md) and the business plan.
+> **Status:** pre-launch. The Royal House of Engagement storefront is built and deploys to dev and staging; production shows a coming-soon page until launch. One test-mode checkout exists (design No. 01, White / L). None of the names or slogans are trademark-cleared yet. See the [concept catalog](docs/product/concept-catalog.md) and the business plan.
 
 | Environment | Branch | Firebase project | URL |
 | --- | --- | --- | --- |
@@ -26,6 +27,7 @@ This repository holds the whole project: the business plan, the product concept 
 - [Branching and releases](#branching-and-releases)
 - [Business plan](#business-plan)
 - [Documentation](#documentation)
+- [Quality and security](#quality-and-security)
 - [Contributing, security, and support](#contributing-security-and-support)
 - [License](#license)
 
@@ -46,33 +48,40 @@ The [concept catalog](docs/product/concept-catalog.md) organizes 100 shirt sayin
 | 9 | Terms and Conditions |
 | 10 | Optimized Human |
 
-Six prototypes are in [design/prototypes/](design/prototypes/) and launch mockups are in [design/mockups/](design/mockups/).
+The launch assortment is the **Founding Ten**: six sayings from the catalog (Nos. 01–06, editable SVGs in [design/prototypes/](design/prototypes/)) plus four Realm-native designs (Nos. 07–10, ornate artwork plates in [design/mockups/royal-house/](design/mockups/royal-house/)). With those four, the full ecosystem catalog holds 104 concepts. Launch and concept mockups are in [design/mockups/](design/mockups/). The plates for Nos. 07–10 are not print-ready yet; see [the front-art notes](docs/product/realm-front-art-production-notes.md).
 
 ## Repository layout
 
 ```
 low-value-content/
 ├── docs/
+│   ├── brand/              Brand guide, Constitution of Engagement, heraldic system, imagery direction
 │   ├── business-plan/      Business plan (.docx) and its QA renders (qa/draft, qa/final)
-│   └── product/            Concept catalog and other product notes
+│   └── product/            Concept catalog, apparel manifest (source of truth), launch matrix, product notes
 ├── design/
-│   ├── prototypes/         Shirt design SVGs and PNG previews
-│   └── mockups/            Launch mockup images
+│   ├── prototypes/         Shirt design SVGs and PNG previews (Nos. 01–10; 07–10 are retired line art)
+│   └── mockups/            Launch mockups, Royal House artwork plates, archived studies
+├── production/             Print-file candidates and QA proofs
+├── functions/              Commerce backend: Stripe Checkout, Printify, Firestore order ledger (see functions/README.md)
+├── scripts/                Site, manifest, and catalog checks and generators
 ├── tools/
 │   └── business-plan/      build_business_plan.py (regenerates the .docx)
 ├── website/
-│   └── dist/               Deployed static site (Firebase Hosting)
-├── sources/                Synced from the ChatGPT project. Read-only, do not edit.
+│   ├── src/ public/        Astro storefront source and static assets
+│   ├── coming-soon/        Standalone production placeholder
+│   └── dist/               Build output served by Firebase Hosting (not committed)
+├── sources/                Local-only mirror of the ChatGPT project (not tracked in git; may be absent). Read-only.
 ├── .github/                Workflows, issue and PR templates, CODEOWNERS, Dependabot
 ├── .firebaserc             Firebase project aliases (dev / staging / prod)
-└── firebase.json           Firebase Hosting configuration
+├── firebase.{dev,staging,prod}.json   Per-environment hosting config (the deploy workflow copies one to firebase.json)
+└── firebase.json           Default hosting config for local use
 ```
 
 ## Getting started
 
 Prerequisites:
 
-- [Node.js](https://nodejs.org/) 18+ and the [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
+- [Node.js](https://nodejs.org/) 24+ for the website (22 for `functions/`) and the [Firebase CLI](https://firebase.google.com/docs/cli): `npm install -g firebase-tools`
 - Python 3.11+ with `python-docx` (only to regenerate the business plan)
 - Access to the three Firebase projects (to deploy by hand)
 
@@ -85,11 +94,22 @@ firebase login
 
 ## Website
 
-The site is plain static HTML in [website/dist/](website/dist/) with no build step yet. The framework has not been chosen; when it is, scaffold it in `website/` and point `hosting.public` in [firebase.json](firebase.json) at the build output.
+The website is one Astro project in [`website/`](website/). `npm run build` writes the static site to `website/dist/` (not committed), which Firebase Hosting serves, routing `/api/**` to the commerce function.
+
+The **Royal House of Engagement** is the governing institution within the Low Value Content world. Low Value Content remains the portal, purveyor, owned domain, merchant, and garment maker's mark. Astro generates the homepage, ten product pages, the Realm, the Lineage, and the Royal Calendar from the master apparel manifest.
+
+```bash
+npm install --prefix website
+npm run dev --prefix website
+npm run build --prefix website
+```
+
+The website needs Node.js 24 or newer. The commerce functions in `functions/` run on Node.js 22 and have their own `package.json`.
 
 Preview locally:
 
 ```bash
+npm run build --prefix website
 firebase emulators:start --only hosting
 ```
 
@@ -103,15 +123,19 @@ firebase deploy --only hosting --project staging       # low-value-content-stagi
 firebase deploy --only hosting --project production    # low-value-content-prod
 ```
 
+### Commerce functions
+
+CI deploys **hosting only**. Hosting rewrites `/api/**` to the `api` function, so checkout and order status work in an environment only after the functions are deployed by hand: `firebase deploy --only functions --project <alias>`. Secrets, params, and webhook setup are in [functions/README.md](functions/README.md).
+
 ### Automatic deploys
 
-[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) deploys on every push to `develop`, `staging`, or `main` that changes `website/dist/**`, `firebase.json`, or `.firebaserc`. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
+[.github/workflows/deploy-website.yml](.github/workflows/deploy-website.yml) builds and deploys the Astro storefront on every push to `develop`, `staging`, or `main` that changes `website/**`, the apparel manifest, Firebase configuration, or the workflow itself. Each branch maps to its own GitHub Environment (`development`, `staging`, `production`).
 
 Deploys are keyless. The workflow authenticates with [Workload Identity Federation](https://cloud.google.com/iam/docs/workload-identity-federation) because the organization policy `iam.disableServiceAccountKeyCreation` forbids service-account keys. Each Firebase project has a `github-deploy` service account (Firebase Hosting Admin only) and a GitHub OIDC provider that trusts only this repository and only that environment's branch (`develop`, `staging`, or `main`). Each GitHub Environment holds a `WIF_PROVIDER` variable with the provider's resource name. No credentials are stored in GitHub.
 
 ## Non-prod access gate
 
-The dev and staging sites sit behind a Google sign-in wall (`website/dist/assets/auth-gate.js`), the same model as `EnvironmentGate` in vehicle-vitals, modulo-squares, and sprout. Production and `localhost` are never gated. It keeps the public out; it is not a hard auth boundary, because the allowlist ships in the page.
+The dev and staging sites sit behind a Google sign-in wall (`website/public/assets/auth-gate.js`), the same model as `EnvironmentGate` in vehicle-vitals, modulo-squares, and sprout. Production and `localhost` are never gated. It keeps the public out; it is not a hard auth boundary, because the allowlist ships in the page.
 
 A visitor gets in if their email's **domain** is in `ALLOWED_EMAIL_DOMAINS`, or their exact address is in `ALLOWED_EMAILS`. An empty allowlist locks everyone out. Both are comma-separated secrets set per GitHub Environment (`development`, `staging`); the deploy workflow writes them into `assets/env-config.js` at deploy time and fails if both are empty. The same workflow step passes the public Firebase web config from the `FIREBASE_WEB_API_KEY` and `FIREBASE_WEB_APP_ID` secrets.
 
@@ -120,6 +144,12 @@ A visitor gets in if their email's **domain** is in `ALLOWED_EMAIL_DOMAINS`, or 
 **One-time setup per Firebase project** (`low-value-content-dev`, `low-value-content-staging`): register a Web app, enable **Google** under Authentication → Sign-in method, and add `<project>.web.app` under Authentication → Settings → Authorized domains.
 
 Both environments also send `X-Robots-Tag: noindex, nofollow, noarchive` and a strict CSP (see `firebase.dev.json`, `firebase.staging.json`).
+
+### Production coming-soon page
+
+Until launch, production (`main`) serves a standalone coming-soon page from [website/coming-soon/](website/coming-soon/) instead of the full site. The deploy workflow swaps it in for `main` pushes. Dev and staging always deploy the full site. The page is `noindex` and collects no data.
+
+The switch is the `SHOW_COMING_SOON` variable in the `production` GitHub Environment. It is `true` now, and anything other than the exact value `false` keeps the coming-soon page up (fails safe). **To go live:** set `SHOW_COMING_SOON` to `false` under *Settings → Environments → production → Environment variables*, then re-run the Deploy Website workflow on `main`.
 
 ## Branching and releases
 
@@ -149,13 +179,30 @@ Its first recommendations are to clear the Low Value Content name for trademark,
 | --- | --- |
 | Business plan | [docs/business-plan/](docs/business-plan/) |
 | Concept catalog | [docs/product/concept-catalog.md](docs/product/concept-catalog.md) |
+| Ecosystem apparel catalog | [docs/product/ECOSYSTEM_APPAREL_CATALOG.md](docs/product/ECOSYSTEM_APPAREL_CATALOG.md) |
+| Master apparel manifest | [docs/product/apparel-manifest.md](docs/product/apparel-manifest.md) |
 | Agent and ChatGPT project notes | [AGENTS.md](AGENTS.md) |
 | Change history | [CHANGELOG.md](CHANGELOG.md) |
+
+## Quality and security
+
+| Check | Where | What it does |
+| --- | --- | --- |
+| Site and config checks | CI (`scripts/check-site.py`) | Every page has `lang`, title, viewport, and description; local links and assets resolve; no inline script or style (the dev/staging CSP blocks them); Firebase JSON is valid |
+| Manifest check | CI (`scripts/check-apparel-manifest.py`) | Ten launch products, 100 sayings, declared assets exist, backend catalog matches the manifest |
+| Functions CI | CI (`functions/`) | Typecheck, tests, and build for the commerce backend |
+| Secret scan | CI (gitleaks, full history) | Fails on committed keys, tokens, or private keys |
+| Promotion guard | CI, pull requests | Fails PRs that skip an environment (advisory; see below) |
+| Pipeline Summary | CI | Single pass/fail roll-up of the checks above |
+| Dependabot | GitHub | Alerts, security updates, and weekly GitHub Actions updates |
+
+The organization is on the GitHub Free plan, so this private repository cannot use branch protection, secret scanning, or code scanning. CI covers what it can; the promotion flow is enforced by convention. See [SECURITY.md](SECURITY.md).
 
 ## Contributing, security, and support
 
 - [CONTRIBUTING.md](CONTRIBUTING.md): workflow and standards
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md): expected behavior
+- [CLAUDE.md](CLAUDE.md): guide for AI-assisted sessions
 - [SECURITY.md](SECURITY.md): reporting vulnerabilities
 - [SUPPORT.md](SUPPORT.md): where to get help
 

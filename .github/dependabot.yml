@@ -4,4 +4,41 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    labels: ["dependencies"]
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    labels:
+      - "dependencies"
+  - package-ecosystem: "npm"
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      npm-website:
+        patterns:
+          - "*"
+    ignore:
+      # TypeScript 7 is a major jump that breaks the Astro type check; revisit when Astro supports it.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "npm"
+    directory: "/functions"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+    groups:
+      npm-functions:
+        patterns:
+          - "*"
+    ignore:
+      # Keep @types/node on the functions runtime major (Node 22).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+    labels:
+      - "dependencies"

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>I came. I saw. I refreshed.</title>
+  <desc>Classical inscription with a refresh glyph.</desc>
+<text x="2250" y="1760" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" letter-spacing="40" text-anchor="middle">I CAME.</text>
+  <text x="2250" y="2290" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" letter-spacing="40" text-anchor="middle">I SAW.</text>
+  <text x="2250" y="2820" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="400" font-weight="700" letter-spacing="10" text-anchor="middle">I REFRESHED.</text>
+  <path d="M900 3050h2700" stroke="#C99B43" stroke-width="22"/>
+  <path d="M2550 3570 A300 300 0 1 1 2376 3330" fill="none" stroke="#C99B43" stroke-width="48" stroke-linecap="round"/><path d="M2265 3150 L2436 3315 L2205 3384" fill="none" stroke="#C99B43" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="2250" y="4390" fill="#C99B43" font-family="Arial, Helvetica, sans-serif" font-size="110" letter-spacing="40" text-anchor="middle">SEMPER DEORSUM</text>
+  <g id="house-mark" transform="translate(2040 760) scale(4.2)" fill="none" stroke="#C99B43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 31a34 34 0 0 1 48 0M34 39a23 23 0 0 1 32 0M43 47a10 10 0 0 1 14 0"/><path d="M22 55h56v31H22zM38 86 50 96l12-10"/><circle cx="74" cy="56" r="9" fill="#C99B43" stroke="none"/></g>
+  <g id="house-frame">
+    <g fill="none" stroke="#C99B43"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#C99B43"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 18</text>
+  </g>
+</svg>

@@ -4,8 +4,9 @@ on:
   push:
     branches: [develop, staging, main]
     paths:
-      - "website/dist/**"
-      - "firebase.json"
+      - "website/**"
+      - "docs/product/apparel-manifest.json"
+      - "firebase*.json"
       - ".firebaserc"
       - ".github/workflows/deploy-website.yml"
   workflow_dispatch:
@@ -25,6 +26,13 @@ jobs:
     environment: ${{ github.ref_name == 'main' && 'production' || github.ref_name == 'staging' && 'staging' || 'development' }}
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - name: Build the Royal House storefront
+        run: npm ci --prefix website && npm run build --prefix website
       - name: Resolve Firebase project
         id: target
         run: |
@@ -61,8 +69,14 @@ jobs:
             --arg apiKey "$FIREBASE_WEB_API_KEY" --arg appId "$FIREBASE_WEB_APP_ID" \
             '{domains: ($domains | split(",")), emails: ($emails | split(",")), apiKey: $apiKey, appId: $appId}')
           printf 'window.__ENV_GATE__ = %s;\n' "$CONFIG" > website/dist/assets/env-config.js
+      - name: Publish coming-soon page to production
+        if: github.ref_name == 'main' && vars.SHOW_COMING_SOON != 'false'
+        run: |
+          # Prod serves the coming-soon page until the SHOW_COMING_SOON variable is set to "false".
+          rm -rf website/dist
+          cp -R website/coming-soon website/dist
       - name: Authenticate to Google Cloud (Workload Identity Federation, no keys)
-        uses: google-github-actions/auth@v2
+        uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: ${{ vars.WIF_PROVIDER }}
           service_account: github-deploy@${{ steps.target.outputs.project }}.iam.gserviceaccount.com
