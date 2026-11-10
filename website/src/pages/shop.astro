@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { courtAndOrders, publicNotices, royalCommemorations } from "../data";
+
+const collections = [
+  {
+    number: "I",
+    id: "public-notices",
+    name: "Public Notices",
+    line: "The notice stands on its own.",
+    description: "Direct observations in contemporary editorial form. They circulate independently and require no court authority.",
+    products: publicNotices,
+  },
+  {
+    number: "II",
+    id: "court-and-orders",
+    name: "Court & Orders",
+    line: "Status deserves a seal.",
+    description: "Appointments, institutes, medals, and sovereign arms issued under the authority of the House.",
+    products: courtAndOrders,
+  },
+  {
+    number: "III",
+    id: "royal-commemorations",
+    name: "Royal Commemorations",
+    line: "History, formally observed.",
+    description: "Dated editions drawn from the Lineage and Royal Calendar, with the Realm operating at full ceremonial volume.",
+    products: royalCommemorations,
+  },
+];
+---
+<BaseLayout title="The Regalia of Engagement | The Royal House of Engagement" description="The ten founding issues of the Royal House of Engagement, by Low Value Content: official regalia for the attention economy." current="shop">
+  <header class="page-hero">
+    <div>
+      <p class="script">The Royal Wardrobe</p>
+      <h1>Regalia,<br />with restraint.</h1>
+      <p>Ten founding issues, classified by degree of ceremonial authority. Some are issued by the Crown. Others circulate under public notice.</p>
+    </div>
+    <aside class="warrant" aria-label="Founding regalia warrant">
+      <img src="/assets/royal-mark.svg" alt="" />
+      <p>Founding warrant</p>
+      <strong>Front-only by decree</strong>
+      <span>One print area. One complete declaration. No secondary jurisdiction.</span>
+      <b>Multa edita, pauca dicta</b>
+    </aside>
+  </header>
+  <section class="ceremonial-library">
+    <div class="library-copy"><p class="eyebrow">The material culture of the Realm</p><h2>The system beyond<br /><span class="script">the printed garment.</span></h2><p>Apparel carries the declaration. Boxes, tissue, appointment cards, wax seals, standards, and provenance records carry the institution. </p></div>
+    <figure class="apparel-study"><a href="/assets/royal-house/02-apparel-collection.png"><img src="/assets/royal-house/02-apparel-collection.png" alt="Founding apparel study with formal heraldic garments in a ceremonial interior" /></a><figcaption>Studies for the Royal Wardrobe</figcaption></figure>
+    <figure class="packaging-study"><a href="/assets/royal-house/03-ceremonial-packaging.png"><img src="/assets/royal-house/03-ceremonial-packaging.png" alt="Ceremonial packaging study with box, tissue, seal, appointment card, and standard" /></a><figcaption>Ceremonial issue materials</figcaption></figure>
+  </section>
+  <section class="artwork-plate">
+    <div>
+      <div>
+        <p class="eyebrow">The founding collection</p>
+        <h2>Ten issues.<br /><span class="script">Three levels of authority.</span></h2>
+      </div>
+      <p>{publicNotices.length} Public Notices stand on their own. {courtAndOrders.length} Court &amp; Orders bear the House’s seals and appointments. {royalCommemorations.length} Royal Commemorations enter the permanent record of lineage, Latin, and disputed history.</p>
+    </div>
+    <figure><img src="/assets/front-art-founding-ten.png" alt="The ten founding issues of the Royal House of Engagement" /><figcaption>The founding collection · Nos. 01–10</figcaption></figure>
+  </section>
+  <nav class="collection-index" aria-label="Regalia collections">
+    {collections.map((collection) => <a href={`#${collection.id}`}><span>{collection.number}</span><b>{collection.name}</b><small>{collection.products.length} issues</small></a>)}
+  </nav>
+  {collections.map((collection) => (
+    <section class:list={["section", "catalog", collection.id]} id={collection.id}>
+      <div class="collection-heading">
+        <p class="collection-number">Collection {collection.number}</p>
+        <div><p class="eyebrow">{collection.name}</p><h2>{collection.line}</h2><p>{collection.description}</p></div>
+      </div>
+      <div class="product-grid">{collection.products.map((product) => <ProductCard product={product} />)}</div>
+    </section>
+  ))}
+  <section class="regalia-note">
+    <img src="/assets/royal-arms.svg" alt="Arms of the Royal House of Engagement" />
+    <div><p class="script">A note from the wardrobe</p><h2>The House confers authority.<br />It does not issue decoration.</h2><p>The peacock, parrot, notification shield, Wi-Fi crown, seals, standards, Latin, and calligraphy constitute the ceremonial library. Their use is reserved for garments possessing recognized standing before the court.</p><a href="/realm.html">Consult the constitution →</a></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4.5rem, 7vw, 7.5rem) var(--gutter); background: var(--navy); color: var(--ivory); border-bottom: 4px double var(--gold); }
+  .page-hero .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
+  .page-hero h1 { font-size: clamp(4rem, 8vw, 7.5rem); line-height: .88; font-weight: 400; letter-spacing: -.04em; margin: 1rem 0 2rem; }
+  .page-hero > div > p:last-child { max-width: 700px; font-size: 1.15rem; line-height: 1.7; }
+  .warrant { padding: clamp(2rem, 4vw, 4rem); text-align: center; border: 4px double var(--gold); background: rgba(255,255,255,.035); }
+  .warrant img { width: 78px; margin: 0 auto 1.5rem; }
+  .warrant p, .warrant span, .warrant b { display: block; }
+  .warrant p { color: var(--gold-light); font: 700 .62rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .warrant strong { display: block; margin: 1.2rem 0 .75rem; font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 400; }
+  .warrant span { color: rgba(244,238,223,.72); line-height: 1.55; }
+  .warrant b { margin-top: 2rem; color: var(--gold-light); font: 400 .66rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .catalog { background: var(--paper); scroll-margin-top: 2rem; }
+  .ceremonial-library { display: grid; grid-template-columns: minmax(260px, .62fr) minmax(480px, 1.38fr); grid-template-areas: "copy apparel" "packaging apparel"; gap: 1.5rem clamp(2rem, 5vw, 5rem); align-items: start; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: var(--paper); border-bottom: 1px solid var(--gold); }
+  .ceremonial-library > * { min-width: 0; }
+  .library-copy { grid-area: copy; align-self: end; padding-right: clamp(.5rem, 2vw, 2rem); }
+  .library-copy h2 { margin: .6rem 0 1rem; font-size: clamp(2.7rem, 4.5vw, 5rem); line-height: .95; font-weight: 400; }
+  .library-copy > p:last-child { max-width: 620px; font-size: 1rem; line-height: 1.65; }
+  .ceremonial-library figure { min-width: 0; margin: 0; padding: .65rem; background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 18px 42px rgba(13,28,43,.15); }
+  .ceremonial-library figure > a { display: block; }
+  .apparel-study { grid-area: apparel; }
+  .apparel-study img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
+  .packaging-study { grid-area: packaging; width: min(360px, 100%); }
+  .packaging-study img { width: 100%; height: 190px; object-fit: cover; }
+  .ceremonial-library figcaption { padding: .75rem .25rem 0; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .packaging-study img { object-position: center 44%; }
+  .catalog.court-and-orders { background: #eee5d4; }
+  .catalog.royal-commemorations { background: #e7ddc9; }
+  .artwork-plate { padding: clamp(4rem, 8vw, 8rem) var(--gutter); background: #e8deca; border-bottom: 1px solid var(--gold); }
+  .artwork-plate > div { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 7vw, 8rem); align-items: end; margin-bottom: 3rem; }
+  .artwork-plate h2 { margin: .5rem 0 0; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
+  .artwork-plate > div > p:last-child { margin: 0; font-size: 1.08rem; line-height: 1.75; }
+  .artwork-plate figure { margin: 0; padding: clamp(.5rem, 1vw, 1rem); background: var(--navy); border: 1px solid var(--gold); box-shadow: 0 24px 60px rgba(13,28,43,.14); }
+  .artwork-plate img { width: 100%; }
+  .artwork-plate figcaption { padding: .85rem .35rem 0; color: var(--gold-light); font: .62rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .collection-index { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .collection-index a { display: grid; grid-template-columns: auto 1fr; gap: .3rem 1rem; padding: 1.5rem clamp(1.25rem, 3vw, 3rem); text-decoration: none; border-right: 1px solid var(--line); }
+  .collection-index a:last-child { border-right: 0; }
+  .collection-index span { grid-row: 1 / 3; align-self: center; color: var(--crimson); font: 400 2rem/1 var(--serif); }
+  .collection-index b { font-size: 1rem; font-weight: 400; }
+  .collection-index small { color: #565e68; font: .62rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  .collection-heading { display: grid; grid-template-columns: .25fr 1fr; gap: clamp(2rem, 6vw, 7rem); align-items: start; margin-bottom: 3rem; }
+  .collection-number { margin: .15rem 0; color: var(--crimson); font: 700 .68rem/1.4 var(--sans); letter-spacing: .15em; text-transform: uppercase; }
+  .collection-heading h2 { margin: .4rem 0 1rem; font-size: clamp(3rem, 6vw, 6.5rem); line-height: .92; font-weight: 400; }
+  .collection-heading > div > p:last-child { max-width: 650px; font-size: 1.08rem; line-height: 1.7; }
+  .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem 1.25rem; }
+  .royal-commemorations .product-grid { grid-template-columns: repeat(2, minmax(240px, 320px)); }
+  .regalia-note { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; padding: clamp(4rem, 8vw, 8rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
+  .regalia-note img { width: min(380px, 82%); margin: auto; }
+  .regalia-note .script { color: var(--gold-light); font-size: 2rem; }
+  .regalia-note h2 { margin: .8rem 0 1.5rem; font-size: clamp(3rem, 6vw, 6rem); line-height: .94; font-weight: 400; }
+  .regalia-note p:not(.script) { max-width: 700px; color: rgba(244,238,223,.75); font-size: 1.08rem; line-height: 1.7; }
+  .regalia-note a { color: var(--gold-light); font: 700 .72rem/1.4 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+  @media (max-width: 1000px) { .ceremonial-library { grid-template-columns: 1fr 1fr; grid-template-areas: "copy copy" "apparel apparel" "packaging packaging"; } .library-copy { max-width: 760px; } .apparel-study { width: min(820px, 100%); } }
+  @media (max-width: 1000px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 900px) { .page-hero, .regalia-note, .artwork-plate > div { grid-template-columns: 1fr; } .collection-index { grid-template-columns: 1fr; } .collection-index a { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.2); } .collection-heading { grid-template-columns: 1fr; gap: 1rem; } }
+  @media (max-width: 620px) { .ceremonial-library { grid-template-columns: 1fr; grid-template-areas: "copy" "apparel" "packaging"; padding-block: 3rem; } .apparel-study img { aspect-ratio: auto; max-height: 360px; object-fit: contain; } .packaging-study { width: 100%; } }
+  @media (max-width: 560px) { .product-grid, .royal-commemorations .product-grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>Original thought temporarily unavailable</title>
+  <desc>Maintenance notice with hazard stripe.</desc>
+<text x="620" y="1380" fill="#852E34" font-family="'Courier New', Courier, monospace" font-size="120" font-weight="700" letter-spacing="28" text-anchor="start">SERVICE NOTICE 0017</text>
+  <text x="620" y="2060" fill="#142B40" font-family="'Courier New', Courier, monospace" font-size="300" font-weight="700" text-anchor="start">ORIGINAL THOUGHT</text>
+  <text x="620" y="2450" fill="#142B40" font-family="'Courier New', Courier, monospace" font-size="300" font-weight="700" text-anchor="start">TEMPORARILY</text>
+  <text x="620" y="2840" fill="#142B40" font-family="'Courier New', Courier, monospace" font-size="300" font-weight="700" text-anchor="start">UNAVAILABLE.</text>
+  <defs><pattern id="hz" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="60" height="120" fill="#852E34"/></pattern></defs>
+  <rect x="620" y="3200" width="3260" height="300" fill="url(#hz)"/>
+  <text x="620" y="3860" fill="#142B40" font-family="'Courier New', Courier, monospace" font-size="150" font-weight="700" letter-spacing="12" text-anchor="start">ESTIMATED RETURN: UNKNOWN</text>
+  <text x="620" y="4130" fill="#852E34" font-family="'Courier New', Courier, monospace" font-size="96" letter-spacing="6" text-anchor="start">WE APOLOGISE FOR THE INCONVENIENCE OF YOUR OWN MIND_</text>
+  <g id="house-mark" transform="translate(2040 780) scale(4.2)" fill="none" stroke="#852E34" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M26 31a34 34 0 0 1 48 0M34 39a23 23 0 0 1 32 0M43 47a10 10 0 0 1 14 0"/><path d="M22 55h56v31H22zM38 86 50 96l12-10"/><circle cx="74" cy="56" r="9" fill="#852E34" stroke="none"/></g>
+  <g id="house-frame">
+    <g fill="none" stroke="#852E34"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#852E34"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#852E34" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 17</text>
+  </g>
+</svg>

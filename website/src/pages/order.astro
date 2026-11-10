@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Your Order | The Royal House of Engagement" description="Track a Low Value Content order.">
+  <section class="plain-page ivory order-status">
+    <p class="script">The Royal Ledger</p>
+    <p class="eyebrow">Order status</p>
+    <h1 id="order-title">Consulting the ledger…</h1>
+    <p id="order-message" role="status" aria-live="polite"></p>
+    <dl id="order-details"></dl>
+    <a class="button" href="/shop.html">Return to the regalia</a>
+  </section>
+  <script is:inline src="/assets/order.js"></script>
+</BaseLayout>
+<style>
+  .order-status h1 { max-width: 18ch; }
+  #order-message { margin: 0; max-width: 40rem; font-size: 1.25rem; line-height: 1.6; }
+  #order-details { max-width: 720px; margin: 2rem 0; border-top: 1px solid var(--line); }
+  #order-details:empty { display: none; }
+  .order-status .button { margin-top: 2rem; }
+</style>

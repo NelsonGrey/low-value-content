@@ -1,6 +1,6 @@
 # Low Value Content Brand and Content Guide
 
-Status: working guide for a pre-launch apparel concept. It translates the business plan into reusable direction for product, website, social, email, packaging, and customer support. Creative priority is not legal clearance; every name, saying, design, font, and third-party reference must complete the appropriate review before commercial release.
+Status: working guide for a pre-launch apparel concept. The governing fiction is in the [Constitution of Engagement](CONSTITUTION_OF_ENGAGEMENT.md); the launch assortment and per-design rules are in the [launch matrix](../product/launch-collection-matrix-v3.md) and the [apparel manifest](../product/apparel-manifest.md), which win where they differ from this guide. It translates the business plan into reusable direction for product, website, social, email, packaging, and customer support. Creative priority is not legal clearance; every name, saying, design, font, and third-party reference must complete the appropriate review before commercial release.
 
 ## Brand foundation
 
@@ -50,11 +50,28 @@ The system should feel like editorial design crossed with institutional interfac
 - Use a small, consistent source-identifying brand detail on the neck label, packaging, product page, or secondary placement.
 - Avoid loud novelty-shirt layouts, unlicensed assets, fake performance metrics, and mockups that imply an unapproved product specification.
 
+### Regnal names
+
+Sovereigns take the name of the power they embody. A numeral appears only when a name recurs (Web I the Great, Web II the Chastened); sole bearers carry none. Every sovereign has an epithet awarded by posterity, a mix of the classical (the Pious, the Great, the Terrible, the Wanting) and the technical (the Interrupted, the Unsolicited, the Sideways). The current line: Moth the Pious, LO the Interrupted, Spam the Unsolicited, Emoticon the Sideways, Web I the Great, Y2K the Almost, Web II the Chastened, Content the Wanting, Scroll the Endless, Algorithm the Terrible, Prompt the Confident. Ordinal position on the lineage page is shown as "Reign 01" to "Reign 11" so it never clashes with a regnal numeral.
+
+### House palette and garments
+
+The Royal House is the visible brand and Low Value Content is the label on it. The same lockup appears everywhere: "The Royal House of Engagement" with "Purveyed by Low Value Content" beneath it. Page titles end "| The Royal House of Engagement". The founding collection is called **the founding collection** (ten issues); do not use "Drop 001", "Founding Ten", "Founding Six" or "Founding Plate" in public copy.
+
+- **Garments:** four colours only: Ivory, Oxblood, Navy, Black. Colours are planned until sampling confirms the blank and provider.
+- **Inks (two-ink designs):** navy, oxblood and antique gold. No editorial black, lime or notification red.
+- **Shared frame (Nos. 01–06):** every two-ink design carries the House frame (double rule, diamond corners) and the imprint line "The Royal House of Engagement · No. NN". Headline typography may stay in its own joke register (typewriter, auction, report); small text is set in the House serif. Sources are `design/prototypes/01..06`; run `python3 scripts/render-front-art.py` to rebuild the display PNGs and proof sheet.
+- **Product pages show shoppers:** name, price, art, one line of description, collection, garment, and an archive note for the lore. Production status, print gates, realm intensity and similar workshop fields live in `docs/`, not on the site.
+
+### Two registers
+
+The visual system has two registers. **Public Notices** use the restrained editorial register above: typography, status language, one or two inks, neutral garments. **Court & Orders** and **Royal Commemorations** use the Realm register: heraldry, seals, Latin as subordinate texture, and the navy, oxblood, antique gold, and ivory palette, with full-colour art for Nos. 07–10. The brand voice stays dry and exact in both; the Realm adds ceremony, not a different joke. Public Notices never receive sovereign heraldry.
+
 ## Product architecture
 
 The ten collections are Social Media Theater, Algorithm Anxiety, Creator Economy, Chronically Online, Artificial Authenticity, Future of Work, Productivity Theater, Performative Sustainability, Terms and Conditions, and Optimized Human.
 
-The proposed validation assortment contains six creative priorities:
+The launch assortment is the **Founding Ten**. It begins with the original six creative priorities:
 
 1. Please validate me algorithmically.
 2. Thought leader. No thoughts required.
@@ -62,6 +79,15 @@ The proposed validation assortment contains six creative priorities:
 4. Content creator. Meaning pending.
 5. My authentic self is currently being monetized.
 6. I optimized this shirt for engagement.
+
+Four Realm-native designs complete the ten:
+
+7. Much Published, Little Said.
+8. Order of the Blue Check.
+9. The End of the World Has Been Postponed.
+10. Patron Saint of Debugging.
+
+Nos. 01–06 and the Public Notices keep the editorial register. Nos. 07–10 use the ornate heraldic register chosen in the [imagery direction](IMAGERY_DIRECTION.md). Collections, Realm intensity, and print rules per design are in the launch matrix.
 
 These are not evidence of rights clearance or final production approval.
 
@@ -74,8 +100,8 @@ The sample test covers print alignment, opacity, edge quality, placement, collar
 ## Release model
 
 1. Complete name, phrase, artwork, font, domain, and handle review.
-2. Finalize six production designs and sample at least two garment or provider configurations.
-3. Build six complete product pages, policies, analytics, and email capture.
+2. Finalize ten production designs and sample at least two garment or provider configurations.
+3. Build ten complete product pages, policies, analytics, and email capture.
 4. Complete a real test order from storefront through delivery.
 5. Soft launch and resolve quality or fulfillment defects.
 6. Run a defined validation period and record the result.
@@ -93,7 +119,7 @@ The about page should explain why the brand exists, who it is for, what it targe
 
 ## Campaign content
 
-The launch sequence is: the premise, one accurate post for each of the six observations, product-quality evidence, the field guide, a vote among reviewed next concepts, and a candid result report. A social post should contain one observation, the familiar scene behind it, accurate product imagery, the true status, and one action.
+The launch sequence is: the premise, one accurate post for each launch design, product-quality evidence, the field guide, a vote among reviewed next concepts, and a candid result report. A social post should contain one observation, the familiar scene behind it, accurate product imagery, the true status, and one action.
 
 The email sequence is: welcome and expectations; first-drop preview; sample report; launch details; post-purchase care and support; and later editorial drop notes. Discounting should not become the voice.
 

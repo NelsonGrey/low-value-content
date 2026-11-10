@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>My self-worth is buffering</title>
+  <desc>Appointment of the Baron of Buffering.</desc>
+<circle cx="2250" cy="1560" r="500" fill="none" stroke="#C99B43" stroke-width="22"/>
+  <circle cx="2250" cy="1560" r="360" fill="none" stroke="#F4EEDF" stroke-width="90" stroke-dasharray="1629 633" transform="rotate(-90 2250 1560)"/>
+  <text x="2250" y="1626" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" text-anchor="middle">72%</text>
+  <text x="2250" y="2420" fill="#C99B43" font-family="Arial, Helvetica, sans-serif" font-size="84" letter-spacing="16" text-anchor="middle">COMMISSION FOR IMMINENT AVAILABILITY</text>
+  <text x="2250" y="3060" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="420" font-weight="700" text-anchor="middle">MY SELF-WORTH</text>
+  <text x="2250" y="3560" fill="#F4EEDF" font-family="Georgia, 'Times New Roman', serif" font-size="420" font-weight="700" text-anchor="middle">IS BUFFERING.</text>
+  <path d="M1100 3880h2300" stroke="#C99B43" stroke-width="22"/>
+  <text x="2250" y="4210" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="150" letter-spacing="44" text-anchor="middle">BARON OF BUFFERING</text>
+  <text x="2250" y="4440" fill="#C99B43" font-family="Arial, Helvetica, sans-serif" font-size="80" letter-spacing="16" text-anchor="middle">ESTIMATED CONFIRMATION · EVENTUALLY, PERHAPS</text>
+  
+  <g id="house-frame">
+    <g fill="none" stroke="#C99B43"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#C99B43"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 15</text>
+  </g>
+</svg>

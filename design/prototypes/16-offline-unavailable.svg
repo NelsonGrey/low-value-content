@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+  <title>Offline is currently unavailable</title>
+  <desc>Empty signal bars struck through, with system-status wording.</desc>
+<rect x="1700" y="1860" width="170" height="220" fill="none" stroke="#F4EEDF" stroke-width="26"/>
+  <rect x="1980" y="1700" width="170" height="380" fill="none" stroke="#F4EEDF" stroke-width="26"/>
+  <rect x="2260" y="1540" width="170" height="540" fill="none" stroke="#F4EEDF" stroke-width="26"/>
+  <rect x="2540" y="1380" width="170" height="700" fill="none" stroke="#F4EEDF" stroke-width="26"/>
+  <path d="M1560 2160L3000 1000" stroke="#C99B43" stroke-width="40" stroke-linecap="round"/>
+  <text x="2250" y="2840" fill="#F4EEDF" font-family="Arial, Helvetica, sans-serif" font-size="430" font-weight="800" text-anchor="middle">OFFLINE IS</text>
+  <text x="2250" y="3300" fill="#F4EEDF" font-family="Arial, Helvetica, sans-serif" font-size="430" font-weight="800" text-anchor="middle">CURRENTLY</text>
+  <text x="2250" y="3760" fill="#C99B43" font-family="Arial, Helvetica, sans-serif" font-size="430" font-weight="800" text-anchor="middle">UNAVAILABLE.</text>
+  <path d="M1000 4000h2500" stroke="#C99B43" stroke-width="22"/>
+  <text x="2250" y="4290" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="100" letter-spacing="18" text-anchor="middle">ESTIMATED RETURN · EVENTUALLY, PERHAPS</text>
+  
+  <g id="house-frame">
+    <g fill="none" stroke="#C99B43"><rect x="250" y="400" width="4000" height="4650" stroke-width="34"/><rect x="335" y="485" width="3830" height="4480" stroke-width="11"/></g>
+    <g fill="#C99B43"><path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/><path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/><path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/></g>
+    <text x="2250" y="4850" fill="#C99B43" font-family="Georgia, 'Times New Roman', serif" font-size="80" letter-spacing="26" text-anchor="middle">THE ROYAL HOUSE OF ENGAGEMENT · NO. 16</text>
+  </g>
+</svg>

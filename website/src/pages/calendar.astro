@@ -1,0 +1,163 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { observances } from "../data";
+
+const eventCopy: Record<string, { year: string; line: string; latin?: string }> = {
+  "01-01": { year: "1983", line: "ARPANET adopted TCP/IP and the interconnected realm received a common protocol." },
+  "04-01": { year: "1998", line: "The Hyper Text Coffee Pot Control Protocol brought standards to the most essential network service." },
+  "04-23": { year: "2005", line: "The first YouTube video was uploaded. Nineteen seconds became an economy." },
+  "04-30": { year: "1993", line: "CERN placed the Web software in the public domain. The Web was free; other ways to pay followed." },
+  "05-03": { year: "1978", line: "The earliest widely recognized spam email addressed the realm without invitation." },
+  "05-11": { year: "1997", line: "Deep Blue defeated Garry Kasparov, beginning the first ceremonial observance of human obsolescence." },
+  "06-29": { year: "2007", line: "The first iPhone went on sale and the infinite scroll moved within ignoring distance." },
+  "09-09": { year: "1947", line: "An actual moth was found in the Mark II and entered the permanent peerage of technical history.", latin: "Primus casus verus" },
+  "09-19": { year: "1982", line: "The sideways smiley supplied mandatory emotional context to digital correspondence." },
+  "10-29": { year: "1969", line: "ARPANET attempted LOGIN, transmitted LO, and crashed before completing its first thought.", latin: "Initium interruptum" },
+  "11-30": { year: "2022", line: "ChatGPT was introduced and the present generative reign began." },
+  "12-31": { year: "1999", line: "The realm awaited the Millennium Pretender and discovered that successful prevention looks suspiciously uneventful.", latin: "Finis mundi dilatus" }
+};
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const eventDevices: Record<string, string> = {
+  "01-01": "/assets/royal-mark.svg",
+  "04-01": "/assets/order-jacquard.svg",
+  "04-23": "/assets/house-influence.svg",
+  "04-30": "/assets/royal-mark.svg",
+  "05-03": "/assets/house-spam.svg",
+  "05-11": "/assets/house-prompt.svg",
+  "06-29": "/assets/house-scroll.svg",
+  "09-09": "/assets/lineage-moth.svg",
+  "09-19": "/assets/order-blue-check.svg",
+  "10-29": "/assets/lineage-lo.svg",
+  "11-30": "/assets/house-prompt.svg",
+  "12-31": "/assets/lineage-y2k.svg",
+};
+const shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const monthCounts = months.map((_, i) => observances.filter((o) => Number(o.monthDay.split("-")[0]) === i + 1));
+
+---
+<BaseLayout title="Royal Calendar | The Royal House of Engagement" description="Annual observances commemorating bugs, spam, the Web, infinite scrolling, Y2K, artificial intelligence, and other events of state." current="calendar">
+  <header class="calendar-hero">
+    <div class="hero-copy">
+      <p class="script">Dates of Ceremonial Importance</p>
+      <h1>The Royal Calendar</h1>
+      <p>Because history is easier to monetize when it occurs on the same date every year.</p>
+    </div>
+    <aside class="next-up" id="next-up" hidden aria-live="polite">
+      <p class="eyebrow">Next observance</p>
+      <time id="next-date"><span id="next-day"></span><b id="next-month"></b></time>
+      <h2 id="next-name"></h2>
+      <p class="countdown" id="next-countdown"></p>
+      <a class="text-link" id="next-link" href="#">Read the entry →</a>
+    </aside>
+  </header>
+  <section class="calendar-preface">
+    <div class="preface-copy">
+      <p class="eyebrow">The annual cycle</p>
+      <h2>Twelve observances. <span class="script">No ordinary days.</span></h2>
+      <p>The court year proceeds from Universal Connectivity through the Vigil of the Missing Digits. Each observance keeps its historical device and established date, and each is a commemorative edition under consideration.</p>
+    </div>
+    <ol class="year-ribbon" aria-label="Observances by month">
+      {shortMonths.map((label, i) => {
+        const hits = monthCounts[i];
+        return (
+          <li class:list={[hits.length > 0 && "has-events"]}>
+            {hits.length > 0 ? <a href={`#obs-${hits[0].monthDay}`} aria-label={`${months[i]}: ${hits.length} observance${hits.length > 1 ? "s" : ""}`}><b>{label}</b><span>{hits.map(() => <i></i>)}</span></a> : <div><b>{label}</b><span></span></div>}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+  <section class="calendar-list" aria-label="Observances in date order">
+    {observances.map((event) => {
+      const [month, day] = event.monthDay.split("-").map(Number);
+      const detail = eventCopy[event.monthDay];
+      return (
+        <article class:list={["obs", event.monthDay === "12-31" && "y2k"]} id={`obs-${event.monthDay}`} data-obs={event.monthDay} data-name={event.name}>
+          <time datetime={`2026-${event.monthDay}`}><span>{String(day).padStart(2, "0")}</span><b>{months[month - 1]}</b></time>
+          <img class="event-device" src={eventDevices[event.monthDay]} alt="" />
+          <div class="obs-body">
+            <p class="year">Established {detail.year}</p>
+            <h2>{event.name}</h2>
+            {detail.latin && <p class="latin">{detail.latin}</p>}
+            <p>{detail.line}</p>
+          </div>
+          <p class="status"><b>Under consideration</b><span class="next-tag" hidden></span></p>
+        </article>
+      );
+    })}
+  </section>
+  <script is:inline src="/assets/calendar.js" defer></script>
+</BaseLayout>
+
+<style>
+  .calendar-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(4rem, 6vw, 6.5rem) var(--gutter); background: var(--ivory); border-bottom: 4px double var(--gold); }
+  .calendar-hero .script { font-size: 2rem; margin: 0; }
+  .calendar-hero h1 { font-size: var(--fs-h1); line-height: .96; letter-spacing: -.03em; margin: 1rem 0 1.5rem; font-weight: 400; }
+  .hero-copy > p:last-child { max-width: 32rem; margin: 0; font-size: 1.25rem; line-height: 1.6; color: #2c3640; }
+  .calendar-hero:has(#next-up[hidden]) { grid-template-columns: 1fr; }
+  .next-up { padding: 2rem 2.25rem 2.25rem; background: var(--navy); color: var(--ivory); border: 4px double var(--gold); }
+  .next-up[hidden] { display: none; }
+  .next-up .eyebrow { margin: 0 0 1.25rem; color: var(--gold-light); }
+  .next-up time { display: flex; align-items: flex-end; gap: .9rem; }
+  .next-up time span { font-size: 5.5rem; line-height: .8; color: var(--gold-light); }
+  .next-up time b { padding-bottom: .2rem; font: 700 .72rem var(--sans); letter-spacing: .16em; text-transform: uppercase; }
+  .next-up h2 { margin: 1.25rem 0 .5rem; font-size: clamp(1.7rem, 2.6vw, 2.4rem); line-height: 1.08; font-weight: 400; }
+  .countdown { margin: 0 0 1.25rem; color: rgba(244,238,223,.8); font: 700 .7rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .next-up .text-link { color: var(--gold-light); }
+
+  .calendar-preface { padding: clamp(3rem, 5vw, 4.5rem) var(--gutter) clamp(2.5rem, 4vw, 3.5rem); background: #e8deca; border-bottom: 1px solid var(--gold); }
+  .preface-copy { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: .5rem clamp(2rem, 5vw, 5rem); align-items: end; }
+  .preface-copy .eyebrow { grid-column: 1 / -1; margin: 0; }
+  .preface-copy h2 { margin: 0; font-size: var(--fs-h2); line-height: 1.02; font-weight: 400; }
+  .preface-copy h2 .script { display: block; color: var(--crimson); }
+  .preface-copy > p:last-child { margin: 0; max-width: 34rem; font-size: 1.05rem; line-height: 1.7; }
+  .year-ribbon { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-top: 1px solid var(--gold); }
+  .year-ribbon li { border-right: 1px solid var(--line); }
+  .year-ribbon li:first-child { border-left: 1px solid var(--line); }
+  .year-ribbon a, .year-ribbon div { display: grid; justify-items: center; gap: .5rem; padding: .9rem 0 1rem; text-decoration: none; }
+  .year-ribbon b { font: 700 .66rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #6a6155; }
+  .year-ribbon .has-events b { color: var(--navy); }
+  .year-ribbon span { display: flex; gap: 4px; min-height: 9px; }
+  .year-ribbon i { width: 9px; height: 9px; border-radius: 50%; background: var(--crimson); }
+  .year-ribbon a:hover, .year-ribbon a:focus-visible { background: rgba(255,255,255,.45); }
+
+  .calendar-list { background: var(--paper); padding: 0 var(--gutter); }
+  .obs { display: grid; grid-template-columns: 7.5rem 5rem minmax(0, 1fr) auto; gap: 0 clamp(1.25rem, 3vw, 3rem); align-items: center; padding: 2.25rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: 110px; }
+  .obs:last-child { border-bottom: 0; }
+  .obs time { display: grid; gap: .5rem; }
+  .obs time span { font-size: 4.25rem; line-height: .8; color: var(--crimson); }
+  .obs time b { font: 700 .66rem var(--sans); text-transform: uppercase; letter-spacing: .16em; }
+  .event-device { width: 64px; height: 72px; object-fit: contain; }
+  .year { margin: 0 0 .35rem; color: var(--crimson); font: 700 .65rem var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+  .obs h2 { margin: 0; font-size: clamp(1.7rem, 2.6vw, 2.5rem); line-height: 1.05; font-weight: 400; }
+  .obs .latin { margin: .5rem 0 0; }
+  .obs-body > p:last-child { max-width: 40rem; margin: .75rem 0 0; font-size: 1.05rem; line-height: 1.6; color: #2c3640; }
+  .status { display: grid; justify-items: end; gap: .5rem; margin: 0; font: 700 .58rem/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+  .status b { padding: .45rem .65rem; border: 1px solid var(--line); color: var(--crimson); }
+  .next-tag { color: var(--navy); }
+  .next-tag[hidden] { display: none; }
+  .obs.is-next { margin-inline: calc(var(--gutter) * -.4); padding-inline: calc(var(--gutter) * .4); background: rgba(186,141,58,.12); box-shadow: inset 4px 0 0 var(--gold); }
+  .obs.y2k { margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); background: var(--navy); color: white; border-bottom: 0; }
+  .y2k time span, .y2k .year { color: var(--gold-light); }
+  .y2k .latin { color: var(--gold-light); }
+  .y2k .obs-body > p:last-child { color: rgba(244,238,223,.88); }
+  .y2k .status b { color: var(--gold-light); border-color: rgba(218,191,131,.45); }
+
+  @media (max-width: 980px) {
+    .calendar-hero { grid-template-columns: 1fr; }
+    .preface-copy { grid-template-columns: 1fr; }
+    .obs { grid-template-columns: 7.5rem 4rem minmax(0, 1fr); }
+    .obs time span { font-size: 3.4rem; }
+    .status { grid-column: 3; justify-items: start; margin-top: 1rem; }
+  }
+  @media (max-width: 620px) {
+    .year-ribbon b { font-size: .56rem; letter-spacing: .04em; }
+    .year-ribbon i { width: 6px; height: 6px; }
+    .obs { grid-template-columns: 4.25rem minmax(0, 1fr); padding: 1.75rem 0; }
+    .obs time { grid-column: 1; }
+    .obs time span { font-size: 2.6rem; }
+    .event-device { display: none; }
+    .obs-body, .status { grid-column: 2; }
+    .obs.is-next { margin-inline: -1rem; padding-inline: 1rem; }
+  }
+</style>

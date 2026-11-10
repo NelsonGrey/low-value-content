@@ -3,6 +3,7 @@
     "public": "website/dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
+    "rewrites": [{ "source": "/api/**", "function": { "functionId": "api", "region": "us-central1" } }],
     "headers": [
       {
         "source": "**/*.@(png|jpg|jpeg|webp|svg|css|js)",
@@ -11,5 +12,9 @@
         ]
       }
     ]
-  }
+  },
+  "functions": [
+    { "source": "functions", "codebase": "default", "ignore": ["node_modules", ".git", "test", "*.log"], "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"] }
+  ],
+  "firestore": { "rules": "firestore.rules" }
 }

@@ -301,7 +301,7 @@ if MOCKUP_1.exists():
 meta = doc.add_paragraph()
 meta.alignment = WD_ALIGN_PARAGRAPH.CENTER
 meta.paragraph_format.space_before = Pt(18)
-mr = meta.add_run("Prepared September 28 2026\nWorking business plan for founder review")
+mr = meta.add_run("Prepared September 28 2026, updated October 31 2026\nWorking business plan for founder review")
 mr.font.size = Pt(10)
 mr.font.color.rgb = RGBColor.from_string(MID)
 
@@ -335,11 +335,31 @@ add_bullets(doc, [
 ])
 
 page_break(doc)
+doc.add_heading("Implementation Update October 31 2026", level=2)
+add_para(doc, "This plan was prepared on September 28 2026. The sections that follow are retained as originally written. This update records where the project has since departed from them, based on the repository at the date shown.")
+add_table(doc,
+          ["Topic", "This plan assumed", "Current state"],
+          [
+              ["Initial assortment", "Six shirts", "Ten designs, the Founding Ten: the original six plus four Realm native designs (Much Published Little Said, Order of the Blue Check, The End of the World Has Been Postponed, Patron Saint of Debugging)"],
+              ["Brand presentation", "Neutral editorial brand", "Low Value Content remains the consumer brand and merchant. The Royal House of Engagement is a fictional ruling institution that gives Court and Commemoration designs their ceremonial register. Public Notices stay editorial."],
+              ["Store and payment", "Shopify, or a Printify Pop Up Store", "A custom static storefront on Firebase Hosting, Stripe Checkout for payment, and a Firestore order ledger"],
+              ["Fulfillment", "Print on demand through the store connection", "A paid order is sent to Printify by the backend and held for manual approval before production"],
+              ["Print", "One color direct to garment", "Nos. 1 to 6 are two ink designs. Nos. 7 to 10 use full color ornate artwork plates that are below print resolution. No design is approved for production."],
+              ["Price", "32 dollars plus shipping", "32 dollars planned retail. Fixed United States shipping of 5.99 dollars is charged at checkout."],
+              ["Commerce status", "Soft launch after samples", "One test mode product (No. 1, White, size L). Production shows a coming soon page. There are no public sales."],
+              ["Garment", "Comfort Colors 1717", "Not recorded in the repository. Confirm from the Printify product before any garment claim is published."],
+          ], widths=[1.35, 1.7, 3.7], font_size=8.6)
+add_bullets(doc, [
+    "The unit economics in this plan use Shopify fees and a Shopify subscription. The current build uses Stripe and Firebase. The 18.98 dollar contribution figure has not been recomputed and should not be treated as current.",
+    "The name and every saying remain without trademark clearance. The validation thresholds in this plan are unchanged.",
+])
+
+page_break(doc)
 
 # Company concept
 doc.add_heading("Company Concept", level=1)
 doc.add_heading("Brand Name", level=2)
-add_para(doc, "The working brand name is Low Value Content. The name functions as criticism of low quality online material and as self aware commentary on the shirt itself. A preliminary web search found no obvious exact apparel collision, and a WHOIS lookup on September 28 2026 returned no registration match for lowvaluecontent.com. Neither result constitutes trademark clearance, and domain availability can change immediately.")
+add_para(doc, "The working brand name is Low Value Content. The name functions as criticism of low quality online material and as self aware commentary on the shirt itself. A preliminary web search found no obvious exact apparel collision, and The domain lowvaluecontent.com was registered on October 15 2026. Neither the web search nor owning the domain constitutes trademark clearance.")
 
 doc.add_heading("Positioning", level=2)
 add_para(doc, "The brand targets people who participate in online culture while remaining skeptical of its incentives. The humor should criticize platform behavior, corporate performance, creator economics, and compulsive consumption. It should not depend on attacking individual users or protected groups.")
