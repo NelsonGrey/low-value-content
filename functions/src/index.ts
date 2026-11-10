@@ -1,7 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import { defineSecret, defineString, defineBoolean } from "firebase-functions/params";
-import Stripe from "stripe";
+import { getStripe } from "./stripe-client.js";
 import { catalog } from "./catalog.js";
 import { createCheckoutSession } from "./checkout.js";
 import { reconcileOrders } from "./fulfillment.js";
@@ -23,7 +23,7 @@ const autoApprove = defineBoolean("PRINTIFY_AUTO_APPROVE", { default: false });
 
 const secrets = [stripeSecretKey, stripeWebhookSecret, printifyToken, printifyWebhookSecret];
 
-const stripe = () => new Stripe(stripeSecretKey.value());
+const stripe = () => getStripe(stripeSecretKey.value());
 const printify = () => printifyClient({ token: printifyToken.value(), shopId: printifyShopId.value() });
 
 function send(res: import("firebase-functions/v2/https").Response, result: HttpResult): void {
