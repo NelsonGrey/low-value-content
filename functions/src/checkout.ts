@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import type Stripe from "stripe";
 import {
   CURRENCY,
@@ -9,6 +10,7 @@ import {
 } from "./catalog.js";
 import { json, logFailure, type HttpResult } from "./http.js";
 import { newPublicToken, type OrderStore } from "./orders.js";
+import { stripeMetadata } from "./stripe-client.js";
 import type { Order, OrderLine } from "./types.js";
 
 export interface CheckoutDeps {
@@ -71,6 +73,10 @@ export function decodeLines(catalog: Catalog, encoded: string | undefined): Orde
   return parsed.ok ? parsed.lines : null;
 }
 
+/** Stable short hash of the basket, used to build the checkout idempotency key. */
+const checkoutFingerprint = (lines: OrderLine[]): string =>
+  createHash("sha256").update(encodeLines(lines)).digest("hex").slice(0, 24);
+
 export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): Promise<HttpResult> {
   const items = (body as { items?: unknown } | null)?.items;
   const parsed = resolveLines(deps.catalog, items);
@@ -103,10 +109,13 @@ export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): 
         },
       ],
       automatic_tax: { enabled: deps.automaticTax },
-      metadata: { publicToken, items: encodeLines(parsed.lines) },
+      metadata: stripeMetadata({ publicToken, items: encodeLines(parsed.lines) }),
       expires_at: Math.floor(Date.now() / 1000) + 31 * 60,
       success_url: `${deps.siteUrl}/order?token=${publicToken}`,
       cancel_url: `${deps.siteUrl}/shop`,
+    }, {
+      // The same basket within one minute (a double click) returns the same session.
+      idempotencyKey: `lvc-checkout:${checkoutFingerprint(parsed.lines)}:${Math.floor(Date.now() / 60000)}`,
     });
     if (!session.url) throw new Error("Stripe returned no checkout URL");
 
