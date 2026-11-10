@@ -25,7 +25,7 @@ Each product had grown its own Stripe wiring: hand-written HTTP calls in one, fi
 1. **One client module per service.** Every Stripe call goes through a single module (`stripe-client.ts`, `stripe/client.ts`). It uses the official `stripe` package, the same major version in every repo, and **one pinned `apiVersion`** equal to the SDK's own. No hand-written HTTP calls, and no `require('stripe')` scattered through the code.
 2. **The webhook endpoint's `api_version` equals the pinned client version.** Webhook payloads follow the endpoint's version, not the client's. A mismatch silently changes event shapes (for example `invoice.subscription` versus `invoice.parent.subscription_details`). An endpoint's `api_version` cannot be edited, so a mismatch means recreate the endpoint. `stripe_reconcile.py audit` checks this.
 3. **Webhook URL.** `https://<site domain>/api/webhooks/stripe`, served through the site's own hosting rewrite. Never `cloudfunctions.net`. One endpoint per product per environment.
-4. **Webhook handling.** Verify with the SDK (`constructEvent`) against the raw body, with the default 5 minute tolerance. De-duplicate by `event.id`. Return 2xx for events we do not handle. Release the dedupe claim if processing fails so Stripe's retry is applied.
+4. **Webhook handling.** Verify with the SDK (`constructEvent`) against the raw body, with the default 5 minute tolerance. De-duplicate by `event.id`. Return 2xx for event types we do not handle. Return non-2xx only when we want Stripe to retry (for example an event whose user is not mapped yet because the checkout event has not been processed). Release the dedupe claim if processing fails so the retry is applied.
 5. **Prices by lookup key.** Lookup keys are `<TIER>_WEB_<MONTH|ANNUAL>` (for example `PLUS_WEB_MONTH`). Code resolves prices with `prices.list({ lookup_keys })`. **Price ids are never stored in secrets or config**, because they differ in every environment and were the main source of drift. One-time products (Low Value Content) price inline from the server catalog.
 6. **Portal configuration by name.** Each subscription product has a billing portal configuration named for the product (`VEHICLE-VITALS`, `WISHLIST WIZARD`), resolved by name at runtime. No portal id in config.
 7. **Secrets.** `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Secret Manager. Prefer a restricted key (`rk_`) with only the permissions the service needs. URLs and ids are plain configuration, not secrets.
@@ -61,3 +61,13 @@ Order matters, because Stripe must never call a route that does not exist yet.
 - **Tax.** Wishlist Wizard enables automatic tax on checkout, Low Value Content does not. No tax registrations exist in any environment. Needs a decision with the accountant before live.
 - **Support URL, dev sandbox.** Currently `https://www.nelsongrey.com/support`; the manifest expects no `www`. Dashboard-only setting.
 - **Live mode.** Not set up. Requires the account structure decision above and explicit sign-off.
+
+## Rollout status
+
+| Environment | Low Value Content | Vehicle Vitals | Wishlist Wizard |
+|---|---|---|---|
+| dev | Not deployed (Firebase project has no billing, so no functions) | Done November 10, 2026. New endpoint verified with a Stripe-signed event; old endpoint deleted | Done November 10, 2026. New endpoint verified; duplicate delivery de-duplicated; old endpoint deleted |
+| staging | Not started | Not started | Not started |
+| prod / live | Not started | Not started | Not started |
+
+Staging follows the normal promotion flow (`develop` to `staging`), then the rollout steps above against the staging sandbox.
