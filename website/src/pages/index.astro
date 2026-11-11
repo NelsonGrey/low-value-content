@@ -43,9 +43,9 @@ const facts = [
       <p>The Royal House of Engagement governs the attention economy through six Great Houses, a line of sovereigns and a calendar of feasts. It takes all of this very seriously, and the shirts are how it issues its notices.</p>
       <a class="button light" href="/realm.html">Enter the Realm</a>
     </div>
-    <img class="arms" src="/assets/royal-arms.svg" alt="The arms of the Royal House of Engagement: a notification shield beneath a Wi-Fi crown" width="320" height="380" />
+    <img class="arms" src="/assets/royal-shield.svg" alt="The shield of the Royal House of Engagement: a loading ring, a card, a liked heart with a notification badge and a cursor, under a Wi-Fi crown" width="165" height="330" />
     <ul class="houses" aria-label="The six Great Houses">
-      {houses.map((house) => <li><a href="/realm.html#great-houses"><img src={`/assets/house-${house.id}.svg`} alt="" width="44" height="44" loading="lazy" /><span>{house.name}</span></a></li>)}
+      {houses.map((house) => <li><a href="/realm.html#great-houses"><img src={`/assets/house-${house.id}.svg`} alt="" width="40" height="50" /><span>{house.name}</span></a></li>)}
     </ul>
   </section>
 
@@ -78,18 +78,18 @@ const facts = [
   .realm { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem clamp(2rem, 5vw, 5rem); align-items: center; background: var(--navy); color: var(--ivory); padding: clamp(3rem, 6vw, 5.5rem) var(--gutter); }
   .realm h2 { margin: 0 0 1.25rem; font: 800 clamp(2.4rem, 5vw, 4.2rem)/.98 var(--display); text-transform: uppercase; }
   .realm p { margin: 0 0 1.75rem; max-width: 38rem; line-height: 1.75; color: rgba(244, 238, 223, .85); }
-  .arms { width: min(100%, 320px); height: auto; justify-self: center; }
+  .arms { width: auto; height: clamp(240px, 28vw, 340px); justify-self: center; }
   .houses { grid-column: 1 / -1; list-style: none; margin: 1rem 0 0; padding: 1.75rem 0 0; border-top: 1px solid rgba(218, 191, 131, .35); display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
   .houses a { display: flex; align-items: center; gap: .75rem; text-decoration: none; font-size: .85rem; line-height: 1.3; }
   .houses a:hover span, .houses a:focus-visible span { text-decoration: underline; text-underline-offset: 4px; }
-  .houses img { flex: none; background: var(--ivory); border-radius: 50%; padding: 3px; }
+  .houses img { flex: none; }
   .close { padding: clamp(3.5rem, 7vw, 6rem) var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; }
   .close h2 { margin: 0; font: 800 clamp(2.2rem, 5vw, 4rem)/.98 var(--display); text-transform: uppercase; color: var(--navy); }
   @media (max-width: 900px) {
     .hero-sub { grid-template-columns: minmax(0, 1fr); }
     .facts dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .realm { grid-template-columns: minmax(0, 1fr); }
-    .arms { justify-self: start; width: 200px; }
+    .arms { justify-self: start; height: 220px; }
     .houses { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (max-width: 600px) {
