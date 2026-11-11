@@ -25,6 +25,18 @@ export const productImage = (product: Product): string | null => {
   return null;
 };
 
+/** Printify's rendered preview of the shirt (interim product photo until sample photography exists). */
+export const productMockup = (product: Product): string | null => {
+  const m = "printifyMockup" in product.assets ? product.assets.printifyMockup : undefined;
+  return m ? `/assets/mockups/${m.split("/").pop()}` : null;
+};
+
+/** Small lossless WebP of the front art for grids and cards; falls back to the PNG. */
+export const productImageSmall = (product: Product): string | null => {
+  const png = productImage(product);
+  return png ? png.replace(/\.png$/, ".webp") : null;
+};
+
 export const productHref = (product: Product) => `/products/${product.id}.html`;
 
 export interface VariantOption {

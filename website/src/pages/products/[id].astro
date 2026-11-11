@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
-import { blankClass, hasRealmProvenance, isPurchasable, lineage, products, productImage, variantOptions, type Product } from "../../data";
+import { blankClass, hasRealmProvenance, isPurchasable, lineage, products, productImage, productMockup, variantOptions, type Product } from "../../data";
 
 export function getStaticPaths() {
   return products.map((product) => ({ params: { id: product.id }, props: { product } }));
@@ -9,6 +9,7 @@ export function getStaticPaths() {
 
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
+const mockupSrc = productMockup(product);
 const price = `$${Math.round(product.commerce.priceCents / 100)}`;
 const canBuy = isPurchasable(product);
 const options = variantOptions(product);
@@ -48,6 +49,12 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
         </form>
       ) : (
         <div class="development-notice"><b>Coming soon</b><p>This issue is not yet available.</p></div>
+      )}
+      {mockupSrc && (
+        <figure class="on-shirt">
+          <img src={mockupSrc} alt={`Preview render of the ${blankColor} shirt with the ${product.primaryCopy} print`} width="900" height="882" loading="lazy" />
+          <figcaption>Preview render. Photography of the finished shirt will replace it.</figcaption>
+        </figure>
       )}
       <dl>
         <div><dt>Collection</dt><dd>{product.launchCollection}</dd></div>
@@ -117,6 +124,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .archive blockquote { margin: 1rem 0; font-size: 1.3rem; line-height: 1.45; }
   .title-line { margin: 0; font-size: .9rem; line-height: 1.6; color: #565e68; }
   .independent-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--crimson); background: #eee5d4; line-height: 1.6; }
+  .on-shirt { margin: 2rem 0 0; } .on-shirt img { width: 100%; height: auto; border: 1px solid var(--line); } .on-shirt figcaption { margin-top: .5rem; font: .72rem/1.5 var(--sans); color: #565e68; }
   .fixed-color { grid-column: 1 / -1; margin: 0; font: .75rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
   .fixed-color b { font-weight: 700; letter-spacing: .06em; }
   .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }

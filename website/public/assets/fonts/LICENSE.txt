@@ -1,0 +1,1 @@
+Barlow Condensed (Jeremy Tribby) and Libre Baskerville (Impallari Type, Rodrigo Fuenzalida) are licensed under the SIL Open Font License 1.1 (https://openfontlicense.org). These files are Latin subsets in WOFF2 format.

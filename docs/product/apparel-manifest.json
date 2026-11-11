@@ -140,7 +140,7 @@
       "design/mockups/low-value-content-launch-03.png"
     ],
     "royalHouseConcepts": [
-      "website/public/assets/royal-house/01-brand-identity-board.png",
+      "website/public/assets/royal-house/01-brand-identity-board.webp",
       "website/public/assets/royal-house/02-apparel-collection.png",
       "website/public/assets/royal-house/03-ceremonial-packaging.png"
     ],
@@ -183,6 +183,7 @@
       "assets": {
         "artwork": "production/print-files/launch-six-v1/01-progress-bar.svg",
         "frontArtDisplay": "website/public/assets/front-art-01-validate-me.png",
+        "printifyMockup": "website/public/assets/mockups/01-validate-me.jpg",
         "conceptMockup": "website/public/assets/shirt-01.png"
       },
       "commerce": {
@@ -222,6 +223,7 @@
       "assets": {
         "artwork": "production/print-files/launch-six-v1/02-door-plaque.svg",
         "frontArtDisplay": "website/public/assets/front-art-02-thought-leader.png",
+        "printifyMockup": "website/public/assets/mockups/02-thought-leader.jpg",
         "conceptMockup": "website/public/assets/shirt-02.png"
       },
       "commerce": {
@@ -261,6 +263,7 @@
       "assets": {
         "artwork": "production/print-files/launch-six-v1/03-field-dispatch.svg",
         "frontArtDisplay": "website/public/assets/front-art-03-market-research.png",
+        "printifyMockup": "website/public/assets/mockups/03-market-research.jpg",
         "conceptMockup": "website/public/assets/shirt-03.png",
         "designStudy": "website/public/assets/design-study-doomscrolling-v3.png",
         "designStudyPrevious": "website/public/assets/design-study-doomscrolling-v2.png"
@@ -302,6 +305,7 @@
       "assets": {
         "artwork": "production/print-files/launch-six-v1/04-editors-marks.svg",
         "frontArtDisplay": "website/public/assets/front-art-04-content-creator.png",
+        "printifyMockup": "website/public/assets/mockups/04-content-creator.jpg",
         "conceptMockup": "website/public/assets/shirt-04.png"
       },
       "commerce": {
@@ -341,6 +345,7 @@
       "assets": {
         "artwork": "production/print-files/launch-six-v1/05-price-tag.svg",
         "frontArtDisplay": "website/public/assets/front-art-05-authentic-self.png",
+        "printifyMockup": "website/public/assets/mockups/05-authentic-self.jpg",
         "conceptMockup": "website/public/assets/shirt-05.png"
       },
       "commerce": {
@@ -379,7 +384,8 @@
       "commerceStatus": "test-sellable",
       "assets": {
         "artwork": "production/print-files/launch-six-v1/06-giant-times.svg",
-        "frontArtDisplay": "website/public/assets/front-art-06-sent-regretted.png"
+        "frontArtDisplay": "website/public/assets/front-art-06-sent-regretted.png",
+        "printifyMockup": "website/public/assets/mockups/06-sent-regretted.jpg"
       },
       "commerce": {
         "catalogKey": "sent-regretted",
