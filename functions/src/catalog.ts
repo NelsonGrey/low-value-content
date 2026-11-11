@@ -33,7 +33,7 @@ export const PLACEHOLDER_PRINTIFY_PRODUCT_ID = "REPLACE_WITH_PRINTIFY_PRODUCT_ID
 export const catalog: Catalog = {
   validate: {
     name: "Please validate me algorithmically.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d07784c3e9e3630dd1a6",
     variants: {
       "ivory-s": { label: "Ivory / S", printifyVariantId: 78991 },
@@ -46,7 +46,7 @@ export const catalog: Catalog = {
   },
   "thought-leader": {
     name: "Thought leader. No thoughts required.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d07bb0bec49fb208604b",
     variants: {
       "true-navy-s": { label: "True Navy / S", printifyVariantId: 79081 },
@@ -59,7 +59,7 @@ export const catalog: Catalog = {
   },
   doomscrolling: {
     name: "I'm not doomscrolling. I'm doing market research.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d07ff6491c921e01d872",
     variants: {
       "brick-s": { label: "Brick / S", printifyVariantId: 78901 },
@@ -72,7 +72,7 @@ export const catalog: Catalog = {
   },
   "content-creator": {
     name: "Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d082c783a6d305012fce",
     variants: {
       "ivory-s": { label: "Ivory / S", printifyVariantId: 78991 },
@@ -85,7 +85,7 @@ export const catalog: Catalog = {
   },
   "authentic-self": {
     name: "My authentic self is currently being monetized.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d08684c3e9e3630dd1b1",
     variants: {
       "brick-s": { label: "Brick / S", printifyVariantId: 78901 },
@@ -98,7 +98,7 @@ export const catalog: Catalog = {
   },
   "sent-regretted": {
     name: "Sent 2:14 AM. Regretted 2:15 AM.",
-    unitAmount: 3200,
+    unitAmount: 3600,
     printifyProductId: "6af3d08bf44a1129e5058223",
     variants: {
       "true-navy-s": { label: "True Navy / S", printifyVariantId: 79081 },

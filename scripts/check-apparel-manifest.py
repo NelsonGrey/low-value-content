@@ -117,6 +117,15 @@ def main() -> int:
             errors.append(f"{product['id']}: Printify product ID does not match backend catalog")
 
 
+    # Price lock: the price shown on the site (manifest) must be the price the backend charges (catalog.ts).
+    for product in products:
+        key = product["commerce"].get("catalogKey")
+        block = commerce_block(commerce_text, key)
+        if key and block:
+            amounts = re.findall(r"unitAmount:\s*(\d+)", block)
+            if not amounts or int(amounts[0]) != product["commerce"]["priceCents"]:
+                errors.append(f"{product['id']}: manifest price {product['commerce']['priceCents']} differs from catalog unitAmount {amounts[:1]}")
+
     # Colour lock: the colour we show a customer (blankColor) must be the colour of every
     # variant we sell, in the backend catalog and in the recorded Printify products.
     hex_re = re.compile(r"^#[0-9a-f]{6}$")

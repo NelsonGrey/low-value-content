@@ -1,6 +1,6 @@
 # Pricing and cost analysis: the holiday six
 
-Status: recommendation for Mark's decision, November 11, 2026. Nothing here has been approved. All figures come from `tools/pricing/model.py`; change an input there, re-run it, and update this page.
+Status: November 11, 2026. **The $36 price is applied** (Mark expected the analysis's $36; it replaced the $32 placeholder in the manifest, the backend catalog and the Printify drafts). The shipping rule, sizes and tax items below are still open. All figures come from `tools/pricing/model.py`; change an input there, re-run it, and update this page.
 
 **Recommendation in one line:** price all six shirts at **$36**, charge shipping as **$5.99 for the first shirt plus $2.49 for each additional shirt**, and treat sales-tax handling as the one open item that could move the margin.
 
@@ -113,11 +113,11 @@ Not quantified yet; fill these in and add them to the model before launch:
 
 I could not find direct comparables for satirical graphic tees. The only data I got were mainstream retail: [Levi's](https://www.levi.com/US/en_US/clothing/men/shirts/classic-graphic-tee/p/224910380) lists graphic tees at $28 to $40, and J.Crew Factory graphic tees list at up to $54.50. A premium garment-dyed blank with a collectible, numbered design supports $36 to $38. A competitor scan on Etsy, Threadless and Cotton Bureau would firm this up and is worth an hour of your time, because I can't reach those shops from here.
 
-## 9. Decisions requested
+## 9. Decisions
 
-1. **Price:** $36 for all six (recommended), or $34 / $38?
+1. **Price: decided, $36 for all six** (applied November 11, 2026).
 2. **Shipping:** $5.99 plus $2.49 per additional shirt (recommended), or keep flat $5.99?
 3. **Sizes:** S to 3XL at one price (recommended), or S to 2XL only?
 4. **Tax:** ask the accountant about collection, Printify's tax, and a resale certificate before live mode.
 
-When 1 and 2 are decided I'll update `functions/src/catalog.ts`, the Printify product prices, the manifest and the cart copy together.
+Price is applied everywhere and `scripts/check-apparel-manifest.py` now fails if the manifest price and the backend catalog price differ. When the shipping rule is decided, update `functions/src/checkout.ts`, the cart copy and this page together.

@@ -18,7 +18,7 @@ Scope rule: launch small, prove the pipeline end to end, add the next issues in 
 - **Garment colors are locked to the real Comfort Colors names** (Ivory, True Navy, Brick). The site, cart, backend catalog and Printify products must all say the same color, and `scripts/check-apparel-manifest.py` fails the build if they don't. Brick is the closest available shade to the brand's oxblood and is **provisional until a physical sample is seen**.
 - **Held back:** No. 07 Much Published, Little Said (the crest, saved for a later edition), No. 08 Order of the Blue Check, and Nos. 09 and 10. They stay in the manifest but are **not listed or built on the site**: the site shows only the six (`holidayLaunch: true`); to release another issue, set that flag and finish its Printify product, catalog entry and color. "I optimized this shirt for engagement" moved to No. 19.
 - **Blank:** Comfort Colors 1717, provider Printify Choice, sizes S to 3XL, DTG print, front only.
-- **Price:** $32 is a placeholder. The recommendation is **$36** with shipping at **$5.99 plus $2.49 per additional shirt**; awaiting Mark's decision.
+- **Price:** **$36** for all six (applied November 11, 2026; see [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md)). Shipping is still the flat $5.99 placeholder; the recommendation is **$5.99 plus $2.49 per additional shirt**, awaiting Mark's decision.
 
 ## Calendar
 
@@ -47,7 +47,7 @@ Dates assume the real production and shipping time is what Printify's product pa
 
 ## Decisions needed from Mark
 
-1. Price: $36 for all six (recommended), or $34 or $38.
+1. ~~Price~~ decided: $36.
 2. Shipping: $5.99 plus $2.49 per extra shirt (recommended), or flat $5.99.
 3. Returns and replacement policy (default proposed in launch-readiness).
 4. Trademark: search-and-launch, or hold until counsel clears.
@@ -64,6 +64,7 @@ Back prints, sleeve seals, garment QR codes, hoodies, Nos. 07 to 10, the Wave 2 
 |---|---|
 | Nov 9, 2026 | First plan: five shirts (01, 02, 03, 05, 08) |
 | Nov 10, 2026 | Approved six: 01 to 06 as above. 07 (crest) and 08 (Blue Check) dropped; "Sent" and the rewritten creator line added; numbering reset to 01 to 06; new artwork replaces the prototypes |
+| Nov 11, 2026 (price) | Mark: the analysis recommended $36, not the $32 placeholder. $36 applied to the manifest, `functions/src/catalog.ts` and the six Printify drafts; the manifest checker now fails if site and backend prices differ |
 | Nov 11, 2026 (shield) | Mark: the line-art arms read as two people praying back to back. The site now uses a shield-only mark (`royal-shield.svg`: loading ring, card, liked heart with badge, cursor, Wi-Fi crown) on the homepage, Realm and shop; the peacock and parrot supporters are not drawn on the site. The full-colour crest plate stays held back |
 | Nov 11, 2026 (homepage) | Homepage redesigned to lead with the six (one condensed headline, a six-tile wall, plain facts, then the Realm); every page now sits in the 1280px column on white (all 11 audited pages pass the layout rule, axe finds no issues); self-hosted Barlow Condensed and Libre Baskerville (the shirts' own type); Printify preview renders added to shop cards and product pages; the 3.2 MB identity board replaced by a 276 KB WebP; homepage 3.9 MB to 0.5 MB, Lighthouse mobile performance 75 to 92 |
 | Nov 11, 2026 (cleanup) | Repo cleanup: creative source art (`design/`, `production/`, unused site assets) is now local-only and gitignored, with a local backup; the site deploys about 6 MB instead of 36 MB; dead CSS removed; GitHub Actions pinned to commit SHAs; the leftover branches merged |
