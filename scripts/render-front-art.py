@@ -29,6 +29,8 @@ def display_pngs():
     for stem, display, _ in LAUNCH:
         art = Image.open(PRINT / f"{stem}.png").convert("RGBA").resize((1200, 1440), Image.Resampling.LANCZOS)
         art.save(ASSETS / display, optimize=True)
+        # Smaller lossless WebP for grids and cards (shown at under 400 px wide).
+        art.resize((800, 960), Image.Resampling.LANCZOS).save(ASSETS / display.replace(".png", ".webp"), "WEBP", lossless=True, method=6)
 
 
 def sheet():

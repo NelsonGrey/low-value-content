@@ -34,6 +34,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
+| Homepage and site-wide 1280px layout | Done | Audited with `tools/site-qa` (screenshots, axe, layout rule, Lighthouse). Preview renders are interim product images; replace with sample photography |
 | Product pages, cards, shop page for the six | Done | Real blank color shown on each page. The site lists and builds only the six (`holidayLaunch`); Nos. 07 to 10 are hidden |
 | Catalog with variants and Printify ids | Done | `functions/src/catalog.ts`, matched to the manifest by the checker |
 | Final price in catalog, Stripe line item, manifest and Printify | Needs Mark | One decision, one change set |

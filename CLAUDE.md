@@ -28,6 +28,8 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 ## Launch state (keep current)
 - The holiday 2026 launch is the six shirts Nos. 01–06. Read `docs/product/holiday-launch-plan.md` (the plan, decisions and change log) and `docs/product/launch-readiness.md` (the work list) first.
 - **Whenever launch state changes** (a decision, a build, a Printify or Stripe change, a sample result, a price), update both files and the change log in the same change, and keep the manifest, `functions/src/catalog.ts`, `tools/printify/`, the site and the docs agreeing. `python3 scripts/check-apparel-manifest.py` enforces the manifest/catalog/colour agreement; `node scripts/build-ecosystem-catalog.mjs --check` enforces the ecosystem catalog.
+- Site design: one centered 1280px column (`--site-content-width` in `BaseLayout.astro`); backgrounds stay inside it, outside is white. Fonts are self-hosted Barlow Condensed (display) and Libre Baskerville (text). After any site change run the build, then `cd tools/site-qa && npm run audit` and check at 1920px and phone width.
+- `design/` and `production/` are ignored, so a `git pull`/`checkout` that crosses a commit where they were still tracked deletes the local copies. If that happens, restore from `~/Circus/Backups/low-value-content-artwork-2026-11-11.tar.gz` (`tar xzf ... --keep-newer-files`).
 - Garment colours are the real Comfort Colors names in the manifest (`blankColor`); never show a customer a colour we don't ship.
 
 ## Working style with this user (Mark Nelson)
