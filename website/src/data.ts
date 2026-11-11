@@ -4,7 +4,8 @@ export type Product = (typeof manifest.launchProducts)[number];
 export type LineageEntry = (typeof manifest.lineage)[number];
 
 export const brand = manifest.brand;
-export const products = manifest.launchProducts as Product[];
+// The site shows only the issues released for sale. Later issues stay in the manifest but are not listed or built.
+export const products = (manifest.launchProducts as Product[]).filter((product) => product.holidayLaunch);
 export const lineage = manifest.lineage as LineageEntry[];
 export const observances = manifest.observances;
 export const houses = manifest.houses;
@@ -12,8 +13,6 @@ export const constitution = manifest.constitution;
 export const peerage = manifest.peerage;
 export const orders = manifest.orders;
 
-export const originalProducts = products.filter((product) => product.position <= 6);
-export const royalProducts = products.filter((product) => product.position > 6);
 export const publicNotices = products.filter((product) => product.launchCollection === "Public Notices");
 export const courtAndOrders = products.filter((product) => product.launchCollection === "Court & Orders");
 export const royalCommemorations = products.filter((product) => product.launchCollection === "Royal Commemorations");

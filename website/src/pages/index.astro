@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { houses, products } from "../data";
-const featured = [products[0], products[2], products[6], products[8]];
+const featured = [products[0], products[1], products[2], products[5]];
 ---
 <BaseLayout title="The Royal House of Engagement | Presented by Low Value Content" description="Enter the Royal House of Engagement: official regalia, disputed lineage, and the ceremonial government of the Attention Economy, presented by Low Value Content.">
   <section class="hero">
@@ -52,7 +52,7 @@ const featured = [products[0], products[2], products[6], products[8]];
   </section>
 
   <section class="section featured">
-    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>Three degrees<br /><span class="script">of ceremonial authority.</span></h2><p>Public Notices circulate beyond the court. Court & Orders bear its seals and appointments. Royal Commemorations enter the permanent record of lineage, Latin, and disputed history.</p></div>
+    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>Six issues.<br /><span class="script">Two degrees of authority.</span></h2><p>Public Notices circulate beyond the court. Court & Orders bear its seals and appointments.</p></div>
     <div class="product-grid">{featured.map((product) => <ProductCard product={product} />)}</div>
     <a class="button ghost" href="/shop.html">View all issues</a>
   </section>
