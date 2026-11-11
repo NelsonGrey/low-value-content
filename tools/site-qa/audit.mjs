@@ -13,7 +13,7 @@ const dist = path.resolve(here, "../../website/dist");
 const out = path.join(here, "out");
 fs.mkdirSync(out, { recursive: true });
 const arg = process.argv.find((a) => a.startsWith("--pages="))?.split("=")[1];
-const PAGES = (arg ? arg.split(",") : ["index", "shop", "products/validate", "products/sent-regretted", "cart", "realm", "lineage", "calendar", "about", "support", "terms"]);
+const PAGES = (arg ? arg.split(",") : ["index", "shop", "products/validate", "products/sent-regretted", "cart", "realm", "realm/constitution", "realm/houses", "realm/peerage", "lineage", "calendar", "about", "support", "terms"]);
 const VIEWPORTS = [{ name: "desktop-1920", width: 1920, height: 1080 }, { name: "laptop-1280", width: 1280, height: 800 }, { name: "phone-390", width: 390, height: 844 }];
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".ico": "image/x-icon" };
 
