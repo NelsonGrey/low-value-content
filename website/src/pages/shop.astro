@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProductCard from "../components/ProductCard.astro";
-import { courtAndOrders, publicNotices, royalCommemorations } from "../data";
+import { courtAndOrders, publicNotices } from "../data";
 
 const collections = [
   {
@@ -20,22 +20,14 @@ const collections = [
     description: "Appointments, institutes, medals, and sovereign arms issued under the authority of the House.",
     products: courtAndOrders,
   },
-  {
-    number: "III",
-    id: "royal-commemorations",
-    name: "Royal Commemorations",
-    line: "History, formally observed.",
-    description: "Dated editions drawn from the Lineage and Royal Calendar, with the Realm operating at full ceremonial volume.",
-    products: royalCommemorations,
-  },
 ];
 ---
-<BaseLayout title="The Regalia of Engagement | The Royal House of Engagement" description="The founding issues of the Royal House of Engagement, by Low Value Content: six holiday issues now, four more to follow." current="shop">
+<BaseLayout title="The Regalia of Engagement | The Royal House of Engagement" description="The six founding issues of the Royal House of Engagement, by Low Value Content: official regalia for the attention economy." current="shop">
   <header class="page-hero">
     <div>
       <p class="script">The Royal Wardrobe</p>
       <h1>Regalia,<br />with restraint.</h1>
-      <p>The six holiday issues, with four more to follow, classified by degree of ceremonial authority. Some are issued by the Court. Others circulate under public notice.</p>
+      <p>The six founding issues, classified by degree of ceremonial authority. Some are issued by the Court. Others circulate under public notice.</p>
     </div>
     <aside class="warrant" aria-label="Founding regalia warrant">
       <img src="/assets/royal-mark.svg" alt="" />
@@ -49,11 +41,11 @@ const collections = [
     <div>
       <div>
         <p class="eyebrow">The founding collection</p>
-        <h2>Six issues now.<br /><span class="script">Four more to follow.</span></h2>
+        <h2>Six issues.<br /><span class="script">Two degrees of authority.</span></h2>
       </div>
-      <p>{publicNotices.length} Public Notices stand on their own. {courtAndOrders.length} Court &amp; Orders bear the House’s seals and appointments. {royalCommemorations.length} Royal Commemorations enter the permanent record of lineage, Latin, and disputed history.</p>
+      <p>{publicNotices.length} Public Notices stand on their own. {courtAndOrders.length} Court &amp; Orders bear the House’s seals and appointments.</p>
     </div>
-    <figure><img src="/assets/front-art-founding-ten.png" alt="The ten founding issues of the Royal House of Engagement" /><figcaption>The founding collection · Nos. 01–06 are the holiday issues; Nos. 07–10 are later concepts</figcaption></figure>
+    <figure><img src="/assets/front-art-holiday-six.png" alt="The six founding issues of the Royal House of Engagement" /><figcaption>The founding collection · Nos. 01–06</figcaption></figure>
   </section>
   <nav class="collection-index" aria-label="Regalia collections">
     {collections.map((collection) => <a href={`#${collection.id}`}><span>{collection.number}</span><b>{collection.name}</b><small>{collection.products.length} issues</small></a>)}

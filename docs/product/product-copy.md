@@ -14,7 +14,7 @@ Voice: the House speaks as an institution that takes itself seriously. Two sente
 
 ## The founding collection
 
-Nos. 01 to 06 are the holiday issues. Nos. 07 to 10 follow later and stay "coming soon" on the site.
+Nos. 01 to 06 are the holiday issues. Nos. 07 to 10 follow later and are not shown on the site.
 
 | No. | Description |
 |---|---|

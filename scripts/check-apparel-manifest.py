@@ -3,6 +3,7 @@
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -12,6 +13,11 @@ MANIFEST_PATH = ROOT / "docs" / "product" / "apparel-manifest.json"
 CATALOG_PATH = ROOT / "docs" / "product" / "concept-catalog.md"
 COMMERCE_PATH = ROOT / "functions" / "src" / "catalog.ts"
 
+
+
+def is_local_only(path: str) -> bool:
+    """True for creative source art that .gitignore keeps out of the repo (design/, production/, held-back assets)."""
+    return subprocess.run(["git", "check-ignore", "-q", path], cwd=ROOT).returncode == 0
 
 
 def commerce_block(text: str, key):
@@ -72,15 +78,19 @@ def main() -> int:
             errors.append(f"{label}: duplicate QR route {route!r}")
         qr_routes.add(route)
         for asset_name, asset_path in product.get("assets", {}).items():
+            if is_local_only(asset_path):
+                continue  # source art kept locally; only deployable assets are validated
             if not (ROOT / asset_path).is_file():
                 errors.append(f"{label}: missing {asset_name} asset {asset_path}")
 
     for group_name, paths in manifest.get("sharedAssets", {}).items():
         if group_name.endswith("Glob"):
-            if not list(ROOT.glob(paths)):
+            if not is_local_only(paths) and not list(ROOT.glob(paths)):
                 errors.append(f"sharedAssets.{group_name}: glob matched no files: {paths}")
             continue
         for asset_path in paths:
+            if is_local_only(asset_path):
+                continue
             if not (ROOT / asset_path).is_file():
                 errors.append(f"sharedAssets.{group_name}: missing {asset_path}")
 

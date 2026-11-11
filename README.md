@@ -58,14 +58,16 @@ low-value-content/
 │   ├── brand/              Brand guide, Constitution of Engagement, heraldic system, imagery direction
 │   ├── business-plan/      Business plan (.docx) and its QA renders (qa/draft, qa/final)
 │   └── product/            Concept catalog, apparel manifest (source of truth), launch matrix, product notes
-├── design/
-│   ├── prototypes/         Shirt design SVGs and PNG previews (Nos. 01–10; 07–10 are retired line art)
-│   └── mockups/            Launch mockups, Royal House artwork plates, archived studies
-├── production/             Print-file candidates and QA proofs
+├── design/                 LOCAL ONLY (gitignored): shirt prototypes, mockups, social cards, launch-six art sources
+├── production/             LOCAL ONLY (gitignored): print masters and QA proofs
 ├── functions/              Commerce backend: Stripe Checkout, Printify, Firestore order ledger (see functions/README.md)
 ├── scripts/                Site, manifest, and catalog checks and generators
 ├── tools/
-│   └── business-plan/      build_business_plan.py (regenerates the .docx)
+│   ├── business-plan/      build_business_plan.py (regenerates the .docx)
+│   ├── printify/           Creates the Printify draft products (reads print masters from production/)
+│   ├── pricing/            Unit-economics model behind docs/product/pricing-and-cost-analysis.md
+│   ├── social/             Social kit generator (writes to design/social/)
+│   └── stripe/             Declarative Stripe manifest and reconcile tool
 ├── website/
 │   ├── src/ public/        Astro storefront source and static assets
 │   ├── coming-soon/        Standalone production placeholder
@@ -76,6 +78,10 @@ low-value-content/
 ├── firebase.{dev,staging,prod}.json   Per-environment hosting config (the deploy workflow copies one to firebase.json)
 └── firebase.json           Default hosting config for local use
 ```
+
+## Creative source art is local only
+
+`design/` and `production/`, plus site assets that nothing references (concept mockups, held-back issue art, logo and icon explorations), are gitignored so the repo and the deployed site stay small. They are not needed to build or deploy; CI builds the site from a clean checkout. Keep your own backup (the working copy is the only copy for new art). To release a held-back issue, copy its display art into `website/public/assets/` and `git add -f` it. `scripts/check-apparel-manifest.py` skips asset paths that .gitignore keeps local.
 
 ## Getting started
 

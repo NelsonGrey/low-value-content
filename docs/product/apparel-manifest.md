@@ -22,6 +22,8 @@ The Crown governs the Attention Economy by converting attention into impressions
 
 Six of the ten products launch first: **Nos. 01 to 06**, marked `holidayLaunch: true` in the manifest. Nos. 07 to 10 stay `planned` and show as "coming soon" concepts. The six, their garments and their Printify drafts are in [holiday-launch-plan.md](holiday-launch-plan.md); the work list is in [launch-readiness.md](launch-readiness.md). No. 06 is now "Sent 2:14 AM. Regretted 2:15 AM." and "I optimized this shirt for engagement." moved to No. 19 (it is no longer in this manifest).
 
+**Only the six are shown.** The website lists, builds and links only products with `holidayLaunch: true`; Nos. 07 to 10 remain in the manifest, the catalog and the Realm lore but have no product pages. To release one, set the flag and complete its Printify product, catalog entry and `blankColor`.
+
 **Colour lock.** Each product records the real Comfort Colors color it is sold in (`blankColor`, plus an approximate `garmentHex` sampled from Printify's mockup and a `blankColorStatus` of selected, pending-sample or planned). Every enabled variant, every catalog label and every recorded Printify variant must be in that color, and the site paints that color behind the art. `scripts/check-apparel-manifest.py` enforces it, so a customer is shown the color they receive. To change a color, change `blankColor`, re-run `tools/printify/create_launch_six.py`, update the catalog and re-run the checker.
 
 ## Ten-product launch matrix

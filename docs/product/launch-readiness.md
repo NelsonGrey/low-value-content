@@ -8,7 +8,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
-| Six approved designs, print masters (outlined SVG plus 4500 x 5400 PNG) | Done | `production/print-files/launch-six-v1/` |
+| Six approved designs, print masters (outlined SVG plus 4500 x 5400 PNG) | Done | `production/print-files/launch-six-v1/`. **Local-only (gitignored)**: back it up; a copy of everything was saved to `~/Circus/Backups/` on Nov 11 |
 | Editable sources and fonts | Done | `design/launch-six/` |
 | Garment colors locked to real blank names | Done | Manifest `blankColor` plus checker; Brick provisional |
 | Confirm Brick and True Navy on a real shirt | Blocked | Needs samples |
@@ -34,7 +34,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
-| Product pages, cards, shop page for the six | Done | Real blank color shown on each page |
+| Product pages, cards, shop page for the six | Done | Real blank color shown on each page. The site lists and builds only the six (`holidayLaunch`); Nos. 07 to 10 are hidden |
 | Catalog with variants and Printify ids | Done | `functions/src/catalog.ts`, matched to the manifest by the checker |
 | Final price in catalog, Stripe line item, manifest and Printify | Needs Mark | One decision, one change set |
 | Tiered shipping ($5.99 plus $2.49 per extra shirt) | Needs Mark | Small change to `checkout.ts` and cart copy |
