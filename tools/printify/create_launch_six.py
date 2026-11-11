@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 SHOP_ID = 29342324
 BLUEPRINT, PROVIDER = 706, 99
 SIZES = ["S", "M", "L", "XL", "2XL", "3XL"]
-PRICE_CENTS = 3200
+PRICE_CENTS = 3600
 # Front print area on provider 99 is 3703x4200 px; our 4500x5400 art is fitted to its height.
 IMAGE_SCALE = round((4200 * 4500 / 5400) / 3703, 4)
 RECORD = Path(__file__).with_name("launch-six-products.json")

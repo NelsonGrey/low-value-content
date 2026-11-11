@@ -22,7 +22,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 |---|---|---|
 | Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | `tools/printify/create_launch_six.py` |
 | Old test product removed | Done | Deleted November 11 |
-| Prices on the Printify products | Ready | Set to the final price once decided (script change plus one API call) |
+| Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
 | Printify Premium plan: price and discount | Needs outside | Could save about $2.50 per shirt; check the current terms |
 | Resale certificate so Printify stops charging tax | Needs outside | Accountant |
@@ -37,7 +37,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Homepage and site-wide 1280px layout | Done | Audited with `tools/site-qa` (screenshots, axe, layout rule, Lighthouse). Preview renders are interim product images; replace with sample photography |
 | Product pages, cards, shop page for the six | Done | Real blank color shown on each page. The site lists and builds only the six (`holidayLaunch`); Nos. 07 to 10 are hidden |
 | Catalog with variants and Printify ids | Done | `functions/src/catalog.ts`, matched to the manifest by the checker |
-| Final price in catalog, Stripe line item, manifest and Printify | Needs Mark | One decision, one change set |
+| Final price in catalog, Stripe line item, manifest and Printify | Done | $36, applied November 11; guarded by the manifest checker |
 | Tiered shipping ($5.99 plus $2.49 per extra shirt) | Needs Mark | Small change to `checkout.ts` and cart copy |
 | Cart and checkout copy for a real launch (remove "Test configuration" notes) | Ready | Do at launch with the final shipping rule |
 | Order status page and emails | Ready | Page exists; transactional email (order confirmation, shipping) is not built |
@@ -65,7 +65,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
-| Price and shipping decision | Needs Mark | See the pricing analysis |
+| Shipping decision | Needs Mark | Price is decided ($36); shipping rule is still open, see the pricing analysis |
 | Sales-tax collection (nexus, Stripe Tax) | Needs outside | Accountant before live mode |
 | Stripe live account structure (one account for the LLC, Connect isolated for Wishlist Wizard if needed) | Needs Mark | See `docs/engineering/stripe-standard.md` |
 | Live product catalog and webhook for Low Value Content | Blocked | Needs the live account and explicit go; use `tools/stripe/` |

@@ -188,7 +188,7 @@
       },
       "commerce": {
         "catalogKey": "validate",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d07784c3e9e3630dd1a6",
         "enabledVariants": ["ivory-s", "ivory-m", "ivory-l", "ivory-xl", "ivory-2xl", "ivory-3xl"]
@@ -228,7 +228,7 @@
       },
       "commerce": {
         "catalogKey": "thought-leader",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d07bb0bec49fb208604b",
         "enabledVariants": ["true-navy-s", "true-navy-m", "true-navy-l", "true-navy-xl", "true-navy-2xl", "true-navy-3xl"]
@@ -270,7 +270,7 @@
       },
       "commerce": {
         "catalogKey": "doomscrolling",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d07ff6491c921e01d872",
         "enabledVariants": ["brick-s", "brick-m", "brick-l", "brick-xl", "brick-2xl", "brick-3xl"]
@@ -310,7 +310,7 @@
       },
       "commerce": {
         "catalogKey": "content-creator",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d082c783a6d305012fce",
         "enabledVariants": ["ivory-s", "ivory-m", "ivory-l", "ivory-xl", "ivory-2xl", "ivory-3xl"]
@@ -350,7 +350,7 @@
       },
       "commerce": {
         "catalogKey": "authentic-self",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d08684c3e9e3630dd1b1",
         "enabledVariants": ["brick-s", "brick-m", "brick-l", "brick-xl", "brick-2xl", "brick-3xl"]
@@ -389,7 +389,7 @@
       },
       "commerce": {
         "catalogKey": "sent-regretted",
-        "priceCents": 3200,
+        "priceCents": 3600,
         "currency": "usd",
         "printifyProductId": "6af3d08bf44a1129e5058223",
         "enabledVariants": ["true-navy-s", "true-navy-m", "true-navy-l", "true-navy-xl", "true-navy-2xl", "true-navy-3xl"]
@@ -429,7 +429,7 @@
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-07-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "commerce": { "catalogKey": null, "priceCents": 3600, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
       "blankColor": "True Navy",
       "garmentHex": "#201e31",
       "blankColorStatus": "planned",
@@ -465,7 +465,7 @@
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-08-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "commerce": { "catalogKey": null, "priceCents": 3600, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
       "blankColor": "Black",
       "garmentHex": "#151515",
       "blankColorStatus": "planned",
@@ -500,7 +500,7 @@
         "frontArtDisplay": "website/public/assets/front-art-09-y2k-postponed.png",
         "conceptMockup": "website/public/assets/shirt-09-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "commerce": { "catalogKey": null, "priceCents": 3600, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
       "blankColor": "Brick",
       "garmentHex": "#7b4d50",
       "blankColorStatus": "planned",
@@ -535,7 +535,7 @@
         "frontArtDisplay": "website/public/assets/front-art-10-saint-moth.png",
         "conceptMockup": "website/public/assets/shirt-10-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "commerce": { "catalogKey": null, "priceCents": 3600, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
       "blankColor": "Ivory",
       "garmentHex": "#ede6d6",
       "blankColorStatus": "planned",
