@@ -1,6 +1,6 @@
 # Low Value Content — Working Concept Catalog
 
-Status: creative development draft. The Launch / Develop / Hold column below is the original first-pass scoring; the Realm-aligned shortlist is in [sayings-review.md](sayings-review.md). These phrases are not yet fully cleared for trademark, marketplace, or prior-use conflicts.
+Status: creative development draft. The Launch / Develop / Hold column below is the original first-pass scoring; the Realm-aligned shortlist is in [sayings-review.md](sayings-review.md). These phrases are not yet fully cleared for trademark, marketplace, or prior-use conflicts. Two sayings were reworded for the November 2026 holiday launch: No. 21 (was "Content creator. Meaning pending.") and No. 39 (was "Seen 2:14 AM."). The six holiday shirts are listed in [holiday-launch-plan.md](holiday-launch-plan.md).
 
 ## Scoring key
 
@@ -42,7 +42,7 @@ Status: creative development draft. The Launch / Develop / Hold column below is 
 
 | # | Saying | Visual direction | Status |
 |---|---|---|---|
-| 21 | Content creator. Meaning pending. | Bold headline with a blinking-cursor block | Launch |
+| 21 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Editorial proof returned with comments: CREATOR. circled, the three findings as margin notes | Launch |
 | 22 | My authentic self is currently being monetized. | Price tag attached to a fingerprint-like abstract mark | Launch |
 | 23 | I went viral and all I got was this dopamine imbalance. | Souvenir-shirt arc with a tiny unstable waveform | Launch |
 | 24 | Follow me for more reasons to unfollow me. | Repeating follow/unfollow buttons in a loop | Launch |
@@ -65,7 +65,7 @@ Status: creative development draft. The Launch / Develop / Hold column below is 
 | 36 | My attention span has left the chat. | Chat transcript with a single departure notification | Launch |
 | 37 | Touch grass request timed out. | Terminal-style error box with retry button | Launch |
 | 38 | I have no new notifications and must now face myself. | Lock-screen layout with an ominously empty notification area | Launch |
-| 39 | Seen 2:14 AM. Regretted 2:15 AM. | Read-receipt timestamps in tiny blue-gray type | Launch |
+| 39 | Sent 2:14 AM. Regretted 2:15 AM. | Huge ivory 2:14 over huge gold 2:15, one minute apart | Launch |
 | 40 | Do not disturb unless it’s engagement. | Phone-focus-mode badge with exception enabled | Develop |
 
 ## Collection 5: Artificial Authenticity

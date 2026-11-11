@@ -48,7 +48,7 @@ The [concept catalog](docs/product/concept-catalog.md) organizes 100 shirt sayin
 | 9 | Terms and Conditions |
 | 10 | Optimized Human |
 
-The launch assortment is the **Founding Ten**: six sayings from the catalog (Nos. 01–06, editable SVGs in [design/prototypes/](design/prototypes/)) plus four Realm-native designs (Nos. 07–10, ornate artwork plates in [design/mockups/royal-house/](design/mockups/royal-house/)). With those four, the full ecosystem catalog holds 104 concepts. Launch and concept mockups are in [design/mockups/](design/mockups/). The plates for Nos. 07–10 are not print-ready yet; see [the front-art notes](docs/product/realm-front-art-production-notes.md).
+The first release is the **holiday six** (Nos. 01–06, see [docs/product/holiday-launch-plan.md](docs/product/holiday-launch-plan.md) and the work list in [docs/product/launch-readiness.md](docs/product/launch-readiness.md)), drawn from the **Founding Ten**: six sayings from the catalog (Nos. 01–06, editable SVGs in [design/prototypes/](design/prototypes/)) plus four Realm-native designs (Nos. 07–10, ornate artwork plates in [design/mockups/royal-house/](design/mockups/royal-house/)). With those four, the full ecosystem catalog holds 104 concepts. Launch and concept mockups are in [design/mockups/](design/mockups/). The plates for Nos. 07–10 are not print-ready yet; see [the front-art notes](docs/product/realm-front-art-production-notes.md).
 
 ## Repository layout
 

@@ -18,16 +18,22 @@ The broader commercial-creative inventory is maintained in the [`Ecosystem Appar
 
 The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the declaration; Latin supplies ceremonial texture and is always translated in public-facing copy.
 
+## Holiday launch (November 2026)
+
+Six of the ten products launch first: **Nos. 01 to 06**, marked `holidayLaunch: true` in the manifest. Nos. 07 to 10 stay `planned` and show as "coming soon" concepts. The six, their garments and their Printify drafts are in [holiday-launch-plan.md](holiday-launch-plan.md); the work list is in [launch-readiness.md](launch-readiness.md). No. 06 is now "Sent 2:14 AM. Regretted 2:15 AM." and "I optimized this shirt for engagement." moved to No. 19 (it is no longer in this manifest).
+
+**Colour lock.** Each product records the real Comfort Colors color it is sold in (`blankColor`, plus an approximate `garmentHex` sampled from Printify's mockup and a `blankColorStatus` of selected, pending-sample or planned). Every enabled variant, every catalog label and every recorded Printify variant must be in that color, and the site paints that color behind the art. `scripts/check-apparel-manifest.py` enforces it, so a customer is shown the color they receive. To change a color, change `blankColor`, re-run `tools/printify/create_launch_six.py`, update the catalog and re-run the checker.
+
 ## Ten-product launch matrix
 
 | # | Product | Launch collection | Realm intensity | Creative status | Commerce status |
 |---:|---|---|---|---|---|
-| 1 | Please validate me algorithmically. | Public Notices | None | Editable SVG | Test sellable: White / L |
-| 2 | Thought leader. No thoughts required. | Court & Orders | Moderate | Editable SVG | Planned |
-| 3 | I’m not doomscrolling. I’m doing market research. | Court & Orders | Moderate | Editable SVG | Planned |
-| 4 | Content creator. Meaning pending. | Public Notices | None | Editable SVG | Planned |
-| 5 | My authentic self is currently being monetized. | Public Notices | None | Editable SVG | Planned |
-| 6 | I optimized this shirt for engagement. | Public Notices | Light | Editable SVG | Planned |
+| 1 | Please validate me algorithmically. | Public Notices | None | Print master | Test sellable (Ivory) |
+| 2 | Thought leader. No thoughts required. | Court & Orders | Moderate | Print master | Test sellable (True Navy) |
+| 3 | I’m not doomscrolling. I’m doing market research. | Court & Orders | Moderate | Print master | Test sellable (Brick, provisional) |
+| 4 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Public Notices | None | Print master | Test sellable (Ivory) |
+| 5 | My authentic self is currently being monetized. | Public Notices | None | Print master | Test sellable (Brick, provisional) |
+| 6 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | Light | Print master | Test sellable (True Navy) |
 | 7 | Much Published, Little Said | Court & Orders | Full | Ornate art plate | Planned |
 | 8 | Order of the Blue Check | Court & Orders | Full | Ornate art plate | Planned |
 | 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Ornate art plate | Planned |

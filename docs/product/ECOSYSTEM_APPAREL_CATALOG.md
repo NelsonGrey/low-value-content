@@ -24,9 +24,9 @@ Atmospheric photography follows [`IMAGERY_DIRECTION.md`](../brand/IMAGERY_DIRECT
 | Subject collection | Default House | Institution | Default form | Suggested garment field | Expansion concepts |
 |---|---|---|---|---|---:|
 | Social Media Theater | House of Influence | Chancery of Public Importance | PN | Warm white or washed black | 9 |
-| Algorithm Anxiety | House of Signal | Ministry of Measurable Outcomes | PN | Warm white | 8 |
+| Algorithm Anxiety | House of Signal | Ministry of Measurable Outcomes | PN | Warm white | 9 |
 | Creator Economy | House of Influence | Chancery of Public Importance | PN | Warm white or washed black | 8 |
-| Chronically Online | House of Scroll | Royal Institute of Digital Inquiry | PN | Oxblood or deep navy | 9 |
+| Chronically Online | House of Scroll | Royal Institute of Digital Inquiry | PN | Oxblood or deep navy | 8 |
 | Artificial Authenticity | House of Prompt | Office of Synthetic Understanding | PN | Warm ivory or deep navy | 10 |
 | Future of Work | House of Prompt | Office of Synthetic Understanding | PN | Washed black or industrial ivory | 10 |
 | Productivity Theater | House of Signal | Ministry of Measurable Outcomes | PN | Warm white or washed black | 10 |
@@ -42,12 +42,12 @@ These records remain authoritative over every expansion classification. Existing
 
 | ID | Product | Collection | Form | House | Production record |
 |---|---|---|---|---|---|
-| F01 | Please validate me algorithmically. | Public Notices | PN | None required | Editable artwork: design/prototypes/01-validate-me.svg |
-| F02 | Thought leader. No thoughts required. | Court & Orders | CO | House of Influence | Editable artwork: design/prototypes/02-thought-leader.svg |
-| F03 | I’m not doomscrolling. I’m doing market research. | Court & Orders | CO | House of Scroll | Editable artwork: design/prototypes/03-market-research.svg |
-| F04 | Content creator. Meaning pending. | Public Notices | PN | None required | Editable artwork: design/prototypes/04-content-creator.svg |
-| F05 | My authentic self is currently being monetized. | Public Notices | PN | None required | Editable artwork: design/prototypes/05-authentic-self.svg |
-| F06 | I optimized this shirt for engagement. | Public Notices | PN | None required | Editable artwork: design/prototypes/06-optimized-shirt.svg |
+| F01 | Please validate me algorithmically. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/01-progress-bar.svg |
+| F02 | Thought leader. No thoughts required. | Court & Orders | CO | House of Influence | Editable artwork: production/print-files/launch-six-v1/02-door-plaque.svg |
+| F03 | I’m not doomscrolling. I’m doing market research. | Court & Orders | CO | House of Scroll | Editable artwork: production/print-files/launch-six-v1/03-field-dispatch.svg |
+| F04 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/04-editors-marks.svg |
+| F05 | My authentic self is currently being monetized. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/05-price-tag.svg |
+| F06 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/06-giant-times.svg |
 | F07 | Much Published, Little Said | Court & Orders | CO | The Royal House of Engagement | Artwork plate (not print-ready): design/mockups/royal-house/A07-much-published-little-said.png |
 | F08 | Order of the Blue Check | Court & Orders | CO | House of Influence | Artwork plate (not print-ready): design/mockups/royal-house/A08-order-blue-check.png |
 | F09 | The End of the World Has Been Postponed | Royal Commemorations | RC | House of Buffer | Artwork plate (not print-ready): design/mockups/royal-house/A09-y2k-postponed.png |
@@ -105,7 +105,7 @@ These twelve concepts deliberately test four Public Notices, four House Warrants
 | ID | Exact front declaration | Form | House | Printable visual brief | Catalog role | Stage |
 |---|---|---|---|---|---|---|
 | L011 | Please validate me algorithmically. | PN | None required | Centered institutional type with a tiny verification spinner | Promoted to Founding 01 | editable-prototype |
-| L012 | I optimized this shirt for engagement. | PN | None required | A/B-test labels and fake conversion metrics | Promoted to Founding 06 | editable-prototype |
+| L012 | I optimized this shirt for engagement. | PN | None required | A/B-test labels and fake conversion metrics | Expansion library | Expansion candidate |
 | L013 | The algorithm and I are taking some space. | PN | House of Buffer | Relationship-status form with “It’s complicated” selected | Expansion library | Expansion candidate |
 | L014 | Organic reach. Synthetic personality. | PN | House of Signal | Two-column nutrition-label composition | Expansion library | Expansion candidate |
 | L015 | My self-worth is buffering. | HW | House of Buffer | Minimal progress wheel beneath the sentence | Expansion library | Expansion candidate |
@@ -119,7 +119,7 @@ These twelve concepts deliberately test four Public Notices, four House Warrants
 
 | ID | Exact front declaration | Form | House | Printable visual brief | Catalog role | Stage |
 |---|---|---|---|---|---|---|
-| L021 | Content creator. Meaning pending. | PN | None required | Bold headline with a blinking-cursor block | Promoted to Founding 04 | editable-prototype |
+| L021 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | PN | None required | Editorial proof returned with comments: CREATOR. circled, the three findings as margin notes | Promoted to Founding 04 | editable-prototype |
 | L022 | My authentic self is currently being monetized. | PN | None required | Price tag attached to a fingerprint-like abstract mark | Promoted to Founding 05 | editable-prototype |
 | L023 | I went viral and all I got was this dopamine imbalance. | PN | House of Influence | Souvenir-shirt arc with a tiny unstable waveform | Expansion library | Expansion candidate |
 | L024 | Follow me for more reasons to unfollow me. | HW | House of Scroll | Repeating follow/unfollow buttons in a loop | Expansion library | Expansion candidate |
@@ -142,7 +142,7 @@ These twelve concepts deliberately test four Public Notices, four House Warrants
 | L036 | My attention span has left the chat. | PN | House of Scroll | Chat transcript with a single departure notification | Expansion library | Expansion candidate |
 | L037 | Touch grass request timed out. | PN | House of Buffer | Terminal-style error box with retry button | Expansion library | Expansion candidate |
 | L038 | I have no new notifications and must now face myself. | PN | House of Influence | Lock-screen layout with an ominously empty notification area | Expansion library | Expansion candidate |
-| L039 | Seen 2:14 AM. Regretted 2:15 AM. | PN | House of Scroll | Read-receipt timestamps in tiny blue-gray type | Expansion library | Expansion candidate |
+| L039 | Sent 2:14 AM. Regretted 2:15 AM. | PN | None required | Huge ivory 2:14 over huge gold 2:15, one minute apart | Promoted to Founding 06 | print-candidate |
 | L040 | Do not disturb unless it’s engagement. | PN | House of Influence | Phone-focus-mode badge with exception enabled | Expansion library | Development |
 
 ## Artificial Authenticity
