@@ -14,7 +14,7 @@ const out = path.join(here, "out");
 fs.mkdirSync(out, { recursive: true });
 const arg = process.argv.find((a) => a.startsWith("--pages="))?.split("=")[1];
 const PAGES = (arg ? arg.split(",") : ["index", "shop", "products/validate", "products/sent-regretted", "cart", "realm", "lineage", "calendar", "about", "support", "terms"]);
-const VIEWPORTS = [{ name: "desktop-1920", width: 1920, height: 1080 }, { name: "laptop-1280", width: 1280, height: 800 }, { name: "phone-390", width: 390, height: 844 }];
+const VIEWPORTS = [{ name: "desktop-1920", width: 1920, height: 1080 }, { name: "laptop-1280", width: 1280, height: 800 }, { name: "tablet-820", width: 820, height: 1100 }, { name: "phone-390", width: 390, height: 844 }];
 const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".ico": "image/x-icon" };
 
 const server = http.createServer((req, res) => {
@@ -32,7 +32,7 @@ const base = `http://localhost:${server.address().port}`;
 const browser = await chromium.launch({ channel: "chrome" });
 const report = [];
 for (const page_ of PAGES) {
-  const entry = { page: page_, axe: [], overflow: [], layout: [] };
+  const entry = { page: page_, axe: [], overflow: [], layout: [], scrollers: [] };
   for (const vp of VIEWPORTS) {
     const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
     const page = await ctx.newPage();
@@ -55,13 +55,16 @@ for (const page_ of PAGES) {
         return bad.slice(0, 12);
       });
     }
+    // Inner horizontal scrollers (a strip that needs a sideways roll) at every width.
+    const scrollers = await page.evaluate(() => [...document.querySelectorAll("body *")].filter((el) => { const cs = getComputedStyle(el); return /(auto|scroll)/.test(cs.overflowX) && el.scrollWidth > el.clientWidth + 1; }).slice(0, 6).map((el) => `${el.tagName.toLowerCase()}.${(el.className || "").toString().split(" ")[0]}`));
+    for (const sc of scrollers) entry.scrollers.push(`${vp.name}: ${sc}`);
     if (vp.name === "phone-390") {
       entry.overflow = await page.evaluate(() => (document.documentElement.scrollWidth > window.innerWidth ? [`scrollWidth ${document.documentElement.scrollWidth} > ${window.innerWidth}`] : []));
     }
     await ctx.close();
   }
   report.push(entry);
-  console.log(`${page_}: axe ${entry.axe.length} rules, layout-rule ${entry.layout.length}, phone overflow ${entry.overflow.length}`);
+  console.log(`${page_}: axe ${entry.axe.length} rules, layout-rule ${entry.layout.length}, phone overflow ${entry.overflow.length}, inner scrollers ${entry.scrollers.length}`);
 }
 await browser.close();
 server.close();

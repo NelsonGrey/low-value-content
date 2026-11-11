@@ -68,8 +68,10 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
   <section class="law-of-succession">
     <p class="eyebrow">The law of succession</p>
     <h2>Authority follows attention.</h2>
+    <div class="law-text">
     <p>A reign begins when a new power changes what the realm notices, produces, or cannot stop checking. The Great Houses endure beneath the Crown; the sovereign changes whenever the machinery of attention does.</p>
     <p>Sovereigns take the name of the power they embody. A numeral is granted only when a name recurs, and an epithet is awarded by posterity, usually without the sovereign’s consent.</p>
+    </div>
   </section>
   <section class="timeline" aria-label="The reigns">
     <ol>
@@ -114,10 +116,10 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
 
   .succession-strip { background: var(--navy); color: var(--ivory); padding: 2.25rem var(--gutter) 2.5rem; border-top: 4px double var(--gold); border-bottom: 1px solid var(--line); }
   .succession-strip .eyebrow { margin: 0 0 1.25rem; color: var(--gold-light); }
-  .succession-strip ol { list-style: none; margin: 0; padding: 0 0 .5rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: thin; }
-  .succession-strip li { flex: 1 0 6.5rem; position: relative; }
+  .succession-strip ol { list-style: none; margin: 0; padding: 0 0 .5rem; display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 1.25rem 0; }
+  .succession-strip li { position: relative; min-width: 0; }
   .succession-strip li + li::before { content: ''; position: absolute; top: 2.1rem; right: 50%; width: 100%; height: 1px; background: var(--gold); opacity: .55; }
-  .succession-strip a { position: relative; display: grid; justify-items: center; gap: .35rem; padding: 0 .35rem; text-decoration: none; text-align: center; }
+  .succession-strip a { position: relative; display: grid; justify-items: center; gap: .35rem; padding: 0 .2rem; text-decoration: none; text-align: center; }
   .succession-strip img { width: 54px; height: 54px; object-fit: contain; padding: 5px; border-radius: 50%; background: var(--navy); border: 1px solid var(--gold); position: relative; z-index: 1; }
   .succession-strip b { color: var(--gold-light); font: 700 .68rem/1 var(--sans); letter-spacing: .12em; }
   .succession-strip span { font-size: .85rem; line-height: 1.25; color: rgba(244,238,223,.85); }
@@ -125,9 +127,11 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
   .succession-strip .disputed img { border-style: dashed; border-color: #e0868d; }
   .succession-strip .present img { background: var(--crimson); border-width: 2px; }
 
-  .law-of-succession { display: grid; grid-template-columns: minmax(8rem, .2fr) 1.3fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: start; padding: clamp(3rem, 6vw, 5.5rem) var(--gutter); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .law-of-succession { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: .5rem clamp(2rem, 5vw, 5rem); align-items: start; padding: clamp(3rem, 6vw, 5.5rem) var(--gutter); background: var(--ivory); border-bottom: 1px solid var(--line); }
+  .law-of-succession > .eyebrow { grid-column: 1 / -1; margin: 0 0 .75rem; }
+  .law-text { display: grid; gap: 1.25rem; }
+  .law-text p { margin: 0; max-width: 40rem; font-size: 1.1rem; line-height: 1.75; }
   .law-of-succession h2 { margin: 0; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
-  .law-of-succession > p:last-child { margin: 0; max-width: 680px; font-size: 1.1rem; line-height: 1.75; }
 
   .timeline { padding: clamp(2rem, 4vw, 4rem) var(--gutter) clamp(4rem, 7vw, 7rem); background: var(--paper); }
   .timeline ol { list-style: none; margin: 0; padding: 0; }
@@ -159,7 +163,8 @@ const yearsReigning = new Date().getFullYear() - Number(firstYear(lineage[0].per
   .succession-note .script { color: var(--gold-light); font-size: 2rem; margin: 0; }
   .succession-note h2 { font-size: var(--fs-h1); line-height: 1; font-weight: 400; margin: 1rem 0 2rem; }
 
-  @media (max-width: 980px) { .law-of-succession, .lineage-hero { grid-template-columns: 1fr; } }
+  @media (max-width: 980px) { .law-of-succession, .lineage-hero { grid-template-columns: 1fr; } .succession-strip ol { grid-template-columns: repeat(6, minmax(0, 1fr)); } .succession-strip li + li::before { display: none; } }
+  @media (max-width: 560px) { .succession-strip ol { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   @media (max-width: 760px) {
     .reign { grid-template-columns: 64px minmax(0, 1fr); }
     .node { grid-row: 1 / 3; grid-column: 1; }
