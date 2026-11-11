@@ -16,7 +16,7 @@ Scope rule: launch small, prove the pipeline end to end, add the next issues in 
 | 06 | Sent 2:14 AM. Regretted 2:15 AM. | Giant times | True Navy | Created | Print master done |
 
 - **Garment colors are locked to the real Comfort Colors names** (Ivory, True Navy, Brick). The site, cart, backend catalog and Printify products must all say the same color, and `scripts/check-apparel-manifest.py` fails the build if they don't. Brick is the closest available shade to the brand's oxblood and is **provisional until a physical sample is seen**.
-- **Held back:** No. 07 Much Published, Little Said (the crest, saved for a later edition), No. 08 Order of the Blue Check, and Nos. 09 and 10. They stay on the site as "coming soon" concepts. "I optimized this shirt for engagement" moved to No. 19.
+- **Held back:** No. 07 Much Published, Little Said (the crest, saved for a later edition), No. 08 Order of the Blue Check, and Nos. 09 and 10. They stay in the manifest but are **not listed or built on the site**: the site shows only the six (`holidayLaunch: true`); to release another issue, set that flag and finish its Printify product, catalog entry and color. "I optimized this shirt for engagement" moved to No. 19.
 - **Blank:** Comfort Colors 1717, provider Printify Choice, sizes S to 3XL, DTG print, front only.
 - **Price:** $32 is a placeholder. The recommendation is **$36** with shipping at **$5.99 plus $2.49 per additional shirt**; awaiting Mark's decision.
 
@@ -64,4 +64,5 @@ Back prints, sleeve seals, garment QR codes, hoodies, Nos. 07 to 10, the Wave 2 
 |---|---|
 | Nov 9, 2026 | First plan: five shirts (01, 02, 03, 05, 08) |
 | Nov 10, 2026 | Approved six: 01 to 06 as above. 07 (crest) and 08 (Blue Check) dropped; "Sent" and the rewritten creator line added; numbering reset to 01 to 06; new artwork replaces the prototypes |
+| Nov 11, 2026 (later) | Mark: show only the six issues. Nos. 07 to 10 removed from the shop, home page and product pages; the shop image is now a six-up sheet (`front-art-holiday-six.png`) and the Royal Commemorations collection is hidden |
 | Nov 11, 2026 | Storefront rebuilt for the six; six Printify drafts created and the old test product deleted; garment colors locked to real blank names; shop-page concept studies removed; pricing analysis written (recommends $36); plan rewritten |
