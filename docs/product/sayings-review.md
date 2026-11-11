@@ -1,5 +1,7 @@
 # Sayings Review: the best of the 100, aligned to the Realm
 
+> **Update, November 11, 2026.** The holiday launch uses six sayings: Nos. 01 to 05 as listed below (No. 04 rewritten to "Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported.") and "Sent 2:14 AM. Regretted 2:15 AM." (catalog No. 39, formerly "Seen") as No. 06. Nos. 07 to 10 are held back. See [holiday-launch-plan.md](holiday-launch-plan.md).
+
 Status: recommendation, October 31, 2026. Nothing here is trademark-cleared (see the rules at the end). The catalog in [concept-catalog.md](concept-catalog.md) keeps its original Launch / Develop / Hold statuses because the generator reads them; this document is the Realm-aligned ranking that supersedes them for planning.
 
 ## Why the catalog needed a second pass
@@ -28,9 +30,9 @@ Houses are as recorded in the manifest. Public Notices with no realm intensity (
 | 01 | Please validate me algorithmically. | Influence | Public Notice |
 | 02 | Thought leader. No thoughts required. | Influence | Court & Order |
 | 03 | I'm not doomscrolling. I'm doing market research. | Scroll | Court & Order |
-| 04 | Content creator. Meaning pending. | Prompt | Public Notice |
+| 04 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Prompt | Public Notice |
 | 05 | My authentic self is currently being monetized. | Influence | Public Notice |
-| 06 | I optimized this shirt for engagement. | Influence | Public Notice |
+| 06 | Sent 2:14 AM. Regretted 2:15 AM. (was: I optimized this shirt for engagement, now No. 19) | Signal | Public Notice |
 | 07 | Much Published, Little Said | the Crown | Court & Order |
 | 08 | Order of the Blue Check | Influence | Court & Order |
 | 09 | The End of the World Has Been Postponed | Buffer | Royal Commemoration |
@@ -52,7 +54,7 @@ Grouped by House so the next collection has a spread of jurisdictions rather tha
 
 | No. | Saying | Form | Realm hook |
 |---|---|---|---|
-| 39 | Seen 2:14 AM. Regretted 2:15 AM. | Public Notice | Read-receipt evidence entered into the record by the Ministry of Measurable Outcomes. |
+| 39 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notice | Read-receipt evidence entered into the record by the Ministry of Measurable Outcomes. (Promoted to launch No. 06.) |
 | 14 | Organic reach. Synthetic personality. | Public Notice | Two-column label; pairs with No. 01 and No. 06. |
 | 17 | Recommended for reasons nobody can explain. | Court & Order | An order issued under **Algorithm the Terrible**; "Ex mandato algorithmi". |
 | 91 | Mindfulness, but competitively. | Court & Order | Leaderboard as a decoration of merit. |

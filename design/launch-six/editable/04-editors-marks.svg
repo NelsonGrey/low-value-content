@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+<title>No. 04 — Content creator. (editable)</title>
+<desc>EDITABLE master: live type. Fonts (static instances) in /workspace/lvc-launch-six/fonts: Inter Regular/Medium/ExtraBold/Black, Libre Baskerville Regular/Bold/Italic, Barlow Condensed ExtraBold. Knockouts are outlined compound paths (a hidden source text is kept beside each). Print from the outlined file in ../print/.</desc>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Regular.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Medium.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-ExtraBold.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 900; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Black.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Regular.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 700; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Bold.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: italic; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Italic.ttf"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/BarlowCondensed-ExtraBold.ttf"); }
+</style>
+<g id="content" transform="translate(0 1220)">
+<text x="627.5" y="368.7" font-family="Libre Baskerville" font-weight="700" font-style="normal" font-size="478.86" letter-spacing="0" fill="#142B40">CONTENT</text>
+<text x="627.5" y="1157.5" font-family="Libre Baskerville" font-weight="700" font-style="normal" font-size="478.86" letter-spacing="0" fill="#142B40">CREATOR.</text>
+<rect x="550" y="679" width="3100" height="589" rx="294" fill="none" stroke="#852E34" stroke-width="18" transform="rotate(-1.5 2100 973)"/>
+<text x="980.0" y="1867.5" font-family="Libre Baskerville" font-weight="400" font-style="italic" font-size="219.49" letter-spacing="0" fill="#852E34">Uniqueness questionable.</text>
+<path d="M616.3 1858.2L691.5 1695.1L766.8 1858.2" fill="none" stroke="#852E34" stroke-width="18" stroke-linejoin="miter"/>
+<text x="1180.0" y="2295.5" font-family="Libre Baskerville" font-weight="400" font-style="italic" font-size="219.49" letter-spacing="0" fill="#852E34">Monetization inconsistent.</text>
+<line x1="860.2" y1="2116.9" x2="860.2" y2="2305.0" stroke="#852E34" stroke-width="18" /><line x1="922.9" y1="2116.9" x2="922.9" y2="2305.0" stroke="#852E34" stroke-width="18" />
+<text x="1380.0" y="2723.5" font-family="Libre Baskerville" font-weight="400" font-style="italic" font-size="219.49" letter-spacing="0" fill="#852E34">Visibility unreported.</text>
+<path d="M1003.7 2714.2C1003.7 2526.1 1179.3 2526.1 1179.3 2639.0C1179.3 2714.2 1104.1 2739.3 1066.4 2689.1" fill="none" stroke="#852E34" stroke-width="18" stroke-linecap="round"/>
+<line x1="560.0" y1="1558.4" x2="560.0" y2="2833.5" stroke="#852E34" stroke-width="14" />
+</g>
+<g id="house-frame">
+<g fill="none" stroke="#852E34">
+<rect x="250" y="400" width="4000" height="4650" stroke-width="34"/>
+<rect x="335" y="485" width="3830" height="4480" stroke-width="11"/>
+</g>
+<g fill="#852E34">
+<path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/>
+<path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/>
+<path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/>
+</g>
+<text x="850.6" y="4850.0" font-family="Libre Baskerville" font-weight="400" font-style="normal" font-size="94.00" letter-spacing="9" fill="#852E34">THE ROYAL HOUSE OF ENGAGEMENT · NO. 04</text>
+</g>
+</svg>

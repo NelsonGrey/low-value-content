@@ -166,7 +166,7 @@
       "launchCollection": "Public Notices",
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An independent editorial notice. The algorithm is the subject, not the sovereign.",
+      "regaliaRole": "An independent editorial notice. A progress bar that never quite finishes makes the whole argument.",
       "family": "royal-proclamations",
       "royalTreatment": "Formal Petition for Algorithmic Recognition",
       "house": "House of Influence",
@@ -181,8 +181,7 @@
       "creativeStatus": "editable-prototype",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/01-validate-me.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/01-validate-me.png",
+        "artwork": "production/print-files/launch-six-v1/01-progress-bar.svg",
         "frontArtDisplay": "website/public/assets/front-art-01-validate-me.png",
         "conceptMockup": "website/public/assets/shirt-01.png"
       },
@@ -190,9 +189,13 @@
         "catalogKey": "validate",
         "priceCents": 3200,
         "currency": "usd",
-        "printifyProductId": "6ad1477a5dcca28e4500da6f",
-        "enabledVariants": ["white-l"]
-      }
+        "printifyProductId": "6af3d07784c3e9e3630dd1a6",
+        "enabledVariants": ["ivory-s", "ivory-m", "ivory-l", "ivory-xl", "ivory-2xl", "ivory-3xl"]
+      },
+      "blankColor": "Ivory",
+      "garmentHex": "#ede6d6",
+      "blankColorStatus": "selected",
+      "holidayLaunch": true
     },
     {
       "position": 2,
@@ -202,7 +205,7 @@
       "launchCollection": "Court & Orders",
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
-      "regaliaRole": "A court appointment bearing one restrained seal and an immediate public declaration.",
+      "regaliaRole": "A court appointment set as an office plaque: one declaration, framed in brass.",
       "family": "royal-proclamations",
       "royalTreatment": "Official Court Appointment",
       "house": "House of Influence",
@@ -215,14 +218,23 @@
         "proclamation": "An appointment to speak with authority before the arrival of any supporting thought."
       },
       "creativeStatus": "editable-prototype",
-      "commerceStatus": "planned",
+      "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/02-thought-leader.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/02-thought-leader.png",
+        "artwork": "production/print-files/launch-six-v1/02-door-plaque.svg",
         "frontArtDisplay": "website/public/assets/front-art-02-thought-leader.png",
         "conceptMockup": "website/public/assets/shirt-02.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": {
+        "catalogKey": "thought-leader",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6af3d07bb0bec49fb208604b",
+        "enabledVariants": ["true-navy-s", "true-navy-m", "true-navy-l", "true-navy-xl", "true-navy-2xl", "true-navy-3xl"]
+      },
+      "blankColor": "True Navy",
+      "garmentHex": "#201e31",
+      "blankColorStatus": "selected",
+      "holidayLaunch": true
     },
     {
       "position": 3,
@@ -232,7 +244,7 @@
       "launchCollection": "Court & Orders",
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An institutional field uniform with a small House of Scroll endorsement inside the front artwork.",
+      "regaliaRole": "An institutional field dispatch with a small House of Scroll endorsement.",
       "family": "court-uniforms",
       "royalTreatment": "Royal Institute of Digital Inquiry",
       "house": "House of Scroll",
@@ -245,28 +257,37 @@
         "proclamation": "Field research conducted continuously, without methodology, conclusion, or visible end."
       },
       "creativeStatus": "editable-prototype",
-      "commerceStatus": "planned",
+      "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/03-market-research.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/03-market-research.png",
+        "artwork": "production/print-files/launch-six-v1/03-field-dispatch.svg",
         "frontArtDisplay": "website/public/assets/front-art-03-market-research.png",
         "conceptMockup": "website/public/assets/shirt-03.png",
         "designStudy": "website/public/assets/design-study-doomscrolling-v3.png",
         "designStudyPrevious": "website/public/assets/design-study-doomscrolling-v2.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": {
+        "catalogKey": "doomscrolling",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6af3d07ff6491c921e01d872",
+        "enabledVariants": ["brick-s", "brick-m", "brick-l", "brick-xl", "brick-2xl", "brick-3xl"]
+      },
+      "blankColor": "Brick",
+      "garmentHex": "#7b4d50",
+      "blankColorStatus": "pending-sample",
+      "holidayLaunch": true
     },
     {
       "position": 4,
       "id": "content-creator",
-      "primaryCopy": "Content creator. Meaning pending.",
+      "primaryCopy": "Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported.",
       "originalCollection": "Creator Economy",
       "launchCollection": "Public Notices",
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An independent editorial notice whose unfinished status constitutes the complete declaration.",
+      "regaliaRole": "An editorial proof returned with comments. The three findings stand unamended.",
       "family": "royal-proclamations",
-      "royalTreatment": "Unfinished Illuminated Proclamation",
+      "royalTreatment": "Proof Returned with Comments",
       "house": "House of Prompt",
       "reign": "content",
       "latin": null,
@@ -277,14 +298,23 @@
         "proclamation": "An unfinished illuminated work whose meaning will be supplied after publication."
       },
       "creativeStatus": "editable-prototype",
-      "commerceStatus": "planned",
+      "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/04-content-creator.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/04-content-creator.png",
+        "artwork": "production/print-files/launch-six-v1/04-editors-marks.svg",
         "frontArtDisplay": "website/public/assets/front-art-04-content-creator.png",
         "conceptMockup": "website/public/assets/shirt-04.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": {
+        "catalogKey": "content-creator",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6af3d082c783a6d305012fce",
+        "enabledVariants": ["ivory-s", "ivory-m", "ivory-l", "ivory-xl", "ivory-2xl", "ivory-3xl"]
+      },
+      "blankColor": "Ivory",
+      "garmentHex": "#ede6d6",
+      "blankColorStatus": "selected",
+      "holidayLaunch": true
     },
     {
       "position": 5,
@@ -294,9 +324,9 @@
       "launchCollection": "Public Notices",
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An independent transactional notice; no heraldry is required on the garment.",
+      "regaliaRole": "An independent transactional notice: the self, tagged and priced. No heraldry on the garment.",
       "family": "royal-proclamations",
-      "royalTreatment": "Royal Portrait and Auction Inventory",
+      "royalTreatment": "Inventory Tag of the Authentic Self",
       "house": "House of Influence",
       "reign": "algorithm",
       "latin": "Persona vera venalis",
@@ -307,44 +337,61 @@
         "proclamation": "The Crown recognizes this authentic person as available for sponsorship, subject to terms."
       },
       "creativeStatus": "editable-prototype",
-      "commerceStatus": "planned",
+      "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/05-authentic-self.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/05-authentic-self.png",
+        "artwork": "production/print-files/launch-six-v1/05-price-tag.svg",
         "frontArtDisplay": "website/public/assets/front-art-05-authentic-self.png",
         "conceptMockup": "website/public/assets/shirt-05.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": {
+        "catalogKey": "authentic-self",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6af3d08684c3e9e3630dd1b1",
+        "enabledVariants": ["brick-s", "brick-m", "brick-l", "brick-xl", "brick-2xl", "brick-3xl"]
+      },
+      "blankColor": "Brick",
+      "garmentHex": "#7b4d50",
+      "blankColorStatus": "pending-sample",
+      "holidayLaunch": true
     },
     {
       "position": 6,
-      "id": "optimized-shirt",
-      "primaryCopy": "I optimized this shirt for engagement.",
-      "originalCollection": "Algorithm Anxiety",
+      "id": "sent-regretted",
+      "primaryCopy": "Sent 2:14 AM. Regretted 2:15 AM.",
+      "originalCollection": "Chronically Online",
       "launchCollection": "Public Notices",
       "realmIntensity": "light",
       "frontOnlyLaunch": true,
-      "regaliaRole": "A bureaucratic performance report with at most one quiet issue mark.",
-      "family": "court-uniforms",
-      "royalTreatment": "Office of Engagement Performance Report",
-      "house": "House of Influence",
+      "regaliaRole": "A read-receipt record entered into evidence. One tiny House mark, no ceremony.",
+      "family": "royal-proclamations",
+      "royalTreatment": "Record of the Ministry of Measurable Outcomes",
+      "house": "House of Signal",
       "reign": "algorithm",
-      "latin": "Ad favorem optimizatum",
-      "qrRoute": "/r/optimized-shirt",
+      "latin": "",
+      "qrRoute": "/r/sent-regretted",
       "realmIssue": {
-        "office": "Bureau of Engagement Measures",
-        "wearerTitle": "Deputy Optimizer of Minor Outcomes",
-        "proclamation": "A performance garment calibrated to produce statistically insignificant approval."
+        "office": "Ministry of Measurable Outcomes",
+        "wearerTitle": "Registrant of Timestamped Regret",
+        "proclamation": "A read-receipt record entered into evidence one minute after it could no longer be withdrawn."
       },
-      "creativeStatus": "editable-prototype",
-      "commerceStatus": "planned",
+      "creativeStatus": "print-candidate",
+      "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "design/prototypes/06-optimized-shirt.svg",
-        "legacyArtworkPreview": "design/prototypes/previews/06-optimized-shirt.png",
-        "frontArtDisplay": "website/public/assets/front-art-06-optimized-shirt.png",
-        "conceptMockup": "website/public/assets/shirt-06.png"
+        "artwork": "production/print-files/launch-six-v1/06-giant-times.svg",
+        "frontArtDisplay": "website/public/assets/front-art-06-sent-regretted.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": {
+        "catalogKey": "sent-regretted",
+        "priceCents": 3200,
+        "currency": "usd",
+        "printifyProductId": "6af3d08bf44a1129e5058223",
+        "enabledVariants": ["true-navy-s", "true-navy-m", "true-navy-l", "true-navy-xl", "true-navy-2xl", "true-navy-3xl"]
+      },
+      "blankColor": "True Navy",
+      "garmentHex": "#201e31",
+      "blankColorStatus": "selected",
+      "holidayLaunch": true
     },
     {
       "position": 7,
@@ -376,7 +423,11 @@
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-07-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "blankColor": "True Navy",
+      "garmentHex": "#201e31",
+      "blankColorStatus": "planned",
+      "holidayLaunch": false
     },
     {
       "position": 8,
@@ -408,7 +459,11 @@
         "conceptReference": "website/public/assets/royal-house/02-apparel-collection.png",
         "conceptMockup": "website/public/assets/shirt-08-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "blankColor": "Black",
+      "garmentHex": "#151515",
+      "blankColorStatus": "planned",
+      "holidayLaunch": false
     },
     {
       "position": 9,
@@ -439,7 +494,11 @@
         "frontArtDisplay": "website/public/assets/front-art-09-y2k-postponed.png",
         "conceptMockup": "website/public/assets/shirt-09-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "blankColor": "Brick",
+      "garmentHex": "#7b4d50",
+      "blankColorStatus": "planned",
+      "holidayLaunch": false
     },
     {
       "position": 10,
@@ -470,7 +529,11 @@
         "frontArtDisplay": "website/public/assets/front-art-10-saint-moth.png",
         "conceptMockup": "website/public/assets/shirt-10-realm.png"
       },
-      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] }
+      "commerce": { "catalogKey": null, "priceCents": 3200, "currency": "usd", "printifyProductId": null, "enabledVariants": [] },
+      "blankColor": "Ivory",
+      "garmentHex": "#ede6d6",
+      "blankColorStatus": "planned",
+      "holidayLaunch": false
     }
   ],
   "preservationRules": [

@@ -1,13 +1,13 @@
 ---
 import type { Product } from "../data";
-import { hasRealmProvenance, productHref, productImage } from "../data";
+import { blankClass, hasRealmProvenance, productHref, productImage } from "../data";
 
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
 const realmConnected = hasRealmProvenance(product);
 ---
 <article class:list={["product-card", !image && "product-card-text"]}>
-  <a class:list={["product-image", `art-${product.id}`]} href={productHref(product)}>
+  <a class:list={["product-image", blankClass(product)]} href={productHref(product)}>
     {image ? <img src={image} alt={`Front artwork for ${product.primaryCopy}`} /> : (
       <div class="text-art">
         <span>{product.latin}</span>
@@ -18,7 +18,7 @@ const realmConnected = hasRealmProvenance(product);
     <span class="product-number">No. {String(product.position).padStart(2, "0")}</span>
   </a>
   <div class="product-copy">
-    <div class="classification"><p>{product.launchCollection}</p></div>
+    <div class="classification"><p>{product.launchCollection}</p>{product.holidayLaunch && <span class="wave">Holiday issue</span>}</div>
     <h3><a href={productHref(product)}>{product.primaryCopy}</a></h3>
     <p class="issue">{realmConnected ? product.royalTreatment : product.originalCollection}</p>
     <div class="status-row"><span>{`$${Math.round(product.commerce.priceCents / 100)}`}</span><span>{product.commerceStatus === "test-sellable" ? "Test checkout" : "Coming soon"}</span></div>
@@ -32,11 +32,8 @@ const realmConnected = hasRealmProvenance(product);
   .product-image img { width: 100%; height: 100%; padding: 7%; object-fit: contain; transition: transform .5s ease; }
   .product-image:hover img { transform: scale(1.025); }
   .product-number { position: absolute; left: .8rem; top: .8rem; background: var(--navy); color: var(--gold-light); padding: .45rem .6rem; font: .65rem/1 var(--sans); letter-spacing: .12em; }
-  .art-doomscrolling, .art-y2k-the-almost { background: #7d2734; }
-  .art-much-published { background: #10263a; }
-  .art-order-blue-check { background: #151515; }
-  .art-saint-moth { background: #f4eedf; }
   .classification { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1rem 0 .5rem; }
+  .wave { font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--navy); border: 1px solid var(--gold); padding: .3rem .45rem; white-space: nowrap; }
   .classification p { margin: 0; text-transform: uppercase; letter-spacing: .13em; color: var(--crimson); font: 700 .65rem/1.3 var(--sans); }
   h3 { margin: 0; font-size: 1.35rem; line-height: 1.2; font-weight: 400; }
   h3 a { text-decoration: none; }

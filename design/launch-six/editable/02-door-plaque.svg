@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+<title>No. 02 — Thought leader. No thoughts required. (editable)</title>
+<desc>EDITABLE master: live type. Fonts (static instances) in /workspace/lvc-launch-six/fonts: Inter Regular/Medium/ExtraBold/Black, Libre Baskerville Regular/Bold/Italic, Barlow Condensed ExtraBold. Knockouts are outlined compound paths (a hidden source text is kept beside each). Print from the outlined file in ../print/.</desc>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Regular.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Medium.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-ExtraBold.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 900; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Black.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Regular.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 700; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Bold.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: italic; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Italic.ttf"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/BarlowCondensed-ExtraBold.ttf"); }
+</style>
+<g id="content" transform="translate(0 1280)">
+<text x="961.2" y="72.8" font-family="Inter" font-weight="500" font-style="normal" font-size="100.00" letter-spacing="38" fill="#C99B43">BY ALGORITHMIC APPOINTMENT</text>
+<rect x="650.0" y="272.8" width="3200.0" height="2147.8" rx="0.0" fill="none" stroke="#C99B43" stroke-width="40" />
+<rect x="725.0" y="347.8" width="3050.0" height="1997.8" rx="0.0" fill="none" stroke="#C99B43" stroke-width="16" />
+<circle cx="830" cy="452.8" r="40" fill="#C99B43"/>
+<circle cx="830" cy="2240.5" r="40" fill="#C99B43"/>
+<circle cx="3670" cy="452.8" r="40" fill="#C99B43"/>
+<circle cx="3670" cy="2240.5" r="40" fill="#C99B43"/>
+<text x="1000.0" y="1062.4" font-family="Barlow Condensed" font-weight="800" font-style="normal" font-size="742.28" letter-spacing="0" fill="#E7D9BA">THOUGHT</text>
+<text x="1128.0" y="1711.9" font-family="Barlow Condensed" font-weight="800" font-style="normal" font-size="742.28" letter-spacing="0" fill="#E7D9BA">LEADER.</text>
+<text x="1350.2" y="2080.5" font-family="Libre Baskerville" font-weight="400" font-style="italic" font-size="180.00" letter-spacing="0" fill="#C99B43">No thoughts required.</text>
+<text x="584.5" y="2713.3" font-family="Inter" font-weight="500" font-style="normal" font-size="100.00" letter-spacing="30" fill="#E7D9BA">OFFICIAL COURT APPOINTMENT · HONORARY</text>
+</g>
+<g id="house-frame">
+<g fill="none" stroke="#C99B43">
+<rect x="250" y="400" width="4000" height="4650" stroke-width="34"/>
+<rect x="335" y="485" width="3830" height="4480" stroke-width="11"/>
+</g>
+<g fill="#C99B43">
+<path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/>
+<path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/>
+<path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/>
+</g>
+<text x="849.1" y="4850.0" font-family="Libre Baskerville" font-weight="400" font-style="normal" font-size="94.00" letter-spacing="9" fill="#C99B43">THE ROYAL HOUSE OF ENGAGEMENT · NO. 02</text>
+</g>
+</svg>

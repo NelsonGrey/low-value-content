@@ -24,6 +24,11 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - Deploys are keyless (Workload Identity Federation) because org policy forbids service-account keys. Never create or commit a service-account key.
 - The org is on the GitHub Free plan: private repos have no branch protection, secret scanning, or code scanning. CI's "Promotion guard" is advisory only.
 
+## Launch state (keep current)
+- The holiday 2026 launch is the six shirts Nos. 01–06. Read `docs/product/holiday-launch-plan.md` (the plan, decisions and change log) and `docs/product/launch-readiness.md` (the work list) first.
+- **Whenever launch state changes** (a decision, a build, a Printify or Stripe change, a sample result, a price), update both files and the change log in the same change, and keep the manifest, `functions/src/catalog.ts`, `tools/printify/`, the site and the docs agreeing. `python3 scripts/check-apparel-manifest.py` enforces the manifest/catalog/colour agreement; `node scripts/build-ecosystem-catalog.mjs --check` enforces the ecosystem catalog.
+- Garment colours are the real Comfort Colors names in the manifest (`blankColor`); never show a customer a colour we don't ship.
+
 ## Working style with this user (Mark Nelson)
 - Give a recommendation and continue; outward-facing or costly actions (publishing, pushing to `main`, deploying to prod, creating cloud resources, spending money) need their explicit say-so.
 - Commit in small commits ending with the co-author line from the session, and open PRs against `develop`.

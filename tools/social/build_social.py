@@ -32,8 +32,8 @@ CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacO
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"]
 GARMENT = {"ivory": "#efe6d2", "oxblood": "#7a2630", "navy": "#10263a", "black": "#1c1c1e"}
-PRODUCT_GARMENT = {"validate": "ivory", "thought-leader": "ivory", "doomscrolling": "oxblood", "content-creator": "ivory",
-                   "authentic-self": "ivory", "optimized-shirt": "ivory", "much-published": "navy", "order-blue-check": "black",
+PRODUCT_GARMENT = {"validate": "ivory", "thought-leader": "navy", "doomscrolling": "oxblood", "content-creator": "ivory",
+                   "authentic-self": "oxblood", "sent-regretted": "navy", "much-published": "navy", "order-blue-check": "black",
                    "y2k-the-almost": "oxblood", "saint-moth": "ivory"}
 SLOT_DAYS = {0, 2, 4}  # Mon, Wed, Fri
 START = date(2026, 11, 5)

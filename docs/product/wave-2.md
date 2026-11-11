@@ -1,5 +1,7 @@
 # Wave 2: the next ten issues
 
+> **Update, November 11, 2026.** No. 19 ("Sent 2:14 AM. Regretted 2:15 AM.") launched early as holiday issue **No. 06**, and "I optimized this shirt for engagement." took the vacated **No. 19**. The table below is otherwise unchanged and not yet re-sequenced. See [holiday-launch-plan.md](holiday-launch-plan.md).
+
 Status: approved direction, October 31, 2026 (ten lines chosen from the [sayings review](sayings-review.md) shortlist using the default House split: four Spam, three Buffer, one Scroll, one Signal, one Prompt). Not trademark-cleared. Numbering continues the founding collection.
 
 ## The ten
@@ -14,7 +16,7 @@ Status: approved direction, October 31, 2026 (ten lines chosen from the [sayings
 | 16 | Offline is currently unavailable. | Buffer | Public Notice | Navy | Ivory + antique gold | System-status wording with an empty signal-bar glyph. The Commission for Imminent Availability as the imprint. |
 | 17 | Original thought temporarily unavailable. | Buffer | Public Notice | Ivory | Navy + oxblood | Maintenance screen. "Estimated return: unknown" as the secondary line. |
 | 18 | I came. I saw. I refreshed. | Scroll | Court & Order | Oxblood | Ivory + antique gold | Classical inscription in capitals with a refresh glyph. Candidate for a Latin line (Veni. Vidi. Refrescavi.), subject to a Latin reader. |
-| 19 | Seen 2:14 AM. Regretted 2:15 AM. | Signal | Public Notice | Navy | Ivory + antique gold | Two timestamped lines in small read-receipt type, one bold. Understated. |
+| 19 | I optimized this shirt for engagement. (was Sent 2:14 AM. Regretted 2:15 AM., now launch No. 06) | Influence | Public Notice | Navy | Ivory + antique gold | Two timestamped lines in small read-receipt type, one bold. Understated. |
 | 20 | Human form. Printer reliability. | Prompt | Court & Order | Ivory | Navy + antique gold | A technical silhouette with a paper-jam warning, set as a specification sheet. |
 
 Mix: seven Public Notices and three Court & Orders. Garments: Ivory 4, Navy 3, Oxblood 2, Black 1. Houses: Spam 4, Buffer 3, and one each for Scroll, Signal and Prompt.
