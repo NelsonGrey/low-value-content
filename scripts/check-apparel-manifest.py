@@ -13,6 +13,15 @@ CATALOG_PATH = ROOT / "docs" / "product" / "concept-catalog.md"
 COMMERCE_PATH = ROOT / "functions" / "src" / "catalog.ts"
 
 
+
+def commerce_block(text: str, key):
+    """Return the catalog.ts source for one product key ('' if absent)."""
+    if not key:
+        return ""
+    match = re.search(r'^\s{2}"?' + re.escape(key) + r'"?:\s*\{.*?^\s{2}\},', text, flags=re.MULTILINE | re.DOTALL)
+    return match.group(0) if match else ""
+
+
 def main() -> int:
     errors: list[str] = []
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
@@ -96,6 +105,37 @@ def main() -> int:
         product_id = product["commerce"].get("printifyProductId")
         if product_id and product_id not in commerce_text:
             errors.append(f"{product['id']}: Printify product ID does not match backend catalog")
+
+
+    # Colour lock: the colour we show a customer (blankColor) must be the colour of every
+    # variant we sell, in the backend catalog and in the recorded Printify products.
+    hex_re = re.compile(r"^#[0-9a-f]{6}$")
+    record_path = ROOT / "tools" / "printify" / "launch-six-products.json"
+    record = json.loads(record_path.read_text(encoding="utf-8")) if record_path.is_file() else {}
+    slug = lambda name: name.lower().replace(" ", "-")
+    for product in products:
+        label = product["id"]
+        color = product.get("blankColor")
+        if not color:
+            errors.append(f"{label}: missing blankColor")
+            continue
+        if not hex_re.match(product.get("garmentHex", "")):
+            errors.append(f"{label}: garmentHex must be a lowercase #rrggbb value")
+        if product.get("blankColorStatus") not in {"selected", "pending-sample", "planned"}:
+            errors.append(f"{label}: blankColorStatus must be selected, pending-sample or planned")
+        for key in product["commerce"].get("enabledVariants", []):
+            if key.rsplit("-", 1)[0] != slug(color):
+                errors.append(f"{label}: variant {key!r} is not in the advertised colour {color!r}")
+        for variant_label in re.findall(r'label: "([^"]+)"', commerce_block(commerce_text, product["commerce"].get("catalogKey"))):
+            if variant_label.split(" / ")[0] != color:
+                errors.append(f"{label}: catalog label {variant_label!r} is not in the advertised colour {color!r}")
+        for variant_key in record.get(label, {}).get("variants", {}):
+            if variant_key.split("|")[0] != color:
+                errors.append(f"{label}: recorded Printify variant {variant_key!r} is not in the advertised colour {color!r}")
+        if product["commerce"].get("enabledVariants") and set(product["commerce"]["enabledVariants"]) != {
+            f"{slug(color)}-{v.split('|')[1].lower()}" for v in record.get(label, {}).get("variants", {})
+        } and record.get(label):
+            errors.append(f"{label}: manifest variants differ from the recorded Printify product")
 
     for error in errors:
         print(f"ERROR {error}")

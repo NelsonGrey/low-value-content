@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
-import { hasRealmProvenance, isPurchasable, lineage, products, productImage, variantOptions, type Product } from "../../data";
+import { blankClass, hasRealmProvenance, isPurchasable, lineage, products, productImage, variantOptions, type Product } from "../../data";
 
 export function getStaticPaths() {
   return products.map((product) => ({ params: { id: product.id }, props: { product } }));
@@ -18,7 +18,7 @@ const colorName = (c: string) => c.split("-").map((w) => w.charAt(0).toUpperCase
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
 const realmConnected = hasRealmProvenance(product);
 const isCommemoration = product.launchCollection === "Royal Commemorations";
-const garment = product.garment;
+const blankColor = product.blankColor;
 const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
 const mockup = rawMockup && rawMockup.includes("-realm.") ? `/assets/${rawMockup.split("/").pop()}` : null;
 const start = products.findIndex((p) => p.id === product.id);
@@ -26,7 +26,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 ---
 <BaseLayout title={`${product.primaryCopy} | The Royal House of Engagement`} description={`${product.primaryCopy} — ${product.royalTreatment}. An official issue of the Royal House, by Low Value Content.`} current="shop">
   <article class="product-page">
-    <div class:list={["product-visual", `garment-${garment.toLowerCase()}`, !image && "typographic"]}>
+    <div class:list={["product-visual", blankClass(product), !image && "typographic"]}>
       {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">Front artwork</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
     </div>
     <div class="product-details">
@@ -39,7 +39,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
         <form class="buy-form" data-product={product.commerce.catalogKey} data-variants={JSON.stringify(options)}>
           {colors.length > 1
             ? <label>Color<select name="color">{colors.map((c) => <option value={c}>{colorName(c)}</option>)}</select></label>
-            : <input type="hidden" name="color" value={colors[0]} />}
+            : <><input type="hidden" name="color" value={colors[0]} /><p class="fixed-color">Color <b>{colorName(colors[0])}</b></p></>}
           <label>Size<select name="size" required>{sizesForFirstColor.map((o) => <option value={o.size}>{o.size.toUpperCase()}</option>)}</select></label>
           <label>Quantity<select name="quantity">{[1, 2, 3, 4, 5].map((n) => <option>{n}</option>)}</select></label>
           <button class="button" type="submit">Add to cart</button>
@@ -47,11 +47,11 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
           <p class="buy-note" role="status" aria-live="polite">Test configuration. US shipping is $5.99 per order.</p>
         </form>
       ) : (
-        <div class="development-notice"><b>Coming soon</b><p>This issue is not yet available. It opens with the first collection.</p></div>
+        <div class="development-notice"><b>Coming soon</b><p>{product.holidayLaunch ? "This issue is not yet available." : "A later issue. It is not part of the holiday collection and has no release date yet."}</p></div>
       )}
       <dl>
         <div><dt>Collection</dt><dd>{product.launchCollection}</dd></div>
-        <div><dt>Garment</dt><dd>{garment}, front print</dd></div>
+        <div><dt>Garment</dt><dd>{blankColor} · Comfort Colors 1717 garment-dyed tee, front print</dd></div>
         {realmConnected && <div><dt>House</dt><dd>{product.house}</dd></div>}
       </dl>
       {realmConnected ? (
@@ -69,20 +69,20 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
     <section class="mockup-section">
       <figure>
         <img src={mockup} alt={`Studio concept mockup of ${product.primaryCopy} on a mannequin`} loading="lazy" />
-        <figcaption>Concept mockup · Realm direction</figcaption>
+        <figcaption>{product.holidayLaunch ? "Concept mockup · Realm direction" : "Future issue · concept study, not for sale"}</figcaption>
       </figure>
       <div class="mockup-copy">
         <p class="eyebrow">The Realm, worn</p>
         <h2>On the mannequin,<br /><span class="script">as the court imagines it.</span></h2>
         <p>A studio impression of this issue in the House's ceremonial register.</p>
-        <p class="mockup-note">Concept imagery. Final garment and placement are confirmed at sampling.</p>
+        <p class="mockup-note">Concept imagery for a later issue. Final garment, art and placement may change before release.</p>
       </div>
     </section>
   )}
   <section class="section related">
-    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>More from the first collection</h2><p>Ten founding issues, classified by degree of ceremonial authority.</p></div>
+    <div class="section-heading"><p class="eyebrow">The founding collection</p><h2>More from the first collection</h2><p>Six holiday issues now, four more to follow, classified by degree of ceremonial authority.</p></div>
     <div class="related-grid">{related.map((item) => <ProductCard product={item} />)}</div>
-    <p class="related-more"><a class="button ghost" href="/shop.html">View all ten issues</a></p>
+    <p class="related-more"><a class="button ghost" href="/shop.html">View all issues</a></p>
   </section>
 </BaseLayout>
 
@@ -117,10 +117,8 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .archive blockquote { margin: 1rem 0; font-size: 1.3rem; line-height: 1.45; }
   .title-line { margin: 0; font-size: .9rem; line-height: 1.6; color: #565e68; }
   .independent-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--crimson); background: #eee5d4; line-height: 1.6; }
-  .garment-ivory { background: #f4eedf; }
-  .garment-oxblood { background: #7d2734; }
-  .garment-navy { background: #10263a; }
-  .garment-black { background: #151515; }
+  .fixed-color { grid-column: 1 / -1; margin: 0; font: .75rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
+  .fixed-color b { font-weight: 700; letter-spacing: .06em; }
   .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
   .mockup-section figure { margin: 0; padding: .55rem; background: #091522; border: 1px solid var(--gold); max-width: 30rem; justify-self: start; }
   .mockup-section img { width: 100%; height: auto; }

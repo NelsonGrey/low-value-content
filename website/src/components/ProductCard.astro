@@ -1,13 +1,13 @@
 ---
 import type { Product } from "../data";
-import { hasRealmProvenance, productHref, productImage } from "../data";
+import { blankClass, hasRealmProvenance, productHref, productImage } from "../data";
 
 const { product } = Astro.props as { product: Product };
 const image = productImage(product);
 const realmConnected = hasRealmProvenance(product);
 ---
 <article class:list={["product-card", !image && "product-card-text"]}>
-  <a class:list={["product-image", `garment-${product.garment.toLowerCase()}`]} href={productHref(product)}>
+  <a class:list={["product-image", blankClass(product)]} href={productHref(product)}>
     {image ? <img src={image} alt={`Front artwork for ${product.primaryCopy}`} /> : (
       <div class="text-art">
         <span>{product.latin}</span>
@@ -32,10 +32,6 @@ const realmConnected = hasRealmProvenance(product);
   .product-image img { width: 100%; height: 100%; padding: 7%; object-fit: contain; transition: transform .5s ease; }
   .product-image:hover img { transform: scale(1.025); }
   .product-number { position: absolute; left: .8rem; top: .8rem; background: var(--navy); color: var(--gold-light); padding: .45rem .6rem; font: .65rem/1 var(--sans); letter-spacing: .12em; }
-  .garment-ivory { background: #f4eedf; }
-  .garment-oxblood { background: #7d2734; }
-  .garment-navy { background: #10263a; }
-  .garment-black { background: #151515; }
   .classification { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1rem 0 .5rem; }
   .wave { font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--navy); border: 1px solid var(--gold); padding: .3rem .45rem; white-space: nowrap; }
   .classification p { margin: 0; text-transform: uppercase; letter-spacing: .13em; color: var(--crimson); font: 700 .65rem/1.3 var(--sans); }

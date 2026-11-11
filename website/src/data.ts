@@ -52,3 +52,6 @@ export const variantOptions = (product: Product): VariantOption[] =>
 
 export const isPurchasable = (product: Product): boolean =>
   product.commerceStatus === "test-sellable" && Boolean(product.commerce.catalogKey) && variantOptions(product).length > 0;
+
+/** CSS class (from /assets/blank-colors.css) that paints the real blank colour behind the art. */
+export const blankClass = (product: Product): string => `blank-${product.blankColor.toLowerCase().replace(/ /g, "-")}`;
