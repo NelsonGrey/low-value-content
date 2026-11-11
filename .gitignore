@@ -57,3 +57,11 @@ id_rsa*
 
 # Local promotional content
 /promotional/
+
+# Holiday six art workspace: bulky archives and zips stay local
+design/launch-six/*.zip
+design/launch-six/archive-*/
+design/launch-six/check/
+design/launch-six/concepts/comps/
+design/launch-six/concepts/svg/
+design/launch-six/concepts/check/

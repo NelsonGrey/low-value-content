@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4500" height="5400" viewBox="0 0 4500 5400">
+<title>No. 01 — Please validate me algorithmically. (editable)</title>
+<desc>EDITABLE master: live type. Fonts (static instances) in /workspace/lvc-launch-six/fonts: Inter Regular/Medium/ExtraBold/Black, Libre Baskerville Regular/Bold/Italic, Barlow Condensed ExtraBold. Knockouts are outlined compound paths (a hidden source text is kept beside each). Print from the outlined file in ../print/.</desc>
+<style>
+@font-face { font-family: "Inter"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Regular.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 500; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Medium.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-ExtraBold.ttf"); }
+@font-face { font-family: "Inter"; font-weight: 900; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/Inter-Black.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Regular.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 700; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Bold.ttf"); }
+@font-face { font-family: "Libre Baskerville"; font-weight: 400; font-style: italic; src: url("file:///workspace/lvc-launch-six/fonts/LibreBaskerville-Italic.ttf"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 800; font-style: normal; src: url("file:///workspace/lvc-launch-six/fonts/BarlowCondensed-ExtraBold.ttf"); }
+</style>
+<g id="content" transform="translate(0 1460)">
+<text x="1060.9" y="92.4" font-family="Libre Baskerville" font-weight="400" font-style="normal" font-size="120.00" letter-spacing="46" fill="#142B40">PUBLIC REQUEST 0001</text>
+<text x="600.0" y="645.1" font-family="Inter" font-weight="800" font-style="normal" font-size="306.05" letter-spacing="0" fill="#142B40">PLEASE VALIDATE ME</text>
+<text x="747.3" y="987.8" font-family="Inter" font-weight="800" font-style="normal" font-size="306.05" letter-spacing="0" fill="#142B40">ALGORITHMICALLY.</text>
+<rect x="600.0" y="1367.8" width="3300.0" height="330.0" rx="165.0" fill="none" stroke="#142B40" stroke-width="34" />
+<rect x="666.0" y="1433.8" width="317" height="198" rx="99.0" fill="#852E34"/>
+<text x="1245.0" y="2107.0" font-family="Inter" font-weight="800" font-style="normal" font-size="150.00" letter-spacing="44" fill="#142B40">REQUEST PENDING</text>
+<text x="605.1" y="2357.0" font-family="Libre Baskerville" font-weight="400" font-style="normal" font-size="104.00" letter-spacing="26" fill="#852E34">ESTIMATED RECOGNITION · INDEFINITE</text>
+</g>
+<g id="house-frame">
+<g fill="none" stroke="#852E34">
+<rect x="250" y="400" width="4000" height="4650" stroke-width="34"/>
+<rect x="335" y="485" width="3830" height="4480" stroke-width="11"/>
+</g>
+<g fill="#852E34">
+<path d="M250 305l95 95-95 95-95-95z"/><path d="M4250 305l95 95-95 95-95-95z"/>
+<path d="M250 4955l95 95-95 95-95-95z"/><path d="M4250 4955l95 95-95 95-95-95z"/>
+<path d="M700 4800l60 60-60 60-60-60z"/><path d="M3800 4800l60 60-60 60-60-60z"/>
+</g>
+<text x="857.1" y="4850.0" font-family="Libre Baskerville" font-weight="400" font-style="normal" font-size="94.00" letter-spacing="9" fill="#852E34">THE ROYAL HOUSE OF ENGAGEMENT · NO. 01</text>
+</g>
+</svg>
