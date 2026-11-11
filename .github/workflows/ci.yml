@@ -52,8 +52,7 @@ jobs:
           BASE: ${{ github.base_ref }}
           HEAD: ${{ github.head_ref }}
         run: |
-          # Branch protection is unavailable on this plan, so this check is advisory: it fails
-          # loudly if someone opens a PR that skips an environment, but it cannot block a merge.
+          # Required status check on develop, staging and main: it fails if a PR skips an environment.
           case "$BASE" in
             main)    [ "$HEAD" = "staging" ] || { echo "::error::PRs into main must come from staging (got $HEAD)."; exit 1; } ;;
             staging) [ "$HEAD" = "develop" ] || { echo "::error::PRs into staging must come from develop (got $HEAD)."; exit 1; } ;;
