@@ -18,20 +18,7 @@ const colorName = (c: string) => c.split("-").map((w) => w.charAt(0).toUpperCase
 const reignName = lineage.find((entry) => entry.id === product.reign)?.name ?? product.reign;
 const realmConnected = hasRealmProvenance(product);
 const isCommemoration = product.launchCollection === "Royal Commemorations";
-// House garment palette: Ivory, Oxblood, Navy, Black.
-const garments: Record<string, string> = {
-  "validate": "Ivory",
-  "thought-leader": "Ivory",
-  "doomscrolling": "Oxblood",
-  "content-creator": "Ivory",
-  "authentic-self": "Ivory",
-  "optimized-shirt": "Ivory",
-  "much-published": "Navy",
-  "order-blue-check": "Black",
-  "y2k-the-almost": "Oxblood",
-  "saint-moth": "Ivory",
-};
-const garment = garments[product.id];
+const garment = product.garment;
 const rawMockup = "conceptMockup" in product.assets ? product.assets.conceptMockup : undefined;
 const mockup = rawMockup && rawMockup.includes("-realm.") ? `/assets/${rawMockup.split("/").pop()}` : null;
 const start = products.findIndex((p) => p.id === product.id);
@@ -39,7 +26,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 ---
 <BaseLayout title={`${product.primaryCopy} | The Royal House of Engagement`} description={`${product.primaryCopy} — ${product.royalTreatment}. An official issue of the Royal House, by Low Value Content.`} current="shop">
   <article class="product-page">
-    <div class:list={["product-visual", `art-${product.id}`, !image && "typographic"]}>
+    <div class:list={["product-visual", `garment-${garment.toLowerCase()}`, !image && "typographic"]}>
       {image ? <><img src={image} alt={`Front artwork for ${product.primaryCopy}`} /><span class="visual-label">Front artwork</span></> : <div><p>{product.latin}</p><h1>{product.primaryCopy}</h1><span class="script">{product.royalTreatment}</span></div>}
     </div>
     <div class="product-details">
@@ -130,12 +117,10 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .archive blockquote { margin: 1rem 0; font-size: 1.3rem; line-height: 1.45; }
   .title-line { margin: 0; font-size: .9rem; line-height: 1.6; color: #565e68; }
   .independent-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 4px solid var(--crimson); background: #eee5d4; line-height: 1.6; }
-  .art-much-published { background: #10263a; }
-  .art-order-blue-check { background: #151515; }
-  .art-y2k-the-almost { background: #7d2734; }
-  .art-saint-moth { background: #f4eedf; }
-  .art-validate, .art-thought-leader, .art-content-creator, .art-authentic-self, .art-optimized-shirt { background: #f4eedf; }
-  .art-doomscrolling { background: #7d2734; }
+  .garment-ivory { background: #f4eedf; }
+  .garment-oxblood { background: #7d2734; }
+  .garment-navy { background: #10263a; }
+  .garment-black { background: #151515; }
   .mockup-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3.5rem, 6vw, 6rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); }
   .mockup-section figure { margin: 0; padding: .55rem; background: #091522; border: 1px solid var(--gold); max-width: 30rem; justify-self: start; }
   .mockup-section img { width: 100%; height: auto; }
