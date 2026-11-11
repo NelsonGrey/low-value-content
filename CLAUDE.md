@@ -22,7 +22,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - Slogans and the brand name are not trademark-cleared. Never present them as cleared in copy or listings.
 - Dev and staging sit behind a Google sign-in gate (`website/public/assets/auth-gate.js`). The allowlist comes from the `ALLOWED_EMAIL_DOMAINS` and `ALLOWED_EMAILS` secrets in each GitHub Environment and is written to `assets/env-config.js` at deploy time. An empty allowlist locks everyone out. Never commit real addresses or API keys.
 - Deploys are keyless (Workload Identity Federation) because org policy forbids service-account keys. Never create or commit a service-account key.
-- The org is on the GitHub Free plan: private repos have no branch protection, secret scanning, or code scanning. CI's "Promotion guard" is advisory only.
+- The repo is **public** (as of 2026-11-11), so branch protection, secret scanning and push protection are available. `develop`, `staging` and `main` require a PR and the four CI checks (Site and config checks, Secret scan, Promotion guard, test); production deploys need an approval in the `production` environment. Making the repo private on the Free plan would remove branch protection, environment protection and secret scanning, so do not do it without replacing them.
 
 ## Launch state (keep current)
 - The holiday 2026 launch is the six shirts Nos. 01–06. Read `docs/product/holiday-launch-plan.md` (the plan, decisions and change log) and `docs/product/launch-readiness.md` (the work list) first.

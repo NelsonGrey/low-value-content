@@ -1,11 +1,11 @@
 name: Functions CI
 
 on:
+  # Runs on every pull request and push so it can be a required check (a path-filtered job would
+  # never report on PRs that do not touch functions/, and would block them).
   pull_request:
-    paths: ["functions/**", ".github/workflows/functions-ci.yml"]
   push:
     branches: [develop, staging, main]
-    paths: ["functions/**"]
 
 permissions:
   contents: read
