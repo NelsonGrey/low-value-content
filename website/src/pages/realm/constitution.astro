@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RealmNav from "../../components/RealmNav.astro";
+import RealmSubhero from "../../components/RealmSubhero.astro";
+import { constitution } from "../../data";
+---
+<BaseLayout title="The Constitution of Engagement | The Royal House of Engagement" description="The seven ranks of authority, the doctrine of convenient evidence and the current constitutional crisis of the Royal House of Engagement." current="realm">
+  <RealmSubhero title="The<br />Constitution" lead="Seven ranks of authority, one doctrine and a standard that records legitimacy by verified appearance." />
+  <RealmNav current="constitution" />
+
+  <section class="hierarchy section">
+    <div class="section-heading">
+      <p class="eyebrow">The constitutional hierarchy</p>
+      <h2>Authority descends.<br /><span class="script">Responsibility does not.</span></h2>
+    </div>
+    <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
+  </section>
+
+  <section class="doctrine">
+    <div><p class="script">The doctrine of convenient evidence</p><h2>All decisions shall be data&#8209;driven.</h2><p>All data shall be interpreted in accordance with the decision.</p></div>
+    <ol>{constitution.principles.map((principle, index) => <li><span>{String(index + 1).padStart(2, "0")}</span>{principle}</li>)}</ol>
+  </section>
+
+  <section class="universal-peerage">
+    <p class="eyebrow">Current constitutional crisis</p>
+    <h2>The Universal Peerage</h2>
+    <blockquote>Once every subject had acquired influence, the Crown discovered that no uninfluenced population remained.</blockquote>
+    <p>The matter was referred to committee.</p>
+  </section>
+</BaseLayout>
+
+<style>
+  .hierarchy { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; background: var(--paper); }
+  .hierarchy .section-heading { display: block; position: sticky; top: 130px; margin: 0; }
+  .hierarchy .section-heading h2 { font-size: var(--fs-h2); }
+  .hierarchy .section-heading .eyebrow { margin-bottom: .5rem; }
+  .hierarchy ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .hierarchy li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+  .hierarchy li:first-child h3 { color: var(--crimson); }
+  .hierarchy li > span { color: var(--crimson); font: 700 .7rem var(--sans); letter-spacing: .14em; }
+  .hierarchy h3, .hierarchy p { margin: 0; }
+  .hierarchy h3 { font-size: 1.6rem; font-weight: 400; }
+  .hierarchy p { margin-top: .35rem; color: #565e68; line-height: 1.55; }
+  .doctrine { display: grid; grid-template-columns: .85fr 1.15fr; background: var(--crimson); color: white; }
+  .doctrine > div { padding: clamp(4rem, 7vw, 7rem); align-self: center; }
+  .doctrine .script { color: var(--gold-light); font-size: 2rem; }
+  .doctrine h2 { margin: 1rem 0; font-size: clamp(2.6rem, 4.6vw, 4.6rem); line-height: 1; font-weight: 400; }
+  .doctrine > div > p:last-child { font-size: 1.25rem; line-height: 1.6; }
+  .doctrine ol { list-style: none; padding: 0; margin: 0; }
+  .doctrine li { min-height: 86px; padding: 1.5rem 2rem; display: grid; grid-template-columns: 55px 1fr; gap: 1rem; align-items: center; border-left: 1px solid rgba(255,255,255,.25); border-bottom: 1px solid rgba(255,255,255,.25); font-size: 1.05rem; }
+  .doctrine li span { color: var(--gold-light); font: .62rem var(--sans); letter-spacing: .14em; }
+  .universal-peerage { padding: clamp(4.5rem, 7vw, 7rem) 1.5rem; text-align: center; background: var(--navy); color: white; border-top: 4px double var(--gold); }
+  .universal-peerage .eyebrow { color: var(--gold-light); }
+  .universal-peerage h2 { margin: 1rem 0; font-size: var(--fs-h1); line-height: 1; font-weight: 400; }
+  .universal-peerage blockquote { max-width: 900px; margin: 2rem auto; color: var(--gold-light); font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: 1.25; }
+  .universal-peerage > p:last-child { font: .72rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  @media (max-width: 900px) { .hierarchy .section-heading { position: static; } .hierarchy, .doctrine { grid-template-columns: minmax(0, 1fr); } }
+</style>

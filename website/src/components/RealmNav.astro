@@ -1,0 +1,22 @@
+---
+interface Props { current: "overview" | "constitution" | "houses" | "peerage"; }
+const { current } = Astro.props;
+const tabs = [
+  ["overview", "/realm.html", "Overview"],
+  ["constitution", "/realm/constitution.html", "The Constitution"],
+  ["houses", "/realm/houses.html", "The Great Houses"],
+  ["peerage", "/realm/peerage.html", "Peerage and Orders"],
+] as const;
+---
+<nav class="realm-tabs" aria-label="The Realm">
+  <ul>
+    {tabs.map(([id, href, label]) => <li><a href={href} aria-current={current === id ? "page" : undefined}>{label}</a></li>)}
+  </ul>
+</nav>
+<style>
+  .realm-tabs { background: var(--navy-2); border-bottom: 1px solid var(--line); padding: 0 var(--gutter); }
+  .realm-tabs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 2rem; }
+  .realm-tabs a { display: block; padding: 1rem 0; color: rgba(244, 238, 223, .8); text-decoration: none; font: 700 .74rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; border-bottom: 2px solid transparent; }
+  .realm-tabs a:hover, .realm-tabs a:focus-visible { color: #fff; }
+  .realm-tabs a[aria-current="page"] { color: #fff; border-bottom-color: var(--gold); }
+</style>

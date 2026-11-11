@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RealmNav from "../../components/RealmNav.astro";
+import RealmSubhero from "../../components/RealmSubhero.astro";
+import { houses } from "../../data";
+---
+<BaseLayout title="The Six Great Houses | The Royal House of Engagement" description="The six permanent branches of government of the Royal House of Engagement: their portfolios, offices, contradictions and Latin mottos." current="realm">
+  <RealmSubhero title="The six<br />Great Houses" lead="Six permanent branches of government, constitutionally equal, with a precedence that changes whenever the dashboard needs a better story." />
+  <RealmNav current="houses" />
+
+  <section class="houses section" id="great-houses">
+    <div class="section-heading">
+      <p class="eyebrow">Court precedence under Prompt the Confident</p>
+      <h2>Equal by constitution.<br /><span class="script">Ranked by convenience.</span></h2>
+      <p>The Houses are constitutionally equal. Their precedence changes with each reign and whenever the dashboard needs to tell a better story.</p>
+    </div>
+    <div class="house-grid">
+      {houses.map((house) => (
+        <article>
+          <div class="house-rank"><span>{String(house.precedence).padStart(2, "0")}</span><img src={`/assets/house-${house.id}.svg`} alt={`Badge of the ${house.name}`} /></div>
+          <p class="standing">{house.standing}</p>
+          <h3>{house.name}</h3>
+          <p class="portfolio">{house.portfolio}</p>
+          <blockquote>{house.contradiction}</blockquote>
+          <p class="institution">{house.institution}</p>
+          <p class="latin">{house.latin} · {house.line}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="royal-standard">
+    <div><p class="eyebrow">The sovereign field</p><h2>One standard.<br /><span class="script">Six jurisdictions.</span></h2><p>The central check records legitimacy by verified appearance. The six charges identify the portfolios through which attention is produced, retained, declared important, measured, distributed, and indefinitely delayed.</p></div>
+    <figure><img src="/assets/royal-standard.svg" alt="The Royal Standard of Engagement bearing the six House charges" /><figcaption>The Royal Standard · current issue under Prompt the Confident</figcaption></figure>
+  </section>
+</BaseLayout>
+
+<style>
+  .houses { background: #eee5d4; }
+  .house-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .house-grid article { min-height: 360px; padding: 1.75rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .house-rank { display: flex; align-items: flex-start; justify-content: space-between; min-height: 62px; }
+  .house-rank span, .standing, .institution { font: 700 .62rem/1.4 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+  .house-rank span, .standing { color: var(--crimson); }
+  .house-rank img { width: 54px; margin: -.35rem -.25rem 0 0; }
+  .standing { margin: .85rem 0 .4rem; }
+  .house-grid h3 { margin: 0; font-size: 2rem; font-weight: 400; }
+  .portfolio { min-height: 44px; color: #565e68; line-height: 1.5; }
+  .house-grid blockquote { margin: 1.35rem 0; font-size: 1.16rem; line-height: 1.35; }
+  .institution { color: var(--navy); }
+  .house-grid .latin { line-height: 1.7; }
+  .royal-standard { display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 480px); gap: clamp(2rem, 6vw, 6rem); align-items: center; padding: clamp(3rem, 5vw, 5rem) var(--gutter); background: var(--navy); color: var(--ivory); border-top: 4px double var(--gold); border-bottom: 4px double var(--gold); }
+  .royal-standard .eyebrow, .royal-standard h2 .script { color: var(--gold-light); }
+  .royal-standard h2 { margin: .75rem 0 1.5rem; font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
+  .royal-standard p:not(.eyebrow) { color: rgba(244,238,223,.74); font-size: 1.08rem; line-height: 1.7; }
+  .royal-standard figure { width: 100%; max-width: 480px; margin: 0 0 0 auto; padding: .6rem; border: 1px solid var(--gold); background: #091522; }
+  .royal-standard img { width: 100%; }
+  .royal-standard figcaption { padding-top: .8rem; color: var(--gold-light); font: .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  @media (max-width: 900px) { .royal-standard { grid-template-columns: minmax(0, 1fr); } .house-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .house-grid { grid-template-columns: 1fr; } }
+</style>
