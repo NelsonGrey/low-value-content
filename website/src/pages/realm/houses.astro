@@ -44,7 +44,7 @@ import { houses } from "../../data";
   .house-rank span, .standing { color: var(--crimson); }
   .house-rank img { width: 54px; margin: -.35rem -.25rem 0 0; }
   .standing { margin: .85rem 0 .4rem; }
-  .house-grid h3 { margin: 0; font-size: 2rem; font-weight: 400; }
+  .house-grid h3 { margin: 0; font-size: clamp(1.5rem, 2.2vw, 1.9rem); font-weight: 400; white-space: nowrap; }
   .portfolio { min-height: 44px; color: #565e68; line-height: 1.5; }
   .house-grid blockquote { margin: 1.35rem 0; font-size: 1.16rem; line-height: 1.35; }
   .institution { color: var(--navy); }
@@ -57,5 +57,5 @@ import { houses } from "../../data";
   .royal-standard img { width: 100%; }
   .royal-standard figcaption { padding-top: .8rem; color: var(--gold-light); font: .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   @media (max-width: 900px) { .royal-standard { grid-template-columns: minmax(0, 1fr); } .house-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 560px) { .house-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .house-grid { grid-template-columns: 1fr; } }
 </style>
