@@ -1,0 +1,17 @@
+{
+  "name": "lvc-site-qa",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local, free audit tooling for the built storefront: screenshots, accessibility (axe), layout-rule checks and Lighthouse. Nothing is sent to any outside service.",
+  "type": "module",
+  "scripts": {
+    "audit": "node audit.mjs",
+    "lighthouse": "node lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "chrome-launcher": "^1.1.0",
+    "lighthouse": "^12.0.0",
+    "playwright-core": "^1.50.0"
+  }
+}
