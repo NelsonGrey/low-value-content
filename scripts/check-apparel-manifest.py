@@ -81,7 +81,7 @@ def main() -> int:
         errors.append("concept catalog must retain exactly the numbered sayings 1 through 100")
 
     commerce_text = COMMERCE_PATH.read_text(encoding="utf-8")
-    commerce_keys = set(re.findall(r"^\s{2}([a-zA-Z][\w-]*):\s*\{", commerce_text, flags=re.MULTILINE))
+    commerce_keys = set(re.findall(r"^\s{2}\"?([a-zA-Z][\w-]*)\"?:\s*\{", commerce_text, flags=re.MULTILINE))
     by_catalog_key = {
         product["commerce"]["catalogKey"]: product
         for product in products

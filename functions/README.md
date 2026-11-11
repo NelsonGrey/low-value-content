@@ -34,7 +34,7 @@ Use Stripe **test** keys and a Printify test shop outside production.
 
 ## Before it can sell anything
 
-[src/catalog.ts](src/catalog.ts) currently sells only `validate` (No. 01), with a real Printify product and a single variant (`white-l`). The other nine launch designs are not in the catalog, so checkout refuses them. For each design, create the Printify product, then add its product ID and per-size variant IDs here and set the matching `commerce` fields in `docs/product/apparel-manifest.json`; `scripts/check-apparel-manifest.py` verifies the two agree.
+[src/catalog.ts](src/catalog.ts) sells the holiday six (Nos. 01-06), each a real Printify draft product with one garment colour in sizes S-3XL (see `tools/printify/`). Nos. 07-10 are not in the catalog, so checkout refuses them. To add a design, create the Printify product, then add its product ID and per-size variant IDs here and set the matching `commerce` fields in `docs/product/apparel-manifest.json`; `scripts/check-apparel-manifest.py` verifies the two agree.
 
 ## Development
 

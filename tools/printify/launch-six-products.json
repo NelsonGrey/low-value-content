@@ -1,0 +1,74 @@
+{
+  "validate": {
+    "productId": "6af3d07784c3e9e3630dd1a6",
+    "uploadId": "6af3d075929ca301e7050d74",
+    "variants": {
+      "Ivory|S": 78991,
+      "Ivory|M": 78992,
+      "Ivory|L": 78993,
+      "Ivory|XL": 78994,
+      "Ivory|2XL": 78995,
+      "Ivory|3XL": 79142
+    }
+  },
+  "thought-leader": {
+    "productId": "6af3d07bb0bec49fb208604b",
+    "uploadId": "6af3d0799fcf91e31eb75d45",
+    "variants": {
+      "True Navy|S": 79081,
+      "True Navy|M": 79082,
+      "True Navy|L": 79083,
+      "True Navy|XL": 79084,
+      "True Navy|2XL": 79085,
+      "True Navy|3XL": 79164
+    }
+  },
+  "doomscrolling": {
+    "productId": "6af3d07ff6491c921e01d872",
+    "uploadId": "6af3d07d1c139c2127ecd4b3",
+    "variants": {
+      "Brick|S": 78901,
+      "Brick|M": 78902,
+      "Brick|L": 78903,
+      "Brick|XL": 78904,
+      "Brick|2XL": 78905,
+      "Brick|3XL": 79119
+    }
+  },
+  "content-creator": {
+    "productId": "6af3d082c783a6d305012fce",
+    "uploadId": "6af3d081ffcfd5751625aa05",
+    "variants": {
+      "Ivory|S": 78991,
+      "Ivory|M": 78992,
+      "Ivory|L": 78993,
+      "Ivory|XL": 78994,
+      "Ivory|2XL": 78995,
+      "Ivory|3XL": 79142
+    }
+  },
+  "authentic-self": {
+    "productId": "6af3d08684c3e9e3630dd1b1",
+    "uploadId": "6af3d0850238dfde99bcc1ba",
+    "variants": {
+      "Brick|S": 78901,
+      "Brick|M": 78902,
+      "Brick|L": 78903,
+      "Brick|XL": 78904,
+      "Brick|2XL": 78905,
+      "Brick|3XL": 79119
+    }
+  },
+  "sent-regretted": {
+    "productId": "6af3d08bf44a1129e5058223",
+    "uploadId": "6af3d089355211cf0eca0b86",
+    "variants": {
+      "True Navy|S": 79081,
+      "True Navy|M": 79082,
+      "True Navy|L": 79083,
+      "True Navy|XL": 79084,
+      "True Navy|2XL": 79085,
+      "True Navy|3XL": 79164
+    }
+  }
+}
