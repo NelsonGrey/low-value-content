@@ -8,7 +8,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
-| Six approved designs, print masters (outlined SVG plus 4500 x 5400 PNG) | Done | `production/print-files/launch-six-v1/` |
+| Six approved designs, print masters (outlined SVG plus 4500 x 5400 PNG) | Done | `production/print-files/launch-six-v1/`. **Local-only (gitignored)**: back it up; a copy of everything was saved to `~/Circus/Backups/` on Nov 11 |
 | Editable sources and fonts | Done | `design/launch-six/` |
 | Garment colors locked to real blank names | Done | Manifest `blankColor` plus checker; Brick provisional |
 | Confirm Brick and True Navy on a real shirt | Blocked | Needs samples |

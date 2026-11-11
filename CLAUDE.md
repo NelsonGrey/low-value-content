@@ -14,7 +14,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - `website/`: the one Astro project for the storefront. Source is `src/` and `public/`; `dist/` is build output (gitignored, never edit or commit).
 - `website/coming-soon/`: standalone production placeholder. `main` deploys this instead of the built site unless the `SHOW_COMING_SOON` variable in the `production` GitHub Environment is exactly `false`.
 - `firebase.{dev,staging,prod}.json`: per-environment hosting config; the deploy workflow copies the right one to `firebase.json`. Dev and staging send noindex and a strict CSP.
-- `docs/`, `design/`, `tools/`: business plan, concept catalog, shirt art and mockups, generator script.
+- `docs/`, `tools/`: business plan, concept catalog, product docs, generator scripts. `design/` and `production/` (shirt art, mockups, print masters, social cards) are **local-only and gitignored**; never commit them, and never delete them (they are the only copy of new art).
 - `sources/`: local-only, untracked, read-only mirror of the original ChatGPT project (may be absent). Never edit, rename, move, or delete anything in it.
 
 ## Rules that must keep holding
