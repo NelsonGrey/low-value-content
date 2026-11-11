@@ -83,3 +83,6 @@ website/public/assets/front-art-10-*.png
 
 # Superseded one-off art build from an earlier pass (writes into production/, which is local-only)
 scripts/build-holiday-six-art.py
+
+# Local QA output (screenshots, reports)
+tools/site-qa/out/

@@ -9,6 +9,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - `firebase emulators:start --only hosting`: preview the built `website/dist/` locally (localhost is never gated).
 - `python tools/business-plan/build_business_plan.py`: regenerates the business plan `.docx` (needs `python-docx`). Not part of the site or deploy.
 - `gitleaks detect --source . --config .gitleaks.toml --redact`: secret scan.
+- `cd tools/site-qa && npm install && npm run audit` (screenshots at 1920/1280/390, axe accessibility, 1280px layout-rule check) and `npm run lighthouse`: free local site audits of the built `website/dist/`. Output goes to `tools/site-qa/out/` (gitignored). Build the site first.
 
 ## Layout
 - `website/`: the one Astro project for the storefront. Source is `src/` and `public/`; `dist/` is build output (gitignored, never edit or commit).
