@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="290 118 320 646" role="img" aria-labelledby="title desc">
+  <title id="title">Shield of the Royal House of Engagement</title>
+  <desc id="desc">A quartered shield bearing a loading ring, a card, a heart with a notification badge and a cursor, under a Wi-Fi crown.</desc>
+  <defs>
+    <style>
+      .line{fill:none;stroke:#ba8d3a;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.fine{fill:none;stroke:#dabf83;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.navy{fill:#0d1c2b}.gold{fill:#ba8d3a}.red{fill:#852e34}.paper{fill:#f4eedf}
+    </style>
+  </defs>
+  <g class="line">
+    <path d="M330 155a170 170 0 0 1 240 0"/>
+    <path d="M360 190a128 128 0 0 1 180 0"/>
+    <path d="M402 225a68 68 0 0 1 96 0"/>
+    <path d="M450 228v34"/>
+  </g>
+  <g class="line">
+    <path d="M327 267h246v270c0 96-59 154-123 190-64-36-123-94-123-190z" class="paper"/>
+    <path d="M450 270v393M328 442h244"/>
+  </g>
+  <path class="navy" d="M336 278h106v156H336zM458 450h106v85c0 64-39 109-106 148z"/>
+  <path class="red" d="M336 450h106v213c-65-40-106-85-106-128z"/>
+  <g class="fine">
+    <path d="M376 343a32 32 0 1 1 17 28"/>
+    <path d="m509 516 34 30-20 3 11 26-14 7-11-26-16 13z" class="paper"/>
+    <path d="M479 331h64v50h-64z"/>
+    <path d="M479 356h64"/>
+  </g>
+  <g class="paper">
+    <path d="M389 508c-29-29-75 15 0 77 75-62 29-106 0-77z"/>
+    <circle cx="414" cy="500" r="20" class="red"/>
+  </g>
+  <text x="414" y="507" fill="#f4eedf" font-family="Georgia,serif" font-size="20" text-anchor="middle">1</text>
+</svg>
