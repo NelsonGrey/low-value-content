@@ -59,6 +59,17 @@ describe("resolveLines", () => {
 });
 
 describe("createCheckoutSession", () => {
+  it("sets explicit tax codes and exclusive tax behavior on lines and shipping", async () => {
+    const { deps: d, create } = deps();
+    await createCheckoutSession(d, { items: [{ productId: "shirt", variantId: "ivory-m", quantity: 1 }] });
+    const params = (create.mock.calls[0] as unknown as [any])[0];
+    expect(params.line_items[0].price_data.tax_behavior).toBe("exclusive");
+    expect(params.line_items[0].price_data.product_data.tax_code).toBe("txcd_99999999");
+    const rate = params.shipping_options[0].shipping_rate_data;
+    expect(rate.tax_behavior).toBe("exclusive");
+    expect(rate.tax_code).toBe("txcd_92010001");
+  });
+
   it("creates a session priced from the catalog and pre-creates the order", async () => {
     const { deps: d, create, store } = deps();
     const res = await createCheckoutSession(d, { items: [{ productId: "shirt", variantId: "ivory-m", quantity: 2 }] });
