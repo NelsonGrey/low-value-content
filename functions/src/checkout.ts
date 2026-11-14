@@ -23,6 +23,10 @@ export interface CheckoutDeps {
 
 const MAX_LINES = 6;
 
+/** Stripe tax codes. The Stripe account is shared by several products, so never rely on the account default. */
+export const TAX_CODE_APPAREL = "txcd_99999999"; // General - Tangible Goods
+export const TAX_CODE_SHIPPING = "txcd_92010001"; // Shipping
+
 type ParsedLines = { ok: true; lines: OrderLine[] } | { ok: false; error: string };
 
 /** Turn untrusted {productId, variantId, quantity} requests into catalog-priced lines. */
@@ -93,7 +97,11 @@ export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): 
           price_data: {
             currency: CURRENCY,
             unit_amount: l.unitAmount,
-            product_data: { name: `${product.name} · ${product.variants[l.variantId]!.label}` },
+            tax_behavior: "exclusive",
+            product_data: {
+              name: `${product.name} · ${product.variants[l.variantId]!.label}`,
+              tax_code: TAX_CODE_APPAREL,
+            },
           },
         };
       }),
@@ -105,6 +113,8 @@ export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): 
             display_name: "Standard shipping (US)",
             type: "fixed_amount",
             fixed_amount: { amount: SHIPPING_AMOUNT, currency: CURRENCY },
+            tax_behavior: "exclusive",
+            tax_code: TAX_CODE_SHIPPING,
           },
         },
       ],
