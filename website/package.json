@@ -12,7 +12,7 @@
     "postbuild": "node scripts/nowrap-houses.mjs"
   },
   "dependencies": {
-    "astro": "^7.4.7"
+    "astro": "^7.4.12"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
