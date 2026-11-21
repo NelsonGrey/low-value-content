@@ -21,3 +21,68 @@ __pycache__/
 
 # Node (future website tooling)
 node_modules/
+.astro/
+
+# Website build output (CI builds it; never commit)
+website/dist/
+
+# Reproducible QA intermediates (large resolution upscales, not print masters)
+production/qa/ornate-raster-upscales/*-upscaled-concept-4500x5400.png
+
+# --- Secrets & signing material: never commit (added after 2026-10 secret audit) ---
+.act-secrets/
+actions-runner/
+.secrets
+secrets/
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.*.sample
+*.p8
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.mobileprovision
+*.keystore
+*.jks
+AuthKey_*
+match_deploy_key*
+service-account*.json
+*-service-account*.json
+id_rsa*
+*_log.txt
+
+# Local promotional content
+/promotional/
+
+# Creative source art is kept locally, not in git (it is not needed to build or deploy the site).
+# design/       prototypes, mockups, social cards, launch-six sources
+# production/   print masters, QA renders
+# To release a held-back issue, copy its art back into website/public/assets and `git add -f` it.
+design/
+production/
+website/public/assets/design-study-*.png
+website/public/assets/mockup-launch-*.png
+website/public/assets/shirt-*.png
+website/public/assets/royal-house/02-apparel-collection.png
+website/public/assets/royal-house/03-ceremonial-packaging.png
+website/public/assets/logo-0*.svg
+website/public/assets/iconmark-*.svg
+!website/public/assets/iconmark-11-content-cocktail.svg
+website/public/assets/front-art-06-optimized-shirt.png
+website/public/assets/front-art-07-*.png
+website/public/assets/front-art-08-*.png
+website/public/assets/front-art-09-*.png
+website/public/assets/front-art-10-*.png
+
+# Local agent tooling
+.agents/
+
+# Superseded one-off art build from an earlier pass (writes into production/, which is local-only)
+scripts/build-holiday-six-art.py
+
+# Local QA output (screenshots, reports)
+tools/site-qa/out/

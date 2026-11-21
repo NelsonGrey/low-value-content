@@ -1,0 +1,71 @@
+{
+  "_comment": "Desired Stripe state for every Nelson Grey product, per environment. Applied by tools/stripe/stripe_reconcile.py. See docs/engineering/stripe-standard.md.",
+  "apiVersion": "2026-10-28.endive",
+  "account": {
+    "supportEmail": "support@nelsongrey.com",
+    "supportUrl": "https://nelsongrey.com/support"
+  },
+  "environments": {
+    "dev": { "keyPrefix": "SANDBOX_DEV" },
+    "staging": { "keyPrefix": "SANDBOX_STAGING" }
+  },
+  "products": {
+    "vehicle-vitals": {
+      "name": "Vehicle Vitals Digital Subscription",
+      "prices": [
+        { "lookupKey": "PRO_WEB_MONTH", "amount": 299, "interval": "month" },
+        { "lookupKey": "PRO_WEB_ANNUAL", "amount": 2999, "interval": "year" },
+        { "lookupKey": "PREMIUM_WEB_MONTH", "amount": 699, "interval": "month" },
+        { "lookupKey": "PREMIUM_WEB_ANNUAL", "amount": 6999, "interval": "year" }
+      ],
+      "webhook": {
+        "path": "/api/webhooks/stripe",
+        "hosts": { "dev": "vehicle-vitals-dev.web.app", "staging": "vehicle-vitals-staging.web.app" },
+        "events": [
+          "charge.dispute.created", "charge.refunded", "checkout.session.completed",
+          "customer.subscription.deleted", "customer.subscription.updated",
+          "invoice.payment_failed", "invoice.payment_succeeded"
+        ]
+      },
+      "portal": { "name": "VEHICLE-VITALS", "cancelMode": "immediately" }
+    },
+    "wishlist-wizard": {
+      "name": "Wishlist Wizard Digital Subscription",
+      "prices": [
+        { "lookupKey": "STARTER_WEB_MONTH", "amount": 399, "interval": "month" },
+        { "lookupKey": "STARTER_WEB_ANNUAL", "amount": 3900, "interval": "year" },
+        { "lookupKey": "PLUS_WEB_MONTH", "amount": 799, "interval": "month" },
+        { "lookupKey": "PLUS_WEB_ANNUAL", "amount": 7900, "interval": "year" },
+        { "lookupKey": "CREATOR_WEB_MONTH", "amount": 1499, "interval": "month" },
+        { "lookupKey": "CREATOR_WEB_ANNUAL", "amount": 14900, "interval": "year" },
+        { "lookupKey": "BUSINESS_WEB_MONTH", "amount": 2999, "interval": "month" },
+        { "lookupKey": "BUSINESS_WEB_ANNUAL", "amount": 29900, "interval": "year" }
+      ],
+      "webhook": {
+        "path": "/api/webhooks/stripe",
+        "hosts": { "dev": "wishlist-wizard-dev.web.app", "staging": "wishlist-wizard-staging.web.app" },
+        "events": [
+          "account.updated", "charge.dispute.created", "charge.refunded", "checkout.session.completed",
+          "customer.subscription.deleted", "customer.subscription.updated",
+          "invoice.payment_failed", "invoice.payment_succeeded",
+          "payout.canceled", "payout.created", "payout.failed", "payout.paid",
+          "payout.reconciliation_completed", "payout.updated"
+        ]
+      },
+      "portal": { "name": "WISHLIST WIZARD", "cancelMode": "at_period_end" }
+    },
+    "low-value-content": {
+      "name": null,
+      "prices": [],
+      "webhook": {
+        "path": "/api/webhooks/stripe",
+        "hosts": { "dev": "low-value-content-dev.web.app", "staging": "low-value-content-staging.web.app" },
+        "events": [
+          "checkout.session.async_payment_failed", "checkout.session.async_payment_succeeded",
+          "checkout.session.completed", "checkout.session.expired"
+        ]
+      },
+      "portal": null
+    }
+  }
+}

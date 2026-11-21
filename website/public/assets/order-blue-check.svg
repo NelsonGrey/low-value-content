@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img">
+  <title>Insignia of the Order of the Blue Check</title><desc>A ceremonial eight-point star surrounding a check-shaped shield.</desc>
+  <path fill="#0d1c2b" stroke="#c6a15b" stroke-width="5" d="m120 22 20 38 40-16 2 43 42 7-18 39 34 26-34 26 18 39-42 7-2 43-40-16-20 38-20-38-40 16-2-43-42-7 18-39-34-26 34-26-18-39 42-7 2-43 40 16z"/>
+  <circle cx="120" cy="159" r="70" fill="#315d8a" stroke="#f4eedf" stroke-width="5"/><circle cx="120" cy="159" r="58" fill="none" stroke="#c6a15b" stroke-width="3"/>
+  <path d="m84 157 24 25 50-55" fill="none" stroke="#f4eedf" stroke-width="15" stroke-linecap="square"/>
+</svg>

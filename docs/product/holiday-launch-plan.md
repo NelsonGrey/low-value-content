@@ -1,0 +1,77 @@
+# Holiday 2026 launch plan: the six
+
+Status: current as of **November 11, 2026**. This is the living plan; update it, and its change log at the bottom, whenever anything changes. The detailed work list is in [launch-readiness.md](launch-readiness.md) and the price recommendation is in [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md).
+
+Scope rule: launch small, prove the pipeline end to end, add the next issues in January.
+
+## The six (approved November 10, 2026)
+
+| No. | Saying | Concept | Garment | Printify draft | Art |
+|---:|---|---|---|---|---|
+| 01 | Please validate me algorithmically. | Progress bar | Ivory | Created | Print master done |
+| 02 | Thought leader. No thoughts required. | Door plaque | True Navy | Created | Print master done |
+| 03 | I'm not doomscrolling. I'm doing market research. | Field dispatch | Brick | Created | Print master done |
+| 04 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Editor's marks | Ivory | Created | Print master done |
+| 05 | My authentic self is currently being monetized. | Price tag | Brick | Created | Print master done |
+| 06 | Sent 2:14 AM. Regretted 2:15 AM. | Giant times | True Navy | Created | Print master done |
+
+- **Garment colors are locked to the real Comfort Colors names** (Ivory, True Navy, Brick). The site, cart, backend catalog and Printify products must all say the same color, and `scripts/check-apparel-manifest.py` fails the build if they don't. Brick is the closest available shade to the brand's oxblood and is **provisional until a physical sample is seen**.
+- **Held back:** No. 07 Much Published, Little Said (the crest, saved for a later edition), No. 08 Order of the Blue Check, and Nos. 09 and 10. They stay in the manifest but are **not listed or built on the site**: the site shows only the six (`holidayLaunch: true`); to release another issue, set that flag and finish its Printify product, catalog entry and color. "I optimized this shirt for engagement" moved to No. 19.
+- **Blank:** Comfort Colors 1717, provider Printify Choice, sizes S to 3XL, DTG print, front only.
+- **Price:** **$36** for all six (applied November 11, 2026; see [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md)). Shipping is still the flat $5.99 placeholder; the recommendation is **$5.99 plus $2.49 per additional shirt**, awaiting Mark's decision.
+
+## Calendar
+
+Dates assume the real production and shipping time is what Printify's product pages suggest. **That is unverified** (the catalog API reports a 10-day handling time for every provider, which looks like a default), so a sample order is the only real test. The holiday cutoff has not been confirmed with the provider.
+
+| When | Milestone | State |
+|---|---|---|
+| Nov 10 to 11 | Art approved, site and storefront built on `feature/holiday-six-storefront`, Printify drafts created, pricing analysis written | **Done** |
+| Nov 11 to 13 | Merge to `develop`, deploy to dev, test orders on the six; staging after review | Next |
+| Nov 12 to 20 | Legal and policy pages, shipping and returns, product copy, size chart, Printify mockups as interim images, email capture, social kit refreshed, tax and trademark questions raised | In progress; see launch-readiness |
+| After everything above is ready | **Mark decides on samples** (four shirts is about $69) | Waiting on Mark |
+| About 7 to 10 days after the sample order | Samples arrive; wash test; photograph on a person; approve or fix colors and art | Blocked on samples |
+| Nov 27 to 30 | Soft launch window (Black Friday to Cyber Monday): live Stripe mode, one real order, refund, flip prod | **At risk**: needs samples ordered by about Nov 14 and every legal item done |
+| Early December | Fallback launch if the sample step runs long | Fallback |
+| About Dec 10 (to confirm) | Last-order-for-Christmas banner, once the provider's cutoff is known | Not set |
+
+## What blocks launch (ranked)
+
+1. **Samples.** They confirm the real Brick and True Navy colors, print quality on dark garments, the thin frame lines on textured cotton, and the true production time. Spends money, so Mark decides.
+2. **Legal and policy pages.** Terms, Privacy, Cookies, Shipping and Returns are placeholders; live payments need them. Needs Mark's policy decisions and, ideally, counsel.
+3. **Sales tax.** Whether we collect, whether Printify's tax can be avoided with a resale certificate, and whether to use Stripe Tax. Accountant.
+4. **Trademark.** The brand name, tagline and the six sayings are not cleared. We can launch with a documented knockout search and the risk accepted, but the site must never claim clearance. Mark's call.
+5. **Stripe live mode.** Not started. Needs the single-live-account decision, the live product catalog and Mark's explicit go.
+6. **Real photos.** Samples on a person become the product images. Until then the site uses art on the real blank color.
+7. **Prod flip.** `SHOW_COMING_SOON=false` plus promotion to `main`. Never without Mark's explicit go.
+
+## Decisions needed from Mark
+
+1. ~~Price~~ decided: $36.
+2. Shipping: $5.99 plus $2.49 per extra shirt (recommended), or flat $5.99.
+3. Returns and replacement policy (default proposed in launch-readiness).
+4. Trademark: search-and-launch, or hold until counsel clears.
+5. Launch window: Black Friday weekend, or early December with more polish.
+6. Samples: when, and which four.
+
+## Not in scope for the holiday launch
+
+Back prints, sleeve seals, garment QR codes, hoodies, Nos. 07 to 10, the Wave 2 designs, the 12-month calendar drops, marketplace listings.
+
+## Change log
+
+| Date | Change |
+|---|---|
+| Nov 9, 2026 | First plan: five shirts (01, 02, 03, 05, 08) |
+| Nov 10, 2026 | Approved six: 01 to 06 as above. 07 (crest) and 08 (Blue Check) dropped; "Sent" and the rewritten creator line added; numbering reset to 01 to 06; new artwork replaces the prototypes |
+| Nov 11, 2026 (names) | Mark: the six Great House names never wrap. The homepage row stacks each badge above its name; a post-build step (`website/scripts/nowrap-houses.mjs`) joins every "House of …" with non-breaking spaces in all pages; the Houses page names are `nowrap` with a fluid size; `tools/site-qa` now fails on any wrapped Great House name and checks page overflow at 600 px too |
+| Nov 11, 2026 (lineage) | Mark: the Lineage "line at a glance" no longer scrolls sideways (a grid that wraps on narrow screens) and the "Law of Succession" text is a balanced two-column layout; the Realm hierarchy list is aligned (PR open); `tools/site-qa` now flags inner horizontal scrollers and tests a tablet width |
+| Nov 11, 2026 (realm) | Mark: the Realm page was too long (about 6,300 px). It is now a short overview plus three sub-pages under `/realm/` (The Constitution, The Great Houses, Peerage and Orders), linked by a small tab bar; the main navigation is unchanged and no sections were added. Pages are now about 2,500 to 3,300 px. The hierarchy list stays aligned (PR #41) |
+| Nov 11, 2026 (price) | Mark: the analysis recommended $36, not the $32 placeholder. $36 applied to the manifest, `functions/src/catalog.ts` and the six Printify drafts; the manifest checker now fails if site and backend prices differ |
+| Nov 11, 2026 (shield) | Mark: the line-art arms read as two people praying back to back. The site now uses a shield-only mark (`royal-shield.svg`: loading ring, card, liked heart with badge, cursor, Wi-Fi crown) on the homepage, Realm and shop; the peacock and parrot supporters are not drawn on the site. The full-colour crest plate stays held back |
+| Nov 11, 2026 (homepage) | Homepage redesigned to lead with the six (one condensed headline, a six-tile wall, plain facts, then the Realm); every page now sits in the 1280px column on white (all 11 audited pages pass the layout rule, axe finds no issues); self-hosted Barlow Condensed and Libre Baskerville (the shirts' own type); Printify preview renders added to shop cards and product pages; the 3.2 MB identity board replaced by a 276 KB WebP; homepage 3.9 MB to 0.5 MB, Lighthouse mobile performance 75 to 92 |
+| Nov 11, 2026 (cleanup) | Repo cleanup: creative source art (`design/`, `production/`, unused site assets) is now local-only and gitignored, with a local backup; the site deploys about 6 MB instead of 36 MB; dead CSS removed; GitHub Actions pinned to commit SHAs; the leftover branches merged |
+| Nov 11, 2026 (later) | Mark: show only the six issues. Nos. 07 to 10 removed from the shop, home page and product pages; the shop image is now a six-up sheet (`front-art-holiday-six.png`) and the Royal Commemorations collection is hidden |
+| Nov 11, 2026 | Storefront rebuilt for the six; six Printify drafts created and the old test product deleted; garment colors locked to real blank names; shop-page concept studies removed; pricing analysis written (recommends $36); plan rewritten |
+| Nov 14, 2026 (tax) | Mark registered Nelson Grey LLC for Illinois sales tax. Checkout now sets explicit Stripe tax codes and exclusive tax behavior (the Stripe account is shared with other products); collection still off until the Illinois registration is added in Stripe and `STRIPE_AUTOMATIC_TAX=true`. Printify resale certificate to follow |
+| Nov 20, 2026 (environments) | Mark: the dev and staging sign-in gate now matches the storefront (navy header and footer, ivory panel, gold rules, inside the 1280px column). Stripe tax codes merged and promoted to staging; staging sandbox has its Illinois registration (test calculation: 9% on the shirt, shipping exempt). Staging backend still needs a redeploy and prod needs its own setup; see [go-live-runbook.md](go-live-runbook.md) |

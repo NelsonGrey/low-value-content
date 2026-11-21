@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RealmNav from "../../components/RealmNav.astro";
+import RealmSubhero from "../../components/RealmSubhero.astro";
+import { orders, peerage } from "../../data";
+---
+<BaseLayout title="Peerage and Orders | The Royal House of Engagement" description="The ranks of the peerage, the Orders of cross-House distinction and the permanent record of the Royal House of Engagement." current="realm">
+  <RealmSubhero title="Peerage<br />and Orders" lead="A title describes the distinction. A House explains the damage. Orders recognize achievement across House boundaries." />
+  <RealmNav current="peerage" />
+
+  <section class="peerage section">
+    <div class="section-heading">
+      <p class="eyebrow">The peerage</p>
+      <h2>A title describes the distinction.<br /><span class="script">A House explains the damage.</span></h2>
+      <p>Institutions provide respectable justification. Orders recognize conspicuous achievement across House boundaries.</p>
+    </div>
+    <div class="peerage-grid">
+      <ol>{peerage.map((rank) => <li><span>{String(rank.rank).padStart(2, "0")}</span><div><h3>{rank.title}</h3><p>{rank.rule}</p><small>{rank.example} · {rank.house}</small></div></li>)}</ol>
+      <article class="duke-card">
+        <p class="eyebrow">Worked example</p>
+        <h3>His Grace,<br />the Duke of Doomscrolling</h3>
+        <p>First Peer of the House of Scroll<br />Fellow of the Royal Institute of Digital Inquiry<br />Companion of the Order of the Blue Check</p>
+        <span>The full style is preserved in the official record. The garment bears the designation appropriate to its station.</span>
+      </article>
+    </div>
+    <div class="orders">{orders.map((order, index) => <article><img src={index === 0 ? "/assets/order-blue-check.svg" : "/assets/order-jacquard.svg"} alt={`Insignia of the ${order.name}`} /><div><p>{order.rank}</p><h3>{order.name}</h3><span>{order.rule}</span></div></article>)}</div>
+  </section>
+
+  <section class="section qr">
+    <div class="qr-mark" aria-hidden="true"><span>▦</span></div>
+    <div><p class="eyebrow">The permanent record</p><h2>Scan the seal.<br /><span class="script">Consult the register.</span></h2><p>Every design has a permanent owned-domain route, while the launch garment remains front-only. Provenance, titles, House affiliation, and constitutional records are maintained online and in official packaging.</p><ol><li>Scan the issue card</li><li>Consult its provenance</li><li>Confirm rank and standing</li><li>Present the official record</li></ol></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .peerage { background: var(--paper); }
+  .peerage-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+  .peerage-grid > ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .peerage-grid > ol li { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+  .peerage-grid li > span { color: var(--crimson); font: 700 .65rem var(--sans); }
+  .peerage-grid h3, .peerage-grid p { margin: 0; }
+  .peerage-grid h3 { font-size: 1.45rem; font-weight: 400; }
+  .peerage-grid p { margin-top: .35rem; line-height: 1.5; }
+  .peerage-grid small { display: block; margin-top: .5rem; color: #565e68; font-style: italic; }
+  .duke-card { padding: 2.5rem; border: 8px double var(--gold); background: var(--ivory); }
+  .duke-card h3 { margin: 1rem 0 2rem; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1; }
+  .duke-card p:not(.eyebrow) { line-height: 1.8; }
+  .duke-card span { display: block; margin-top: 2rem; color: #565e68; font-style: italic; line-height: 1.5; }
+  .orders { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 3rem; }
+  .orders article { display: grid; grid-template-columns: 62px 1fr; gap: 1rem; align-items: center; padding: 1.25rem; border: 1px solid var(--line); }
+  .orders img { width: 58px; max-height: 72px; }
+  .orders p { color: var(--crimson); font: 700 .62rem var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+  .orders h3 { font-size: 2rem; font-weight: 400; }
+  .orders span { color: #565e68; line-height: 1.5; }
+  .qr { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; }
+  .qr-mark { aspect-ratio: 1; display: grid; place-items: center; border: 14px double var(--navy); background: var(--ivory); }
+  .qr-mark span { font-size: clamp(7rem, 20vw, 16rem); color: var(--navy); }
+  .qr h2 { font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
+  .qr p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.7; max-width: 700px; }
+  .qr ol { padding: 1.5rem 0 0; list-style-position: inside; columns: 2; font-family: var(--sans); line-height: 2; }
+  @media (max-width: 900px) { .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 560px) { .orders { grid-template-columns: 1fr; } .qr ol { columns: 1; } }
+</style>
