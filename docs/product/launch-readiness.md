@@ -25,7 +25,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
 | Printify Premium plan: price and discount | Needs outside | Could save about $2.50 per shirt; check the current terms |
-| Resale certificate so Printify stops charging tax | Needs outside | Accountant |
+| Resale certificate so Printify stops charging tax | Needs Mark | Illinois CRT-61 certificate of resale, now possible with the registration; upload in Printify's tax-exemption settings and confirm it covers every print provider |
 | Webhook registration for shipped and delivered events | Ready | Needs the webhook secret stored in each Firebase project; payload shape still unverified |
 | Publish to a sales channel | Not needed | The site sends orders by API; the drafts stay unpublished |
 | Sample order (4 shirts, about $69) | **Needs Mark** | Mark decides when everything else is built |
@@ -66,7 +66,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Item | State | Notes |
 |---|---|---|
 | Shipping decision | Needs Mark | Price is decided ($36); shipping rule is still open, see the pricing analysis |
-| Sales-tax collection (nexus, Stripe Tax) | Needs outside | Accountant before live mode |
+| Sales-tax collection (nexus, Stripe Tax) | In progress | Illinois registered 2026-11-14. Checkout now sends tax codes (apparel `txcd_99999999`, shipping `txcd_92010001`, tax-exclusive); collection stays off until Illinois is added under Stripe Tax Registrations per mode and `STRIPE_AUTOMATIC_TAX=true`. Other states: accountant |
 | Stripe live account structure (one account for the LLC, Connect isolated for Wishlist Wizard if needed) | Needs Mark | See `docs/engineering/stripe-standard.md` |
 | Live product catalog and webhook for Low Value Content | Blocked | Needs the live account and explicit go; use `tools/stripe/` |
 | One real live order, then refund | Blocked | After live mode |
