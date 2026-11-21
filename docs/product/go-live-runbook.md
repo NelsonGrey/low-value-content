@@ -7,14 +7,16 @@ Status: current as of **November 20, 2026**. Companion to [launch-readiness.md](
 | | Website | Access gate | Stripe | Backend (functions, Firestore) |
 |---|---|---|---|---|
 | dev | Current `develop` | Storefront look, deployed | Sandbox. Illinois registration active, `STRIPE_AUTOMATIC_TAX=true` | Deployed and verified end to end |
-| staging | Current `develop` (promoted Nov 20) | Storefront look, deployed | Sandbox. Illinois registration added Nov 20; test calculation: 9% on the $36 shirt ($3.24), shipping exempt | **Still the Nov 10 revision.** Needs the redeploy below (new catalog, tax codes, `STRIPE_AUTOMATIC_TAX=true`) |
+| staging | Current `develop` (promoted Nov 20) | Storefront look, deployed | Sandbox. Illinois registration added Nov 20; test calculation: 9% on the $36 shirt ($3.24), shipping exempt | Redeployed Nov 20 (revision `api-00002-map`): six-product catalog, tax codes, `STRIPE_AUTOMATIC_TAX=true`. A sandbox checkout session came back with automatic tax enabled. A paid test order and the failure paths are still to do |
 | prod | Coming-soon page | Not gated, by design | Live mode not touched | **Not set up.** Billing is on and Firestore exists. Functions, Cloud Run, Cloud Build and Secret Manager APIs are not enabled, and there are no secrets |
 
 ## What the resale certificate does and does not gate
 
 The Illinois resale certificate only stops **Printify** charging us tax on blanks. It does not change anything in the site, Stripe or the backend. It is the business trigger for going live, not a technical dependency, so every step below can be done before it is approved.
 
-## A. Staging: finish before anything else
+## A. Staging: deployed; remaining checks
+
+Steps 1 and 2 were done Nov 20. They are kept as the recipe for prod.
 
 1. Log in: `firebase login` (the CLI login expired; it cannot be done from an automated session).
 2. From a clean checkout of `staging` (not a dirty working tree): `firebase deploy --only functions --project low-value-content-staging`. `functions/.env.low-value-content-staging` already has `STRIPE_AUTOMATIC_TAX=true`.
