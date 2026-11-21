@@ -84,7 +84,7 @@ describe("createCheckoutSession", () => {
     expect(params.metadata.publicToken).toBe(order.publicToken);
   });
 
-  it("tags Stripe objects with app/env metadata and sends a basket-based idempotency key", async () => {
+  it("tags Stripe objects and gives each checkout a unique idempotency key", async () => {
     const first = deps();
     const second = deps();
     const items = [{ productId: "shirt", variantId: "ivory-m", quantity: 1 }];
@@ -93,11 +93,11 @@ describe("createCheckoutSession", () => {
     const [params, options] = first.create.mock.calls[0] as unknown[] as [any, any];
     expect(params.metadata.app).toBe("low-value-content");
     expect(["dev", "staging", "prod"]).toContain(params.metadata.env);
-    expect(options.idempotencyKey).toMatch(/^lvc-checkout:[0-9a-f]{24}:\d+$/);
-    // The same basket yields the same key, so a double click returns one session.
+    expect(options.idempotencyKey).toBe(`lvc-checkout:${params.metadata.publicToken}`);
+    // A different buyer with the same basket must not share a Checkout Session.
     const secondKey = (second.create.mock.calls[0] as unknown[])[1] as any;
-    expect(secondKey.idempotencyKey).toBe(options.idempotencyKey);
-    // A different basket yields a different key.
+    expect(secondKey.idempotencyKey).not.toBe(options.idempotencyKey);
+    // A different basket also receives its own key.
     const third = deps();
     await createCheckoutSession(third.deps, { items: [{ productId: "shirt", variantId: "ivory-m", quantity: 2 }] });
     expect(((third.create.mock.calls[0] as unknown[])[1] as any).idempotencyKey).not.toBe(options.idempotencyKey);

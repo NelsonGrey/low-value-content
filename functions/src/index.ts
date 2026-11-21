@@ -18,6 +18,8 @@ const printifyWebhookSecret = defineSecret("PRINTIFY_WEBHOOK_SECRET");
 const printifyShopId = defineString("PRINTIFY_SHOP_ID");
 const siteUrl = defineString("SITE_URL", { default: "https://lowvaluecontent.com" });
 const automaticTax = defineBoolean("STRIPE_AUTOMATIC_TAX", { default: false });
+// Keep production checkout closed until tax registration, policies, and fulfillment are approved.
+const checkoutEnabled = defineBoolean("CHECKOUT_ENABLED", { default: false });
 // Launch default: orders stay on hold in Printify until approved manually.
 const autoApprove = defineBoolean("PRINTIFY_AUTO_APPROVE", { default: false });
 
@@ -35,6 +37,7 @@ export const api = onRequest({ secrets, region: "us-central1", maxInstances: 10 
   const path = req.path.replace(/\/+$/, "");
 
   if (req.method === "POST" && path === "/api/checkout-session") {
+    if (!checkoutEnabled.value()) return send(res, json(503, { error: "Checkout is not available yet" }));
     if (!req.is("application/json")) return send(res, json(415, { error: "Expected JSON" }));
     return send(
       res,
