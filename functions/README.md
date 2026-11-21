@@ -7,7 +7,7 @@ Stripe Checkout, Printify production, and a Firestore order ledger. Hosting rewr
 1. Browser `POST /api/checkout-session` with `{items:[{productId, variantId, quantity}]}`. Prices and Printify IDs come only from [src/catalog.ts](src/catalog.ts).
 2. Stripe collects payment, email, phone and a US shipping address.
 3. A verified Stripe webhook marks the order `paid`, then submits it to Printify with the Checkout Session ID as `external_id`.
-4. The Printify order stays **on hold**: it is created but not sent to production until approved in the Printify dashboard (or `PRINTIFY_AUTO_APPROVE=true`).
+4. The Printify order stays **on hold** when the shop's Order approval setting is **Manual**. `PRINTIFY_AUTO_APPROVE=false` only prevents this function from calling `send_to_production`; it does not override Printify's shop setting.
 5. Verified Printify webhooks advance the status (`in_production`, `shipped` with tracking, `delivered`). Status never moves backwards.
 6. Customers see status at `/order?token=…` via `GET /api/orders/:publicToken`.
 
@@ -25,12 +25,12 @@ firebase functions:secrets:set PRINTIFY_API_TOKEN
 firebase functions:secrets:set PRINTIFY_WEBHOOK_SECRET
 ```
 
-Params (prompted on deploy, or in `functions/.env.<project>`): `PRINTIFY_SHOP_ID`, `SITE_URL`, `STRIPE_AUTOMATIC_TAX`, `PRINTIFY_AUTO_APPROVE`.
+Params (prompted on deploy, or in `functions/.env.<project>`): `PRINTIFY_SHOP_ID`, `SITE_URL`, `STRIPE_AUTOMATIC_TAX`, `CHECKOUT_ENABLED`, `PRINTIFY_AUTO_APPROVE`. Checkout is disabled by default and returns HTTP 503 until `CHECKOUT_ENABLED=true` is set for that project. Keep production false while the resale and tax registrations, policies, and live payment flow are unresolved.
 
 Stripe webhook endpoint: `https://<site>/api/webhooks/stripe`, events `checkout.session.completed`, `.async_payment_succeeded`, `.async_payment_failed`, `.expired`.
 Printify webhooks (register via API with the shared secret): `order:sent-to-production`, `order:shipment:created`, `order:shipment:delivered`, `order:updated` to `https://<site>/api/webhooks/printify`.
 
-Use Stripe **test** keys and a Printify test shop outside production.
+In dev and staging, use Stripe **test** keys and a Printify shop with **Manual** order approval. Stripe sandbox payments do not make Printify orders simulated; a shop with automatic approval can send them to production and incur a real charge.
 
 ## Before it can sell anything
 
@@ -44,4 +44,4 @@ npm test          # vitest, no network or Firebase needed
 npm run typecheck
 ```
 
-Unverified assumptions to confirm against a real test event before trusting them: the Printify webhook payload shape (`resource.id`, `resource.data.carrier`) and the `X-Pfy-Signature` header format.
+The Printify `X-Pfy-Signature` format and order event payload fields match the current Printify API reference. In dev, a signed webhook probe and Printify's webhook simulator both received HTTP 200 on November 20, 2026; canceling the paid sandbox test order also updated Firestore to `canceled` through a real Printify webhook. Shipment and delivery events still need confirmation against an actual fulfilled order.
