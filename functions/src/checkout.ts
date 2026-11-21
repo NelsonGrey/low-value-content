@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import type Stripe from "stripe";
 import {
   CURRENCY,
@@ -77,10 +76,6 @@ export function decodeLines(catalog: Catalog, encoded: string | undefined): Orde
   return parsed.ok ? parsed.lines : null;
 }
 
-/** Stable short hash of the basket, used to build the checkout idempotency key. */
-const checkoutFingerprint = (lines: OrderLine[]): string =>
-  createHash("sha256").update(encodeLines(lines)).digest("hex").slice(0, 24);
-
 export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): Promise<HttpResult> {
   const items = (body as { items?: unknown } | null)?.items;
   const parsed = resolveLines(deps.catalog, items);
@@ -124,8 +119,8 @@ export async function createCheckoutSession(deps: CheckoutDeps, body: unknown): 
       success_url: `${deps.siteUrl}/order?token=${publicToken}`,
       cancel_url: `${deps.siteUrl}/shop`,
     }, {
-      // The same basket within one minute (a double click) returns the same session.
-      idempotencyKey: `lvc-checkout:${checkoutFingerprint(parsed.lines)}:${Math.floor(Date.now() / 60000)}`,
+      // Each buyer gets a separate session. Stripe can safely retry this one request.
+      idempotencyKey: `lvc-checkout:${publicToken}`,
     });
     if (!session.url) throw new Error("Stripe returned no checkout URL");
 
