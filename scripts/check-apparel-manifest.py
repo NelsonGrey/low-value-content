@@ -3,6 +3,7 @@
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -11,6 +12,20 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST_PATH = ROOT / "docs" / "product" / "apparel-manifest.json"
 CATALOG_PATH = ROOT / "docs" / "product" / "concept-catalog.md"
 COMMERCE_PATH = ROOT / "functions" / "src" / "catalog.ts"
+
+
+
+def is_local_only(path: str) -> bool:
+    """True for creative source art that .gitignore keeps out of the repo (design/, production/, held-back assets)."""
+    return subprocess.run(["git", "check-ignore", "-q", path], cwd=ROOT).returncode == 0
+
+
+def commerce_block(text: str, key):
+    """Return the catalog.ts source for one product key ('' if absent)."""
+    if not key:
+        return ""
+    match = re.search(r'^\s{2}"?' + re.escape(key) + r'"?:\s*\{.*?^\s{2}\},', text, flags=re.MULTILINE | re.DOTALL)
+    return match.group(0) if match else ""
 
 
 def main() -> int:
@@ -63,15 +78,19 @@ def main() -> int:
             errors.append(f"{label}: duplicate QR route {route!r}")
         qr_routes.add(route)
         for asset_name, asset_path in product.get("assets", {}).items():
+            if is_local_only(asset_path):
+                continue  # source art kept locally; only deployable assets are validated
             if not (ROOT / asset_path).is_file():
                 errors.append(f"{label}: missing {asset_name} asset {asset_path}")
 
     for group_name, paths in manifest.get("sharedAssets", {}).items():
         if group_name.endswith("Glob"):
-            if not list(ROOT.glob(paths)):
+            if not is_local_only(paths) and not list(ROOT.glob(paths)):
                 errors.append(f"sharedAssets.{group_name}: glob matched no files: {paths}")
             continue
         for asset_path in paths:
+            if is_local_only(asset_path):
+                continue
             if not (ROOT / asset_path).is_file():
                 errors.append(f"sharedAssets.{group_name}: missing {asset_path}")
 
@@ -81,7 +100,7 @@ def main() -> int:
         errors.append("concept catalog must retain exactly the numbered sayings 1 through 100")
 
     commerce_text = COMMERCE_PATH.read_text(encoding="utf-8")
-    commerce_keys = set(re.findall(r"^\s{2}([a-zA-Z][\w-]*):\s*\{", commerce_text, flags=re.MULTILINE))
+    commerce_keys = set(re.findall(r"^\s{2}\"?([a-zA-Z][\w-]*)\"?:\s*\{", commerce_text, flags=re.MULTILINE))
     by_catalog_key = {
         product["commerce"]["catalogKey"]: product
         for product in products
@@ -96,6 +115,46 @@ def main() -> int:
         product_id = product["commerce"].get("printifyProductId")
         if product_id and product_id not in commerce_text:
             errors.append(f"{product['id']}: Printify product ID does not match backend catalog")
+
+
+    # Price lock: the price shown on the site (manifest) must be the price the backend charges (catalog.ts).
+    for product in products:
+        key = product["commerce"].get("catalogKey")
+        block = commerce_block(commerce_text, key)
+        if key and block:
+            amounts = re.findall(r"unitAmount:\s*(\d+)", block)
+            if not amounts or int(amounts[0]) != product["commerce"]["priceCents"]:
+                errors.append(f"{product['id']}: manifest price {product['commerce']['priceCents']} differs from catalog unitAmount {amounts[:1]}")
+
+    # Colour lock: the colour we show a customer (blankColor) must be the colour of every
+    # variant we sell, in the backend catalog and in the recorded Printify products.
+    hex_re = re.compile(r"^#[0-9a-f]{6}$")
+    record_path = ROOT / "tools" / "printify" / "launch-six-products.json"
+    record = json.loads(record_path.read_text(encoding="utf-8")) if record_path.is_file() else {}
+    slug = lambda name: name.lower().replace(" ", "-")
+    for product in products:
+        label = product["id"]
+        color = product.get("blankColor")
+        if not color:
+            errors.append(f"{label}: missing blankColor")
+            continue
+        if not hex_re.match(product.get("garmentHex", "")):
+            errors.append(f"{label}: garmentHex must be a lowercase #rrggbb value")
+        if product.get("blankColorStatus") not in {"selected", "pending-sample", "planned"}:
+            errors.append(f"{label}: blankColorStatus must be selected, pending-sample or planned")
+        for key in product["commerce"].get("enabledVariants", []):
+            if key.rsplit("-", 1)[0] != slug(color):
+                errors.append(f"{label}: variant {key!r} is not in the advertised colour {color!r}")
+        for variant_label in re.findall(r'label: "([^"]+)"', commerce_block(commerce_text, product["commerce"].get("catalogKey"))):
+            if variant_label.split(" / ")[0] != color:
+                errors.append(f"{label}: catalog label {variant_label!r} is not in the advertised colour {color!r}")
+        for variant_key in record.get(label, {}).get("variants", {}):
+            if variant_key.split("|")[0] != color:
+                errors.append(f"{label}: recorded Printify variant {variant_key!r} is not in the advertised colour {color!r}")
+        if product["commerce"].get("enabledVariants") and set(product["commerce"]["enabledVariants"]) != {
+            f"{slug(color)}-{v.split('|')[1].lower()}" for v in record.get(label, {}).get("variants", {})
+        } and record.get(label):
+            errors.append(f"{label}: manifest variants differ from the recorded Printify product")
 
     for error in errors:
         print(f"ERROR {error}")

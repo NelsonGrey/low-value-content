@@ -4,7 +4,8 @@ export type Product = (typeof manifest.launchProducts)[number];
 export type LineageEntry = (typeof manifest.lineage)[number];
 
 export const brand = manifest.brand;
-export const products = manifest.launchProducts as Product[];
+// The site shows only the issues released for sale. Later issues stay in the manifest but are not listed or built.
+export const products = (manifest.launchProducts as Product[]).filter((product) => product.holidayLaunch);
 export const lineage = manifest.lineage as LineageEntry[];
 export const observances = manifest.observances;
 export const houses = manifest.houses;
@@ -12,8 +13,6 @@ export const constitution = manifest.constitution;
 export const peerage = manifest.peerage;
 export const orders = manifest.orders;
 
-export const originalProducts = products.filter((product) => product.position <= 6);
-export const royalProducts = products.filter((product) => product.position > 6);
 export const publicNotices = products.filter((product) => product.launchCollection === "Public Notices");
 export const courtAndOrders = products.filter((product) => product.launchCollection === "Court & Orders");
 export const royalCommemorations = products.filter((product) => product.launchCollection === "Royal Commemorations");
@@ -24,6 +23,18 @@ export const productImage = (product: Product): string | null => {
   const frontArt = "frontArtDisplay" in product.assets ? product.assets.frontArtDisplay : undefined;
   if (frontArt) return `/assets/${frontArt.split("/").pop()}`;
   return null;
+};
+
+/** Printify's rendered preview of the shirt (interim product photo until sample photography exists). */
+export const productMockup = (product: Product): string | null => {
+  const m = "printifyMockup" in product.assets ? product.assets.printifyMockup : undefined;
+  return m ? `/assets/mockups/${m.split("/").pop()}` : null;
+};
+
+/** Small lossless WebP of the front art for grids and cards; falls back to the PNG. */
+export const productImageSmall = (product: Product): string | null => {
+  const png = productImage(product);
+  return png ? png.replace(/\.png$/, ".webp") : null;
 };
 
 export const productHref = (product: Product) => `/products/${product.id}.html`;
@@ -52,3 +63,6 @@ export const variantOptions = (product: Product): VariantOption[] =>
 
 export const isPurchasable = (product: Product): boolean =>
   product.commerceStatus === "test-sellable" && Boolean(product.commerce.catalogKey) && variantOptions(product).length > 0;
+
+/** CSS class (from /assets/blank-colors.css) that paints the real blank colour behind the art. */
+export const blankClass = (product: Product): string => `blank-${product.blankColor.toLowerCase().replace(/ /g, "-")}`;

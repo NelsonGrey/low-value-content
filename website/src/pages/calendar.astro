@@ -61,7 +61,7 @@ const monthCounts = months.map((_, i) => observances.filter((o) => Number(o.mont
         const hits = monthCounts[i];
         return (
           <li class:list={[hits.length > 0 && "has-events"]}>
-            {hits.length > 0 ? <a href={`#obs-${hits[0].monthDay}`} aria-label={`${months[i]}: ${hits.length} observance${hits.length > 1 ? "s" : ""}`}><b>{label}</b><span>{hits.map(() => <i></i>)}</span></a> : <div><b>{label}</b><span></span></div>}
+            {hits.length > 0 ? <a href={`#obs-${hits[0].monthDay}`} aria-label={`${label}, ${months[i]}: ${hits.length} observance${hits.length > 1 ? "s" : ""}`}><b>{label}</b><span>{hits.map(() => <i></i>)}</span></a> : <div><b>{label}</b><span></span></div>}
           </li>
         );
       })}

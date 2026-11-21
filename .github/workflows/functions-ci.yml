@@ -1,11 +1,11 @@
 name: Functions CI
 
 on:
+  # Runs on every pull request and push so it can be a required check (a path-filtered job would
+  # never report on PRs that do not touch functions/, and would block them).
   pull_request:
-    paths: ["functions/**", ".github/workflows/functions-ci.yml"]
   push:
     branches: [develop, staging, main]
-    paths: ["functions/**"]
 
 permissions:
   contents: read
@@ -17,8 +17,8 @@ jobs:
       run:
         working-directory: functions
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 22
           cache: npm

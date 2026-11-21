@@ -2,3 +2,9 @@ title = "low-value-content gitleaks config"
 
 [extend]
 useDefault = true
+
+# False positive: a list of artwork file names in scripts/render-front-art.py (commit d9705d0, 2026-10-31)
+# matched the generic-api-key rule. It is not a credential, and the line no longer exists.
+[allowlist]
+description = "artwork file-name list in render-front-art.py"
+commits = ["d9705d0442833ba43239bb131ec142864224508a"]

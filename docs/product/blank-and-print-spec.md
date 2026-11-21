@@ -1,6 +1,26 @@
 # Blank, provider and print specification
 
-Status: recommendation, October 31, 2026. The reasoning is from published comparisons and general Printify practice. **Nothing below has been verified in the Printify editor or by a sample order**, which is the first thing to do (see the checklist).
+Status: updated November 11, 2026. The **Verified facts** section below supersedes the estimates in the rest of this page, which are kept as the original reasoning. Price and margin now live in [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md). Nothing has been checked on a physical sample yet.
+
+## Verified facts (Printify API, November 11, 2026)
+
+| Item | Value |
+|---|---|
+| Blank | Comfort Colors 1717 garment-dyed tee (Printify blueprint 706): 6.1 oz pre-shrunk ring-spun cotton, relaxed fit, double-needle stitching, no side seams, sewn-in label, made in Honduras |
+| Provider | Printify Choice (provider 99). Ten other providers carry the blank; Printful (410) and SwiftPOD (39) have the same three colors, with smaller print areas (3425 x 3882 and 3461 x 3955 px) |
+| Colors we use | **Ivory**, **True Navy**, **Brick**, all in stock for S to 3XL. The catalog also has "Navy" (renders as a grey-blue) and "Crimson" (renders as a coral red), which we rejected. No Comfort Colors shade is called oxblood; Brick is the nearest we tested, so it is provisional until a sample |
+| Sizes sold | S, M, L, XL, 2XL, 3XL (4XL exists on some colors; not used) |
+| Print method | DTG. Front print area 3703 x 4200 px. Our 4500 x 5400 art is fitted to the height (scale 0.945), so it prints about 11.7 in wide and 14 in tall |
+| Production cost | S to XL **$12.65**, 2XL $13.89, 3XL $16.03 |
+| US shipping (Printify's quote) | $5.35 first shirt, $2.40 each additional shirt |
+| Care | Machine wash cold (max 30 °C), do not bleach, tumble dry low, iron on low heat, do not dry clean |
+| Handling time | The API reports 10 days for every provider, which looks like a default. Real production time is unverified |
+
+**Print-quality flag.** At the scale Printify fits our art, the thinnest rule in each frame is about 0.029 in, just under our own 0.03 in minimum. The samples will show whether that holds on textured garment-dyed cotton.
+
+**Interim mockups.** Printify renders mockups for every color we enabled. They are what the site can show until sample photography exists.
+
+## Original reasoning (kept for reference)
 
 ## Recommended blank: Comfort Colors 1717 (garment-dyed)
 

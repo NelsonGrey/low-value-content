@@ -13,8 +13,8 @@ jobs:
     name: Site and config checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 24
           cache: npm
@@ -34,7 +34,7 @@ jobs:
     name: Secret scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
       - name: Scan history with gitleaks
@@ -52,8 +52,7 @@ jobs:
           BASE: ${{ github.base_ref }}
           HEAD: ${{ github.head_ref }}
         run: |
-          # Branch protection is unavailable on this plan, so this check is advisory: it fails
-          # loudly if someone opens a PR that skips an environment, but it cannot block a merge.
+          # Required status check on develop, staging and main: it fails if a PR skips an environment.
           case "$BASE" in
             main)    [ "$HEAD" = "staging" ] || { echo "::error::PRs into main must come from staging (got $HEAD)."; exit 1; } ;;
             staging) [ "$HEAD" = "develop" ] || { echo "::error::PRs into staging must come from develop (got $HEAD)."; exit 1; } ;;

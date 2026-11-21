@@ -2,6 +2,8 @@
 
 ## Status
 
+**Update, November 11, 2026.** Nos. 01 to 06 now have approved, outlined print masters in `production/print-files/launch-six-v1/` (SVG plus 4500 x 5400 transparent PNG), made from `design/launch-six/`. They replace the prototype SVGs described below, which remain in `design/prototypes/` as history. The issue table below still describes the original ten-up plan; for Nos. 01 to 06 use [holiday-launch-plan.md](holiday-launch-plan.md) (garments Ivory, True Navy, Brick) and [blank-and-print-spec.md](blank-and-print-spec.md) (verified print area and thin-line flag). Nos. 07 to 10 are held back.
+
 Nos. 01–06 have editable, transparent, 4500 × 5400 SVG masters and 750 × 900 PNG review renders. Nos. 07–10 follow the **ornate full-colour direction** chosen in [`IMAGERY_DIRECTION.md`](../brand/IMAGERY_DIRECTION.md): their earlier line-art SVGs are retired (kept in the manifest as `legacyArtwork`), and the selected artwork is the A07–A10 plates in `design/mockups/royal-house/`. Those plates are 1122 × 1402 px, so they are **working plates, not print files**; each needs a vector redraw or an approved upscale to print resolution. All ten are **print-oriented prototypes**, not files approved for fulfillment. Before upload, the selected Printify provider template must determine final physical dimensions, placement, color handling, and raster export settings. Live type in the SVG masters must be converted to outlines in the final vendor file.
 
 ## Shared construction

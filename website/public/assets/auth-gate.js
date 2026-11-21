@@ -32,7 +32,9 @@
   const SESSION_KEY = 'lvc_env_gate_email';
   const gate = document.createElement('div');
   gate.id = 'auth-gate';
-  gate.innerHTML = '<section class="auth-gate-card" aria-labelledby="auth-gate-title"><img src="/assets/iconmark-11-content-cocktail.svg" alt=""><p class="auth-gate-label"></p><h1 id="auth-gate-title">Team access only.</h1><p>Sign in with an authorized Google account to view this website.</p><button class="auth-gate-button" type="button">Sign in with Google</button><p class="auth-gate-error" role="alert" aria-live="polite"></p></section>';
+  gate.innerHTML = '<header class="auth-gate-header"><img src="/assets/royal-mark.svg" alt=""><span><b>The Royal House of Engagement</b><small>Purveyed by Low Value Content</small></span></header>'
+    + '<main class="auth-gate-main"><section class="auth-gate-card" aria-labelledby="auth-gate-title"><img src="/assets/iconmark-11-content-cocktail.svg" alt=""><p class="auth-gate-label"></p><h1 id="auth-gate-title">Team access <span class="script">only.</span></h1><p>This is a private preview of the storefront. Sign in with an authorized Google account to view it.</p><button class="auth-gate-button" type="button">Sign in with Google</button><p class="auth-gate-error" role="alert" aria-live="polite"></p></section></main>'
+    + '<footer class="auth-gate-footer">© 2026 <i>Low Value Content</i>, an imprint of Nelson Grey LLC. Not open to the public.</footer>';
   gate.querySelector('.auth-gate-label').textContent = 'Restricted ' + environment + ' environment';
   const button = gate.querySelector('.auth-gate-button');
   const error = gate.querySelector('.auth-gate-error');

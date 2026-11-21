@@ -1,5 +1,7 @@
 # Launch Collection Matrix V3
 
+> **Update, November 11, 2026.** The holiday launch is the first six issues (Nos. 01 to 06), with new artwork approved November 10; see [holiday-launch-plan.md](holiday-launch-plan.md). No. 06 is now "Sent 2:14 AM. Regretted 2:15 AM." (the optimized-shirt design moved to No. 19), No. 04's wording is rewritten, and garments are Ivory (01, 04), True Navy (02, 06) and Brick (03, 05). Nos. 07 to 10 are held back as later issues. The rows below describe the original ten-product plan; where they differ from the manifest and the holiday plan, those win.
+
 ## Governing principle
 
 The Realm is an optional source of authority, not a mandatory classification system. A design enters its jurisdiction only when formal provenance strengthens the observation.
