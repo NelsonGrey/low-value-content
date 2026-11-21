@@ -84,6 +84,8 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 ## 7. Release mechanics (never done without Mark's explicit go)
 
+The step-by-step version, with the current state of dev, staging and prod, is in [go-live-runbook.md](go-live-runbook.md).
+
 1. PR `feature/holiday-six-storefront` into `develop` (merge deploys dev).
 2. Test orders on dev for all six, then `develop` into `staging` and repeat.
 3. Samples approved; colors and art adjusted if needed.
