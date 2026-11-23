@@ -50,8 +50,8 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Cart and checkout copy for a real launch (remove "Test configuration" notes) | Done in launch branch | $5.99 flat US shipping, tax at checkout, and returns link. Keep aligned with any future shipping decision. |
 | Order status page and emails | Ready | Page exists; transactional email (order confirmation, shipping) is not built |
 | Deploy to dev and run test orders for all six | Ready | After the PR merges |
-| Deploy to staging and repeat | Ready | After dev passes |
-| Failure-path tests (declined card, expired session, Printify error) | Ready | Add before prod |
+| Deploy to staging and repeat | Done Nov 23 for the happy path | Paid sandbox order: tax on the apparel line only, Printify order created on hold, then cancelled. Index for `reconcile` was missing (PR #61); order-status page after payment not yet seen (staging sign-in gate) |
+| Failure-path tests (declined card, expired session, Printify error) | Ready | Not yet run on staging; add before prod. Invalid cart input returns 400 (checked Nov 23) |
 | Product images: Printify mockups as interim, sample photos later | Done locally | November 23 generated mockups for the approved redesigns replaced the six storefront mockup files; sample photos remain open. |
 | Size chart and fit copy | Ready | Take measurements from the Printify blueprint and the sample |
 
