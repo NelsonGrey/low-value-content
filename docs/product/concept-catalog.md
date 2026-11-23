@@ -42,7 +42,7 @@ Status: creative development draft. The Launch / Develop / Hold column below is 
 
 | # | Saying | Visual direction | Status |
 |---|---|---|---|
-| 21 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Editorial proof returned with comments: CREATOR. circled, the three findings as margin notes | Launch |
+| 21 | Content creator. Originality questionable. Revenue inconsistent. Reach unreported. | Editorial proof returned with comments: CREATOR. circled, the three findings as margin notes | Launch |
 | 22 | My authentic self is currently being monetized. | Price tag attached to a fingerprint-like abstract mark | Launch |
 | 23 | I went viral and all I got was this dopamine imbalance. | Souvenir-shirt arc with a tiny unstable waveform | Launch |
 | 24 | Follow me for more reasons to unfollow me. | Repeating follow/unfollow buttons in a loop | Launch |
