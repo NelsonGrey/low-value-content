@@ -7,7 +7,7 @@ Status: updated **November 21, 2026**. Companion to [launch-readiness.md](launch
 | | Website | Access gate | Stripe | Backend (functions, Firestore) |
 |---|---|---|---|---|
 | dev | Current `develop` | Storefront look, deployed | Sandbox. Illinois registration active, `STRIPE_AUTOMATIC_TAX=true` | Deployed and verified end to end |
-| staging | Current `develop` (promoted Nov 20) | Storefront look, deployed | Sandbox. Illinois registration active; webhook matches expected events/version | `api` and `reconcile` deployed; verify their exact revisions and run a complete sandbox order before promotion |
+| staging | Current `develop` (promoted Nov 23, #59) | Storefront look, deployed | Sandbox. Illinois registration active; webhook matches expected events/version | `api` and `reconcile` redeployed Nov 23 from a clean `staging` checkout (CHECKOUT_ENABLED, automatic tax on, Printify auto-approve off). Paid sandbox order Nov 23: Stripe showed Sales Tax (9%) $3.24 on the $36 shirt and none on shipping (total $45.23); Printify received the order and held it; the test order was then cancelled. Firestore index for `reconcile` was missing in dev and staging (PR #61); deployed to staging only. Failure paths and the order-status page after payment are still to verify. |
 | prod | Coming-soon page | Not gated, by design | Live Illinois Tax location needs attention; masked account ID ends `707` and is not verified against IDOR. Four-event live webhook created. | Billing and Firestore on; required APIs enabled. Stripe Checkout key, Printify API token, and Printify webhook secret stored. Stripe signing secret and functions deployment remain. `CHECKOUT_ENABLED=false` in local prod config |
 
 ## What the resale certificate does and does not gate
