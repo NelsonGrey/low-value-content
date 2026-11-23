@@ -2,7 +2,16 @@
 
 Status: review of **November 23, 2026**, covering every customer-facing page on `develop` (25 pages, about 6,300 words). Nothing here has been applied. Wording is judgment, not fact; the *Decisions for Mark* section at the end lists what needs a yes or no first.
 
-## Verdict
+## Correction: read this first
+
+The first draft of this review was written **without reading the written canon in `docs/brand/`**. That was a mistake. The canon is `CONSTITUTION_OF_ENGAGEMENT.md` (which says it "governs the website, lineage, calendar, regalia, titles, Houses, product provenance, and future QR experiences"), `LOW_VALUE_CONTENT_GUIDE.md`, `HERALDIC_SYSTEM.md` and `IMAGERY_DIRECTION.md`. Reading them changes the review:
+
+1. **The Realm copy is canon, not drift.** "Governs the Attention Economy" is the Constitution's *central premise* word for word. "Attention is the natural resource … Metrics are presumed accurate until they become inconvenient" are its *ten principles* verbatim. "Ministries and Institutes … respectable policy, research, and administration", each House's portfolio, contradiction, institution and motto, and "the matter remains with committee" are all verbatim canon. "The government of attention" is a restatement of the premise.
+2. **The canon's register is constitutional-bureaucratic on purpose.** Its voice rules: the House "speaks as a sovereign institution", states improbable doctrine "with administrative precision", prefers "decrees, findings, classifications, records, appointments, and official interpretations", and never signals that it knows it is funny. Its "Official language" table (*"The data contradicts us" → "A methodology transition is in progress"*) depends on modern bureaucratic idiom. **No brand document says "medieval" or names an era.** The medieval and heraldic flavor lives in the Crown, Houses, peerage titles, Latin mottos, sovereigns, feasts and the heraldry (`HERALDIC_SYSTEM.md`, `IMAGERY_DIRECTION.md`: "engraved coat of arms, gold acanthus ornament").
+3. **So there are two separate questions.** (a) *Does the site match the canon?* Mostly yes, and the must-fix items below still stand (several are backed by the canon itself). (b) *Is the canon's register what Mark wants?* That is a decision about the canon, not a site bug. The "Option B" sections below (word map, headline options, register rewrites) **change canon text** and would require updating the Constitution, the Guide, the Houses data, `product-copy.md` and the Lineage together. They are kept as an option, **not a recommendation**.
+4. **The canon lags the launch in places.** The Guide's "Current public status statement" still says *"in early product development … working concepts, not products offered for sale"*; it lists four garment colors (Ivory, Oxblood, Navy, Black) where the shop ships Ivory, True Navy and Brick; it describes a ten-issue founding collection with older wording for Nos. 04 and 06; and it forbids "Drop 001", which the Social page uses. Its own rule, "workshop fields live in `docs/`, not on the site", is broken by the product descriptions (M1).
+
+## Original verdict (before reading the brand docs)
 
 The best pages already sound right. **Lineage, the Royal Calendar and the 404 page are firmly in the royal register**: sovereigns with epithets (*Moth the Pious*, *Spam the Unsolicited*), Latin mottos, feasts, a vigil, a coronation, "The Palace Regrets to Announce". Support ("Royal Office of Practical Matters", "plainly stated") is also right.
 
@@ -18,7 +27,7 @@ A vocabulary scan of the 14 story pages (hits in the page text):
 
 Per page, the royal words outnumber the modern ones on Lineage (27 to 3), Calendar (20 to 2), Peerage (22 to 7) and the 404 (7 to 1). They are **outnumbered on Constitution (11 to 16) and Great Houses (15 to 17)** and roughly level on Realm Overview (19 to 13), About (4 to 5) and Cart (2 to 5).
 
-## The rule (so the fixes stay consistent)
+## Option B only: a rule for a fully medieval register
 
 **A medieval court, solemnly governing modern things.** The joke works because the *institution* is old and the *subject* is new. So:
 
@@ -56,7 +65,7 @@ Per page, the royal words outnumber the modern ones on Lineage (27 to 3), Calend
 | platform-scale | of continental scale | |
 | cart | the Royal Purse | heading only; keep "Checkout" plain |
 
-## The Realm headline
+## Option B only: the Realm headline
 
 Current: **"The government of attention."** Kicker: "By Sovereign Instrument". Lead: "The Crown *governs* the Attention Economy…"
 
@@ -71,7 +80,7 @@ Suggested companions: kicker **By Royal Writ**; lead *"The Crown holds dominion 
 
 ## Findings, most important first
 
-### Must fix (wrong, misleading, or customer-facing internal text)
+### Must fix (confirmed against the canon)
 
 | # | Where | Problem | Fix |
 |---|---|---|---|
@@ -82,7 +91,16 @@ Suggested companions: kicker **By Royal Writ**; lead *"The Crown holds dominion 
 | M5 | Peerage, "The permanent record" | Promises QR seals and that records are kept "in official packaging". No such packaging or routes exist. A claim the shop cannot yet keep. | Soften to what is true, or hold until it exists (draft below). |
 | M6 | Privacy and Cookies | Public policy pages explain the **dev and staging Google sign-in gate**. Irrelevant to a customer, and the sign-in gate is not on production. | Remove those paragraphs from the production pages. |
 
-### Should fix (breaks the register)
+Canon backing for the above:
+
+- **M1.** Guide, *Visual system*: "Product pages show shoppers: name, price, art, one line of description, collection, garment, and an archive note for the lore. Production status, print gates, realm intensity and similar workshop fields live in `docs/`, not on the site."
+- **M2.** Guide, *Update this guide whenever a product, supplier … or legal status changes. The business plan supplies the strategy; current verified facts control public copy.* The About status paragraph comes from the Guide's outdated "Current public status statement", so **the Guide needs the same update**.
+- **M3.** Constitution, *Current apparel examples*: "Thought Leader to the Court, Honorary: House of Influence; **Chancery** of Public Importance." The product page's "Ministry" is the error.
+- **M5.** Constitution rule 9 puts "QR provenance" online or in packaging, and the Guide's *QR experience* section is a future feature. Present-tense claims on the Peerage page run ahead of what exists.
+- **M7 (new).** Social page: "Official profile opens with **Drop 001**." The Guide says: *do not use "Drop 001", "Founding Ten", "Founding Six" or "Founding Plate"* in public copy. Use "the founding collection".
+- **M8 (new).** The Guide's status statement, garment colors and collection list are out of date for launch (see Correction, point 4).
+
+### Option B only: register rewrites (these change canon text; see Correction)
 
 **Realm Overview** (`realm.astro`)
 
@@ -206,13 +224,16 @@ The Lineage (all 11 reigns and their mottos), the Calendar entries and its Next 
 
 ## Decisions for Mark
 
-1. **Realm headline.** *The Kingdom of Attention* (recommended), or another from the list above?
-2. **Constitution becomes Charter?** Site-only rename; the URL can stay. Recommended yes.
-3. **Rename the two Ministries** (Exchequer of Measurable Outcomes, Heralds of Universal Correspondence)? It also touches `product-copy.md`, the Great Houses page and the 06 product line. The Exchequer and tally-stick fit is strong. Recommended yes, but it is the most optional item here.
-4. **Homepage headline.** *Regalia for the chronically online* (recommended) or keep the plain line?
-5. **About page "The issue" paragraph.** Approve the wording, and tell me what you are comfortable saying about trademarks (nothing claiming clearance).
-6. **Latin mottos** for Nos. 03, 04 and 06, or leave as is?
+1. **Which register?** This is the real question.
+   - **A. Keep the canon as written.** The site is faithful to it. Apply only the must-fix items (M1 to M8). The headline stays.
+   - **B. Amend the canon toward a medieval register.** Everything in the Option B sections. Touches the Constitution, Guide, Houses data, product copy, Lineage and the shirt-adjacent copy. Large.
+   - **C. Keep the canon's voice, change only the hero lines.** Leave the Realm body, the ten principles, and the Official language table alone (that bureaucratic idiom is where the best jokes are). Change only the big headline words that feel modern ("government", "economy" in headings) and write the change back into the Constitution so docs and site agree. **This is my recommendation.**
+2. **If C (or B), the Realm headline.** *The Kingdom of Attention* (recommended), *The Crown's Dominion over Attention*, or *The Court of Attention*; and the matching line in the Constitution's premise.
+3. **About page and the Guide's status statement.** Approve the replacement wording (draft above) and tell me what you are comfortable saying about trademarks (nothing claiming clearance). The Guide gets the same update.
+4. **Homepage line.** *Regalia for the chronically online* (recommended, still says what is sold) or keep *Shirts for the chronically online*.
+5. **Latin mottos** for Nos. 03, 04 and 06, or leave as is? I would want the Latin checked by a person before it ships.
+6. **Two Ministries** (Option B only): rename to Exchequer and Heralds, or keep the canon names.
 
 ## How to apply (when approved)
 
-Most Realm copy lives in `website/src/pages/realm*.astro` and in `docs/product/apparel-manifest.json` (houses, constitution, peerage, lineage, observances). Product descriptions need a new customer-facing field so the ecosystem catalog (which reads `regaliaRole`) is untouched. After any change run `python3 scripts/check-apparel-manifest.py`, `node scripts/build-ecosystem-catalog.mjs --check`, the build, and `cd tools/site-qa && npm run audit`.
+Most Realm copy lives in `website/src/pages/realm*.astro` and in `docs/product/apparel-manifest.json` (houses, constitution, peerage, lineage, observances). The canon lives in `docs/brand/`; any wording change under Option B or C must be written back there so the documents and the site never disagree. Product descriptions need a new customer-facing field so the ecosystem catalog (which reads `regaliaRole`) is untouched. After any change run `python3 scripts/check-apparel-manifest.py`, `node scripts/build-ecosystem-catalog.mjs --check`, the build, and `cd tools/site-qa && npm run audit`.
