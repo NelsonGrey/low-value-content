@@ -15,7 +15,7 @@
     "deploy": "firebase deploy --only functions"
   },
   "dependencies": {
-    "firebase-admin": "^14.5.0",
+    "firebase-admin": "^14.5.1",
     "firebase-functions": "^7.4.0",
     "stripe": "^23.1.0"
   },
@@ -23,5 +23,8 @@
     "@types/node": "^22.20.5",
     "typescript": "^7.0.2",
     "vitest": "^5.1.0"
+  },
+  "overrides": {
+    "rimraf": "^6.1.4"
   }
 }
