@@ -110,30 +110,33 @@ const nav = [
     --display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
     --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --script: 'Snell Roundhand', 'Apple Chancery', cursive;
-    /* Header and footer are full width but align their content to the column. */
-    --gutter: max(clamp(1.25rem, 5vw, 5rem), calc((100vw - var(--site-content-width)) / 2));
+    /* One inset for everything. Header and footer are full width, but their content sits at the
+       column's inner edge, the same line the page content uses (main redefines --gutter to the inset alone). */
+    --page-pad: clamp(1.25rem, 5vw, 5rem);
+    --gutter: calc(max(0px, (100vw - var(--site-content-width)) / 2) + var(--page-pad));
     --fs-h1: clamp(2.9rem, 6.2vw, 5.75rem);
     --fs-h2: clamp(2.2rem, 4.2vw, 4rem);
   }
   .current-reign .latin, .realm-hero .latin, .lineage-hero .latin, .page-hero .latin, .doctrine .latin, .universal-peerage .latin, .arms-panel .latin { color: var(--gold-light); }
   h1, h2, h3 { text-wrap: balance; }
   p, li { text-wrap: pretty; }
-  h1 .script, h2 .script, h1 i, h2 i { font-size: .94em; line-height: 1.12; text-wrap: wrap; }
+  h1 .script, h2 .script, h1 i, h2 i { display: block; font: inherit; font-style: normal; color: var(--crimson); text-transform: uppercase; text-wrap: wrap; }
+  p.script { margin: 0; font: 700 .72rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
   :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
   ::selection { background: var(--crimson); color: var(--ivory); }
-  .plain-page { padding: clamp(4rem, 8vw, 7rem) var(--gutter) clamp(4.5rem, 8vw, 8rem); min-height: 62vh; background: var(--paper); }
-  .plain-page.ivory { background: var(--ivory); }
+  /* Shared page system. Display headings are Barlow Condensed caps everywhere, as on the homepage. */
+  .plain-page { padding: clamp(3rem, 6vw, 5rem) var(--gutter) clamp(4rem, 7vw, 6.5rem); min-height: 62vh; background: #fff; }
   .plain-page > header, .plain-page > .intro { max-width: 60rem; }
-  .plain-page .script { margin: 0; font-size: 1.9rem; }
-  .plain-page h1 { margin: .6rem 0 1.5rem; font-size: var(--fs-h1); line-height: .96; font-weight: 400; letter-spacing: -.03em; }
-  .plain-page .lead, .plain-page header > p:last-child, .plain-page .intro > p:last-child { max-width: 44rem; margin: 0; font-size: 1.25rem; line-height: 1.65; color: #2c3640; }
+  .plain-page .script { margin: 0 0 .5rem; font: 700 .72rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--crimson); }
+  .plain-page h1 { margin: .6rem 0 1.25rem; font: 800 clamp(2.8rem, 6.4vw, 5.25rem)/.92 var(--display); text-transform: uppercase; letter-spacing: -.005em; color: var(--navy); }
+  .plain-page .lead, .plain-page header > p:last-child, .plain-page .intro > p:last-child { max-width: 44rem; margin: 0; font-size: 1.125rem; line-height: 1.7; color: #2c3640; }
   .plain-page .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin: 2rem 0 0; }
   .text-link { font: 700 .72rem/1.4 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); text-underline-offset: 4px; }
-  .plain-page h2 { margin: 0; font-size: 1.7rem; font-weight: 400; line-height: 1.15; }
-  .plain-page .rows { margin-top: 3.5rem; border-bottom: 1px solid var(--line); }
-  .plain-page .rows > section { display: grid; grid-template-columns: minmax(12rem, 1fr) 2.4fr; gap: 1rem 3rem; padding: 2rem 0; border-top: 1px solid var(--line); }
+  .plain-page h2 { margin: 0; font: 800 1.65rem/1.05 var(--display); text-transform: uppercase; color: var(--navy); }
+  .plain-page .rows { margin-top: 3rem; border-bottom: 1px solid var(--navy); }
+  .plain-page .rows > section { display: grid; grid-template-columns: minmax(12rem, 1fr) 2.4fr; gap: 1rem 3rem; padding: 1.75rem 0; border-top: 1px solid var(--navy); }
   .plain-page .rows p { margin: 0; max-width: 44rem; line-height: 1.75; }
-  .plain-page .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--gold); }
+  .plain-page .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--navy); }
   .plain-page .columns h2 { margin-bottom: .75rem; }
   .plain-page .columns p { margin: 0; line-height: 1.7; }
   @media (max-width: 860px) { .plain-page .columns { grid-template-columns: 1fr; gap: 2rem; } }
@@ -142,7 +145,7 @@ const nav = [
   html { background: #fff; color: var(--ink); scroll-behavior: smooth; }
   body { margin: 0; background: #fff; font-family: var(--serif); }
   /* Layout rule: all page content and every section background live in one centered 1280px column; outside it the page is white. */
-  main { max-width: var(--site-content-width); margin-inline: auto; background: #fff; --gutter: clamp(1.25rem, 5vw, 5rem); }
+  main { max-width: var(--site-content-width); margin-inline: auto; background: #fff; --gutter: var(--page-pad); }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
@@ -187,8 +190,7 @@ const nav = [
   .section { padding: clamp(3.75rem, 6.5vw, 7rem) var(--gutter); }
   .section-heading { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: .5rem clamp(2rem, 5vw, 5rem); align-items: end; margin-bottom: 3rem; }
   .section-heading > .eyebrow { grid-column: 1 / -1; margin: 0; }
-  .section-heading h2 { font-size: var(--fs-h2); line-height: 1.02; margin: 0; font-weight: 400; }
-  .section-heading h2 .script, .section-heading h2 i { display: block; }
+  .section-heading h2 { font: 800 clamp(2.2rem, 4.4vw, 3.5rem)/.98 var(--display); text-transform: uppercase; color: var(--navy); margin: 0; }
   .section-heading p:last-child { max-width: 34rem; margin: 0; font-size: 1.08rem; line-height: 1.7; }
   @media (max-width: 860px) { .section-heading { grid-template-columns: minmax(0, 1fr); } .section-heading p:last-child { margin-top: .75rem; } }
   @media (max-width: 800px) {

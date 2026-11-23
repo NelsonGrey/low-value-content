@@ -55,7 +55,7 @@ import { orders, peerage } from "../../data";
   .qr { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 8vw, 9rem); align-items: center; }
   .qr-mark { aspect-ratio: 1; display: grid; place-items: center; border: 14px double var(--navy); background: var(--ivory); }
   .qr-mark span { font-size: clamp(7rem, 20vw, 16rem); color: var(--navy); }
-  .qr h2 { font-size: var(--fs-h2); line-height: 1; font-weight: 400; }
+  .qr h2 { font: 800 var(--fs-h2)/1 var(--display); text-transform: uppercase; }
   .qr p:not(.eyebrow) { font-size: 1.1rem; line-height: 1.7; max-width: 700px; }
   .qr ol { padding: 1.5rem 0 0; list-style-position: inside; columns: 2; font-family: var(--sans); line-height: 2; }
   @media (max-width: 900px) { .peerage-grid, .qr { grid-template-columns: minmax(0, 1fr); } }
