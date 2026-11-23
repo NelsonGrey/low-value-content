@@ -1,0 +1,20 @@
+{
+  "name": "The Royal House of Engagement",
+  "short_name": "Royal House",
+  "description": "Official regalia for the chronically online, by Low Value Content.",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0d1c2b",
+  "background_color": "#0d1c2b",
+  "display": "browser"
+}

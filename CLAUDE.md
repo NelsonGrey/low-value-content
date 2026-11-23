@@ -7,6 +7,7 @@ Satirical editorial T-shirt brand of Nelson Grey LLC, pre-launch. This repo hold
 - `python3 scripts/check-site.py`: validates every built HTML page (lang, title, viewport, description, local links) and the Firebase JSON config. Build first; CI does the same.
 - `python3 scripts/check-apparel-manifest.py`: validates the master apparel manifest against assets, the 100-saying catalog, and `functions/src/catalog.ts`. CI runs it too.
 - `firebase emulators:start --only hosting`: preview the built `website/dist/` locally (localhost is never gated).
+- `python3 scripts/build-favicons.py`: regenerates every favicon file (`.ico`, touch icon, 192/512 icons, `site.webmanifest`) for the storefront and the coming-soon page from the one master, `website/public/assets/favicon.svg` (needs `rsvg-convert` and Pillow).
 - `python tools/business-plan/build_business_plan.py`: regenerates the business plan `.docx` (needs `python-docx`). Not part of the site or deploy.
 - `gitleaks detect --source . --config .gitleaks.toml --redact`: secret scan.
 - `cd tools/site-qa && npm install && npm run audit` (screenshots at 1920/1280/390, axe accessibility, 1280px layout-rule check) and `npm run lighthouse`: free local site audits of the built `website/dist/`. Output goes to `tools/site-qa/out/` (gitignored). Build the site first.
