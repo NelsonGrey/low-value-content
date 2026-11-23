@@ -4,13 +4,13 @@ import RealmNav from "../../components/RealmNav.astro";
 import RealmSubhero from "../../components/RealmSubhero.astro";
 import { constitution } from "../../data";
 ---
-<BaseLayout title="The Constitution of Engagement | The Royal House of Engagement" description="The seven ranks of authority, the doctrine of convenient evidence and the current constitutional crisis of the Royal House of Engagement." current="realm">
-  <RealmSubhero title="The<br />Constitution" lead="Seven ranks of authority, one doctrine and a standard that records legitimacy by verified appearance." />
+<BaseLayout title="The Customs of Engagement | The Royal House of Engagement" description="The seven ranks of precedence, the doctrine of convenient evidence and the current crisis of the realm, as kept by the Royal House of Engagement." current="realm">
+  <RealmSubhero title="The<br />Customs" lead="Seven ranks of precedence, one doctrine, and customs that bind the subjects and bend for the powerful." />
   <RealmNav current="constitution" />
 
   <section class="hierarchy section">
     <div class="section-heading">
-      <p class="eyebrow">The constitutional hierarchy</p>
+      <p class="eyebrow">The order of precedence</p>
       <h2>Authority descends.<br /><span class="script">Responsibility does not.</span></h2>
     </div>
     <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
@@ -22,10 +22,10 @@ import { constitution } from "../../data";
   </section>
 
   <section class="universal-peerage">
-    <p class="eyebrow">Current constitutional crisis</p>
+    <p class="eyebrow">Current crisis of the realm</p>
     <h2>The Universal Peerage</h2>
     <blockquote>Once every subject had acquired influence, the Crown discovered that no uninfluenced population remained.</blockquote>
-    <p>The matter was referred to committee.</p>
+    <p>The matter was referred to the Privy Council.</p>
   </section>
 </BaseLayout>
 

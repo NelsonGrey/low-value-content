@@ -54,7 +54,7 @@ Grouped by House so the next collection has a spread of jurisdictions rather tha
 
 | No. | Saying | Form | Realm hook |
 |---|---|---|---|
-| 39 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notice | Read-receipt evidence entered into the record by the Ministry of Measurable Outcomes. (Promoted to launch No. 06.) |
+| 39 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notice | Read-receipt evidence entered into the record by the Exchequer of Measurable Outcomes. (Promoted to launch No. 06.) |
 | 14 | Organic reach. Synthetic personality. | Public Notice | Two-column label; pairs with No. 01 and No. 06. |
 | 17 | Recommended for reasons nobody can explain. | Court & Order | An order issued under **Algorithm the Terrible**; "Ex mandato algorithmi". |
 | 91 | Mindfulness, but competitively. | Court & Order | Leaderboard as a decoration of merit. |
@@ -78,7 +78,7 @@ Grouped by House so the next collection has a spread of jurisdictions rather tha
 
 | No. | Saying | Form | Realm hook |
 |---|---|---|---|
-| 87 | I have read and accepted nothing. | Public Notice | Agreement box above microtype; Ministry of Universal Correspondence. |
+| 87 | I have read and accepted nothing. | Public Notice | Agreement box above microtype; Heralds of Universal Correspondence. |
 | 83 | My privacy has ads. | Public Notice | Shortest and cleanest of the Spam lines. |
 | 84 | Cancel anytime after calling us. | Public Notice | Phone-tree redirect. |
 | 74 | Reduce. Reuse. Overnight delivery. | Public Notice | Distribution joke; recycling arrows around a shipping box. |

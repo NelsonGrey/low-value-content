@@ -6,7 +6,7 @@ Status: working visual canon. This document governs the relationship between the
 
 1. **The sovereign arms** represent the Royal House of Engagement as a whole. The peacock, parrot, notification shield, and Wi-Fi crown are reserved for the Crown and its highest warrants.
 2. **The Royal Standard** carries the six House charges beneath a central verified device. It represents the Realm in assembly rather than any single House.
-3. **Great House badges** identify the six permanent branches of government. They share one frame and differ only in their central charge.
+3. **Great House badges** identify the six standing Houses of the realm. They share one frame and differ only in their central charge.
 4. **Order insignia** are medals of cross-House distinction. They are more ornamental than a House badge and must remain visibly subordinate to the sovereign arms.
 5. **Lineage devices** represent a reign, event, or claimant. They may borrow a House charge when the historical relationship is direct.
 6. **Ceremonial materials** include seals, warrants, appointment cards, standards, tissue, boxes, hangtags, and provenance records. They extend the institution without adding a second print location to a launch garment.
@@ -35,7 +35,7 @@ Each badge uses the same crown, circular double rule, botanical supporters, shie
 - LO the Interrupted receives the interrupted terminal.
 - Y2K the Almost receives the divided double zero.
 - Spam the Unsolicited, Scroll the Endless, and Prompt the Confident inherit the corresponding Great House badge.
-- Other reigns may use the nearest constitutional charge until a dedicated device is entered into the record.
+- Other reigns may use the nearest charge in the Customs until a dedicated device is entered into the record.
 
 ## Use on the website
 

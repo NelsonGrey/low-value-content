@@ -13,7 +13,7 @@ KIND_TAGS = {
     "intro": [],
 }
 
-# One dry follow-on line for each constitutional principle (index = principle number).
+# One dry follow-on line for each custom (index = custom number).
 PRINCIPLE_TAGS = {
     1: "Mined daily. Replenished never.",
     2: "A mandate renewed with every tap.",
@@ -28,7 +28,7 @@ PRINCIPLE_TAGS = {
 }
 
 PREMISE_CAPTION = (
-    "Official regalia for the attention economy.\n\n"
+    "Official regalia for the chronically online.\n\n"
     "The Royal House of Engagement governs what you notice, what you produce, and what you cannot stop checking. "
     "Low Value Content is its purveyor: wearable observations on the systems, rituals, and small humiliations of online life.\n\n"
     "The court is now in session. Follow for the founding collection."

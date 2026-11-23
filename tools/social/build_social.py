@@ -91,7 +91,7 @@ def build_posts():
                       "platforms": platforms, "hashtags": tags(kind)})
 
     add("intro-premise", "intro", C.premise_card(), T.PREMISE_CAPTION,
-        "Peacock-and-parrot arms of the Royal House of Engagement above the words: Official regalia for the attention economy.",
+        "Peacock-and-parrot arms of the Royal House of Engagement above the words: Official regalia for the chronically online.",
         platforms="instagram,facebook,linkedin")
     add("intro-status", "intro", C.status_card(), T.STATUS_CAPTION,
         "Notice reading: In early product development. The designs are working concepts, not products offered for sale.",
@@ -103,7 +103,7 @@ def build_posts():
         add(f"plate-{n}-{key}", "plate", C.plate_card(f"{C.ASSETS}/royal-house/{src}", plate, title, cap), caption, alt)
 
     for i, text in enumerate(manifest["constitution"]["principles"], 1):
-        caption = f"{text}\n\n{T.PRINCIPLE_TAGS[i]}\n\nConstitutional principle No. {i} of the Royal House of Engagement."
+        caption = f"{text}\n\n{T.PRINCIPLE_TAGS[i]}\n\nCustom No. {i} of the Royal House of Engagement."
         add(f"principle-{i:02d}", "principle", C.principle_card(i, text, dark=(i % 3 == 0)), caption,
             f"Card reading: {text}", platforms="instagram,facebook,linkedin")
 

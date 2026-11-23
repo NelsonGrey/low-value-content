@@ -4,7 +4,7 @@ Status: original art brief, November 10, 2026. **November 23 update:** Mark appr
 
 ## 1. The job
 
-Turn six approved sayings into print-ready front artwork for t-shirts, each placed correctly inside the fictional world ("the Realm") the brand uses. The brand is **Low Value Content**, a satirical editorial apparel label. Its fictional institution is **The Royal House of Engagement**, a mock monarchy that governs the attention economy. The tone is **over-serious**: the joke is in the words and the objects, and the art never winks. No cartoons, no memes, no smiley faces.
+Turn six approved sayings into print-ready front artwork for t-shirts, each placed correctly inside the fictional world ("the Realm") the brand uses. The brand is **Low Value Content**, a satirical editorial apparel label. Its fictional institution is **The Royal House of Engagement**, a mock monarchy that holds court over the realm of attention. The tone is **over-serious**: the joke is in the words and the objects, and the art never winks. No cartoons, no memes, no smiley faces.
 
 The six shirts:
 
@@ -49,7 +49,7 @@ What this means:
 - **Court & Order**: authority, appointment, rank, medals, institutes. Formal type, a seal or one restrained heraldic device. Latin only if subordinate.
 - **Royal Commemoration**: dated technology history in full heraldry. (None of the six.)
 
-**Six Great Houses**, each a branch of government with one charge (symbol): Prompt (command chevron and waiting cursor), **Scroll** (descending feed and arrow), **Influence** (radiant faceted star), **Signal** (measured bars and ascending trace), Spam (repeated envelopes), Buffer (incomplete loading ring). Badges share one frame: crown, double rule, botanical supporters, navy shield, ivory face, gold line, oxblood charge.
+**Six Great Houses**, each a standing House of the realm with one charge (symbol): Prompt (command chevron and waiting cursor), **Scroll** (descending feed and arrow), **Influence** (radiant faceted star), **Signal** (measured bars and ascending trace), Spam (repeated envelopes), Buffer (incomplete loading ring). Badges share one frame: crown, double rule, botanical supporters, navy shield, ivory face, gold line, oxblood charge.
 
 **Hard rules**
 1. The **peacock, parrot, notification shield and Wi-Fi crown belong to the Crown only**. None of the six shirts uses them. Never put them on a Public Notice, and do not substitute a similar bird, crest or shield.
@@ -127,7 +127,7 @@ What this means:
 - **Existing files (context only, do not reproduce):** `design/prototypes/05-authentic-self.svg` and its preview.
 
 ### No. 06: Sent 2:14 AM. Regretted 2:15 AM.
-- **Form / Realm:** Public Notice. Evidence, not a decree: a read-receipt style record "entered into the record" by the **House of Signal** (measured bars, an ascending trace), via its Ministry of Measurable Outcomes. That lore goes on the product page; on the shirt it is at most the small House mark.
+- **Form / Realm:** Public Notice. Evidence, not a decree: a read-receipt style record "entered into the record" by the **House of Signal** (measured bars, an ascending trace), via its Exchequer of Measurable Outcomes. That lore goes on the product page; on the shirt it is at most the small House mark.
 - **Garment / inks:** Navy; ivory + antique gold.
 - **Text (exact):** `SENT 2:14 AM.` / `REGRETTED` / `2:15 AM.` / `SENT · DELIVERED · READ · REGRETTED` (the old footer was `DELIVERED · READ · REGRETTED`; `SENT` is added at the front).
 - **Composition (old design; a starting point to move away from, not a spec):** understated. Two timestamped lines in bold grotesque, ivory for the first and gold for the second; a thin ivory rule; the status chain in small tracked capitals with a gold double-check mark; the shared double-rule frame and imprint `THE ROYAL HOUSE OF ENGAGEMENT · NO. 06`. Quiet and left-aligned like a message thread.
