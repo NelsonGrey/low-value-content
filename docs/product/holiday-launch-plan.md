@@ -1,6 +1,6 @@
 # Holiday 2026 launch plan: the six
 
-Status: current as of **November 11, 2026**. This is the living plan; update it, and its change log at the bottom, whenever anything changes. The detailed work list is in [launch-readiness.md](launch-readiness.md) and the price recommendation is in [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md).
+Status: art and Printify drafts updated **November 23, 2026**. This is the living plan; update it, and its change log at the bottom, whenever anything changes. The detailed work list is in [launch-readiness.md](launch-readiness.md) and the price recommendation is in [pricing-and-cost-analysis.md](pricing-and-cost-analysis.md).
 
 Scope rule: launch small, prove the pipeline end to end, add the next issues in January.
 
@@ -8,12 +8,12 @@ Scope rule: launch small, prove the pipeline end to end, add the next issues in 
 
 | No. | Saying | Concept | Garment | Printify draft | Art |
 |---:|---|---|---|---|---|
-| 01 | Please validate me algorithmically. | Progress bar | Ivory | Created | Print master done |
-| 02 | Thought leader. No thoughts required. | Door plaque | True Navy | Created | Print master done |
-| 03 | I'm not doomscrolling. I'm doing market research. | Field dispatch | Brick | Created | Print master done |
-| 04 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Editor's marks | Ivory | Created | Print master done |
-| 05 | My authentic self is currently being monetized. | Price tag | Brick | Created | Print master done |
-| 06 | Sent 2:14 AM. Regretted 2:15 AM. | Giant times | True Navy | Created | Print master done |
+| 01 | Please validate me algorithmically. | 3% validation bar | Ivory | Updated draft | Redesign candidate |
+| 02 | Thought leader. No thoughts required. | Honorary appointment | True Navy | Updated draft | Redesign candidate |
+| 03 | I'm not doomscrolling. I'm doing market research. | Inquiry feed | Brick | Updated draft | Redesign candidate |
+| 04 | Content creator. Originality questionable. Revenue inconsistent. Reach unreported. | Creator audit | Ivory | Updated draft | Redesign candidate |
+| 05 | My authentic self is currently being monetized. | Price tag | Brick | Updated draft | Redesign candidate |
+| 06 | Sent 2:14 AM. Regretted 2:15 AM. | One-minute record | True Navy | Updated draft | Redesign candidate |
 
 - **Garment colors are locked to the real Comfort Colors names** (Ivory, True Navy, Brick). The site, cart, backend catalog and Printify products must all say the same color, and `scripts/check-apparel-manifest.py` fails the build if they don't. Brick is the closest available shade to the brand's oxblood and is **provisional until a physical sample is seen**.
 - **Held back:** No. 07 Much Published, Little Said (the crest, saved for a later edition), No. 08 Order of the Blue Check, and Nos. 09 and 10. They stay in the manifest but are **not listed or built on the site**: the site shows only the six (`holidayLaunch: true`); to release another issue, set that flag and finish its Printify product, catalog entry and color. "I optimized this shirt for engagement" moved to No. 19.
@@ -62,6 +62,7 @@ Back prints, sleeve seals, garment QR codes, hoodies, Nos. 07 to 10, the Wave 2 
 
 | Date | Change |
 |---|---|
+| Nov 23, 2026 (redesign) | Mark approved the six revised designs and 01/04/06 copy. Outlined 4500 × 5400 local print candidates passed mechanical QA; all six existing Printify drafts were updated with the new art and current mockups were downloaded. Physical print quality and Brick color still await samples. |
 | Nov 9, 2026 | First plan: five shirts (01, 02, 03, 05, 08) |
 | Nov 10, 2026 | Approved six: 01 to 06 as above. 07 (crest) and 08 (Blue Check) dropped; "Sent" and the rewritten creator line added; numbering reset to 01 to 06; new artwork replaces the prototypes |
 | Nov 11, 2026 (names) | Mark: the six Great House names never wrap. The homepage row stacks each badge above its name; a post-build step (`website/scripts/nowrap-houses.mjs`) joins every "House of …" with non-breaking spaces in all pages; the Houses page names are `nowrap` with a fluid size; `tools/site-qa` now fails on any wrapped Great House name and checks page overflow at 600 px too |

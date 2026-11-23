@@ -151,7 +151,7 @@ const founding = manifest.launchProducts.map((product) => {
     creativeStage: product.creativeStatus,
     rightsStage: "Creative concept only; collision and legal clearance remain open",
     productionStage: product.assets?.artwork
-      ? `${product.creativeStatus === "ornate-art-plate" ? "Artwork plate (not print-ready)" : "Editable artwork"}: ${product.assets.artwork}`
+      ? `${product.creativeStatus === "ornate-art-plate" ? "Artwork plate (not print-ready)" : product.creativeStatus === "print-candidate" ? "Outlined print candidate" : "Editable artwork"}: ${product.assets.artwork}`
       : "No production artwork",
     conceptMockup: product.assets?.conceptMockup ?? null,
     artworkPlate: [7, 8, 9, 10].includes(product.position)
@@ -165,7 +165,7 @@ const priorityExpansionTranche = priorityIds.map((id) => library.find((item) => 
 
 const catalog = {
   schemaVersion: 1,
-  generatedOn: "2026-10-19",
+  generatedOn: "2026-11-23",
   status: "working commercial-creative catalog; not rights-cleared or print-approved",
   counts: {
     foundingProducts: founding.length,

@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "audit": "node audit.mjs",
-    "lighthouse": "node lighthouse.mjs"
+    "lighthouse": "node lighthouse.mjs",
+    "cart": "node cart-behavior.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

@@ -71,7 +71,7 @@ export const catalog: Catalog = {
     },
   },
   "content-creator": {
-    name: "Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported.",
+    name: "Content creator. Originality questionable. Revenue inconsistent. Reach unreported.",
     unitAmount: 3600,
     printifyProductId: "6af3d082c783a6d305012fce",
     variants: {

@@ -102,11 +102,11 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .product-visual.typographic p { color: var(--gold-text); text-transform: uppercase; letter-spacing: .15em; }
   .product-visual.typographic h1 { color: var(--navy); font-size: clamp(2.5rem, 5vw, 5rem); text-transform: uppercase; line-height: .96; }
   .product-details { min-width: 0; padding: clamp(2.5rem, 5vw, 5rem) var(--gutter) clamp(3rem, 6vw, 6rem) clamp(2rem, 4.5vw, 5rem); }
-  .product-details > h1 { font-size: clamp(2.4rem, 3.9vw, 3.8rem); line-height: 1; letter-spacing: -.02em; font-weight: 400; margin: .75rem 0 1.25rem; }
-  .price { font-size: 1.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.2rem; }
+  .product-details > h1 { font: 800 clamp(2.6rem, 4.4vw, 4rem)/.95 var(--display); text-transform: uppercase; color: var(--navy); margin: .75rem 0 1rem; }
+  .price { margin: 0 0 1.2rem; font: 800 1.9rem/1 var(--display); letter-spacing: .02em; color: var(--navy); border-bottom: 1px solid var(--navy); padding-bottom: 1.2rem; }
   .price span { font: .7rem var(--sans); text-transform: uppercase; letter-spacing: .12em; color: #565e68; }
   .treatment { font-size: 1.1rem; line-height: 1.7; }
-  .buy-form { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; background: #eee5d4; border: 1px solid var(--line); }
+  .buy-form { margin: 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; background: var(--paper); border: 1px solid var(--navy); }
   .buy-form label { display: grid; gap: .4rem; font: 700 .7rem var(--sans); text-transform: uppercase; letter-spacing: .1em; }
   .buy-form select { padding: .8rem; border: 1px solid var(--gold); background: white; font: inherit; }
   .buy-form .button, .buy-note { grid-column: 1 / -1; }
@@ -132,11 +132,11 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
   .mockup-section img { width: 100%; height: auto; }
   .mockup-section figcaption { padding: .7rem .2rem .1rem; color: var(--gold-light); font: .6rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
   .mockup-copy .eyebrow { color: var(--gold-light); }
-  .mockup-copy h2 { margin: .6rem 0 1.25rem; font-size: var(--fs-h2); line-height: 1.02; font-weight: 400; }
+  .mockup-copy h2 { margin: .6rem 0 1.25rem; font: 800 clamp(2.2rem, 4.4vw, 3.5rem)/.98 var(--display); text-transform: uppercase; }
   .mockup-copy h2 .script { color: var(--gold-light); display: block; }
   .mockup-copy p:not(.eyebrow) { max-width: 36rem; font-size: 1.1rem; line-height: 1.7; color: rgba(244,238,223,.88); }
   .mockup-copy p.mockup-note { font: .68rem/1.5 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: rgba(244,238,223,.65); }
-  .related { background: #efe7d7; border-top: 1px solid var(--gold); }
+  .related { background: #fff; border-top: 1px solid var(--navy); }
   .related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
   .related-more { margin: 3rem 0 0; }
   @media (max-width: 900px) { .product-page { grid-template-columns: minmax(0, 1fr); } .product-visual { position: relative; top: 0; height: auto; min-height: 0; } .product-visual img { height: auto; max-height: 70vh; } .mockup-section { grid-template-columns: minmax(0, 1fr); } .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-page > * { min-width: 0; } .product-details { padding-inline: var(--gutter); } }
