@@ -28,7 +28,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Item | State | Notes |
 |---|---|---|
-| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts updated with approved redesign art November 23; read-back verified IDs, price, variants and placement. Update log: `production/qa/printify-redesign-update-2026-11-23.json`. |
+| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts updated with approved redesign art November 23, then again the same day with the maker's line added at the foot of each front design (`PURVEYED BY LOW VALUE CONTENT · LOWVALUECONTENT.COM`); each read-back verified IDs, price, variants and placement. Update logs: `production/qa/printify-redesign-update-2026-11-23-first-pass.json` and `production/qa/printify-redesign-update-2026-11-23.json`. |
 | Old test product removed | Done | Deleted November 11 |
 | Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
@@ -52,7 +52,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Deploy to dev and run test orders for all six | Ready | After the PR merges |
 | Deploy to staging and repeat | Done Nov 23 for the happy path | Paid sandbox order: tax on the apparel line only, Printify order created on hold, then cancelled. Index for `reconcile` was missing (PR #61); order-status page after payment not yet seen (staging sign-in gate) |
 | Failure-path tests (declined card, expired session, Printify error) | Ready | Not yet run on staging; add before prod. Invalid cart input returns 400 (checked Nov 23) |
-| Product images: Printify mockups as interim, sample photos later | Done locally | November 23 generated mockups for the approved redesigns replaced the six storefront mockup files; sample photos remain open. |
+| Product images: Printify mockups as interim, sample photos later | Done locally | November 23 generated mockups for the approved redesigns replaced the six storefront mockup files, and were regenerated after the maker's line was added; sample photos remain open. The small maker's line on dark garments needs checking on the physical sample. |
 | Size chart and fit copy | Ready | Take measurements from the Printify blueprint and the sample |
 
 ## 4. Legal and policy
