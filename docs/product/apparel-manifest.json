@@ -166,7 +166,7 @@
       "launchCollection": "Public Notices",
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An independent editorial notice. A progress bar that never quite finishes makes the whole argument.",
+      "regaliaRole": "An independent editorial notice. The validation bar reaches 3% while self-worth remains pending.",
       "family": "royal-proclamations",
       "royalTreatment": "Formal Petition for Algorithmic Recognition",
       "house": "House of Influence",
@@ -178,10 +178,10 @@
         "wearerTitle": "Petitioner in Good Algorithmic Standing",
         "proclamation": "A formal request for recognition, received by the Crown and left permanently pending."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/01-progress-bar.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/01-approval-pending.svg",
         "frontArtDisplay": "website/public/assets/front-art-01-validate-me.png",
         "printifyMockup": "website/public/assets/mockups/01-validate-me.jpg",
         "conceptMockup": "website/public/assets/shirt-01.png"
@@ -206,7 +206,7 @@
       "launchCollection": "Court & Orders",
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
-      "regaliaRole": "A court appointment set as an office plaque: one declaration, framed in brass.",
+      "regaliaRole": "An honorary court appointment with one Influence star and the punchline beneath the title.",
       "family": "royal-proclamations",
       "royalTreatment": "Official Court Appointment",
       "house": "House of Influence",
@@ -218,10 +218,10 @@
         "wearerTitle": "Thought Leader to the Court, Honorary",
         "proclamation": "An appointment to speak with authority before the arrival of any supporting thought."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/02-door-plaque.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/02-honorary-appointment.svg",
         "frontArtDisplay": "website/public/assets/front-art-02-thought-leader.png",
         "printifyMockup": "website/public/assets/mockups/02-thought-leader.jpg",
         "conceptMockup": "website/public/assets/shirt-02.png"
@@ -246,7 +246,7 @@
       "launchCollection": "Court & Orders",
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An institutional field dispatch with a small House of Scroll endorsement.",
+      "regaliaRole": "An institutional inquiry with a descending feed beside the research excuse.",
       "family": "court-uniforms",
       "royalTreatment": "Royal Institute of Digital Inquiry",
       "house": "House of Scroll",
@@ -258,10 +258,10 @@
         "wearerTitle": "Fellow of Applied Doomscrolling",
         "proclamation": "Field research conducted continuously, without methodology, conclusion, or visible end."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/03-field-dispatch.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/03-inquiry-feed.svg",
         "frontArtDisplay": "website/public/assets/front-art-03-market-research.png",
         "printifyMockup": "website/public/assets/mockups/03-market-research.jpg",
         "conceptMockup": "website/public/assets/shirt-03.png",
@@ -283,12 +283,12 @@
     {
       "position": 4,
       "id": "content-creator",
-      "primaryCopy": "Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported.",
+      "primaryCopy": "Content creator. Originality questionable. Revenue inconsistent. Reach unreported.",
       "originalCollection": "Creator Economy",
       "launchCollection": "Public Notices",
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
-      "regaliaRole": "An editorial proof returned with comments. The three findings stand unamended.",
+      "regaliaRole": "A creator career audit with three unresolved findings and distinct status marks.",
       "family": "royal-proclamations",
       "royalTreatment": "Proof Returned with Comments",
       "house": "House of Prompt",
@@ -300,10 +300,10 @@
         "wearerTitle": "Creator-in-Waiting",
         "proclamation": "An unfinished illuminated work whose meaning will be supplied after publication."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/04-editors-marks.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/04-creator-audit.svg",
         "frontArtDisplay": "website/public/assets/front-art-04-content-creator.png",
         "printifyMockup": "website/public/assets/mockups/04-content-creator.jpg",
         "conceptMockup": "website/public/assets/shirt-04.png"
@@ -340,10 +340,10 @@
         "wearerTitle": "Bearer of the Monetized Self",
         "proclamation": "The Crown recognizes this authentic person as available for sponsorship, subject to terms."
       },
-      "creativeStatus": "editable-prototype",
+      "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/05-price-tag.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/05-authentic-self-tag.svg",
         "frontArtDisplay": "website/public/assets/front-art-05-authentic-self.png",
         "printifyMockup": "website/public/assets/mockups/05-authentic-self.jpg",
         "conceptMockup": "website/public/assets/shirt-05.png"
@@ -368,7 +368,7 @@
       "launchCollection": "Public Notices",
       "realmIntensity": "light",
       "frontOnlyLaunch": true,
-      "regaliaRole": "A read-receipt record entered into evidence. One tiny House mark, no ceremony.",
+      "regaliaRole": "Two timestamped events joined by the one minute between sending and regret.",
       "family": "royal-proclamations",
       "royalTreatment": "Record of the Ministry of Measurable Outcomes",
       "house": "House of Signal",
@@ -383,7 +383,7 @@
       "creativeStatus": "print-candidate",
       "commerceStatus": "test-sellable",
       "assets": {
-        "artwork": "production/print-files/launch-six-v1/06-giant-times.svg",
+        "artwork": "production/print-files/launch-six-redesign-candidate-v1/06-one-minute-record.svg",
         "frontArtDisplay": "website/public/assets/front-art-06-sent-regretted.png",
         "printifyMockup": "website/public/assets/mockups/06-sent-regretted.jpg"
       },
