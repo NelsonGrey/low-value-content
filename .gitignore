@@ -86,3 +86,7 @@ scripts/build-holiday-six-art.py
 
 # Local QA output (screenshots, reports)
 tools/site-qa/out/
+
+# Local tax certificate working files and signed copies
+/tmp/pdfs/
+/output/pdf/
