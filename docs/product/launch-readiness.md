@@ -63,11 +63,11 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Privacy | Drafted Nov 23, needs counsel | Covers Stripe, Printify, Firebase; no analytics or email list yet |
 | Cookies | Ready | Site uses no tracking cookies on the public site today |
 | Shipping policy | Drafted Nov 23, needs Mark | `shipping.astro`: US only, flat $5.99, no delivery-time numbers until Printify confirms them |
-| Returns and replacements | Drafted Nov 23, needs Mark | `returns.astro` uses the proposed default below; approve or change |
+| Returns and replacements | Drafted Nov 23, needs Mark | `returns.astro` accepts fit returns (30 days, unworn, item refund or size exchange, customer pays return shipping). Mark decided Nov 23: flat $5.99 shipping, fit returns accepted |
 | Support page with contact | Ready | Branch `feature/support-contact` holds the `support@lowvaluecontent.com` change; merge with the launch PR when Mark approves |
 | Trademark-cleared language | Needs Mark | Keep "not cleared" language off the customer-facing site, but never claim clearance |
 
-**Proposed returns default (for Mark's decision):** print-on-demand shirts are made to order, so no returns for fit or change of mind; free replacement or refund for misprints, damage or the wrong item, reported within 30 days of delivery with a photo; no refund of shipping on change-of-mind. This matches how Printify handles defects.
+**Returns policy (revised Nov 23 after Mark's decision to accept fit returns):** fit returns and size exchanges within 30 days, unworn, customer pays return shipping, item price refunded. Cost note: Printify does not take back fit returns, so returned shirts are a cost to us; consider exchanges first. Misprints and damage: free replacement or refund for misprints, damage or the wrong item, reported within 30 days of delivery with a photo; no refund of shipping on change-of-mind. This matches how Printify handles defects.
 
 ## 5. Money and tax
 
