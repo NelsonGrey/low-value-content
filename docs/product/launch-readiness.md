@@ -46,7 +46,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Product pages, cards, shop page for the six | Done | Real blank color shown on each page. The site lists and builds only the six (`holidayLaunch`); Nos. 07 to 10 are hidden |
 | Catalog with variants and Printify ids | Done | `functions/src/catalog.ts`, matched to the manifest by the checker |
 | Final price in catalog, Stripe line item, manifest and Printify | Done | $36, applied November 11; guarded by the manifest checker |
-| Tiered shipping ($5.99 plus $2.49 per extra shirt) | Needs Mark | Small change to `checkout.ts` and cart copy |
+| Tiered shipping | Dropped | Mark chose flat $5.99 on Nov 23 |
 | Cart and checkout copy for a real launch (remove "Test configuration" notes) | Done in launch branch | $5.99 flat US shipping, tax at checkout, and returns link. Keep aligned with any future shipping decision. |
 | Order status page and emails | Ready | Page exists; transactional email (order confirmation, shipping) is not built |
 | Deploy to dev and run test orders for all six | Ready | After the PR merges |
@@ -63,17 +63,17 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Privacy | Drafted in launch branch, Needs outside | Describes Stripe, Printify, Firebase, order records, and dev/staging sign-in |
 | Cookies | Drafted in launch branch | Cart local storage and external checkout disclosed; no public ad or analytics cookies |
 | Shipping policy | Drafted in launch branch | US only, $5.99 per order, variable production and delivery times; revisit if tiered shipping is approved |
-| Returns and replacements | Approved by Mark, drafted | No fit/change-of-mind returns; photo within 30 days for damage, misprint, or wrong item; replacement or refund |
+| Returns and replacements | Approved by Mark, drafted | Revised Nov 23: fit returns accepted (30 days, unworn, item refund or size exchange, customer pays return shipping); photo within 30 days for damage, misprint, or wrong item; replacement or refund. Pages: `returns.astro`, `shipping.astro`, terms, support |
 | Support page with contact | Approved by Mark, drafted | `support@lowvaluecontent.com` is monitored |
 | Trademark-cleared language | Needs Mark | Keep "not cleared" language off the customer-facing site, but never claim clearance |
 
-**Approved returns default:** made-to-order shirts cannot be returned for fit or change of mind. Damage, misprints and wrong items are eligible for replacement or refund when reported with a photo within 30 days of delivery. Applicable legal rights still apply.
+**Returns policy (revised Nov 23, Mark decided to accept fit returns):** fit returns and size exchanges within 30 days of delivery, unworn and unwashed, item price refunded, customer pays return shipping. Damage, misprints and wrong items: free replacement or refund with a photo within 30 days. Cost note: Printify does not take back fit returns, so each one is a loss to us; offer exchanges first and publish a size chart. Applicable legal rights still apply.
 
 ## 5. Money and tax
 
 | Item | State | Notes |
 |---|---|---|
-| Shipping decision | Needs Mark | Price is decided ($36); shipping rule is still open, see the pricing analysis |
+| Shipping decision | Done | Mark decided Nov 23: flat $5.99 per order, US only |
 | Sales-tax collection (nexus, Stripe Tax) | Blocked for live | Checkout sends tax codes (apparel `txcd_99999999`, shipping `txcd_92010001`, tax-exclusive). Sandbox Illinois registrations are active. The live registration's number must be verified against an actual IDOR Sales/Use account before live collection. Other states: accountant. |
 | Stripe live account structure (one account for the LLC, Connect isolated for Wishlist Wizard if needed) | Needs Mark | See `docs/engineering/stripe-standard.md` |
 | Live product catalog and webhook for Low Value Content | Partly done | Least-privilege Checkout key and four-event webhook destination created. Backend and webhook signing secret remain; live checkout stays disabled until tax and policy gates are satisfied. The live webhook is `2026-11-18.endive`, while the SDK is pinned to `2026-10-28.endive`; verify compatibility or align before live orders. |
