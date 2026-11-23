@@ -1,6 +1,6 @@
 # Master Apparel and Asset Manifest
 
-The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json). It preserves the original apparel work while connecting it to the Royal House of Engagement, the future storefront, QR experiences, Stripe checkout, and Printify fulfillment. The governing fiction and naming rules live in the [`Constitution of Engagement`](../brand/CONSTITUTION_OF_ENGAGEMENT.md).
+The machine-readable source is [`apparel-manifest.json`](apparel-manifest.json). It preserves the original apparel work while connecting it to the Royal House of Engagement, the future storefront, QR experiences, Stripe checkout, and Printify fulfillment. The governing fiction and naming rules live in the [`Customs of Engagement`](../brand/CUSTOMS_OF_ENGAGEMENT.md).
 
 The broader commercial-creative inventory is maintained in the [`Ecosystem Apparel Catalog`](ECOSYSTEM_APPAREL_CATALOG.md), with machine-readable classifications in [`ecosystem-apparel-catalog.json`](ecosystem-apparel-catalog.json). It reconciles the Founding Ten with the original 100-concept library and assigns each concept a printable issue form, ecosystem relationship, and imagery brief.
 
@@ -16,7 +16,7 @@ The broader commercial-creative inventory is maintained in the [`Ecosystem Appar
 
 **Low Value Content** is the portal, purveyor, owned domain, and maker's mark. **The Royal House of Engagement** is the ruling institution inside the fictional realm. It adds provenance, lineage, Great Houses, peerage, orders, Latin mottos, annual observances, commemorative editions, and QR experiences without requiring every shirt to use heraldic artwork.
 
-The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the declaration; Latin supplies ceremonial texture and is always translated in public-facing copy.
+The Crown holds dominion over the realm's attention, converting attention into impressions, impressions into influence, and influence into evidence of importance. English carries the declaration; Latin supplies ceremonial texture and is always translated in public-facing copy.
 
 ## Holiday launch (November 2026)
 

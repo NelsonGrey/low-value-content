@@ -1,6 +1,34 @@
 # Voice review: is the site speaking as the Royal House of Engagement?
 
-Status: review of **November 23, 2026**, covering every customer-facing page on `develop` (25 pages, about 6,300 words). Nothing here has been applied. Wording is judgment, not fact; the *Decisions for Mark* section at the end lists what needs a yes or no first.
+Status: review of **November 23, 2026**, covering every customer-facing page on `develop` (25 pages, about 6,300 words). **Decided and applied: see Outcome below.** Wording is judgment, not fact; the *Decisions for Mark* section at the end lists what needs a yes or no first.
+
+## Outcome (decided November 23, 2026)
+
+**Mark's direction:** the realm has no government. Like the world it mirrors, it is driven by a few kingmakers who set the rules informally, so words that imply a legitimate state (government, constitution, ministry, committee, policy, economy) contradict the premise. Crown, Court, heraldry and the rest stay.
+
+This is neither Option A nor the full medieval rewrite (B) below. It is a **vocabulary change**: civil-state words out, court-and-patronage words in, canon first and then the site. Everything below this section is the analysis that led here and is kept as history.
+
+**Decisions**
+
+| Question | Decision |
+|---|---|
+| Realm headline | **The Court of Attention.** Kicker "By Royal Writ"; the lead adds "It reigns by the favour of whichever House can hold the room." |
+| The Constitution | Renamed **The Customs of Engagement** (`docs/brand/CUSTOMS_OF_ENGAGEMENT.md`). Unwritten, set by whoever can enforce them. The URL `/realm/constitution` is unchanged so no link breaks. |
+| The two Ministries | **Exchequer of Measurable Outcomes** and **Heralds of Universal Correspondence**. Institutions are now documented as respectable fronts for the Houses' power. |
+| Great Houses | "Portfolio" becomes **province**; the Houses are the **kingmakers** ("no sovereign reigns without the favour of at least one of them"). |
+| Corporate words | Left alone (data-driven, dashboard, metrics, currency, industry): they are the modern subject of the satire. |
+| Homepage | **Regalia for the chronically online.** The tagline changes everywhere ("Official regalia for the chronically online"). |
+| About | "A Brief Chronicle"; the pre-launch and rights-review paragraph is replaced by "The issue". |
+
+**Applied in the same PR:** the must-fix items M1 to M8 (customer descriptions from `product-copy.md` via a new `customerNote` field; the Ministry/Chancery contradiction; Draft labels; the Peerage record block no longer promises QR seals or packaging; staging-gate text removed from public Privacy and Cookies; "Drop 001"; the Brand Guide's stale status statement, colors, collection and sayings). Also corrected because the Customs forbid them in public copy: the homepage's "a kingdom that does not exist", "It takes all of this very seriously" and the word "satirical" in its meta description.
+
+**Deliberately not changed, and why**
+
+- **Latin mottos for Nos. 03, 04 and 06.** Needs a person to check the Latin.
+- **The "Creator Economy" collection name** on No. 04: it is the modern subject's own name, and the collection taxonomy is used by the catalog.
+- **"Institutions provide respectable justification"** on the Peerage page: kept; it is now explicit canon.
+- **The 58 social cards** are generated, local-only images. The generator sources and kit text are updated; re-run `tools/social/build_social.py` to regenerate. The kit's bios still say "In development" and need a launch update.
+- **The Brand Guide's "brand foundation" paragraph and the kit's LinkedIn About say "It is satire from inside the feed."** That sentence would break Customs voice rule 1 if published. It is an open decision for Mark before the LinkedIn page is written.
 
 ## Correction: read this first
 

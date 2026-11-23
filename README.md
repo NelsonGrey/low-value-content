@@ -55,7 +55,7 @@ The first release is the **holiday six** (Nos. 01–06, see [docs/product/holida
 ```
 low-value-content/
 ├── docs/
-│   ├── brand/              Brand guide, Constitution of Engagement, heraldic system, imagery direction
+│   ├── brand/              Brand guide, Customs of Engagement, heraldic system, imagery direction
 │   ├── business-plan/      Business plan (.docx) and its QA renders (qa/draft, qa/final)
 │   └── product/            Concept catalog, apparel manifest (source of truth), launch matrix, product notes
 ├── design/                 LOCAL ONLY (gitignored): shirt prototypes, mockups, social cards, launch-six art sources

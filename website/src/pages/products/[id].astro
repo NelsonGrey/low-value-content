@@ -34,7 +34,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
       <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
       <h1>{product.primaryCopy}</h1>
       <p class="price">{price}</p>
-      <p class="treatment">{product.regaliaRole}</p>
+      <p class="treatment">{("customerNote" in product && product.customerNote) || product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
         <form class="buy-form" data-product={product.commerce.catalogKey} data-variants={JSON.stringify(options)}>
