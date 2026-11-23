@@ -1,6 +1,14 @@
 # Launch readiness: everything that has to be true before the holiday six go live
 
-Status: current as of **November 11, 2026**. This is the working checklist behind [holiday-launch-plan.md](holiday-launch-plan.md). Update the state column as work lands. Nothing here touches production; going live is always a separate, explicit step.
+Status: checklist begun **November 11, 2026**; the verified update below is from **November 21, 2026**. This is the working checklist behind [holiday-launch-plan.md](holiday-launch-plan.md). Update the state column as work lands. Going live is a separate release step.
+
+## Verified November 21 update
+
+- The IDOR REG-1 email supplied for Nelson Grey LLC lists **only IL Business Income Tax** with account ID `20670-81248`. It does not establish a Sales/Use Tax retailer or reseller registration. The `D18371707` number in local business notes is labeled an Illinois LLC file number. Neither is evidence of an Illinois resale account ID. The previously submitted Printify MTC certificate used `18371707` and must not be relied on; ask Printify to withdraw or replace it when the correct IDOR registration is available.
+- Stripe's dev and staging sandboxes each have an active Illinois tax registration and the Low Value Content Checkout webhook is present with the expected four events. These are sandbox records, not proof of an IDOR registration.
+- Live Stripe Tax shows an Illinois registration marked **Needs attention**. Its masked ID ends `707`, which may match the LLC file number; verify the full ID and correct the registration before enabling live automatic tax. Stripe's notice says its setup for subscriptions, invoices and payment links is incomplete; that notice does not by itself establish whether this Checkout integration can collect tax.
+- Production Firebase has billing, Hosting and the coming-soon page. Its Cloud Functions and Secret Manager APIs are not enabled and it has no deployed commerce backend. The `production` GitHub Environment currently has `SHOW_COMING_SOON=true`.
+- The development and staging preview screens are a client-side Google/Firebase gate. Hosting still serves their files to anyone who knows the URLs; a server-side access policy is needed if the preview content must be genuinely private.
 
 State key: **Done** (built and checked), **Ready** (I can do it now without a decision), **Needs Mark** (a decision, money or an account action), **Needs outside** (accountant, counsel, Printify, Stripe), **Blocked** (waits on a sample or an earlier item).
 
@@ -25,7 +33,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
 | Printify Premium plan: price and discount | Needs outside | Could save about $2.50 per shirt; check the current terms |
-| Resale certificate so Printify stops charging tax | Needs Mark | Illinois CRT-61 certificate of resale, now possible with the registration; upload in Printify's tax-exemption settings and confirm it covers every print provider |
+| Resale certificate so Printify stops charging tax | Blocked | Correct IDOR Sales/Use retailer or reseller account ID is not yet evidenced. The submitted MTC used the LLC file number; replace or withdraw it. Do not treat a Printify approval of that document as tax clearance. |
 | Webhook registration for shipped and delivered events | Ready | Needs the webhook secret stored in each Firebase project; payload shape still unverified |
 | Publish to a sales channel | Not needed | The site sends orders by API; the drafts stay unpublished |
 | Sample order (4 shirts, about $69) | **Needs Mark** | Mark decides when everything else is built |
@@ -51,11 +59,11 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 
 | Page | State | Notes |
 |---|---|---|
-| Terms of sale | Needs Mark, Needs outside | I can draft it; counsel should review before live payments |
-| Privacy | Needs Mark, Needs outside | Reflects Stripe, Printify, Firebase and Google sign-in on dev and staging |
+| Terms of sale | Drafted Nov 23, needs counsel | `terms.astro` now covers use and sale; Illinois governing law is my assumption, confirm |
+| Privacy | Drafted Nov 23, needs counsel | Covers Stripe, Printify, Firebase; no analytics or email list yet |
 | Cookies | Ready | Site uses no tracking cookies on the public site today |
-| Shipping policy | Needs Mark | US only; Printify production plus shipping time; tiered shipping once decided |
-| Returns and replacements | Needs Mark | Proposed default below |
+| Shipping policy | Drafted Nov 23, needs Mark | `shipping.astro`: US only, flat $5.99, no delivery-time numbers until Printify confirms them |
+| Returns and replacements | Drafted Nov 23, needs Mark | `returns.astro` uses the proposed default below; approve or change |
 | Support page with contact | Ready | Branch `feature/support-contact` holds the `support@lowvaluecontent.com` change; merge with the launch PR when Mark approves |
 | Trademark-cleared language | Needs Mark | Keep "not cleared" language off the customer-facing site, but never claim clearance |
 
@@ -66,9 +74,9 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Item | State | Notes |
 |---|---|---|
 | Shipping decision | Needs Mark | Price is decided ($36); shipping rule is still open, see the pricing analysis |
-| Sales-tax collection (nexus, Stripe Tax) | In progress | Illinois registered 2026-11-14. Checkout now sends tax codes (apparel `txcd_99999999`, shipping `txcd_92010001`, tax-exclusive); collection stays off until Illinois is added under Stripe Tax Registrations per mode and `STRIPE_AUTOMATIC_TAX=true`. Other states: accountant |
+| Sales-tax collection (nexus, Stripe Tax) | Blocked for live | Checkout sends tax codes (apparel `txcd_99999999`, shipping `txcd_92010001`, tax-exclusive). Sandbox Illinois registrations are active. The live registration's number must be verified against an actual IDOR Sales/Use account before live collection. Other states: accountant. |
 | Stripe live account structure (one account for the LLC, Connect isolated for Wishlist Wizard if needed) | Needs Mark | See `docs/engineering/stripe-standard.md` |
-| Live product catalog and webhook for Low Value Content | Blocked | Needs the live account and explicit go; use `tools/stripe/` |
+| Live product catalog and webhook for Low Value Content | Blocked | Live mode is accessible, but the production backend, least-privilege key, webhook destination and secrets are not configured. Checkout must remain disabled until the tax and policy gates are satisfied. |
 | One real live order, then refund | Blocked | After live mode |
 | Printify billing method and spending limit | Needs Mark | Check the funding source before the first real order |
 
