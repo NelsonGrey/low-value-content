@@ -27,6 +27,7 @@ const nav = [
     <link rel="stylesheet" href="/assets/auth-gate.css" />
     <link rel="stylesheet" href="/assets/checkout.css" />
     <link rel="stylesheet" href="/assets/blank-colors.css" />
+    <script is:inline src="/assets/layout.js"></script>
     <script is:inline src="/assets/env-config.js"></script>
     <script is:inline src="/assets/auth-gate.js"></script>
     <script is:inline src="/assets/cart.js" defer></script>
@@ -44,6 +45,7 @@ const nav = [
         <a class="cart-link" href="/cart.html" aria-current={current === "cart" ? "page" : undefined}>Cart <span class="cart-count" data-cart-count hidden></span></a>
       </nav>
     </header>
+    <div class="page-scroll" id="page-scroll">
     <main id="main"><slot /></main>
     <footer class="site-footer">
       <div class="footer-brand">
@@ -85,6 +87,7 @@ const nav = [
       </div>
       <p class="legal">© 2026 Low Value Content, an imprint of Nelson Grey LLC. All rights reserved.</p>
     </footer>
+    </div>
     <script is:inline src="/assets/site.js" defer></script>
   </body>
 </html>
@@ -113,7 +116,10 @@ const nav = [
     /* One inset for everything. Header and footer are full width, but their content sits at the
        column's inner edge, the same line the page content uses (main redefines --gutter to the inset alone). */
     --page-pad: clamp(1.25rem, 5vw, 5rem);
-    --gutter: calc(max(0px, (100vw - var(--site-content-width)) / 2) + var(--page-pad));
+    --gutter: calc(max(0px, (100% - var(--site-content-width)) / 2) + var(--page-pad));
+    --header-h: 92px;      /* pinned header height; sticky elements inside the page offset by it on small screens */
+    --stick-top: var(--header-h);
+    --sbw: 0px;            /* classic scrollbar width, measured by /assets/layout.js */
     --fs-h1: clamp(2.9rem, 6.2vw, 5.75rem);
     --fs-h2: clamp(2.2rem, 4.2vw, 4rem);
   }
@@ -151,7 +157,7 @@ const nav = [
   a { color: inherit; }
   .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 30; background: white; padding: .75rem 1rem; }
   .skip-link:focus { top: 1rem; }
-  .site-header { position: sticky; top: 0; z-index: 20; min-height: 92px; padding: 1rem var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: var(--navy); color: var(--ivory); border-bottom: 1px solid rgba(218,191,131,.35); position: relative; z-index: 10; }
+  .site-header { position: sticky; top: 0; z-index: 20; min-height: var(--header-h); padding: 1rem var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: var(--navy); color: var(--ivory); border-bottom: 1px solid rgba(218,191,131,.35); }
   .brand-lockup { display: flex; align-items: center; gap: .85rem; text-decoration: none; letter-spacing: .04em; }
   .brand-lockup b { display: block; text-transform: uppercase; font-size: .95rem; }
   .brand-lockup small { display: block; color: var(--gold-light); font-style: italic; margin-top: .2rem; }
@@ -193,6 +199,27 @@ const nav = [
   .section-heading h2 { font: 800 clamp(2.2rem, 4.4vw, 3.5rem)/.98 var(--display); text-transform: uppercase; color: var(--navy); margin: 0; }
   .section-heading p:last-child { max-width: 34rem; margin: 0; font-size: 1.08rem; line-height: 1.7; }
   @media (max-width: 860px) { .section-heading { grid-template-columns: minmax(0, 1fr); } .section-heading p:last-child { margin-top: .75rem; } }
+  /* Wide screens: the header is pinned and only the body (main + footer) scrolls, so the scrollbar sits under
+     the header and the header never changes width between short and long pages. */
+  @media (min-width: 801px) {
+    :root { --stick-top: 0px; }
+    html, body { height: 100%; overflow: hidden; }
+    body { display: flex; flex-direction: column; }
+    .site-header {
+      flex: none;
+      --g: calc(max(0px, (100% - var(--sbw) - var(--site-content-width)) / 2) + var(--page-pad));
+      padding-left: var(--g);
+      padding-right: calc(var(--g) + var(--sbw));
+    }
+    .page-scroll { flex: 1 1 auto; min-height: 0; overflow-y: scroll; overflow-x: hidden; scroll-behavior: smooth; overscroll-behavior: contain; }
+    .page-scroll:focus { outline: none; }
+  }
+  @media (min-width: 801px) and (prefers-reduced-motion: reduce) { .page-scroll { scroll-behavior: auto; } }
+  @media print {
+    html, body { height: auto; overflow: visible; }
+    .page-scroll { overflow: visible; }
+    .site-header { position: static; }
+  }
   @media (max-width: 800px) {
     .menu-button { display: block; }
     .site-header nav { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 1.25rem; background: var(--navy); flex-direction: column; align-items: stretch; border-top: 1px solid var(--line); }

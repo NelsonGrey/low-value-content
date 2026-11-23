@@ -31,7 +31,7 @@ import { constitution } from "../../data";
 
 <style>
   .hierarchy { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; background: var(--paper); }
-  .hierarchy .section-heading { display: block; position: sticky; top: 130px; margin: 0; }
+  .hierarchy .section-heading { display: block; position: sticky; top: calc(var(--stick-top) + 2.4rem); margin: 0; }
   .hierarchy .section-heading h2 { font-size: var(--fs-h2); }
   .hierarchy .section-heading .eyebrow { margin-bottom: .5rem; }
   .hierarchy ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }

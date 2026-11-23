@@ -37,7 +37,11 @@ for (const page_ of PAGES) {
     const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
     const page = await ctx.newPage();
     await page.goto(`${base}/${page_}.html`, { waitUntil: "networkidle" });
+    // On wide screens only #page-scroll scrolls, so a "full page" shot means sizing the window to the content.
+    const needed = await page.evaluate(() => { const s = document.getElementById("page-scroll"); return s && s.scrollHeight > s.clientHeight ? s.scrollHeight - s.clientHeight : 0; });
+    if (needed) await page.setViewportSize({ width: vp.width, height: vp.height + needed });
     await page.screenshot({ path: path.join(out, `${page_.replaceAll("/", "_")}-${vp.name}.png`), fullPage: true });
+    if (needed) await page.setViewportSize({ width: vp.width, height: vp.height });
     if (vp.name === "desktop-1920") {
       const results = await new AxeBuilder({ page }).analyze();
       entry.axe = results.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, help: v.help }));
