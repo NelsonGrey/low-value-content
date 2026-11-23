@@ -38,16 +38,16 @@ The House assignment identifies the mechanism being satirized; it does not requi
 
 ## Founding Ten
 
-These records remain authoritative over every expansion classification. Existing SVGs are editable prototypes; generated artwork plates are concept references until reconstructed or approved at provider resolution.
+These records remain authoritative over every expansion classification. Nos. F01–F06 use the November 23 outlined print candidates; physical samples remain open. The held-back artwork plates are concept references until reconstructed or approved at provider resolution.
 
 | ID | Product | Collection | Form | House | Production record |
 |---|---|---|---|---|---|
-| F01 | Please validate me algorithmically. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/01-progress-bar.svg |
-| F02 | Thought leader. No thoughts required. | Court & Orders | CO | House of Influence | Editable artwork: production/print-files/launch-six-v1/02-door-plaque.svg |
-| F03 | I’m not doomscrolling. I’m doing market research. | Court & Orders | CO | House of Scroll | Editable artwork: production/print-files/launch-six-v1/03-field-dispatch.svg |
-| F04 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/04-editors-marks.svg |
-| F05 | My authentic self is currently being monetized. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/05-price-tag.svg |
-| F06 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | PN | None required | Editable artwork: production/print-files/launch-six-v1/06-giant-times.svg |
+| F01 | Please validate me algorithmically. | Public Notices | PN | None required | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/01-approval-pending.svg |
+| F02 | Thought leader. No thoughts required. | Court & Orders | CO | House of Influence | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/02-honorary-appointment.svg |
+| F03 | I’m not doomscrolling. I’m doing market research. | Court & Orders | CO | House of Scroll | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/03-inquiry-feed.svg |
+| F04 | Content creator. Originality questionable. Revenue inconsistent. Reach unreported. | Public Notices | PN | None required | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/04-creator-audit.svg |
+| F05 | My authentic self is currently being monetized. | Public Notices | PN | None required | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/05-authentic-self-tag.svg |
+| F06 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | PN | None required | Outlined candidate: production/print-files/launch-six-redesign-candidate-v1/06-one-minute-record.svg |
 | F07 | Much Published, Little Said | Court & Orders | CO | The Royal House of Engagement | Artwork plate (not print-ready): design/mockups/royal-house/A07-much-published-little-said.png |
 | F08 | Order of the Blue Check | Court & Orders | CO | House of Influence | Artwork plate (not print-ready): design/mockups/royal-house/A08-order-blue-check.png |
 | F09 | The End of the World Has Been Postponed | Royal Commemorations | RC | House of Buffer | Artwork plate (not print-ready): design/mockups/royal-house/A09-y2k-postponed.png |

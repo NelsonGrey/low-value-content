@@ -30,12 +30,12 @@ Six of the ten products launch first: **Nos. 01 to 06**, marked `holidayLaunch: 
 
 | # | Product | Launch collection | Realm intensity | Creative status | Commerce status |
 |---:|---|---|---|---|---|
-| 1 | Please validate me algorithmically. | Public Notices | None | Print master | Test sellable (Ivory) |
-| 2 | Thought leader. No thoughts required. | Court & Orders | Moderate | Print master | Test sellable (True Navy) |
-| 3 | I’m not doomscrolling. I’m doing market research. | Court & Orders | Moderate | Print master | Test sellable (Brick, provisional) |
-| 4 | Content creator. Uniqueness questionable. Monetization inconsistent. Visibility unreported. | Public Notices | None | Print master | Test sellable (Ivory) |
-| 5 | My authentic self is currently being monetized. | Public Notices | None | Print master | Test sellable (Brick, provisional) |
-| 6 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | Light | Print master | Test sellable (True Navy) |
+| 1 | Please validate me algorithmically. | Public Notices | None | Print candidate | Test sellable (Ivory) |
+| 2 | Thought leader. No thoughts required. | Court & Orders | Moderate | Print candidate | Test sellable (True Navy) |
+| 3 | I’m not doomscrolling. I’m doing market research. | Court & Orders | Moderate | Print candidate | Test sellable (Brick, provisional) |
+| 4 | Content creator. Originality questionable. Revenue inconsistent. Reach unreported. | Public Notices | None | Print candidate | Test sellable (Ivory) |
+| 5 | My authentic self is currently being monetized. | Public Notices | None | Print candidate | Test sellable (Brick, provisional) |
+| 6 | Sent 2:14 AM. Regretted 2:15 AM. | Public Notices | Light | Print candidate | Test sellable (True Navy) |
 | 7 | Much Published, Little Said | Court & Orders | Full | Ornate art plate | Planned |
 | 8 | Order of the Blue Check | Court & Orders | Full | Ornate art plate | Planned |
 | 9 | The End of the World Has Been Postponed | Royal Commemorations | Full | Ornate art plate | Planned |

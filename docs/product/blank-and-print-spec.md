@@ -16,7 +16,7 @@ Status: updated November 11, 2026. The **Verified facts** section below supersed
 | Care | Machine wash cold (max 30 °C), do not bleach, tumble dry low, iron on low heat, do not dry clean |
 | Handling time | The API reports 10 days for every provider, which looks like a default. Real production time is unverified |
 
-**Print-quality flag.** At the scale Printify fits our art, the thinnest rule in each frame is about 0.029 in, just under our own 0.03 in minimum. The samples will show whether that holds on textured garment-dyed cotton.
+**Print-quality flag.** The November 11 frame note below applies to the earlier art. The November 23 redesign has a 3 px minimum rule in its 1000-unit source, about 0.035 in when the 5400 px master is fitted to the recorded 4200 px / 14 in print area. Physical samples still need to confirm the small serif text and gold on textured garment-dyed cotton.
 
 **Interim mockups.** Printify renders mockups for every color we enabled. They are what the site can show until sample photography exists.
 

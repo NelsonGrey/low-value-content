@@ -1,6 +1,6 @@
 # Art brief: the holiday six
 
-Status: draft for Mark's review, November 10, 2026. Written to be handed to an outside AI image/design tool that has **not** seen this repository. Everything it needs is in this file; attach the reference files named under each shirt. Nothing here is trademark-cleared.
+Status: original art brief, November 10, 2026. **November 23 update:** Mark approved the six redesigns in `production/print-files/launch-six-redesign-candidate-v1/`. The approved visible copy and design changes in that package's `COPY-REVIEW.md` supersede the older per-shirt wording and composition below, especially for 01, 04, and 06. This brief remains the record of the original directions. Nothing here is trademark-cleared.
 
 ## 1. The job
 
