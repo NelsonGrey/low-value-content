@@ -17,7 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 SHOP = 29342324
-IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE = 0.5, 0.39, 0.75, 0
+IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE = 0.5, 0.42, 0.82, 0
 RECORD = ROOT / "tools/printify/launch-six-products.json"
 ART = ROOT / "production/print-files/launch-six-redesign-candidate-v1"
 LOG = ROOT / "production/qa/printify-redesign-update-2026-11-23.json"
@@ -66,6 +66,7 @@ def check_product(key, product, entry, allowed_ids):
     if (image["x"], image["y"], image["scale"], image["angle"]) not in {
         (0.5, 0.5, 0.9452, 0),
         (0.5, 0.42, 0.82, 0),
+        (0.5, 0.39, 0.75, 0),   # the shorter placement set on November 23; a valid starting point
         (IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE),
     }:
         raise RuntimeError(f"{key}: placement changed")
