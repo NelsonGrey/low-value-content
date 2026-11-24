@@ -21,14 +21,14 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Garment colors locked to real blank names | Done | Manifest `blankColor` plus checker; Brick provisional |
 | Confirm Brick and True Navy on a real shirt | Blocked | Needs samples |
 | Confirm print quality, thin rules and gold on dark cotton | Blocked | Needs samples |
-| Frame and small-type quality on the redesign | Blocked | The raised, shorter Printify placement brings the thinnest rules to about 0.030 in. Confirm edge quality and small serif text, especially the maker line, on a physical sample. |
+| Frame and small-type quality on the redesign | Blocked | At the latest shorter placement, the thinnest rules are about 0.028 in, slightly below the local 0.03 in target. Confirm edge quality and small serif text, especially the maker line, on a physical sample. |
 | Trademark knockout searches for the six sayings and the brand | Needs outside | Cannot be done from here; search the USPTO and common marketplaces; the site must not claim clearance |
 
 ## 2. Printify
 
 | Item | State | Notes |
 |---|---|---|
-| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts received the redesign and maker's line November 23, then were shortened and raised to x 0.50, y 0.42, scale 0.82. Each read-back verified image IDs, price, variants and placement. Logs: `production/qa/printify-redesign-update-2026-11-23-first-pass.json`, `production/qa/printify-redesign-update-2026-11-23.json`, and `production/qa/printify-placement-update-2026-11-23.json`. |
+| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts received the redesign and maker's line November 23, then were shortened again to x 0.50, y 0.39, scale 0.75. Each read-back verified image IDs, price, variants and placement. Logs: `production/qa/printify-redesign-update-2026-11-23-first-pass.json`, `production/qa/printify-redesign-update-2026-11-23.json`, `production/qa/printify-placement-update-2026-11-23.json`, and `production/qa/printify-placement-update-2026-11-23-v2.json`. |
 | Old test product removed | Done | Deleted November 11 |
 | Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
