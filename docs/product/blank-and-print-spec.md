@@ -10,13 +10,13 @@ Status: updated November 11, 2026. The **Verified facts** section below supersed
 | Provider | Printify Choice (provider 99). Ten other providers carry the blank; Printful (410) and SwiftPOD (39) have the same three colors, with smaller print areas (3425 x 3882 and 3461 x 3955 px) |
 | Colors we use | **Ivory**, **True Navy**, **Brick**, all in stock for S to 3XL. The catalog also has "Navy" (renders as a grey-blue) and "Crimson" (renders as a coral red), which we rejected. No Comfort Colors shade is called oxblood; Brick is the nearest we tested, so it is provisional until a sample |
 | Sizes sold | S, M, L, XL, 2XL, 3XL (4XL exists on some colors; not used) |
-| Print method | DTG. Front print area 3703 x 4200 px. The latest November 23 draft placement uses scale 0.75, x 0.50, y 0.39. The 4500 x 5400 image occupies about 9.3 in wide by 11.1 in tall, subject to Printify's actual print rendering. The previous scale 0.82 was about 10.1 by 12.1 in. |
+| Print method | DTG. Front print area 3703 x 4200 px. The November 23 draft placement is scale 0.82, x 0.50, y 0.42: the 4500 x 5400 image occupies about 10.1 in wide by 12.1 in tall, subject to Printify's actual print rendering. The first approved placement, scale 0.945, was about 11.7 by 14 in. A trial at scale 0.75 (about 9.3 by 11.1 in) was reverted the same day because it put the thinnest rules at 0.028 in. |
 | Production cost | S to XL **$12.65**, 2XL $13.89, 3XL $16.03 |
 | US shipping (Printify's quote) | $5.35 first shirt, $2.40 each additional shirt |
 | Care | Machine wash cold (max 30 °C), do not bleach, tumble dry low, iron on low heat, do not dry clean |
 | Handling time | The API reports 10 days for every provider, which looks like a default. Real production time is unverified |
 
-**Print-quality flag.** The November 11 frame note below applies to the earlier art. At scale 0.75, a 3 px rule in the redesign's 1000-unit source becomes about 0.028 in, slightly below the local 0.03 in target. The small serif text, including the maker line, needs a physical sample for legibility; this placement has only been reviewed in Printify mockups.
+**Print-quality flag.** The November 11 frame note below applies to the earlier art. At scale 0.82, a 3 px rule in the redesign's 1000-unit source becomes about 0.030 in, exactly on the local 0.03 in target, so there is no margin: do not shrink the placement further without thickening the rules in the art. The small serif text, including the maker's line (about 8 pt capitals at this scale), needs a physical sample for legibility; this placement has only been reviewed in Printify mockups.
 
 **Interim mockups.** Printify renders mockups for every color we enabled. They are what the site can show until sample photography exists.
 
