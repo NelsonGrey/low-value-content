@@ -19,7 +19,7 @@ const realmConnected = hasRealmProvenance(product);
     <span class="product-number">No. {String(product.position).padStart(2, "0")}</span>
   </a>
   <div class="product-copy">
-    <div class="classification"><p>{product.launchCollection}</p>{product.holidayLaunch && <span class="wave">Holiday issue</span>}</div>
+    <div class="classification"><p>{product.launchCollection}</p>{product.holidayLaunch && <span class="wave">Yuletide issue</span>}</div>
     <h3><a href={productHref(product)}>{product.primaryCopy}</a></h3>
     <p class="issue">{realmConnected ? product.royalTreatment : product.originalCollection}</p>
     <div class="status-row"><span class="price">{`$${Math.round(product.commerce.priceCents / 100)}`}</span><span>{product.commerceStatus === "test-sellable" ? "Made to order" : "Coming soon"}</span></div>

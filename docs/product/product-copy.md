@@ -18,12 +18,12 @@ Nos. 01 to 06 are the holiday issues. Nos. 07 to 10 follow later and are not sho
 
 | No. | Description |
 |---|---|
-| 01 | A formal request for recognition, filed in the plain language of a public notice. Pending, as ever. |
+| 01 | A formal request for recognition, filed in the plain language of a public notice. Validation stands at three per cent; self-worth is pending. |
 | 02 | An honorary court appointment, conferred without examination. The thoughts remain optional. |
 | 03 | Issued under the Royal Institute of Digital Inquiry, which has reclassified scrolling as fieldwork. |
-| 04 | An editorial proof returned with comments. The findings stand unamended. |
+| 04 | An audit of the creator's affairs, returned with findings. The findings stand unamended. |
 | 05 | An inventory tag for the self. Sponsorship is subject to terms. |
-| 06 | Two timestamps, entered into the record by the Ministry of Measurable Outcomes. The gap is one minute. |
+| 06 | Two timestamps, entered into the record by the Exchequer of Measurable Outcomes. The gap is one minute. |
 | 07 | The sovereign motto of the House, borne by the peacock and the parrot. *Multa edita, pauca dicta*: much published, little said. |
 | 08 | The Order of the Blue Check, conferred for verified distinction without regard to what was verified. |
 | 09 | A commemorative issue for the disputed reign of Y2K the Almost. *Finis mundi dilatus*: the end of the world, postponed. |

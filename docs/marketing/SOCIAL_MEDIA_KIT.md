@@ -15,7 +15,7 @@ This kit gives you what a new account needs on day one: profile images, bios, 58
 | `design/social/posts.csv` | One row per card: suggested date, platforms, caption, hashtags, alt text, and a note for anything on hold. |
 | `tools/social/` | The generator. `python3 tools/social/build_social.py` rebuilds everything (needs Pillow and Chrome, and the macOS system fonts). |
 
-The 58 cards: 2 introductions, 3 concept plates, 10 constitutional principles, 6 Great Houses, 11 Lineage reigns, 12 Royal Calendar observances, 10 founding-collection designs, and 4 mannequin mockups.
+The 58 cards: 2 introductions, 3 concept plates, 10 customs, 6 Great Houses, 11 Lineage reigns, 12 Royal Calendar observances, 10 founding-collection designs, and 4 mannequin mockups.
 
 ## Ground rules
 
@@ -44,9 +44,9 @@ Do this once, before the first post.
 
 | Platform | Limit | Text | Length |
 |---|---|---|---|
-| Instagram bio | 150 | Official regalia for the attention economy. The Royal House of Engagement, purveyed by Low Value Content. In development. | 121 |
-| Facebook short description | 255 | Official regalia for the attention economy. Wearable observations on the systems, rituals, and small humiliations of online life, issued by the Royal House of Engagement. In early product development. | 200 |
-| TikTok bio | 80 | Official regalia for the attention economy. In development. | 59 |
+| Instagram bio | 150 | Official regalia for the chronically online. The Royal House of Engagement, purveyed by Low Value Content. In development. | 122 |
+| Facebook short description | 255 | Official regalia for the chronically online. Wearable observations on the systems, rituals, and small humiliations of online life, issued by the Royal House of Engagement. In early product development. | 201 |
+| TikTok bio | 80 | Official regalia for the chronically online. In development. | 60 |
 | LinkedIn tagline | 120 | Wearable observations on the systems and rituals of online life. In early product development. | 94 |
 
 LinkedIn "About": use the brand foundation paragraph from the guide: *Low Value Content makes wearable observations about the systems, rituals, and small humiliations of online life. It is satire from inside the feed: written for people who participate in digital culture while remaining skeptical of what it rewards.* Then the current public status statement, word for word.
@@ -55,7 +55,7 @@ LinkedIn "About": use the brand foundation paragraph from the guide: *Low Value 
 
 | Pillar | Day | Cards | Notes |
 |---|---|---|---|
-| The Constitution | Monday | 10 principles | The most shareable cards. One line, no setup. |
+| The Customs | Monday | 10 customs | The most shareable cards. One line, no setup. |
 | The Houses and the Lineage | Wednesday | 6 Houses, then 10 reigns | Good as carousels: post all six Houses as one swipe post. |
 | The founding collection | Friday | 8 design cards and 3 mockups scheduled (2 held, see below) | Always "in development." |
 | The Royal Calendar | On the real date | 12 observances (11 scheduled, 1 on hold) | The engine that never runs out: the cards post on their actual dates. |

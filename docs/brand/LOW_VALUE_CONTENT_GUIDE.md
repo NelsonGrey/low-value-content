@@ -1,6 +1,6 @@
 # Low Value Content Brand and Content Guide
 
-Status: working guide for a pre-launch apparel concept. The governing fiction is in the [Constitution of Engagement](CONSTITUTION_OF_ENGAGEMENT.md); the launch assortment and per-design rules are in the [launch matrix](../product/launch-collection-matrix-v3.md) and the [apparel manifest](../product/apparel-manifest.md), which win where they differ from this guide. It translates the business plan into reusable direction for product, website, social, email, packaging, and customer support. Creative priority is not legal clearance; every name, saying, design, font, and third-party reference must complete the appropriate review before commercial release.
+Status: working guide for a pre-launch apparel concept. The governing fiction is in the [Customs of Engagement](CUSTOMS_OF_ENGAGEMENT.md); the launch assortment and per-design rules are in the [launch matrix](../product/launch-collection-matrix-v3.md) and the [apparel manifest](../product/apparel-manifest.md), which win where they differ from this guide. It translates the business plan into reusable direction for product, website, social, email, packaging, and customer support. Creative priority is not legal clearance; every name, saying, design, font, and third-party reference must complete the appropriate review before commercial release.
 
 ## Brand foundation
 
@@ -58,9 +58,9 @@ Sovereigns take the name of the power they embody. A numeral appears only when a
 
 The Royal House is the visible brand and Low Value Content is the label on it. The same lockup appears everywhere: "The Royal House of Engagement" with "Purveyed by Low Value Content" beneath it. Page titles end "| The Royal House of Engagement". The founding collection is called **the founding collection** (ten issues); do not use "Drop 001", "Founding Ten", "Founding Six" or "Founding Plate" in public copy.
 
-- **Garments:** four colours only: Ivory, Oxblood, Navy, Black. Colours are planned until sampling confirms the blank and provider.
+- **Garments:** the founding collection ships three Comfort Colors 1717 colours, named exactly as in the manifest: Ivory, True Navy and Brick (Brick is provisional until sampled). Never show a customer a colour we do not ship.
 - **Inks (two-ink designs):** navy, oxblood and antique gold. No editorial black, lime or notification red.
-- **Shared frame (Nos. 01–06):** every two-ink design carries the House frame (double rule, diamond corners) and the imprint line "The Royal House of Engagement · No. NN". Headline typography may stay in its own joke register (typewriter, auction, report); small text is set in the House serif. Sources are `design/prototypes/01..06`; run `python3 scripts/render-front-art.py` to rebuild the display PNGs and proof sheet.
+- **Shared frame (Nos. 01–06):** every two-ink design carries the House frame (double rule, diamond corners) and the imprint line "The Royal House of Engagement · No. NN", with the maker's line "Purveyed by Low Value Content · lowvaluecontent.com" beneath it in the same ink (16 of the design's 1000 units, about 8 pt capitals at the 0.82 placement, the same width as the House line; part of the one front print, not a second print location). Headline typography may stay in its own joke register (typewriter, auction, report); small text is set in the House serif. Sources are `design/launch-six-redesign-review/` (local-only): run `build_redesigns.py` for the editable SVGs, then `build_print_candidate.py` for the outlined print masters and 4500 × 5400 PNGs in `production/print-files/launch-six-redesign-candidate-v1/`. The site's display PNGs (1200 × 1440) and WebPs (800 × 960, lossless) are Lanczos resizes of those PNGs.
 - **Product pages show shoppers:** name, price, art, one line of description, collection, garment, and an archive note for the lore. Production status, print gates, realm intensity and similar workshop fields live in `docs/`, not on the site.
 
 ### Two registers
@@ -71,14 +71,14 @@ The visual system has two registers. **Public Notices** use the restrained edito
 
 The ten collections are Social Media Theater, Algorithm Anxiety, Creator Economy, Chronically Online, Artificial Authenticity, Future of Work, Productivity Theater, Performative Sustainability, Terms and Conditions, and Optimized Human.
 
-The launch assortment is the **Founding Ten**. It begins with the original six creative priorities:
+The founding collection is ten issues. The holiday 2026 launch ships Nos. 01–06 (see `docs/product/holiday-launch-plan.md`); Nos. 07–10 follow later. It begins with the original six creative priorities, as approved on November 23, 2026:
 
 1. Please validate me algorithmically.
 2. Thought leader. No thoughts required.
 3. I’m not doomscrolling. I’m doing market research.
-4. Content creator. Meaning pending.
+4. Content creator. Originality questionable. Revenue inconsistent. Reach unreported.
 5. My authentic self is currently being monetized.
-6. I optimized this shirt for engagement.
+6. Sent 2:14 AM. Regretted 2:15 AM.
 
 Four Realm-native designs complete the ten:
 
@@ -145,6 +145,8 @@ Before publishing, confirm that rights review is complete; assets and fonts are 
 
 ## Current public status statement
 
-> Low Value Content is in early product development. The current designs are working concepts, not products offered for sale. Final garments, colors, pricing, release timing, and availability depend on rights review, physical samples, supplier selection, and a successful test order.
+> Low Value Content is an imprint of Nelson Grey LLC. The founding collection of six shirts is made to order and shipped within the United States. Sizes, colors, prices, shipping and returns are as listed on each page.
+
+*Internal note: this replaces the pre-launch statement ("in early product development … working concepts, not products offered for sale"), which must not appear on the live site. Until checkout is live in production, the coming-soon page is the public statement.*
 
 Update this guide whenever a product, supplier, fulfillment route, price, policy, or legal status changes. The business plan supplies the strategy; current verified facts control public copy.

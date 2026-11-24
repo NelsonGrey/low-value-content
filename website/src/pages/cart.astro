@@ -20,16 +20,16 @@ const catalog = Object.fromEntries(
 const SHIPPING_CENTS = 599;
 const suggestions = [...sellable].sort((a, b) => a.position - b.position);
 ---
-<BaseLayout title="Your Cart | The Royal House of Engagement" description="Review your Low Value Content order before secure checkout." current="cart">
+<BaseLayout title="The Royal Purse | The Royal House of Engagement" description="Review your Low Value Content order before secure checkout." current="cart">
   <section class="cart-page" data-cart-root data-shipping-cents={SHIPPING_CENTS}>
     <header class="cart-head">
       <p class="eyebrow">Secure checkout</p>
-      <h1>Your cart</h1>
+      <h1>The Royal Purse</h1>
     </header>
 
     <div class="cart-empty" data-cart-empty hidden>
       <img src="/assets/royal-mark.svg" alt="" width="72" height="72" />
-      <h2>Your cart is empty</h2>
+      <h2>The purse is empty</h2>
       <p>Six shirts, each printed to order. Choose a size and it will wait for you here.</p>
       <a class="button" href="/shop.html">Shop the six</a>
       <ul class="cart-suggest" aria-label="The six issues">
@@ -48,7 +48,7 @@ const suggestions = [...sellable].sort((a, b) => a.position - b.position);
     <div class="cart-layout" data-cart-filled hidden>
       <ul class="cart-lines" data-cart-lines aria-label="Items in your cart"></ul>
       <aside class="cart-summary" data-cart-summary aria-label="Order summary">
-        <h2>Order summary</h2>
+        <h2>The reckoning</h2>
         <dl>
           <div><dt data-cart-count-label>Subtotal</dt><dd data-cart-subtotal></dd></div>
           <div><dt>US shipping</dt><dd data-cart-shipping></dd></div>

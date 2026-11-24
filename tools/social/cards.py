@@ -122,7 +122,7 @@ def principle_card(num, text, dark=False):
 .p-sig{position:absolute;left:0;right:0;top:1140px;text-align:center}
 """
     body = (chrome() +
-        f"<p class='eyebrow p-n'>Constitutional principle No. {num:02d}</p>"
+        f"<p class='eyebrow p-n'>Custom No. {num:02d}</p>"
         f"<div class='p-orn'><img src='{ASSETS}/royal-mark.svg' alt=''></div>"
         f"<div class='p-mid'><h1 class='p-t'>{e(text)}</h1></div><div class='p-rule'></div>"
         "<p class='script p-sig' style='font-size:40px;color:var(--byc)'>By Sovereign Instrument</p>")
@@ -174,7 +174,7 @@ def premise_card():
 """
     body = (chrome() + f"<img class='pm-arms' src='{ASSETS}/royal-arms.svg' alt=''>"
         "<p class='eyebrow pm-eb'>Low Value Content presents</p>"
-        "<h1 class='pm-t'>Official regalia for the <em>attention economy.</em></h1>"
+        "<h1 class='pm-t'>Official regalia for the <em>chronically online.</em></h1>"
         "<p class='pm-s'>Wearable observations on the systems, rituals, and small humiliations of online life.</p>")
     return page(W, H, "ivory", body, css)
 
@@ -213,7 +213,7 @@ def cover(w, h, tagline=True, scale=1.0):
 .rule{{position:absolute;left:0;right:0;height:3px;background:var(--gold)}}
 .rule.a{{top:{int(14*s)}px}}.rule.b{{bottom:{int(14*s)}px}}
 """
-    tl = "<em>Official regalia for the attention economy</em>" if tagline else ""
+    tl = "<em>Official regalia for the chronically online</em>" if tagline else ""
     body = (f"<div class='rule a'></div><div class='rule b'></div><div class='cv'><img src='{ASSETS}/royal-mark.svg' alt=''>"
             f"<div class='t'><b>The Royal House of Engagement</b><i>Purveyed by Low Value Content</i>{tl}</div></div>")
     return page(w, h, "navy", body, css)

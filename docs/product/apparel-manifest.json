@@ -5,8 +5,8 @@
     "name": "Low Value Content",
     "brandWorld": "The Royal House of Engagement",
     "brandWorldFormal": "The Most Ancient and Most Serene Royal House of Engagement",
-    "brandArchitecture": "Low Value Content is the consumer brand, portal, purveyor, and maker's mark. The Royal House of Engagement is the fictional ruling institution of the Attention Economy.",
-    "brandLine": "Official regalia for the attention economy.",
+    "brandArchitecture": "Low Value Content is the consumer brand, portal, purveyor, and maker's mark. The Royal House of Engagement is the fictional court that holds dominion over the realm of attention.",
+    "brandLine": "Official regalia for the chronically online.",
     "primaryMotto": {
       "english": "Much Published, Little Said",
       "latin": "Multa edita, pauca dicta"
@@ -56,7 +56,7 @@
     "storefrontDisplay": "The exact frontArtDisplay asset is the authoritative image throughout the storefront. Atmospheric shirt images and design studies are preserved only as concept references."
   },
   "constitution": {
-    "premise": "The Crown governs the Attention Economy by converting attention into impressions, impressions into influence, and influence into proof of its own importance.",
+    "premise": "The Crown holds dominion over the realm's attention, converting attention into impressions, impressions into influence, and influence into proof of its own importance. It reigns by the favour of whichever House can hold the room.",
     "crown": "Engagement",
     "naturalResource": "Attention",
     "currency": "Impressions",
@@ -67,7 +67,7 @@
     "unofficialConsequence": "Brain rot",
     "principles": [
       "Attention is the natural resource.",
-      "Engagement is political legitimacy.",
+      "Engagement is legitimacy.",
       "Impressions are the currency.",
       "Influence is the aristocracy.",
       "Content is the principal industry.",
@@ -80,8 +80,8 @@
     "hierarchy": [
       { "rank": 1, "name": "The Crown", "function": "Embodies the reigning source of authority." },
       { "rank": 2, "name": "The Royal House", "function": "Claims permanent ownership of engagement." },
-      { "rank": 3, "name": "The Great Houses", "function": "Compete to produce, distribute, measure, and certify importance." },
-      { "rank": 4, "name": "Ministries and Institutes", "function": "Convert prevailing conduct into policy, research, and administrative doctrine." },
+      { "rank": 3, "name": "The Great Houses", "function": "Compete to produce, distribute, measure, and certify importance. The kingmakers: no sovereign reigns without the favour of one." },
+      { "rank": 4, "name": "Offices and Institutes", "function": "Convert prevailing conduct into decree, research, and custom." },
       { "rank": 5, "name": "The Peerage", "function": "Awards territorial titles for dubious distinction." },
       { "rank": 6, "name": "The Orders", "function": "Grant cross-House honors for conspicuous achievement." },
       { "rank": 7, "name": "The Subjects", "function": "Follow, create, refresh, and occasionally attempt to log off." }
@@ -91,8 +91,8 @@
     { "id": "prompt", "precedence": 1, "name": "House of Prompt", "portfolio": "AI generation, synthetic expertise, and automated creativity", "contradiction": "The less one understands, the more confidently one produces.", "institution": "Office of Synthetic Understanding", "latin": "Pete Sine Intellegendo", "line": "Ask without understanding.", "mark": "?", "standing": "Produces the content." },
     { "id": "scroll", "precedence": 2, "name": "House of Scroll", "portfolio": "Attention, compulsion, and infinite feeds", "contradiction": "Nothing is important, but everything must be seen.", "institution": "Royal Institute of Digital Inquiry", "latin": "Semper Deorsum", "line": "Forever downward.", "mark": "↓", "standing": "Keeps it moving." },
     { "id": "influence", "precedence": 3, "name": "House of Influence", "portfolio": "Status, visibility, personal brands, and public importance", "contradiction": "Everyone is an influencer, leaving no one available to be influenced.", "institution": "Chancery of Public Importance", "latin": "Notus Quia Notus", "line": "Known for being known.", "mark": "◇", "standing": "Declares it important." },
-    { "id": "signal", "precedence": 4, "name": "House of Signal", "portfolio": "Analytics, dashboards, attribution, and evidence", "contradiction": "Every decision is data-driven; the data is adjusted to support the decision.", "institution": "Ministry of Measurable Outcomes", "latin": "Quod Mensuratur Verum Est", "line": "What is measured is true.", "mark": "⌁", "standing": "Proves it worked." },
-    { "id": "spam", "precedence": 5, "name": "House of Spam", "portfolio": "Scale, distribution, repetition, and unsolicited reach", "contradiction": "If nobody responded, the audience was insufficiently large.", "institution": "Ministry of Universal Correspondence", "latin": "Ad Omnes Aeque", "line": "To all subjects equally.", "mark": "@", "standing": "Sends it to everyone else." },
+    { "id": "signal", "precedence": 4, "name": "House of Signal", "portfolio": "Analytics, dashboards, attribution, and evidence", "contradiction": "Every decision is data-driven; the data is adjusted to support the decision.", "institution": "Exchequer of Measurable Outcomes", "latin": "Quod Mensuratur Verum Est", "line": "What is measured is true.", "mark": "⌁", "standing": "Proves it worked." },
+    { "id": "spam", "precedence": 5, "name": "House of Spam", "portfolio": "Scale, distribution, repetition, and unsolicited reach", "contradiction": "If nobody responded, the audience was insufficiently large.", "institution": "Heralds of Universal Correspondence", "latin": "Ad Omnes Aeque", "line": "To all subjects equally.", "mark": "@", "standing": "Sends it to everyone else." },
     { "id": "buffer", "precedence": 6, "name": "House of Buffer", "portfolio": "Delay, loading, postponement, and technical excuses", "contradiction": "Everything is imminent; nothing is presently available.", "institution": "Commission for Imminent Availability", "latin": "Tandem, Fortasse", "line": "Eventually, perhaps.", "mark": "◌", "standing": "Precedence pending." }
   ],
   "peerage": [
@@ -167,6 +167,7 @@
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
       "regaliaRole": "An independent editorial notice. The validation bar reaches 3% while self-worth remains pending.",
+      "customerNote": "A formal request for recognition, filed in the plain language of a public notice. Validation stands at three per cent; self-worth is pending.",
       "family": "royal-proclamations",
       "royalTreatment": "Formal Petition for Algorithmic Recognition",
       "house": "House of Influence",
@@ -207,6 +208,7 @@
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
       "regaliaRole": "An honorary court appointment with one Influence star and the punchline beneath the title.",
+      "customerNote": "An honorary court appointment, conferred without examination. The thoughts remain optional.",
       "family": "royal-proclamations",
       "royalTreatment": "Official Court Appointment",
       "house": "House of Influence",
@@ -214,7 +216,7 @@
       "latin": "Nulla cogitatio requiritur",
       "qrRoute": "/r/thought-leader",
       "realmIssue": {
-        "office": "Ministry of Public Importance",
+        "office": "Chancery of Public Importance",
         "wearerTitle": "Thought Leader to the Court, Honorary",
         "proclamation": "An appointment to speak with authority before the arrival of any supporting thought."
       },
@@ -247,6 +249,7 @@
       "realmIntensity": "moderate",
       "frontOnlyLaunch": true,
       "regaliaRole": "An institutional inquiry with a descending feed beside the research excuse.",
+      "customerNote": "Issued under the Royal Institute of Digital Inquiry, which has reclassified scrolling as fieldwork.",
       "family": "court-uniforms",
       "royalTreatment": "Royal Institute of Digital Inquiry",
       "house": "House of Scroll",
@@ -289,6 +292,7 @@
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
       "regaliaRole": "A creator career audit with three unresolved findings and distinct status marks.",
+      "customerNote": "An audit of the creator's affairs, returned with findings. The findings stand unamended.",
       "family": "royal-proclamations",
       "royalTreatment": "Proof Returned with Comments",
       "house": "House of Prompt",
@@ -329,6 +333,7 @@
       "realmIntensity": "none",
       "frontOnlyLaunch": true,
       "regaliaRole": "An independent transactional notice: the self, tagged and priced. No heraldry on the garment.",
+      "customerNote": "An inventory tag for the self. Sponsorship is subject to terms.",
       "family": "royal-proclamations",
       "royalTreatment": "Inventory Tag of the Authentic Self",
       "house": "House of Influence",
@@ -369,14 +374,15 @@
       "realmIntensity": "light",
       "frontOnlyLaunch": true,
       "regaliaRole": "Two timestamped events joined by the one minute between sending and regret.",
+      "customerNote": "Two timestamps, entered into the record by the Exchequer of Measurable Outcomes. The gap is one minute.",
       "family": "royal-proclamations",
-      "royalTreatment": "Record of the Ministry of Measurable Outcomes",
+      "royalTreatment": "Record of the Exchequer of Measurable Outcomes",
       "house": "House of Signal",
       "reign": "algorithm",
       "latin": "",
       "qrRoute": "/r/sent-regretted",
       "realmIssue": {
-        "office": "Ministry of Measurable Outcomes",
+        "office": "Exchequer of Measurable Outcomes",
         "wearerTitle": "Registrant of Timestamped Regret",
         "proclamation": "A read-receipt record entered into evidence one minute after it could no longer be withdrawn."
       },

@@ -24,15 +24,15 @@ Atmospheric photography follows [`IMAGERY_DIRECTION.md`](../brand/IMAGERY_DIRECT
 | Subject collection | Default House | Institution | Default form | Suggested garment field | Expansion concepts |
 |---|---|---|---|---|---:|
 | Social Media Theater | House of Influence | Chancery of Public Importance | PN | Warm white or washed black | 9 |
-| Algorithm Anxiety | House of Signal | Ministry of Measurable Outcomes | PN | Warm white | 9 |
+| Algorithm Anxiety | House of Signal | Exchequer of Measurable Outcomes | PN | Warm white | 9 |
 | Creator Economy | House of Influence | Chancery of Public Importance | PN | Warm white or washed black | 8 |
 | Chronically Online | House of Scroll | Royal Institute of Digital Inquiry | PN | Oxblood or deep navy | 8 |
 | Artificial Authenticity | House of Prompt | Office of Synthetic Understanding | PN | Warm ivory or deep navy | 10 |
 | Future of Work | House of Prompt | Office of Synthetic Understanding | PN | Washed black or industrial ivory | 10 |
-| Productivity Theater | House of Signal | Ministry of Measurable Outcomes | PN | Warm white or washed black | 10 |
-| Performative Sustainability | House of Signal | Ministry of Measurable Outcomes | PN | Warm ivory or faded green | 10 |
-| Terms and Conditions | House of Spam | Ministry of Universal Correspondence | PN | Warm white or washed black | 10 |
-| Optimized Human | House of Signal | Ministry of Measurable Outcomes | PN | Warm ivory or washed navy | 10 |
+| Productivity Theater | House of Signal | Exchequer of Measurable Outcomes | PN | Warm white or washed black | 10 |
+| Performative Sustainability | House of Signal | Exchequer of Measurable Outcomes | PN | Warm ivory or faded green | 10 |
+| Terms and Conditions | House of Spam | Heralds of Universal Correspondence | PN | Warm white or washed black | 10 |
+| Optimized Human | House of Signal | Exchequer of Measurable Outcomes | PN | Warm ivory or washed navy | 10 |
 
 The House assignment identifies the mechanism being satirized; it does not require a badge on the garment. A Public Notice may map to a House online while remaining lore-free on the shirt.
 

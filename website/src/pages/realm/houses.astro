@@ -4,15 +4,15 @@ import RealmNav from "../../components/RealmNav.astro";
 import RealmSubhero from "../../components/RealmSubhero.astro";
 import { houses } from "../../data";
 ---
-<BaseLayout title="The Six Great Houses | The Royal House of Engagement" description="The six permanent branches of government of the Royal House of Engagement: their portfolios, offices, contradictions and Latin mottos." current="realm">
-  <RealmSubhero title="The six<br />Great Houses" lead="Six permanent branches of government, constitutionally equal, with a precedence that changes whenever the dashboard needs a better story." />
+<BaseLayout title="The Six Great Houses | The Royal House of Engagement" description="The six Great Houses of the realm: their provinces, offices, contradictions and Latin mottos." current="realm">
+  <RealmSubhero title="The six<br />Great Houses" lead="Six standing Houses, equal by custom, with a precedence that changes whenever the dashboard needs a better story." />
   <RealmNav current="houses" />
 
   <section class="houses section" id="great-houses">
     <div class="section-heading">
       <p class="eyebrow">Court precedence under Prompt the Confident</p>
-      <h2>Equal by constitution.<br /><span class="script">Ranked by convenience.</span></h2>
-      <p>The Houses are constitutionally equal. Their precedence changes with each reign and whenever the dashboard needs to tell a better story.</p>
+      <h2>Equal by custom.<br /><span class="script">Ranked by convenience.</span></h2>
+      <p>The Houses are equal by custom. Their precedence changes with each reign and whenever the dashboard needs to tell a better story. No sovereign reigns without the favour of at least one of them.</p>
     </div>
     <div class="house-grid">
       {houses.map((house) => (
@@ -30,7 +30,7 @@ import { houses } from "../../data";
   </section>
 
   <section class="royal-standard">
-    <div><p class="eyebrow">The sovereign field</p><h2>One standard.<br /><span class="script">Six jurisdictions.</span></h2><p>The central check records legitimacy by verified appearance. The six charges identify the portfolios through which attention is produced, retained, declared important, measured, distributed, and indefinitely delayed.</p></div>
+    <div><p class="eyebrow">The sovereign field</p><h2>One standard.<br /><span class="script">Six jurisdictions.</span></h2><p>The central check records legitimacy by verified appearance. The six charges identify the provinces through which attention is produced, retained, declared important, measured, distributed, and indefinitely delayed.</p></div>
     <figure><img src="/assets/royal-standard.svg" alt="The Royal Standard of Engagement bearing the six House charges" /><figcaption>The Royal Standard · current issue under Prompt the Confident</figcaption></figure>
   </section>
 </BaseLayout>

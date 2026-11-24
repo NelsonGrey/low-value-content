@@ -4,13 +4,13 @@ import RealmNav from "../../components/RealmNav.astro";
 import RealmSubhero from "../../components/RealmSubhero.astro";
 import { constitution } from "../../data";
 ---
-<BaseLayout title="The Constitution of Engagement | The Royal House of Engagement" description="The seven ranks of authority, the doctrine of convenient evidence and the current constitutional crisis of the Royal House of Engagement." current="realm">
-  <RealmSubhero title="The<br />Constitution" lead="Seven ranks of authority, one doctrine and a standard that records legitimacy by verified appearance." />
+<BaseLayout title="The Customs of Engagement | The Royal House of Engagement" description="The seven ranks of precedence, the doctrine of convenient evidence and the current crisis of the realm, as kept by the Royal House of Engagement." current="realm">
+  <RealmSubhero title="The<br />Customs" lead="Seven ranks of precedence, one doctrine, and customs that bind the subjects and bend for the powerful." />
   <RealmNav current="constitution" />
 
   <section class="hierarchy section">
     <div class="section-heading">
-      <p class="eyebrow">The constitutional hierarchy</p>
+      <p class="eyebrow">The order of precedence</p>
       <h2>Authority descends.<br /><span class="script">Responsibility does not.</span></h2>
     </div>
     <ol>{constitution.hierarchy.map((level) => <li><span>{String(level.rank).padStart(2, "0")}</span><div><h3>{level.name}</h3><p>{level.function}</p></div></li>)}</ol>
@@ -22,16 +22,16 @@ import { constitution } from "../../data";
   </section>
 
   <section class="universal-peerage">
-    <p class="eyebrow">Current constitutional crisis</p>
+    <p class="eyebrow">Current crisis of the realm</p>
     <h2>The Universal Peerage</h2>
     <blockquote>Once every subject had acquired influence, the Crown discovered that no uninfluenced population remained.</blockquote>
-    <p>The matter was referred to committee.</p>
+    <p>The matter was referred to the Privy Council.</p>
   </section>
 </BaseLayout>
 
 <style>
   .hierarchy { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; background: var(--paper); }
-  .hierarchy .section-heading { display: block; position: sticky; top: 130px; margin: 0; }
+  .hierarchy .section-heading { display: block; position: sticky; top: calc(var(--stick-top) + 2.4rem); margin: 0; }
   .hierarchy .section-heading h2 { font-size: var(--fs-h2); }
   .hierarchy .section-heading .eyebrow { margin-bottom: .5rem; }
   .hierarchy ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }

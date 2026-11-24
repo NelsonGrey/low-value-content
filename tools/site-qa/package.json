@@ -7,7 +7,9 @@
   "scripts": {
     "audit": "node audit.mjs",
     "lighthouse": "node lighthouse.mjs",
-    "cart": "node cart-behavior.mjs"
+    "cart": "node cart-behavior.mjs",
+    "shell": "node shell-behavior.mjs",
+    "header": "VH=2100 node header-shift.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

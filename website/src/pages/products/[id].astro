@@ -34,7 +34,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
       <p class="eyebrow">No. {String(product.position).padStart(2, "0")} · {product.launchCollection}</p>
       <h1>{product.primaryCopy}</h1>
       <p class="price">{price}</p>
-      <p class="treatment">{product.regaliaRole}</p>
+      <p class="treatment">{("customerNote" in product && product.customerNote) || product.regaliaRole}</p>
       {product.latin && <p class="latin">{product.latin}</p>}
       {canBuy ? (
         <form class="buy-form" data-product={product.commerce.catalogKey} data-variants={JSON.stringify(options)}>
@@ -95,7 +95,7 @@ const related = [1, 2, 3].map((n) => products[(start + n) % products.length]);
 
 <style>
   .product-page { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
-  .product-visual { position: sticky; top: 92px; align-self: start; height: calc(100vh - 92px); min-height: 520px; background: #e8dfce; padding: clamp(1.5rem, 3vw, 3rem); display: grid; place-items: center; overflow: hidden; }
+  .product-visual { position: sticky; top: var(--stick-top); align-self: start; height: calc(100dvh - var(--header-h)); min-height: 520px; background: #e8dfce; padding: clamp(1.5rem, 3vw, 3rem); display: grid; place-items: center; overflow: hidden; }
   .product-visual img { width: 100%; height: 100%; object-fit: contain; }
   .visual-label { position: absolute; left: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem); padding: .55rem .7rem; background: rgba(244,238,223,.94); color: var(--navy); font: 700 .58rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
   .product-visual.typographic > div { border: 14px double var(--navy); width: min(640px, 100%); aspect-ratio: 4 / 5; display: flex; padding: 3rem; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: var(--ivory); }

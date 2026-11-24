@@ -21,14 +21,14 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Garment colors locked to real blank names | Done | Manifest `blankColor` plus checker; Brick provisional |
 | Confirm Brick and True Navy on a real shirt | Blocked | Needs samples |
 | Confirm print quality, thin rules and gold on dark cotton | Blocked | Needs samples |
-| Frame and small-type quality on the redesign | Blocked | The new rails are lighter in area and the smallest drawn rule exceeds the local 0.03 in target at the recorded provider scale. Confirm edge quality and small serif text on a physical sample. |
+| Frame and small-type quality on the redesign | Blocked | At the 0.82 placement the thinnest rules are about 0.030 in, exactly on the local 0.03 in target with no margin. Confirm edge quality and small serif text, especially the maker's line (about 8 pt capitals), on a physical sample. |
 | Trademark knockout searches for the six sayings and the brand | Needs outside | Cannot be done from here; search the USPTO and common marketplaces; the site must not claim clearance |
 
 ## 2. Printify
 
 | Item | State | Notes |
 |---|---|---|
-| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts updated with approved redesign art November 23; read-back verified IDs, price, variants and placement. Update log: `production/qa/printify-redesign-update-2026-11-23.json`. |
+| Six draft products (Ivory, True Navy, Brick; S to 3XL; placed art) | Done | Existing drafts received the redesign and maker's line November 23, then shortened to x 0.50, y 0.42, scale 0.82, shortened further to y 0.39, scale 0.75, and restored to x 0.50, y 0.42, scale 0.82 the same day (at 0.75 the thinnest rules printed at 0.028 in, under the 0.03 in target). Each read-back verified image IDs, price, variants and placement. Logs: `production/qa/printify-redesign-update-2026-11-23-first-pass.json`, `production/qa/printify-redesign-update-2026-11-23.json`, `production/qa/printify-placement-update-2026-11-23.json`, and `production/qa/printify-placement-update-2026-11-23-v2.json`. |
 | Old test product removed | Done | Deleted November 11 |
 | Prices on the Printify products | Done | Set to $36 on November 11 |
 | Confirm real production time and the holiday cutoff | Needs outside | Ask Printify support or read the provider page; the 10-day API field looks like a default |
@@ -52,7 +52,7 @@ State key: **Done** (built and checked), **Ready** (I can do it now without a de
 | Deploy to dev and run test orders for all six | Ready | After the PR merges |
 | Deploy to staging and repeat | Done Nov 23 for the happy path | Paid sandbox order: tax on the apparel line only, Printify order created on hold, then cancelled. Index for `reconcile` was missing (PR #61); order-status page after payment not yet seen (staging sign-in gate) |
 | Failure-path tests (declined card, expired session, Printify error) | Ready | Not yet run on staging; add before prod. Invalid cart input returns 400 (checked Nov 23) |
-| Product images: Printify mockups as interim, sample photos later | Done locally | November 23 generated mockups for the approved redesigns replaced the six storefront mockup files; sample photos remain open. |
+| Product images: Printify mockups as interim, sample photos later | Done locally | November 23 generated mockups for the approved redesigns replaced the six storefront mockup files, and were regenerated after the maker's line was added; sample photos remain open. The small maker's line on dark garments needs checking on the physical sample. |
 | Size chart and fit copy | Ready | Take measurements from the Printify blueprint and the sample |
 
 ## 4. Legal and policy

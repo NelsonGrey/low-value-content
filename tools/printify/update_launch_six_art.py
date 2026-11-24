@@ -17,6 +17,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 SHOP = 29342324
+IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE = 0.5, 0.42, 0.82, 0
 RECORD = ROOT / "tools/printify/launch-six-products.json"
 ART = ROOT / "production/print-files/launch-six-redesign-candidate-v1"
 LOG = ROOT / "production/qa/printify-redesign-update-2026-11-23.json"
@@ -62,7 +63,12 @@ def check_product(key, product, entry, allowed_ids):
     if len(images) != 1 or images[0]["id"] not in allowed_ids:
         raise RuntimeError(f"{key}: unexpected front image")
     image = images[0]
-    if (image["x"], image["y"], image["scale"], image["angle"]) != (0.5, 0.5, 0.9452, 0):
+    if (image["x"], image["y"], image["scale"], image["angle"]) not in {
+        (0.5, 0.5, 0.9452, 0),
+        (0.5, 0.42, 0.82, 0),
+        (0.5, 0.39, 0.75, 0),   # the shorter placement set on November 23; a valid starting point
+        (IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE),
+    }:
         raise RuntimeError(f"{key}: placement changed")
     other = [p for area in product["print_areas"] for p in area["placeholders"]
              if p["position"] != "front" and p.get("images")]
@@ -96,13 +102,15 @@ def main():
         product = request(session, "GET", f"/shops/{SHOP}/products/{entry['productId']}.json")
         check_product(key, product, entry, allowed)
         current_id = front_image(product)[0]["id"]
-        if prior.get("newUploadId") == current_id and prior.get("sourceSha256") == digest:
+        position = (front_image(product)[0]["x"], front_image(product)[0]["y"],
+                    front_image(product)[0]["scale"], front_image(product)[0]["angle"])
+        if prior.get("newUploadId") == current_id and prior.get("sourceSha256") == digest and position == (IMAGE_X, IMAGE_Y, IMAGE_SCALE, IMAGE_ANGLE):
             print(f"{key}: already updated and verified")
             continue
         print(f"{key}: ready, current art {current_id}, new file {png.name}")
         if not apply:
             continue
-        if current_id != old_id:
+        if current_id not in {old_id, prior.get("newUploadId")}:
             raise RuntimeError(f"{key}: current art no longer matches saved original")
         if not prior.get("newUploadId"):
             upload = request(session, "POST", "/uploads/images.json", {
@@ -119,7 +127,7 @@ def main():
             "print_areas": [{
                 "variant_ids": product["print_areas"][0]["variant_ids"],
                 "placeholders": [{"position": "front", "images": [{
-                    "id": prior["newUploadId"], "x": 0.5, "y": 0.5, "scale": 0.9452, "angle": 0,
+                    "id": prior["newUploadId"], "x": IMAGE_X, "y": IMAGE_Y, "scale": IMAGE_SCALE, "angle": IMAGE_ANGLE,
                 }]}],
             }],
         }

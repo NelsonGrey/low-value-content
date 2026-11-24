@@ -9,15 +9,15 @@ const markdownPath = path.join(root, "docs/product/ECOSYSTEM_APPAREL_CATALOG.md"
 
 const collectionConfig = {
   "Social Media Theater": { house: "House of Influence", institution: "Chancery of Public Importance", form: "PN", garment: "Warm white or washed black", locus: "Realm / Influence" },
-  "Algorithm Anxiety": { house: "House of Signal", institution: "Ministry of Measurable Outcomes", form: "PN", garment: "Warm white", locus: "Realm / Signal" },
+  "Algorithm Anxiety": { house: "House of Signal", institution: "Exchequer of Measurable Outcomes", form: "PN", garment: "Warm white", locus: "Realm / Signal" },
   "Creator Economy": { house: "House of Influence", institution: "Chancery of Public Importance", form: "PN", garment: "Warm white or washed black", locus: "Realm / Influence" },
   "Chronically Online": { house: "House of Scroll", institution: "Royal Institute of Digital Inquiry", form: "PN", garment: "Oxblood or deep navy", locus: "Realm / Scroll" },
   "Artificial Authenticity": { house: "House of Prompt", institution: "Office of Synthetic Understanding", form: "PN", garment: "Warm ivory or deep navy", locus: "Realm / Prompt" },
   "Future of Work": { house: "House of Prompt", institution: "Office of Synthetic Understanding", form: "PN", garment: "Washed black or industrial ivory", locus: "Realm / Prompt" },
-  "Productivity Theater": { house: "House of Signal", institution: "Ministry of Measurable Outcomes", form: "PN", garment: "Warm white or washed black", locus: "Realm / Signal" },
-  "Performative Sustainability": { house: "House of Signal", institution: "Ministry of Measurable Outcomes", form: "PN", garment: "Warm ivory or faded green", locus: "Realm / Signal" },
-  "Terms and Conditions": { house: "House of Spam", institution: "Ministry of Universal Correspondence", form: "PN", garment: "Warm white or washed black", locus: "Realm / Spam" },
-  "Optimized Human": { house: "House of Signal", institution: "Ministry of Measurable Outcomes", form: "PN", garment: "Warm ivory or washed navy", locus: "Realm / Signal" },
+  "Productivity Theater": { house: "House of Signal", institution: "Exchequer of Measurable Outcomes", form: "PN", garment: "Warm white or washed black", locus: "Realm / Signal" },
+  "Performative Sustainability": { house: "House of Signal", institution: "Exchequer of Measurable Outcomes", form: "PN", garment: "Warm ivory or faded green", locus: "Realm / Signal" },
+  "Terms and Conditions": { house: "House of Spam", institution: "Heralds of Universal Correspondence", form: "PN", garment: "Warm white or washed black", locus: "Realm / Spam" },
+  "Optimized Human": { house: "House of Signal", institution: "Exchequer of Measurable Outcomes", form: "PN", garment: "Warm ivory or washed navy", locus: "Realm / Signal" },
 };
 
 const formOverrides = new Map([

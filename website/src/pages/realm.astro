@@ -7,23 +7,23 @@ const realmProductIds = new Set(["thought-leader", "doomscrolling", "much-publis
 const realmProducts = products.filter((product) => realmProductIds.has(product.id));
 const stateTerms = [
   ["Natural resource", constitution.naturalResource],
-  ["Political legitimacy", constitution.crown],
+  ["Legitimacy", constitution.crown],
   ["Currency", constitution.currency],
   ["Aristocracy", constitution.aristocracy],
   ["Principal industry", constitution.industry],
   ["Divine providence", constitution.providence],
 ];
 const rooms = [
-  ["/realm/constitution.html", "The Constitution", "The seven ranks of authority, the doctrine of convenient evidence and the current constitutional crisis."],
-  ["/realm/houses.html", "The Great Houses", "Six permanent branches of government, each with a portfolio, an office and a contradiction, and the Royal Standard that carries their charges."],
+  ["/realm/constitution.html", "The Customs", "The seven ranks of precedence, the doctrine of convenient evidence and the current crisis of the realm."],
+  ["/realm/houses.html", "The Great Houses", "Six standing Houses, each with a province, an office and a contradiction, and the Royal Standard that carries their charges."],
   ["/realm/peerage.html", "Peerage and Orders", "Titles that describe the distinction, Houses that explain the damage, and the register that keeps score."],
 ] as const;
 ---
-<BaseLayout title="The Realm of Engagement | The Royal House of Engagement" description="The constitution, Great Houses, peerage, institutions, and official contradictions of the Royal House of Engagement." current="realm">
+<BaseLayout title="The Realm of Engagement | The Royal House of Engagement" description="The customs, Great Houses, peerage, offices, and official contradictions of the Royal House of Engagement." current="realm">
   <header class="realm-hero">
     <div>
-      <p class="script">By Sovereign Instrument</p>
-      <h1>The government<br />of attention.</h1>
+      <p class="script">By Royal Writ</p>
+      <h1>The Court<br />of Attention.</h1>
       <p>{constitution.premise}</p>
     </div>
     <div class="realm-arms">
@@ -36,18 +36,18 @@ const rooms = [
 
   <section class="state-ledger section">
     <div class="section-heading">
-      <p class="eyebrow">The state at a glance</p>
-      <h2>A complete economy.<br /><span class="script">Properly constituted.</span></h2>
-      <p>The terms are not interchangeable. Each describes a different part of the machinery that turns human attention into institutional self-importance.</p>
+      <p class="eyebrow">The realm at a glance</p>
+      <h2>A complete realm.<br /><span class="script">Properly ordered.</span></h2>
+      <p>The terms are not interchangeable. Each describes a different part of the machinery that turns human attention into the Crown's self-importance.</p>
     </div>
     <dl>{stateTerms.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}</dl>
-    <aside><p class="eyebrow">Known outside the court as</p><strong>{constitution.unofficialConsequence}</strong><span>Official designation: {constitution.officialConsequence}</span></aside>
+    <aside><p class="eyebrow">Known outside the court as</p><strong>{constitution.unofficialConsequence}</strong><span>Styled in the court rolls: {constitution.officialConsequence}</span></aside>
   </section>
 
   <section class="rooms section" aria-labelledby="rooms-heading">
     <div class="section-heading">
       <p class="eyebrow">Explore the Realm</p>
-      <h2 id="rooms-heading">Three rooms.<br /><span class="script">One government.</span></h2>
+      <h2 id="rooms-heading">Three halls.<br /><span class="script">One Crown.</span></h2>
     </div>
     <ul>
       {rooms.map(([href, title, blurb]) => <li><a href={href}><h3>{title}</h3><p>{blurb}</p><span>Enter</span></a></li>)}
